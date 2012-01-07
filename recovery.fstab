@@ -1,0 +1,20 @@
+# mount point	fstype    device    	[device2]
+
+/boot		mtd	boot
+/recovery	mtd	recovery
+/splash		mtd	splash
+
+/cache		yaffs2	cache
+/data		yaffs2	userdata
+/system		yaffs2	system
+/persist	yaffs2	persist
+
+/sdcard		vfat	/dev/block/mmcblk0p1	/dev/block/mmcblk0
+/sd-ext		vfat	/dev/block/mmcblk1p1	/dev/block/mmcblk1
+
+# misc does not exist on Odys Space
+# /misc       mtd         misc
+# /sd-ext     ext4        /dev/block/mmcblk0p2
+# Not sure here. The user supplied card is /sdcard2
+# /sd-ext		vfat	/dev/block/mmcblk1p1	/dev/block/mmcblk1
+# Additional mount and MTD partitions for Odys Space
