@@ -17,8 +17,10 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
-$(call inherit-product, build/target/product/full.mk)
+# $(call inherit-product, build/target/product/full.mk)
+$(call inherit-product, build/target/product/full_base.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_space
+PRODUCT_NAME := odys_space
 PRODUCT_DEVICE := space
+PRODUCT_MODEL := Odys Space

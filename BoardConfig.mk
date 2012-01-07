@@ -5,8 +5,34 @@ USE_CAMERA_STUB := true
 
 TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := msm7k
+TARGET_ARCH_VARIANT := armv6-vfp
 TARGET_CPU_ABI := armeabi
+TARGET_CPU_ABI := armeabi-v6l
+TARGET_CPU_ABI2 := armeabi
+
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 TARGET_BOOTLOADER_BOARD_NAME := space
+
+# BOARD_HAVE_BLUETOOTH := true
+
+WITH_JIT := true
+ENABLE_JSC_JIT := true
+
+TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
+
+# JS_ENGINE := v8
+
+BOARD_EGL_CFG := device/odys/space/egl.cfg
+
+BOARD_USES_QCOM_HARDWARE := true
+BOARD_USES_QCOM_LIBS := true
+
+# TARGET_PROVIDES_LIBRIL := true
+# TARGET_PROVIDES_LIBAUDIO := true
+
+BOARD_CUSTOM_USB_CONTROLLER := ../../device/odys/space/UsbController.cpp
+
+BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 
 BOARD_KERNEL_CMDLINE := mem=212M console=ttyMSM2 androidboot.hardware=qcom
 # BOARD_KERNEL_BASE := 0x00200000
