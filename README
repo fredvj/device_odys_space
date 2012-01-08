@@ -19,3 +19,5 @@
 2012-01-08:	Had to hardcode some settings in buildinfo.sh
 		Original update.zip will not install without
 		Modified nandroid to allow backup of splash
+		Backup of splash seems to be okay
+		Toggeling script assert does NOTHING!		
