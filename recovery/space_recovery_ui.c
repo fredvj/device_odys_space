@@ -20,7 +20,7 @@
 #include "common.h"
 #include "extendedcommands.h"
 
-char* MENU_HEADERS[] = { "Odys Space - 20120107.1",
+char* MENU_HEADERS[] = { "Odys Space - 2012/01/08 rev 1",
                          "Use volume keys to highlight / Home to select",
                          NULL };
 

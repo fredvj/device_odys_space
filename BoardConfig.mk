@@ -10,6 +10,11 @@ TARGET_CPU_ABI := armeabi
 TARGET_CPU_ABI := armeabi-v6l
 TARGET_CPU_ABI2 := armeabi
 
+# Let us try to allow recovery to flash old images
+TARGET_PRODUCT_NAME := msm7627_ffa
+TARGET_PRODUCT_DEVICE := msm7627_ffa
+TARGET_PRODUCT_BOARD := 7x27
+
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 TARGET_BOOTLOADER_BOARD_NAME := space
 
