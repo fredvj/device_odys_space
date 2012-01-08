@@ -35,10 +35,6 @@ BOARD_USES_QCOM_LIBS := true
 # TARGET_PROVIDES_LIBRIL := true
 # TARGET_PROVIDES_LIBAUDIO := true
 
-BOARD_CUSTOM_USB_CONTROLLER := ../../device/odys/space/UsbController.cpp
-
-BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
-
 BOARD_KERNEL_CMDLINE := mem=212M console=ttyMSM2 androidboot.hardware=qcom
 # BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_BASE := 0x00208000
@@ -60,11 +56,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x09600000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x0ef00000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_PREBUILT_KERNEL := device/odys/space/kernel
-
-#BOARD_HAS_NO_SELECT_BUTTON := true
-# Use this flag if the board has a ext4 partition larger than 2gb
-#BOARD_HAS_LARGE_FILESYSTEM := true
+TARGET_PREBUILT_KERNEL := device/odys/space/prebuilt/kernel
 
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/odys/space/recovery/space_recovery_ui.c
 TARGET_RECOVERY_INITRC := device/odys/space/recovery/recovery.rc
