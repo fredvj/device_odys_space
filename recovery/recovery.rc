@@ -10,6 +10,9 @@ on init
     export ANDROID_DATA /data
     export EXTERNAL_STORAGE /sdcard
 
+# Backup times are in UTC - check if recovery supports timezones
+    export TZ Europe/Berlin
+
     symlink /system/etc /etc
 
     mkdir /boot
