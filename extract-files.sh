@@ -65,7 +65,19 @@ adb pull /system/lib/libgps.so $PROPS
 
 echo "    -------------------- Missing /system/etc/bluetooth"
 echo "    -------------------- Missing /system/etc/firmware"
+
+adb pull /etc/firmware/yamato_pm4.fw prebuilt/
+adb pull /etc/firmware/yamato_pfp.fw prebuilt/
+
 echo "    -------------------- Missing /system/etc/firmware/wlan"
+
+adb pull /persist/qcom_wlan_nv.bin prebuilt/
+adb pull /data/hostapd/qcom_cfg.ini prebuilt/
+
+adb pull /etc/firmware/wlan/cfg.dat prebuilt/
+adb pull /etc/firmware/wlan/qcom_wapi_fw.bin prebuilt/
+adb pull /etc/firmware/wlan/qcom_fw.bin prebuilt/
+
 
 # /system/etc:
 # init.qcom.bt.sh
@@ -76,12 +88,30 @@ echo "    -------------------- Missing /system/etc/firmware/wlan"
 # init.qcom.wifi.sh
 
 echo "    -------------------- Android 2.2.2 init scripts"
-for f in init.qcom.bt.sh init.qcom.coex.sh init.qcom.fm.sh init.qcom.post_boot.sh init.qcom.sdio.sh init.qcom.wifi.sh
+for f in init.qcom.bt.sh init.qcom.coex.sh init.qcom.fm.sh init.qcom.post_boot.sh init.qcom.sdio.sh init.qcom.wifi.sh 01_qcomm_omx.cfg
 	do adb pull /system/etc/$f etc/
 done
 
 # /init.qcom.rc
 
 adb pull /init.qcom.rc .
+
+# And the master
+
+adb pull /init.rc init.space.rc
+
+echo "    -------------------- Other prebuilt binaries from Anroid 2.2.2 image"
+
+adb pull /system/bin/battery_charging prebuilt/
+adb pull /system/bin/qmuxd prebuilt/
+adb pull /system/bin/btwlancoex prebuilt/
+adb pull /system/bin/wifiwritemac prebuilt/
+adb pull /system/bin/port-bridge prebuilt/
+adb pull /system/bin/CKPD-daemon prebuilt/
+# File not found on device
+# adb pull /system/bin/hdmid prebuilt/
+adb pull /system/bin/hostapd prebuilt/
+adb pull /data/hostapd/hostapd.conf prebuilt/
+adb pull /system/bin/fm_qsoc_patches prebuilt/
 
 echo "    -------------------- DONE. check the above lines for errors"

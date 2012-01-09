@@ -1,3 +1,4 @@
+# Gingerbread disagrees on oncrpc : root system
 /dev/oncrpc/*             0660   radio       system
 /dev/msm_camera/*          0660   system       system
 /dev/smdcntl0               0640   radio    radio
