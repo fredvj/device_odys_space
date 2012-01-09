@@ -6,6 +6,7 @@ mkdir -p $PROPS/modules
 mkdir -p $PROPS/hw
 mkdir -p $PROPS/egl
 mkdir -p $PROPS/bluez-plugin
+mkdir -p etc
 
 echo "Please connect your phone to USB"
 echo -n "Waiting ... "
@@ -74,6 +75,13 @@ echo "    -------------------- Missing /system/etc/firmware/wlan"
 # init.qcom.sdio.sh
 # init.qcom.wifi.sh
 
+echo "    -------------------- Android 2.2.2 init scripts"
+for f in init.qcom.bt.sh init.qcom.coex.sh init.qcom.fm.sh init.qcom.post_boot.sh init.qcom.sdio.sh init.qcom.wifi.sh
+	do adb pull /system/etc/$f etc/
+done
+
 # /init.qcom.rc
+
+adb pull /init.qcom.rc .
 
 echo "    -------------------- DONE. check the above lines for errors"

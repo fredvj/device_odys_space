@@ -20,4 +20,6 @@
 		Original update.zip will not install without
 		Modified nandroid to allow backup of splash
 		Backup of splash seems to be okay
-		Toggeling script assert does NOTHING!		
+		Toggeling script assert does NOTHING!
+2012-01-09:	Started to work on script to pull blobs
+
