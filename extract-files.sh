@@ -63,7 +63,7 @@ echo "    -------------------- GPS library"
 adb pull /system/lib/libgps.so $PROPS
 
 echo "    -------------------- Missing /system/etc/bluetooth"
-echo "    -------------------- Missing /system/etc/firmware
+echo "    -------------------- Missing /system/etc/firmware"
 echo "    -------------------- Missing /system/etc/firmware/wlan"
 
 # /system/etc:
