@@ -18,7 +18,7 @@ on init
 # Backup times are in UTC - check if recovery supports timezones
     export TZ Europe/Berlin
 
-    export HOME /
+    export HOME /sdcard
 
     symlink /system/etc /etc
 
