@@ -27,7 +27,7 @@ TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 
 # JS_ENGINE := v8
 
-BOARD_EGL_CFG := device/odys/space/egl.cfg
+# BOARD_EGL_CFG := device/odys/space/egl.cfg
 
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
@@ -60,3 +60,4 @@ TARGET_PREBUILT_KERNEL := device/odys/space/prebuilt/kernel
 
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/odys/space/recovery/space_recovery_ui.c
 TARGET_RECOVERY_INITRC := device/odys/space/recovery/recovery.rc
+

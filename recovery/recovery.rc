@@ -2,7 +2,13 @@ on early-init
     start ueventd
 
 # Todo: Check what this is doing - Changing ADB output???
+
     write /sys/modul/g_android/parameters/serial_number CWM-Space
+
+# Let's see if we can get charging
+
+on boot-pause
+    exec system/bin/battery_charging
 
 on init
     export PATH /sbin
@@ -43,6 +49,9 @@ service adbd /sbin/adbd recovery
 
 on property:persist.service.adb.enable=1
     start adbd
+    write /sys/module/g_android/parameters/product_id 9017
 
 on property:persist.service.adb.enable=0
     stop adbd
+    write /sys/module/g_android/parameters/product_id 9018
+
