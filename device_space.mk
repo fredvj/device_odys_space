@@ -42,7 +42,7 @@ PRODUCT_COPY_FILES += \
 
 # Startup scripts
 
-PRODUCTS_COPY_FILES += \
+PRODUCT_COPY_FILES += \
 	device/odys/space/boot.space.rc:root/init.space.rc
 
 # Configuration files
