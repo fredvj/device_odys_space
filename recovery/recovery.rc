@@ -1,11 +1,10 @@
 on early-init
     start ueventd
 
-# Todo: Check what this is doing - Changing ADB output???
-
+# Set our device name for ADB during recovery mode
     write /sys/modul/g_android/parameters/serial_number CWM-Space
 
-# Let's see if we can get charging
+# Let's see if we can get charging as well
 
 on boot-pause
     exec system/bin/battery_charging
@@ -32,9 +31,6 @@ on init
     mkdir /data
     mkdir /cache
     mount /tmp /tmp tmpfs
-
-# Setup android gadget
-    write /sys/module/g_android/parameters/serial_number CWM-Space
 
 
 on boot
