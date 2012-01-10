@@ -19,13 +19,23 @@ PRODUCT_COPY_FILES += \
 
 # Boot logo
 
-PRODUCT_COPY_FILE += \
+PRODUCT_COPY_FILES += \
 	device/odys/space/prebuilt/initlogo.rle:root/initlogo.rle
+
+# Startup scripts
+
+PRODUCTS_COPY_FILES += \
+	device/odys/space/boot.space.rc:root/init.space.rc
 
 # Configuration files
 
 PRODUCT_COPY_FILES += \
 	device/odys/space/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf 
+
+# Proprietary files - BLOBS
+
+PRODUCT_COPY_FILES += \
+	device/odys/space/recovery/battery_charging:system/bin/battery_charging
 
 # $(call inherit-product, build/target/product/full.mk)
 $(call inherit-product, build/target/product/small_base.mk)

@@ -6,7 +6,9 @@ mkdir -p $PROPS/modules
 mkdir -p $PROPS/hw
 mkdir -p $PROPS/egl
 mkdir -p $PROPS/bluez-plugin
-mkdir -p etc
+mkdir -p $PROPS/etc
+mkdir -p $PROPS/etc/bluetooth
+mkdir -p $PROPS/prebuilt
 
 echo "Please connect your phone to USB"
 echo -n "Waiting ... "
@@ -63,20 +65,24 @@ done
 echo "    -------------------- GPS library"
 adb pull /system/lib/libgps.so $PROPS
 
-echo "    -------------------- Missing /system/etc/bluetooth"
-echo "    -------------------- Missing /system/etc/firmware"
+echo "    -------------------- Bluetooth configuration files"
+for f in main.conf audio.conf input.conf auto_pairing.conf blacklist.conf
+	do adb pull /system/etc/bluetooth/$f $PROPS/etc/bluetooth
+done
 
-adb pull /etc/firmware/yamato_pm4.fw prebuilt/
-adb pull /etc/firmware/yamato_pfp.fw prebuilt/
+echo "    -------------------- Firmware"
 
-echo "    -------------------- Missing /system/etc/firmware/wlan"
+adb pull /etc/firmware/yamato_pm4.fw $PROPS/prebuilt/
+adb pull /etc/firmware/yamato_pfp.fw $PROPS/prebuilt/
 
-adb pull /persist/qcom_wlan_nv.bin prebuilt/
-adb pull /data/hostapd/qcom_cfg.ini prebuilt/
+echo "    -------------------- WLAN Firmware"
 
-adb pull /etc/firmware/wlan/cfg.dat prebuilt/
-adb pull /etc/firmware/wlan/qcom_wapi_fw.bin prebuilt/
-adb pull /etc/firmware/wlan/qcom_fw.bin prebuilt/
+adb pull /persist/qcom_wlan_nv.bin $PROPS/prebuilt/
+adb pull /data/hostapd/qcom_cfg.ini $PROPS/prebuilt/
+
+adb pull /etc/firmware/wlan/cfg.dat $PROPS/prebuilt/
+adb pull /etc/firmware/wlan/qcom_wapi_fw.bin $PROPS/prebuilt/
+adb pull /etc/firmware/wlan/qcom_fw.bin $PROPS/prebuilt/
 
 
 # /system/etc:
@@ -89,7 +95,7 @@ adb pull /etc/firmware/wlan/qcom_fw.bin prebuilt/
 
 echo "    -------------------- Android 2.2.2 init scripts"
 for f in init.qcom.bt.sh init.qcom.coex.sh init.qcom.fm.sh init.qcom.post_boot.sh init.qcom.sdio.sh init.qcom.wifi.sh 01_qcomm_omx.cfg
-	do adb pull /system/etc/$f etc/
+	do adb pull /system/etc/$f $PROPS/etc/
 done
 
 # /init.qcom.rc
@@ -102,16 +108,16 @@ adb pull /init.rc init.space.rc
 
 echo "    -------------------- Other prebuilt binaries from Anroid 2.2.2 image"
 
-adb pull /system/bin/battery_charging prebuilt/
-adb pull /system/bin/qmuxd prebuilt/
-adb pull /system/bin/btwlancoex prebuilt/
-adb pull /system/bin/wifiwritemac prebuilt/
-adb pull /system/bin/port-bridge prebuilt/
-adb pull /system/bin/CKPD-daemon prebuilt/
+adb pull /system/bin/battery_charging $PROPS/prebuilt/
+adb pull /system/bin/qmuxd $PROPS/prebuilt/
+adb pull /system/bin/btwlancoex $PROPS/prebuilt/
+adb pull /system/bin/wifiwritemac $PROPS/prebuilt/
+adb pull /system/bin/port-bridge $PROPS/prebuilt/
+adb pull /system/bin/CKPD-daemon $PROPS/prebuilt/
 # File not found on device
 # adb pull /system/bin/hdmid prebuilt/
-adb pull /system/bin/hostapd prebuilt/
-adb pull /data/hostapd/hostapd.conf prebuilt/
-adb pull /system/bin/fm_qsoc_patches prebuilt/
+adb pull /system/bin/hostapd $PROPS/prebuilt/
+adb pull /data/hostapd/hostapd.conf $PROPS/prebuilt/
+adb pull /system/bin/fm_qsoc_patches $PROPS/prebuilt/
 
 echo "    -------------------- DONE. check the above lines for errors"
