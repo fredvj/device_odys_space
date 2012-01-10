@@ -19,6 +19,8 @@ on init
 # Backup times are in UTC - check if recovery supports timezones
     export TZ Europe/Berlin
 
+    export HOME /
+
     symlink /system/etc /etc
 
     mkdir /boot
@@ -30,6 +32,10 @@ on init
     mkdir /data
     mkdir /cache
     mount /tmp /tmp tmpfs
+
+# Setup android gadget
+    write /sys/module/g_android/parameters/serial_number CWM-Space
+
 
 on boot
 
