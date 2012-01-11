@@ -37,8 +37,8 @@ PRODUCT_COPY_FILES += \
 
 # Boot logo
 
-PRODUCT_COPY_FILES += \
-	device/odys/space/prebuilt/initlogo.rle:root/initlogo.rle
+# PRODUCT_COPY_FILES += \
+# 	device/odys/space/prebuilt/initlogo.rle:root/initlogo.rle
 
 # Startup scripts
 

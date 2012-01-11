@@ -1,8 +1,3 @@
-# Set our ADB device name
-
-on early-init
-    write /sys/modul/g_android/parameters/serial_number CM-Space
-
 # Enable USB charging
 
 on boot-pause
@@ -16,6 +11,7 @@ on init
 # Set USB interface depending on ADB status
 
 on property:persist.service.adb.enable=1
+    write /sys/module/g_android/parameters/serial_number CM-Space
     write /sys/module/g_android/parameters/product_id 9017
 
 on property:persist.service.adb.enable=0
