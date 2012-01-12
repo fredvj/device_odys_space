@@ -64,3 +64,6 @@ PRODUCT_DEVICE := space
 PRODUCT_MODEL := Odys Space
 PRODUCT_BRAND := ACTION
 PRODUCT_MANUFACTURER := ACTION
+
+# Generate descriptive build.id
+DISPLAY_BUILD_NUMBER := true

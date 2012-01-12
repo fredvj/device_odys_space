@@ -15,11 +15,6 @@ echo -n "Waiting ... "
 adb wait-for-device
 echo "phone connected. Pulling files"
 
-# echo "    -------------------- Wifi AR6002 firmware files..."
-# for f in athwlan.bin.z77 data.patch.hw2_0.bin eeprom.bin;
-# 	do adb pull /system/etc/wifi/fw/$f $PROPS
-# done
-
 echo "    -------------------- Kernel modules"
 for f in libra_ftm.ko libra.ko librasdioif.ko
 	do adb pull /system/lib/modules/$f $PROPS/modules

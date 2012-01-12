@@ -1,8 +1,6 @@
 LOCAL_PATH := $(my-dir)
 
 ifeq ($(TARGET_DEVICE),space)
-    subdir_makefiles := \
-        $(LOCAL_PATH)/recovery/Android.mk
-
-    include $(subdir_makefiles)
+#	include $(call all-named-subdir-makefiles, recovery libaudio libril libcamera libgralloc libcopybit libsensors BladeParts liblights)
+	include $(call all-named-subdir-makefiles, recovery hwprops)
 endif
