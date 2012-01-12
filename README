@@ -22,4 +22,6 @@
 		Backup of splash seems to be okay
 		Toggeling script assert does NOTHING!
 2012-01-09:	Started to work on script to pull blobs
-
+2012-01-12:	Now we got init processing our startup scripts
+		init.qcom.rc is ours. ADB and USB charging is okay.
+		Now we can start the fun of adding other hardware.
