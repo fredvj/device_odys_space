@@ -35,6 +35,9 @@ BOARD_USES_QCOM_LIBS := true
 # TARGET_PROVIDES_LIBRIL := true
 # TARGET_PROVIDES_LIBAUDIO := true
 
+# The name of the init file can be controlled from the kernel command line
+# androidboot.hardware=qcom will result in init calling init.qcom.rc in addition to init.rc
+
 BOARD_KERNEL_CMDLINE := mem=212M console=ttyMSM2 androidboot.hardware=qcom
 # BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_BASE := 0x00208000

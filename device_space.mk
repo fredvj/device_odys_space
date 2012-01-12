@@ -9,7 +9,9 @@ $(call inherit-product-if-exists, vendor/odys/space/space-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/odys/space/overlay
 
 PRODUCT_PACKAGES += \
-    Gallery
+    Gallery \
+	LiveWallpapers \
+	LiveWallpapersPicker
 
 # This is the list of libraries to include in the build
 PRODUCT_PACKAGES += \
@@ -41,9 +43,10 @@ PRODUCT_COPY_FILES += \
 # 	device/odys/space/prebuilt/initlogo.rle:root/initlogo.rle
 
 # Startup scripts
+# If would like to name it init.space.rc, we would have to change the kernel parameter
 
 PRODUCT_COPY_FILES += \
-	device/odys/space/boot.space.rc:root/init.space.rc
+	device/odys/space/boot.space.rc:root/init.qcom.rc
 
 # Configuration files
 
