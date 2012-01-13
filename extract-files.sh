@@ -49,7 +49,12 @@ done
 
 echo "    -------------------- Camera control and encoding libraries"
 # for f in libmmcamera.so libmmcamera_target.so libmmjpeg.so
-for f in libcamera.so liboemcamera.so libcamera_client.so libcameraservice.so libmmjpeg.so
+# for f in libcamera.so liboemcamera.so libcamera_client.so libcameraservice.so libmmjpeg.so
+#
+# 2012-01-13: From my tests it looks like the Android build system is generating libcameraservice.so & libcamera_client.so
+# Disabling extration for the moment
+#
+for f in libcamera.so liboemcamera.so libmmjpeg.so
 	do adb pull /system/lib/$f $PROPS
 done
 
