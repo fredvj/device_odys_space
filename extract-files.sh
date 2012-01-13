@@ -1,7 +1,8 @@
 #!/bin/sh
 
-mkdir -p ../../../vendor/odys/space/proprietary
 PROPS=../../../vendor/odys/space/proprietary/
+
+mkdir -p $PROPS
 mkdir -p $PROPS/modules
 mkdir -p $PROPS/hw
 mkdir -p $PROPS/egl
