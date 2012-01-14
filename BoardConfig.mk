@@ -21,6 +21,10 @@ TARGET_BOOTLOADER_BOARD_NAME := space
 
 BOARD_HAVE_BLUETOOTH := true
 
+WIFI_DRIVER_MODULE_NAME     := ar6000
+WIFI_DRIVER_MODULE_PATH     := rfkill
+BOARD_WPA_SUPPLICANT_DRIVER:=WEXT
+
 WITH_JIT := true
 ENABLE_JSC_JIT := true
 
@@ -33,8 +37,8 @@ BOARD_EGL_CFG := device/odys/space/egl.cfg
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
 
-# TARGET_PROVIDES_LIBRIL := true
-# TARGET_PROVIDES_LIBAUDIO := true
+TARGET_PROVIDES_LIBRIL := true
+TARGET_PROVIDES_LIBAUDIO := true
 
 # The name of the init file can be controlled from the kernel command line
 # androidboot.hardware=qcom will result in init calling init.qcom.rc in addition to init.rc

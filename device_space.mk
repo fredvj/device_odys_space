@@ -16,13 +16,13 @@ PRODUCT_PACKAGES += \
 # This is the list of libraries to include in the build
 PRODUCT_PACKAGES += \
 	sensors.space \
-	lights.msm7k \
-	copybit.msm7k \
-	gralloc.msm7k \
+#	lights.msm7k \
+#	copybit.msm7k \
+#	gralloc.msm7k \
 	gps.space \
 	libRS \
 	librs_jni \
-	hwprops \
+#	hwprops \
 	libOmxCore
 
 TINY_TOOLBOX:=true
@@ -45,7 +45,8 @@ PRODUCT_COPY_FILES += \
 # If would like to name it init.space.rc, we would have to change the kernel parameter
 
 PRODUCT_COPY_FILES += \
-	device/odys/space/boot.space.rc:root/init.qcom.rc
+	device/odys/space/boot.space.rc:root/init.qcom.rc \
+	device/odys/space/ueventd.space.rc:root/ueventd.qcom.rc
 
 # Configuration files
 
@@ -71,30 +72,25 @@ PRODUCT_COPY_FILES += \
 # copybit, gralloc and lights are not copied due to warnings
 
 PRODUCT_COPY_FILES += \
-#	vendor/odys/space/proprietary/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
-#	vendor/odys/space/proprietary/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
-#	vendor/odys/space/proprietary/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
+	vendor/odys/space/proprietary/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
+	vendor/odys/space/proprietary/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
+	vendor/odys/space/proprietary/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
 	vendor/odys/space/proprietary/hw/sensors.7x27.so:system/lib/hw/sensors.7x27.so
+
 
 # Graphic hardware
 
-# PRODUCT_COPY_FILES += \
-# 	vendor/odys/space/proprietary/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
-# 	vendor/odys/space/proprietary/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
-# 	vendor/odys/space/proprietary/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
-# 	vendor/odys/space/proprietary/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so
+PRODUCT_COPY_FILES += \
+	vendor/odys/space/proprietary/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
+	vendor/odys/space/proprietary/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
+	vendor/odys/space/proprietary/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
+	vendor/odys/space/proprietary/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so
 
-# Bluez Plugin
-
-# PRODUCT_COPY_FILES += \
-# 	vendor/odys/space/proprietary/bluez-plugin/input.so:system/lib/bluez-plugin/input.so \
-# 	vendor/odys/space/proprietary/bluez-plugin/audio.so:system/lib/bluez-plugin/audio.so
 
 # Bluetooth helpers
 
 PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/hci_qcomm_init:system/bin/hci_qcomm_init
-#	vendor/odys/space/proprietary/hciattach:system/bin/hciattach
 
 # Radio and associated libraries
 
@@ -137,14 +133,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/libgps.so:system/lib/libgps.so
 
-# Bluetooth configuration files
-
-# PRODUCT_COPY_FILES += \
-# 	vendor/odys/space/proprietary/etc/bluetooth/main.conf:system/etc/bluetooth/main.conf \
-# 	vendor/odys/space/proprietary/etc/bluetooth/audio.conf:system/etc/bluetooth/audio.conf \
-# 	vendor/odys/space/proprietary/etc/bluetooth/input.conf:system/etc/bluetooth/input.conf \
-# 	vendor/odys/space/proprietary/etc/bluetooth/auto_pairing.conf:system/etc/bluetooth/auto_pairing.conf \
-# 	vendor/odys/space/proprietary/etc/bluetooth/blacklist.conf:system/etc/bluetooth/blacklist.conf
 
 # Firmware
 
@@ -153,7 +141,8 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/prebuilt/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
 	vendor/odys/space/proprietary/prebuilt/cfg.dat:system/etc/firmware/wlan/cfg.dat \
 	vendor/odys/space/proprietary/prebuilt/qcom_wapi_fw.bin:system/etc/firmware/wlan/qcom_wapi_fw.bin \
-	vendor/odys/space/proprietary/prebuilt/qcom_fw.bin:system/etc/firmware/wlan/qcom_fw.bin
+	vendor/odys/space/proprietary/prebuilt/qcom_fw.bin:system/etc/firmware/wlan/qcom_fw.bin \
+	vendor/odys/space/proprietary/prebuilt/qcom_wlan_nv.bin:system/etc/firmware/wlan/qcom_wlan_nv.bin
 
 # HostAPd configuration files
 
