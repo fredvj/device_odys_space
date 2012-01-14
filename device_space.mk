@@ -30,7 +30,32 @@ PRODUCT_PACKAGES += \
 	libOmxCore \
 	libOmxVidEnc
 
-TINY_TOOLBOX:=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	rild.libpath=/system/lib/libril-qc-1.so \
+	rild.libargs=-d /dev/smd0 \
+	wifi.interface=wlan0 \
+	wifi.supplicant_scan_interval=15 \
+	ro.com.android.dataroaming=false \
+	keyguard.no_require_sim=true \
+	ro.ril.hsxpa=2 \
+	ro.ril.gprsclass=10 \
+	ro.build.baseband_version=P729BB01 \
+	ro.telephony.default_network=0 \
+	ro.telephony.call_ring.multiple=false \
+	ro.sf.lcd_density=240 \
+	ro.opengles.version=131072  \
+	ro.compcache.default=0
+
+# This would be the way to rotate the screen
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.sf.hwrotation=90
+
+
+# Use high-density artwork where available
+PRODUCT_LOCALES += hdpi
+
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/odys/space/prebuilt/kernel
