@@ -48,9 +48,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.compcache.default=0
 
 # This would be the way to rotate the screen
+# But the touchscreen would be missing
 
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.hwrotation=90
+# PRODUCT_PROPERTY_OVERRIDES += \
+# 	ro.sf.hwrotation=270
 
 
 # Use high-density artwork where available
