@@ -78,11 +78,11 @@ PRODUCT_COPY_FILES += \
 
 # Graphic hardware
 
-PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
-	vendor/odys/space/proprietary/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
-	vendor/odys/space/proprietary/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
-	vendor/odys/space/proprietary/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so
+# PRODUCT_COPY_FILES += \
+# 	vendor/odys/space/proprietary/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
+# 	vendor/odys/space/proprietary/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
+# 	vendor/odys/space/proprietary/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
+# 	vendor/odys/space/proprietary/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so
 
 # Bluez Plugin
 

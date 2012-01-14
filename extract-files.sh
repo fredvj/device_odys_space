@@ -31,14 +31,8 @@ for f in libGLESv1_CM_adreno200.so libGLESv2_adreno200.so libEGL_adreno200.so li
 	do adb pull /system/lib/egl/$f $PROPS/egl
 done
 
-echo "    -------------------- Bluez Plugin"
-for f in input.so audio.so
-	do adb pull /system/lib/bluez-plugin/$f $PROPS/bluez-plugin
-done
-
 echo "    -------------------- Bluetooth helpers"
 adb pull /system/bin/hci_qcomm_init $PROPS
-adb pull /system/bin/hciattach $PROPS
 
 echo "    -------------------- Radio and associated libraries"
 for f in libcm.so libdsm.so libdss.so libgsdi_exp.so libgstk_exp.so libmmgsdilib.so libnv.so liboem_rapi.so liboncrpc.so libqmi.so libqueue.so libril-qc-1.so libwms.so libwmsts.so libsnd.so
@@ -65,11 +59,6 @@ done
 
 echo "    -------------------- GPS library"
 adb pull /system/lib/libgps.so $PROPS
-
-echo "    -------------------- Bluetooth configuration files"
-for f in main.conf audio.conf input.conf auto_pairing.conf blacklist.conf
-	do adb pull /system/etc/bluetooth/$f $PROPS/etc/bluetooth
-done
 
 echo "    -------------------- Firmware"
 
