@@ -1,4 +1,5 @@
 USE_CAMERA_STUB := true
+# BUILD_OLD_LIBCAMERA := true
 
 # inherit from the proprietary version
 -include vendor/odys/space/BoardConfigVendor.mk
@@ -18,7 +19,7 @@ TARGET_PRODUCT_BOARD := 7x27
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 TARGET_BOOTLOADER_BOARD_NAME := space
 
-# BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH := true
 
 WITH_JIT := true
 ENABLE_JSC_JIT := true
@@ -27,7 +28,7 @@ TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 
 # JS_ENGINE := v8
 
-# BOARD_EGL_CFG := device/odys/space/egl.cfg
+BOARD_EGL_CFG := device/odys/space/egl.cfg
 
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
