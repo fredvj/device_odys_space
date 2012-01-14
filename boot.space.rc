@@ -57,6 +57,13 @@ on boot
 
     chmod 0666 /data/hostapd/hostapd.conf
 
+    # The name change that was not possible during build
+
+    symlink /system/lib/hw/copybit.msm7k.so /system/lib/hw/copybit.space.so
+    symlink /system/lib/hw/gralloc.msm7k.so /system/lib/hw/gralloc.space.so
+    symlink /system/lib/hw/lights.msm7k.so /system/lib/hw/lights.space.so
+    symlink /system/lib/hw/sensors.msm7k.so / system/lib/hw/sensors.space.so
+
 # Services
 
 on property:init.svc.wpa_supplicant=stopped

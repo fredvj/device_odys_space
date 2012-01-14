@@ -11,19 +11,24 @@ DEVICE_PACKAGE_OVERLAYS += device/odys/space/overlay
 PRODUCT_PACKAGES += \
 	Gallery \
 	LiveWallpapers \
-	LiveWallpapersPicker
+	LiveWallpapersPicker \
+	VisualizationWallpapers \
+	MagicSmokeWallpapers \
+	SpareParts \
+	Development \
+	Term
 
 # This is the list of libraries to include in the build
 PRODUCT_PACKAGES += \
 	sensors.space \
-#	lights.msm7k \
-#	copybit.msm7k \
-#	gralloc.msm7k \
+	lights.space \
+	copybit.space \
+	gralloc.space \
 	gps.space \
 	libRS \
 	librs_jni \
-#	hwprops \
-	libOmxCore
+	libOmxCore \
+	libOmxVidEnc
 
 TINY_TOOLBOX:=true
 
@@ -32,6 +37,7 @@ ifeq ($(TARGET_PREBUILT_KERNEL),)
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
+
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
@@ -51,7 +57,10 @@ PRODUCT_COPY_FILES += \
 # Configuration files
 
 PRODUCT_COPY_FILES += \
-	device/odys/space/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf 
+	device/odys/space/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+	device/odys/space/AudioFilter.csv:system/etc/AudioFilter.csv \
+	device/odys/space/vold.fstab:system/etc/vold.fstab \
+	device/odys/space/media_profiles.xml:system/etc/media_profiles.xml
 
 # Proprietary files - BLOBS
 
@@ -71,11 +80,11 @@ PRODUCT_COPY_FILES += \
 
 # copybit, gralloc and lights are not copied due to warnings
 
-PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
-	vendor/odys/space/proprietary/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
-	vendor/odys/space/proprietary/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
-	vendor/odys/space/proprietary/hw/sensors.7x27.so:system/lib/hw/sensors.7x27.so
+# PRODUCT_COPY_FILES += \
+# 	vendor/odys/space/proprietary/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
+# 	vendor/odys/space/proprietary/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
+# 	vendor/odys/space/proprietary/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
+# 	vendor/odys/space/proprietary/hw/sensors.7x27.so:system/lib/hw/sensors.7x27.so
 
 
 # Graphic hardware
@@ -113,20 +122,20 @@ PRODUCT_COPY_FILES += \
 
 # Camera control and encoding libraries
 
-PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/libcamera.so:system/lib/libcamera.so \
-	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so \
+# PRODUCT_COPY_FILES += \
+# 	vendor/odys/space/proprietary/libcamera.so:system/lib/libcamera.so \
+# 	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so \
 #	vendor/odys/space/proprietary/libcamera_client.so:system/lib/libcamera_client.so \
 #	vendor/odys/space/proprietary/libcameraservice.so:system/lib/libcameraservice.so \
-	vendor/odys/space/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so
+# 	vendor/odys/space/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so
 
 # Media libraries
 
-PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
-	vendor/odys/space/proprietary/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
-	vendor/odys/space/proprietary/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
-	vendor/odys/space/proprietary/libOmxVidEnc.so:system/lib/libOmxVidEnc.so
+# PRODUCT_COPY_FILES += \
+# 	vendor/odys/space/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
+# 	vendor/odys/space/proprietary/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
+# 	vendor/odys/space/proprietary/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
+# 	vendor/odys/space/proprietary/libOmxVidEnc.so:system/lib/libOmxVidEnc.so
 
 # GPS library
 
@@ -162,7 +171,7 @@ PRODUCT_COPY_FILES += \
 
 # And last but not least a couple of prebuilt binaries
 
-PRODUCTS_COPY_FILES += \
+PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/prebuilt/battery_charging:system/bin/battery_charging \
 	vendor/odys/space/proprietary/prebuilt/qmuxd:system/bin/qmuxd \
 	vendor/odys/space/proprietary/prebuilt/btwlancoex:system/bin/btwlancoex \

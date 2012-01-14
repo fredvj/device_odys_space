@@ -1,5 +1,4 @@
-USE_CAMERA_STUB := true
-# BUILD_OLD_LIBCAMERA := true
+USE_CAMERA_STUB := false
 
 # inherit from the proprietary version
 -include vendor/odys/space/BoardConfigVendor.mk
