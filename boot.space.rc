@@ -14,6 +14,10 @@ on fs
     mount yaffs2 mtd@persist /persist nosuid nodev
 
 
+on property:dev.bootcomplete=1
+   chmod 0666 /dev/smd0
+   chmod 0666 /dev/ttyGS0 
+
 # Set USB interface depending on ADB status
 
 on property:persist.service.adb.enable=1
@@ -46,13 +50,39 @@ on boot
     # Create the directories used by the Wireless subsystem
 
     mkdir /data/misc/wifi 0770 wifi wifi
+    chown wifi wifi /data/misc/wifi
+    chmod 0770 /data/misc/wifi
+
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
-    mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
+    chown wifi wifi /data/misc/wifi/sockets
+    chmod 0770 /data/misc/wifi/sockets
+
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
+    chmod 0770 /data/misc/dhcp
+
+    mkdir /data/wifi 0770 wifi wifi
+    chown wifi wifi /data/wifi
+    chmod 0770 /data/wifi
+
+    chown wifi wifi /data/misc/wifi/wpa_supplicant.conf
+    chmod 0660 /data/misc/wifi/wpa_supplicant.conf
+
     symlink /persist/qcom_wlan_nv.bin /etc/firmware/wlan/qcom_wlan_nv.bin
     symlink /data/hostapd/qcom_cfg.ini /etc/firmware/wlan/qcom_cfg.ini
+
     setprop wifi.interface wlan0
+    setprop wlan.driver.status ok
+    setprop wlan.interface wlan0
+
+    # This more or less the content of /system/etc/init.qcom.sdio.sh ...
+
+    write /sys/devices/platform/msm_sdcc.2/polling 1
+
+    # ... and this is the first stage of loading the kernel modules from /system/etc/init.qcom.wifi.sh
+    # libra.ko is missing, but this should be handled by Android (BoardConfig.mk)
+
+    insmod /system/lib/modules/librasdioif.ko
 
     # Create directories for wiper services
 
@@ -65,59 +95,61 @@ on boot
 
 # Services
 
-on property:init.svc.wpa_supplicant=stopped
-    stop dhcpcd
+# on property:init.svc.wpa_supplicant=stopped
+#     stop dhcpcd
 
-on property:init.svc.bluetoothd=running
-    write /sys/devices/virtual/bluetooth/hci0/idle_timeout 7000
-    start btwlancoex
+# on property:init.svc.bluetoothd=running
+#     write /sys/devices/virtual/bluetooth/hci0/idle_timeout 7000
+#     start btwlancoex
 
-on property:init.svc.bluetoothd=stopped
-    stop btwlancoex
+# on property:init.svc.bluetoothd=stopped
+#     stop btwlancoex
 
-service hci_qcomm_init /system/bin/log -t qcom-bluetooth -p i "hci_qcomm_init service requested"
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
+# service hci_qcomm_init /system/bin/log -t qcom-bluetooth -p i "hci_qcomm_init service requested"
+#     user bluetooth
+#     group bluetooth net_bt_admin
+#     disabled
+#     oneshot
 
-service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p10 /dev/block/mmcblk0p11
-    user root
-    disabled
+# service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p10 /dev/block/mmcblk0p11
+#     user root
+#     disabled
 
-on property:ro.emmc=1
-    start rmt_storage
+# on property:ro.emmc=1
+#     start rmt_storage
 
 service wifiwritemac /system/bin/wifiwritemac
     oneshot
 
-service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
-    user bluetooth
-    group qcom_oncrpc bluetooth net_bt_admin
-    disabled
-    oneshot
+# service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
+#     user bluetooth
+#     group qcom_oncrpc bluetooth net_bt_admin
+#     disabled
+#     oneshot
 
-service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyGS0
-    user system
-    group system inet
+# service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyGS0
+#     user system
+# #    group system inet
+#     group system inet radio
 
-service qmuxd /system/bin/qmuxd
+# service qmuxd /system/bin/qmuxd
 
-service netmgrd /system/bin/netmgrd -E
-    disabled
+# service netmgrd /system/bin/netmgrd -E
+#     disabled
 
-on property:ro.use_data_netmgrd=true
-    start netmgrd
+# on property:ro.use_data_netmgrd=true
+#     start netmgrd
 
-service btwlancoex /system/bin/sh /system/etc/init.qcom.coex.sh
-    user root
-    group qcom_oncrpc bluetooth net_bt_admin
-    disabled
-    oneshot
+# service btwlancoex /system/bin/sh /system/etc/init.qcom.coex.sh
+#     user root
+#     group qcom_oncrpc bluetooth net_bt_admin
+#     disabled
+#     oneshot
 
-service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant -Dwext -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf -dd
-    user root
-    group wifi inet
+service wpa_supplicant /system/bin/wpa_supplicant \
+    -Dwext -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf
+#    user root
+#    group wifi inet
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
@@ -126,58 +158,58 @@ service dhcpcd /system/bin/dhcpcd -BKL wlan0
     disabled
     oneshot
 
-service wiperiface /system/bin/wiperiface
-    user location
-    group qcom_oncrpc
-    oneshot
+# service wiperiface /system/bin/wiperiface
+#     user location
+#     group qcom_oncrpc
+#     oneshot
 
-service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
-    user system
-    group system
-    disabled
-    oneshot
+# service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
+#     user system
+#     group system
+#     disabled
+#     oneshot
 
-service qcom-sh /system/bin/sh /init.qcom.sh
-    user root
-    oneshot
+# service qcom-sh /system/bin/sh /init.qcom.sh
+#     user root
+#     oneshot
 
-service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
-    user root
-    disabled
-    oneshot
+# service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
+#     user root
+#     disabled
+#     oneshot
 
-service qcom-wifi /system/bin/sh /system/etc/init.qcom.wifi.sh
-    user root
-    disabled
-    oneshot
+# service qcom-wifi /system/bin/sh /system/etc/init.qcom.wifi.sh
+#     user root
+#     disabled
+#     oneshot
 
-on property:init.svc.bootanim=stopped
-    start qcom-post-boot
-    start qcom-wifi
+# on property:init.svc.bootanim=stopped
+#     start qcom-post-boot
+#     start qcom-wifi
 
-service ckpd /system/bin/CKPD-daemon
-    user system
-    group system radio
-    disabled
-    onrestart /system/bin/log -t RIL-CKPD -p w "CKPD daemon restarted"
+# service ckpd /system/bin/CKPD-daemon
+#     user system
+#     group system radio
+#     disabled
+#     onrestart /system/bin/log -t RIL-CKPD -p w "CKPD daemon restarted"
 
-on property:ro.service.ckpd.enable=1
-    start ckpd
+# on property:ro.service.ckpd.enable=1
+#     start ckpd
 
-service hdmid /system/bin/hdmid
-    socket hdmid stream 0660 root system graphics
-    disabled
+# service hdmid /system/bin/hdmid
+#     socket hdmid stream 0660 root system graphics
+#     disabled
 
-on property:ro.hdmi.enable=true
-    start hdmid
+# on property:ro.hdmi.enable=true
+#     start hdmid
 
-service hostapd /system/bin/hostapd -dddd /data/hostapd/hostapd.conf
-    user root
-    group root
-    oneshot
-    disabled
+# service hostapd /system/bin/hostapd -dddd /data/hostapd/hostapd.conf
+#     user root
+#     group root
+#     oneshot
+#     disabled
 
-on property:ro.data.large_tcp_window_size=true
-    # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
-    write /proc/sys/net/ipv4/tcp_adv_win_scale  1
+# on property:ro.data.large_tcp_window_size=true
+#     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
+#     write /proc/sys/net/ipv4/tcp_adv_win_scale  1
 

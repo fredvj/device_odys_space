@@ -1,3 +1,5 @@
 #
 # system.prop for space
 #
+wifi.interface=wlan0
+
