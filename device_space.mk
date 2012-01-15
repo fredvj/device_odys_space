@@ -24,7 +24,7 @@ PRODUCT_PACKAGES += \
 	lights.space \
 	copybit.space \
 	gralloc.space \
-	gps.space \
+#	gps.space \
 	libRS \
 	librs_jni \
 	libOmxCore \
