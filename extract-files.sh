@@ -35,19 +35,13 @@ echo "    -------------------- Bluetooth helpers"
 adb pull /system/bin/hci_qcomm_init $PROPS
 
 echo "    -------------------- Radio and associated libraries"
-for f in libcm.so libdsm.so libdss.so libgsdi_exp.so libgstk_exp.so libmmgsdilib.so libnv.so liboem_rapi.so liboncrpc.so libqmi.so libqueue.so libril-qc-1.so libwms.so libwmsts.so libsnd.so
+for f in libcm.so libdsm.so libdss.so libgsdi_exp.so libgstk_exp.so libmmgsdilib.so libnv.so liboem_rapi.so liboncrpc.so libqmi.so libqueue.so libril-qc-1.so libwms.so libwmsts.so libsnd.so libgsl.so
 	do adb pull /system/lib/$f $PROPS
 done
 
 # frevj: Not using this file ??? libril-qcril-hook-oem.so libril.so
 
 echo "    -------------------- Camera control and encoding libraries"
-# for f in libmmcamera.so libmmcamera_target.so libmmjpeg.so
-# for f in libcamera.so liboemcamera.so libcamera_client.so libcameraservice.so libmmjpeg.so
-#
-# 2012-01-13: From my tests it looks like the Android build system is generating libcameraservice.so & libcamera_client.so
-# Disabling extration for the moment
-#
 for f in libcamera.so liboemcamera.so libmmjpeg.so
 	do adb pull /system/lib/$f $PROPS
 done

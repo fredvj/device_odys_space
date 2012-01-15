@@ -85,6 +85,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	device/odys/space/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
 	device/odys/space/AudioFilter.csv:system/etc/AudioFilter.csv \
+	device/odys/space/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
 	device/odys/space/vold.fstab:system/etc/vold.fstab \
 	device/odys/space/media_profiles.xml:system/etc/media_profiles.xml
 
@@ -119,7 +120,8 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
 	vendor/odys/space/proprietary/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
 	vendor/odys/space/proprietary/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
-	vendor/odys/space/proprietary/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so
+	vendor/odys/space/proprietary/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
+	vendor/odys/space/proprietary/libgsl.so:system/lib/libgsl.so
 
 
 # Bluetooth helpers
@@ -148,9 +150,9 @@ PRODUCT_COPY_FILES += \
 
 # Camera control and encoding libraries
 
-# PRODUCT_COPY_FILES += \
-# 	vendor/odys/space/proprietary/libcamera.so:system/lib/libcamera.so \
-# 	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so \
+PRODUCT_COPY_FILES += \
+	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so
+
 #	vendor/odys/space/proprietary/libcamera_client.so:system/lib/libcamera_client.so \
 #	vendor/odys/space/proprietary/libcameraservice.so:system/lib/libcameraservice.so \
 # 	vendor/odys/space/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so
