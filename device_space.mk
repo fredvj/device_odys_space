@@ -40,10 +40,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	keyguard.no_require_sim=true \
 	ro.ril.hsxpa=2 \
 	ro.ril.gprsclass=10 \
-	ro.build.baseband_version=P729BB01 \
+#	ro.build.baseband_version=P729BB01 \
 	ro.telephony.default_network=0 \
 	ro.telephony.call_ring.multiple=false \
-	ro.sf.lcd_density=240 \
+	ro.sf.lcd_density=160 \
 	ro.opengles.version=131072  \
 	ro.compcache.default=0
 
@@ -146,7 +146,8 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \
 	vendor/odys/space/proprietary/libwms.so:system/lib/libwms.so \
 	vendor/odys/space/proprietary/libwmsts.so:system/lib/libwmsts.so \
-	vendor/odys/space/proprietary/libsnd.so:system/lib/libsnd.so
+	vendor/odys/space/proprietary/libsnd.so:system/lib/libsnd.so \
+	vendor/odys/space/proprietary/libdiag.so:system/lib/libdiag.so
 
 # Camera control and encoding libraries
 

@@ -8,3 +8,6 @@
 /dev/taos               0777   root       root
 /dev/si4708               0777   root       root
 /dev/msm_preproc_ctl	    0660   system audio
+/dev/smd0		0666	radio	radio
+/dev/ttyGS0		0666	radio	radio
+
