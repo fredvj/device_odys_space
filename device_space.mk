@@ -43,7 +43,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #	ro.build.baseband_version=P729BB01 \
 	ro.telephony.default_network=0 \
 	ro.telephony.call_ring.multiple=false \
-	ro.sf.lcd_density=160 \
+#	ro.sf.lcd_density=160 \
 	ro.opengles.version=131072  \
 	ro.compcache.default=0
 
@@ -55,7 +55,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 
 # Use high-density artwork where available
-PRODUCT_LOCALES += hdpi
+# PRODUCT_LOCALES += hdpi
 
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
@@ -180,7 +180,8 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/prebuilt/cfg.dat:system/etc/firmware/wlan/cfg.dat \
 	vendor/odys/space/proprietary/prebuilt/qcom_wapi_fw.bin:system/etc/firmware/wlan/qcom_wapi_fw.bin \
 	vendor/odys/space/proprietary/prebuilt/qcom_fw.bin:system/etc/firmware/wlan/qcom_fw.bin \
-	vendor/odys/space/proprietary/prebuilt/qcom_wlan_nv.bin:system/etc/firmware/wlan/qcom_wlan_nv.bin
+	vendor/odys/space/proprietary/prebuilt/qcom_wlan_nv.bin:system/etc/firmware/wlan/qcom_wlan_nv.bin \
+	vendor/odys/space/proprietary/prebuilt/qcom_cfg.ini:system/etc/firmware/wlan/qcom_cfg.ini
 
 # HostAPd configuration files
 

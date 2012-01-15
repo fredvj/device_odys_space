@@ -8,6 +8,12 @@ on boot-pause
 on init
     export HOME /
 
+    mkdir /persist 0771 system system
+
+on fs
+    mount yaffs2 mtd@persist /persist nosuid nodev
+
+
 # Set USB interface depending on ADB status
 
 on property:persist.service.adb.enable=1
