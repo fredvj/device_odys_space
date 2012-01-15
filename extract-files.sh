@@ -62,8 +62,10 @@ adb pull /etc/firmware/yamato_pfp.fw $PROPS/prebuilt/
 echo "    -------------------- WLAN Firmware"
 
 adb pull /persist/qcom_wlan_nv.bin $PROPS/prebuilt/
+adb pull /persist/qcom/softap/qcom_cfg_default.ini $PROPS/prebuilt/
+adb pull /persist/qcom/softap/hostapd_default.conf $PROPS/prebuilt/
 adb pull /data/hostapd/qcom_cfg.ini $PROPS/prebuilt/
-
+adb pull /data/hostapd/hostapd.conf $PROPS/prebuilt/
 adb pull /etc/firmware/wlan/cfg.dat $PROPS/prebuilt/
 adb pull /etc/firmware/wlan/qcom_wapi_fw.bin $PROPS/prebuilt/
 adb pull /etc/firmware/wlan/qcom_fw.bin $PROPS/prebuilt/
@@ -101,7 +103,6 @@ adb pull /system/bin/CKPD-daemon $PROPS/prebuilt/
 # File not found on device
 # adb pull /system/bin/hdmid prebuilt/
 adb pull /system/bin/hostapd $PROPS/prebuilt/
-adb pull /data/hostapd/hostapd.conf $PROPS/prebuilt/
 adb pull /system/bin/fm_qsoc_patches $PROPS/prebuilt/
 
 echo "    -------------------- DONE. check the above lines for errors"
