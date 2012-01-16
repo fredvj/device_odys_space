@@ -168,13 +168,13 @@ PRODUCT_COPY_FILES += \
 # Build environment (obj)
 
 PRODUCT_COPY_FILES += \
-        vendor/odys/space/proprietary/libcamera.so:obj/lib/libcamera.so \
+#         vendor/odys/space/proprietary/libcamera.so:obj/lib/libcamera.so \
 	vendor/odys/space/proprietary/liboemcamera.so:ob/lib/liboemcamera.so
 
 # Target
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/libcamera.so:system/lib/libcamera.so \
+#	vendor/odys/space/proprietary/libcamera.so:system/lib/libcamera.so \
 	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so \
 	vendor/odys/space/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \
 	vendor/odys/space/proprietary/libmmipl.so:system/lib/libmmipl.so
@@ -189,7 +189,7 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/libOmxAmrEnc.so:system/lib/libOmxAmrEnc.so \
 	vendor/odys/space/proprietary/libOmxAmrRtpDec.so:system/lib/libOmxAmrRtpDec.so \
 	vendor/odys/space/proprietary/libOmxAmrwbDec.so:system/lib/libOmxAmrwbDec.so \
-	vendor/odys/space/proprietary/libOmxCore.so:system/lib/libOmxCore.so \
+#	vendor/odys/space/proprietary/libOmxCore.so:system/lib/libOmxCore.so \
 	vendor/odys/space/proprietary/libOmxEvrcEnc.so:system/lib/libOmxEvrcEnc.so \
 	vendor/odys/space/proprietary/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
 	vendor/odys/space/proprietary/libOmxMp3Dec.so:system/lib/libOmxMp3Dec.so \
@@ -207,9 +207,15 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/libomx_mp3dec_sharedlibrary.so:system/lib/libomx_mp3dec_sharedlibrary.so \
 	vendor/odys/space/proprietary/libomx_sharedlibrary.so:system/lib/libomx_sharedlibrary.so
 
-libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
 
 # GPS library
+
+# Built environment (obj)
+
+PRODUCT_COPY_FILES += \
+	vendor/odys/space/proprietary/libloc.so:obj/lib/libloc.so
+
+# Target
 
 PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/libloc.so:system/lib/libloc.so \
