@@ -173,11 +173,11 @@ service wiperiface /system/bin/wiperiface
     group qcom_oncrpc
     oneshot
 
-service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
-    user system
-    group system
-    disabled
-    oneshot
+# service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
+#     user system
+#     group system
+#     disabled
+#     oneshot
 
 service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
     user root

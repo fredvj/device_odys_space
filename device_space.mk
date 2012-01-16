@@ -98,8 +98,8 @@ PRODUCT_COPY_FILES += \
 	device/odys/space/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
 	device/odys/space/AudioFilter.csv:system/etc/AudioFilter.csv \
 	device/odys/space/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
-	device/odys/space/vold.fstab:system/etc/vold.fstab \
-	device/odys/space/media_profiles.xml:system/etc/media_profiles.xml
+	device/odys/space/vold.fstab:system/etc/vold.fstab
+#	device/odys/space/media_profiles.xml:system/etc/media_profiles.xml
 
 # Proprietary files - BLOBS
 
@@ -147,6 +147,7 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/libcm.so:system/lib/libcm.so \
 	vendor/odys/space/proprietary/libdsm.so:system/lib/libdsm.so \
 	vendor/odys/space/proprietary/libdss.so:system/lib/libdss.so \
+	vendor/odys/space/proprietary/libdll.so:system/lib/libdll.so \
 	vendor/odys/space/proprietary/libgsdi_exp.so:system/lib/libgsdi_exp.so \
 	vendor/odys/space/proprietary/libgstk_exp.so:system/lib/libgstk_exp.so \
 	vendor/odys/space/proprietary/libmmgsdilib.so:system/lib/libmmgsdilib.so \
@@ -156,6 +157,7 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/libqmi.so:system/lib/libqmi.so \
 	vendor/odys/space/proprietary/libqueue.so:system/lib/libqueue.so \
 	vendor/odys/space/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \
+	vendor/odys/space/proprietary/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
 	vendor/odys/space/proprietary/libwms.so:system/lib/libwms.so \
 	vendor/odys/space/proprietary/libwmsts.so:system/lib/libwmsts.so \
 	vendor/odys/space/proprietary/libsnd.so:system/lib/libsnd.so \
@@ -163,25 +165,56 @@ PRODUCT_COPY_FILES += \
 
 # Camera control and encoding libraries
 
-# PRODUCT_COPY_FILES += \
-# 	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so
+# Build environment (obj)
 
-#	vendor/odys/space/proprietary/libcamera_client.so:system/lib/libcamera_client.so \
-#	vendor/odys/space/proprietary/libcameraservice.so:system/lib/libcameraservice.so \
-# 	vendor/odys/space/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so
+PRODUCT_COPY_FILES += \
+        vendor/odys/space/proprietary/libcamera.so:obj/lib/libcamera.so \
+	vendor/odys/space/proprietary/liboemcamera.so:ob/lib/liboemcamera.so
+
+# Target
+
+PRODUCT_COPY_FILES += \
+	vendor/odys/space/proprietary/libcamera.so:system/lib/libcamera.so \
+	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so \
+	vendor/odys/space/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \
+	vendor/odys/space/proprietary/libmmipl.so:system/lib/libmmipl.so
 
 # Media libraries
 
-# PRODUCT_COPY_FILES += \
-# 	vendor/odys/space/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
-# 	vendor/odys/space/proprietary/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
-# 	vendor/odys/space/proprietary/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
-# 	vendor/odys/space/proprietary/libOmxVidEnc.so:system/lib/libOmxVidEnc.so
+PRODUCT_COPY_FILES += \
+	vendor/odys/space/proprietary/libOmxAacDec.so:system/lib/libOmxAacDec.so \
+	vendor/odys/space/proprietary/libOmxAacEnc.so:system/lib/libOmxAacEnc.so \
+	vendor/odys/space/proprietary/libOmxAdpcmDec.so:system/lib/libOmxAdpcmDec.so \
+	vendor/odys/space/proprietary/libOmxAmrDec.so:system/lib/libOmxAmrDec.so \
+	vendor/odys/space/proprietary/libOmxAmrEnc.so:system/lib/libOmxAmrEnc.so \
+	vendor/odys/space/proprietary/libOmxAmrRtpDec.so:system/lib/libOmxAmrRtpDec.so \
+	vendor/odys/space/proprietary/libOmxAmrwbDec.so:system/lib/libOmxAmrwbDec.so \
+	vendor/odys/space/proprietary/libOmxCore.so:system/lib/libOmxCore.so \
+	vendor/odys/space/proprietary/libOmxEvrcEnc.so:system/lib/libOmxEvrcEnc.so \
+	vendor/odys/space/proprietary/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
+	vendor/odys/space/proprietary/libOmxMp3Dec.so:system/lib/libOmxMp3Dec.so \
+	vendor/odys/space/proprietary/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
+	vendor/odys/space/proprietary/libOmxQcelp13Enc.so:system/lib/libOmxQcelp13Enc.so \
+	vendor/odys/space/proprietary/libOmxVidEnc.so:system/lib/libOmxVidEnc.so \
+	vendor/odys/space/proprietary/libOmxWmaDec.so:system/lib/libOmxWmaDec.so \
+	vendor/odys/space/proprietary/libOmxWmvDec.so:system/lib/libOmxWmvDec.so \
+	vendor/odys/space/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
+	vendor/odys/space/proprietary/libomx_aacdec_sharedlibrary.so:system/lib/libomx_aacdec_sharedlibrary.so \
+	vendor/odys/space/proprietary/libomx_amrdec_sharedlibrary.so:system/lib/libomx_amrdec_sharedlibrary.so \
+	vendor/odys/space/proprietary/libomx_amrenc_sharedlibrary.so:system/lib/libomx_amrenc_sharedlibrary.so \
+	vendor/odys/space/proprietary/libomx_avcdec_sharedlibrary.so:system/lib/libomx_avcdec_sharedlibrary.so \
+	vendor/odys/space/proprietary/libomx_m4vdec_sharedlibrary.so:system/lib/libomx_m4vdec_sharedlibrary.so \
+	vendor/odys/space/proprietary/libomx_mp3dec_sharedlibrary.so:system/lib/libomx_mp3dec_sharedlibrary.so \
+	vendor/odys/space/proprietary/libomx_sharedlibrary.so:system/lib/libomx_sharedlibrary.so
+
+libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
 
 # GPS library
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/libgps.so:system/lib/libgps.so
+	vendor/odys/space/proprietary/libloc.so:system/lib/libloc.so \
+	vendor/odys/space/proprietary/libloc-rpc.so:system/lib/libloc-rpc.so \
+	vendor/odys/space/proprietary/libcommondefs.so:system/lib/libcommondefs.so
 
 
 # Firmware
@@ -206,7 +239,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
 	vendor/odys/space/proprietary/etc/init.qcom.coex.sh:system/etc/init.qcom.coex.sh \
-	vendor/odys/space/proprietary/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
+#	vendor/odys/space/proprietary/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
 	vendor/odys/space/proprietary/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
 	vendor/odys/space/proprietary/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
 	vendor/odys/space/proprietary/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh
@@ -221,7 +254,7 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/prebuilt/port-bridge:system/bin/port-bridge \
 	vendor/odys/space/proprietary/prebuilt/CKPD-daemon:system/bin/CKPD-daemon \
 	vendor/odys/space/proprietary/prebuilt/hostapd:system/bin/hostapd \
-	vendor/odys/space/proprietary/prebuilt/fm_qsoc_patches:system/bin/fm_qsoc_patches \
+#	vendor/odys/space/proprietary/prebuilt/fm_qsoc_patches:system/bin/fm_qsoc_patches \
 	vendor/odys/space/proprietary/prebuilt/wiperiface:system/bin/wiperiface \
 	vendor/odys/space/proprietary/prebuilt/rmt_storage:system/bin/rmt_storage \
 	vendor/odys/space/proprietary/prebuilt/netmgrd:system/bin/netmgrd \

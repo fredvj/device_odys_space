@@ -1,4 +1,4 @@
-USE_CAMERA_STUB := true
+USE_CAMERA_STUB := false
 
 # inherit from the proprietary version
 -include vendor/odys/space/BoardConfigVendor.mk
@@ -44,6 +44,10 @@ BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
 BOARD_USES_QCOM_LIBRPC := true
 BOARD_USES_QCOM_GPS := true
+
+BOARD_HAVE_FM_RADIO := true
+BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
+BOARD_FM_DEVICE := si4708
 
 BOARD_GPS_LIBRARIES := libloc libloc-rpc libcommondefs
 BOARD_USES_GPSSHIM := true

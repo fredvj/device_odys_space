@@ -35,24 +35,31 @@ echo "    -------------------- Bluetooth helpers"
 adb pull /system/bin/hci_qcomm_init $PROPS
 
 echo "    -------------------- Radio and associated libraries"
-for f in libcm.so libdsm.so libdss.so libgsdi_exp.so libgstk_exp.so libmmgsdilib.so libnv.so liboem_rapi.so liboncrpc.so libqmi.so libqueue.so libril-qc-1.so libwms.so libwmsts.so libsnd.so libgsl.so libdiag.so
+for f in libcm.so libdsm.so libdss.so libdll.so libgsdi_exp.so libgstk_exp.so libmmgsdilib.so libnv.so liboem_rapi.so liboncrpc.so libqmi.so libqueue.so libril-qc-1.so libwms.so libwmsts.so libsnd.so libdiag.so libril-qcril-hook-oem.so libgsl.so
 	do adb pull /system/lib/$f $PROPS
 done
 
-# frevj: Not using this file ??? libril-qcril-hook-oem.so libril.so
-
 echo "    -------------------- Camera control and encoding libraries"
-for f in libcamera.so liboemcamera.so libmmjpeg.so
+for f in libcamera.so liboemcamera.so libmmjpeg.so libmmipl.so
 	do adb pull /system/lib/$f $PROPS
 done
 
 echo "    -------------------- Media libraries"
-for f in libmm-adspsvc.so libOmxH264Dec.so libOmxMpeg4Dec.so libOmxVidEnc.so
+for f in libOmxAacDec.so libOmxAacEnc.so libOmxAdpcmDec.so libOmxAmrDec.so libOmxAmrEnc.so libOmxAmrRtpDec.so libOmxAmrwbDec.so libOmxCore.so libOmxEvrcEnc.so libOmxH264Dec.so libOmxMp3Dec.so libOmxMpeg4Dec.so libOmxQcelp13Enc.so libOmxVidEnc.so libOmxWmaDec.so libOmxWmvDec.so \
+libmm-adspsvc.so \
+libomx_aacdec_sharedlibrary.so libomx_amrdec_sharedlibrary.so libomx_amrenc_sharedlibrary.so libomx_avcdec_sharedlibrary.so libomx_m4vdec_sharedlibrary.so libomx_mp3dec_sharedlibrary.so libomx_sharedlibrary.so
+
 	do adb pull /system/lib/$f $PROPS
 done
 
 echo "    -------------------- GPS library"
-adb pull /system/lib/libgps.so $PROPS
+
+# Others are saying we need only libloc-rpc.so libloc.so & libcommondefs.so
+# Pulling the rest anyway
+
+for f in libgps.so libloc-rpc.so libloc.so libloc_api.so libloc_ext.so libcommondefs.so 
+	do adb pull /system/lib/$f $PROPS
+done
 
 echo "    -------------------- Firmware"
 
