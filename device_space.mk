@@ -12,8 +12,6 @@ PRODUCT_PACKAGES += \
 	Gallery \
 	LiveWallpapers \
 	LiveWallpapersPicker \
-# 	VisualizationWallpapers \
-# 	MagicSmokeWallpapers \
 	SpareParts \
 	Development \
 	Term
@@ -24,7 +22,6 @@ PRODUCT_PACKAGES += \
 	lights.space \
 	copybit.space \
 	gralloc.space \
-#	gps.space \
 	libRS \
 	librs_jni \
 	libOmxCore \
@@ -40,10 +37,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	keyguard.no_require_sim=true \
 	ro.ril.hsxpa=2 \
 	ro.ril.gprsclass=10 \
-#	ro.build.baseband_version=P729BB01 \
 	ro.telephony.default_network=0 \
 	ro.telephony.call_ring.multiple=false \
-#	ro.sf.lcd_density=160 \
 	ro.opengles.version=131072  \
 	ro.compcache.default=0
 
@@ -119,11 +114,11 @@ PRODUCT_COPY_FILES += \
 
 # copybit, gralloc and lights are not copied due to warnings
 
-PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/hw/copybit.msm7k.so:system/lib/hw/copybit.7x27.so \
-	vendor/odys/space/proprietary/hw/gralloc.msm7k.so:system/lib/hw/gralloc.7x27.so \
-	vendor/odys/space/proprietary/hw/lights.msm7k.so:system/lib/hw/lights.7x27.so \
-	vendor/odys/space/proprietary/hw/sensors.7x27.so:system/lib/hw/sensors.7x27.so
+# PRODUCT_COPY_FILES += \
+# 	vendor/odys/space/proprietary/hw/copybit.space.so:system/lib/hw/copybit.7x27.so \
+# 	vendor/odys/space/proprietary/hw/gralloc.space.so:system/lib/hw/gralloc.7x27.so \
+# 	vendor/odys/space/proprietary/hw/lights.space.so:system/lib/hw/lights.7x27.so \
+# 	vendor/odys/space/proprietary/hw/sensors.space.so:system/lib/hw/sensors.7x27.so
 
 
 # Graphic hardware
@@ -143,38 +138,43 @@ PRODUCT_COPY_FILES += \
 
 # Radio and associated libraries
 
+# PRODUCT_COPY_FILES += \
+# 	vendor/odys/space/proprietary/libcm.so:system/lib/libcm.so \
+# 	vendor/odys/space/proprietary/libdsm.so:system/lib/libdsm.so \
+# 	vendor/odys/space/proprietary/libdss.so:system/lib/libdss.so \
+# 	vendor/odys/space/proprietary/libdll.so:system/lib/libdll.so \
+# 	vendor/odys/space/proprietary/libgsdi_exp.so:system/lib/libgsdi_exp.so \
+# 	vendor/odys/space/proprietary/libgstk_exp.so:system/lib/libgstk_exp.so \
+# 	vendor/odys/space/proprietary/libmmgsdilib.so:system/lib/libmmgsdilib.so \
+# 	vendor/odys/space/proprietary/libnv.so:system/lib/libnv.so \
+# 	vendor/odys/space/proprietary/liboem_rapi.so:system/lib/liboem_rapi.so \
+# 	vendor/odys/space/proprietary/liboncrpc.so:system/lib/liboncrpc.so \
+# 	vendor/odys/space/proprietary/libqmi.so:system/lib/libqmi.so \
+# 	vendor/odys/space/proprietary/libqueue.so:system/lib/libqueue.so \
+# 	vendor/odys/space/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \
+# 	vendor/odys/space/proprietary/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
+# 	vendor/odys/space/proprietary/libwms.so:system/lib/libwms.so \
+# 	vendor/odys/space/proprietary/libwmsts.so:system/lib/libwmsts.so \
+# # 	vendor/odys/space/proprietary/libsnd.so:system/lib/libsnd.so \
+# 	vendor/odys/space/proprietary/libdiag.so:system/lib/libdiag.so
+
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/libcm.so:system/lib/libcm.so \
-	vendor/odys/space/proprietary/libdsm.so:system/lib/libdsm.so \
-	vendor/odys/space/proprietary/libdss.so:system/lib/libdss.so \
-	vendor/odys/space/proprietary/libdll.so:system/lib/libdll.so \
-	vendor/odys/space/proprietary/libgsdi_exp.so:system/lib/libgsdi_exp.so \
-	vendor/odys/space/proprietary/libgstk_exp.so:system/lib/libgstk_exp.so \
-	vendor/odys/space/proprietary/libmmgsdilib.so:system/lib/libmmgsdilib.so \
-	vendor/odys/space/proprietary/libnv.so:system/lib/libnv.so \
-	vendor/odys/space/proprietary/liboem_rapi.so:system/lib/liboem_rapi.so \
-	vendor/odys/space/proprietary/liboncrpc.so:system/lib/liboncrpc.so \
-	vendor/odys/space/proprietary/libqmi.so:system/lib/libqmi.so \
-	vendor/odys/space/proprietary/libqueue.so:system/lib/libqueue.so \
-	vendor/odys/space/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \
-	vendor/odys/space/proprietary/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
-	vendor/odys/space/proprietary/libwms.so:system/lib/libwms.so \
-	vendor/odys/space/proprietary/libwmsts.so:system/lib/libwmsts.so \
-# 	vendor/odys/space/proprietary/libsnd.so:system/lib/libsnd.so \
-	vendor/odys/space/proprietary/libdiag.so:system/lib/libdiag.so
+        vendor/odys/space/proprietary/libdsm.so:system/lib/libdsm.so \
+        vendor/odys/space/proprietary/liboncrpc.so:system/lib/liboncrpc.so \
+        vendor/odys/space/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \
+        vendor/odys/space/proprietary/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
+        vendor/odys/space/proprietary/libdiag.so:system/lib/libdiag.so
 
 # Camera control and encoding libraries
 
 # Build environment (obj)
 
 PRODUCT_COPY_FILES += \
-#         vendor/odys/space/proprietary/libcamera.so:obj/lib/libcamera.so \
 	vendor/odys/space/proprietary/liboemcamera.so:ob/lib/liboemcamera.so
 
 # Target
 
 PRODUCT_COPY_FILES += \
-#	vendor/odys/space/proprietary/libcamera.so:system/lib/libcamera.so \
 	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so \
 	vendor/odys/space/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \
 	vendor/odys/space/proprietary/libmmipl.so:system/lib/libmmipl.so
@@ -189,7 +189,6 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/libOmxAmrEnc.so:system/lib/libOmxAmrEnc.so \
 	vendor/odys/space/proprietary/libOmxAmrRtpDec.so:system/lib/libOmxAmrRtpDec.so \
 	vendor/odys/space/proprietary/libOmxAmrwbDec.so:system/lib/libOmxAmrwbDec.so \
-#	vendor/odys/space/proprietary/libOmxCore.so:system/lib/libOmxCore.so \
 	vendor/odys/space/proprietary/libOmxEvrcEnc.so:system/lib/libOmxEvrcEnc.so \
 	vendor/odys/space/proprietary/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
 	vendor/odys/space/proprietary/libOmxMp3Dec.so:system/lib/libOmxMp3Dec.so \
@@ -245,7 +244,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
 	vendor/odys/space/proprietary/etc/init.qcom.coex.sh:system/etc/init.qcom.coex.sh \
-#	vendor/odys/space/proprietary/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
 	vendor/odys/space/proprietary/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
 	vendor/odys/space/proprietary/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
 	vendor/odys/space/proprietary/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh
@@ -260,7 +258,6 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/prebuilt/port-bridge:system/bin/port-bridge \
 	vendor/odys/space/proprietary/prebuilt/CKPD-daemon:system/bin/CKPD-daemon \
 	vendor/odys/space/proprietary/prebuilt/hostapd:system/bin/hostapd \
-#	vendor/odys/space/proprietary/prebuilt/fm_qsoc_patches:system/bin/fm_qsoc_patches \
 	vendor/odys/space/proprietary/prebuilt/wiperiface:system/bin/wiperiface \
 	vendor/odys/space/proprietary/prebuilt/rmt_storage:system/bin/rmt_storage \
 	vendor/odys/space/proprietary/prebuilt/netmgrd:system/bin/netmgrd \
