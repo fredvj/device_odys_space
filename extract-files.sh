@@ -69,6 +69,7 @@ adb pull /data/hostapd/hostapd.conf $PROPS/prebuilt/
 adb pull /etc/firmware/wlan/cfg.dat $PROPS/prebuilt/
 adb pull /etc/firmware/wlan/qcom_wapi_fw.bin $PROPS/prebuilt/
 adb pull /etc/firmware/wlan/qcom_fw.bin $PROPS/prebuilt/
+chmod a+rx $PROPS/prebuilt/*
 
 
 # /system/etc:
@@ -100,9 +101,11 @@ adb pull /system/bin/btwlancoex $PROPS/prebuilt/
 adb pull /system/bin/wifiwritemac $PROPS/prebuilt/
 adb pull /system/bin/port-bridge $PROPS/prebuilt/
 adb pull /system/bin/CKPD-daemon $PROPS/prebuilt/
-# File not found on device
-# adb pull /system/bin/hdmid prebuilt/
 adb pull /system/bin/hostapd $PROPS/prebuilt/
 adb pull /system/bin/fm_qsoc_patches $PROPS/prebuilt/
+adb pull /system/bin/wiperiface $PROPS/prebuilt/
+adb pull /system/bin/wpa_supplicant $PROPS/prebuilt/
+adb pull /system/bin/rmt_storage $PROPS/prebuilt/
+adb pull /system/bin/netmgrd $PROPS/prebuilt/
 
 echo "    -------------------- DONE. check the above lines for errors"

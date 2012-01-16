@@ -4,6 +4,7 @@ USE_CAMERA_STUB := false
 -include vendor/odys/space/BoardConfigVendor.mk
 
 TARGET_NO_BOOTLOADER := true
+TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := msm7k
 TARGET_ARCH_VARIANT := armv6-vfp
 TARGET_CPU_ABI := armeabi
@@ -21,25 +22,39 @@ TARGET_BOOTLOADER_BOARD_NAME := space
 WIFI_DRIVER_MODULE_NAME     := libra
 WIFI_DRIVER_MODULE_PATH     := /system/lib/modules/libra.ko
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-WPA_SUPPLICANT_VERSION      := VER_0_6_X
+WPA_SUPPLICANT_VERSION      := VER_0_5_X
 
 WITH_JIT := true
 ENABLE_JSC_JIT := true
 
 TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 
+TARGET_USES_OLD_LIBSENSORS_HAL := true
+
 JS_ENGINE := v8
 
 BOARD_EGL_CFG := device/odys/space/egl.cfg
+
+BOARD_NO_RGBX_8888 := true
 
 BOARD_HAVE_BLUETOOTH := true
 
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
+BOARD_USES_QCOM_LIBRPC := true
+BOARD_USES_QCOM_GPS := true
 
-BOARD_GPS_LIBRARIES := libloc
+BOARD_GPS_LIBRARIES := libloc libloc-rpc libcommondefs
 BOARD_USES_GPSSHIM := true
 BOARD_GPS_NEEDS_XTRA := true
+
+BOARD_HAVE_FM_RADIO := true
+BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
+
+BOARD_USE_USB_MASS_STORAGE_SWITCH := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun
+BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
+BOARD_CUSTOM_USB_CONTROLLER := ../../device/odys/space/UsbController.cpp
 
 TARGET_PROVIDES_LIBRIL := true
 TARGET_PROVIDES_LIBAUDIO := true

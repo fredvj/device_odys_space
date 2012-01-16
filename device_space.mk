@@ -54,9 +54,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # 	ro.sf.hwrotation=270
 
 
-# Use high-density artwork where available
-# PRODUCT_LOCALES += hdpi
-
+# A kernel seems like a good start
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/odys/space/prebuilt/kernel
@@ -67,6 +65,20 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
+
+# Install device features
+
+PRODUCT_COPY_FILES += \
+	packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml \
+	frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+	frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
+	frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+	frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+	frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+	frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+	frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+	frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
+
 
 # Boot logo
 
@@ -107,11 +119,11 @@ PRODUCT_COPY_FILES += \
 
 # copybit, gralloc and lights are not copied due to warnings
 
-# PRODUCT_COPY_FILES += \
-# 	vendor/odys/space/proprietary/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
-# 	vendor/odys/space/proprietary/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
-# 	vendor/odys/space/proprietary/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
-# 	vendor/odys/space/proprietary/hw/sensors.7x27.so:system/lib/hw/sensors.7x27.so
+PRODUCT_COPY_FILES += \
+	vendor/odys/space/proprietary/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
+	vendor/odys/space/proprietary/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
+	vendor/odys/space/proprietary/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
+	vendor/odys/space/proprietary/hw/sensors.7x27.so:system/lib/hw/sensors.7x27.so
 
 
 # Graphic hardware
@@ -209,7 +221,11 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/prebuilt/port-bridge:system/bin/port-bridge \
 	vendor/odys/space/proprietary/prebuilt/CKPD-daemon:system/bin/CKPD-daemon \
 	vendor/odys/space/proprietary/prebuilt/hostapd:system/bin/hostapd \
-	vendor/odys/space/proprietary/prebuilt/fm_qsoc_patches:system/bin/fm_qsoc_patches
+	vendor/odys/space/proprietary/prebuilt/fm_qsoc_patches:system/bin/fm_qsoc_patches \
+	vendor/odys/space/proprietary/prebuilt/wiperiface:system/bin/wiperiface \
+	vendor/odys/space/proprietary/prebuilt/rmt_storage:system/bin/rmt_storage \
+	vendor/odys/space/proprietary/prebuilt/netmgrd:system/bin/netmgrd \
+	vendor/odys/space/proprietary/prebuilt/wpa_supplicant:system/bin/wpa_supplicant
 
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
