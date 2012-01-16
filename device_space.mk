@@ -1,4 +1,4 @@
-$(call inherit-product, build/target/product/small_base.mk)
+$(call inherit-product, build/target/product/full.mk)
 $(call inherit-product, build/target/product/languages_small.mk)
 
 # The gps config appropriate for this device
@@ -8,15 +8,15 @@ $(call inherit-product-if-exists, vendor/odys/space/space-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/odys/space/overlay
 
-PRODUCT_PACKAGES += \
-	Gallery \
-	LiveWallpapers \
-	LiveWallpapersPicker \
-	VisualizationWallpapers \
-	MagicSmokeWallpapers \
-	SpareParts \
-	Development \
-	Term
+# PRODUCT_PACKAGES += \
+# 	Gallery \
+# 	LiveWallpapers \
+# 	LiveWallpapersPicker \
+# 	VisualizationWallpapers \
+# 	MagicSmokeWallpapers \
+# 	SpareParts \
+# 	Development \
+# 	Term
 
 # This is the list of libraries to include in the build
 PRODUCT_PACKAGES += \
@@ -163,8 +163,8 @@ PRODUCT_COPY_FILES += \
 
 # Camera control and encoding libraries
 
-PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so
+# PRODUCT_COPY_FILES += \
+# 	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so
 
 #	vendor/odys/space/proprietary/libcamera_client.so:system/lib/libcamera_client.so \
 #	vendor/odys/space/proprietary/libcameraservice.so:system/lib/libcameraservice.so \

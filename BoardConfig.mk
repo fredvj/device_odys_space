@@ -1,4 +1,4 @@
-USE_CAMERA_STUB := false
+USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
 -include vendor/odys/space/BoardConfigVendor.mk
@@ -30,6 +30,7 @@ ENABLE_JSC_JIT := true
 TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 
 TARGET_USES_OLD_LIBSENSORS_HAL := true
+TARGET_HAS_FOXCONN_SENSORS := true
 
 JS_ENGINE := v8
 
@@ -48,13 +49,12 @@ BOARD_GPS_LIBRARIES := libloc libloc-rpc libcommondefs
 BOARD_USES_GPSSHIM := true
 BOARD_GPS_NEEDS_XTRA := true
 
-BOARD_HAVE_FM_RADIO := true
-BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
-
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 BOARD_CUSTOM_USB_CONTROLLER := ../../device/odys/space/UsbController.cpp
+
+BOARD_USE_FROYO_LIBCAMERA := true
 
 TARGET_PROVIDES_LIBRIL := true
 TARGET_PROVIDES_LIBAUDIO := true
