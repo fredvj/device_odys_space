@@ -8,15 +8,15 @@ $(call inherit-product-if-exists, vendor/odys/space/space-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/odys/space/overlay
 
-# PRODUCT_PACKAGES += \
-# 	Gallery \
-# 	LiveWallpapers \
-# 	LiveWallpapersPicker \
+PRODUCT_PACKAGES += \
+	Gallery \
+	LiveWallpapers \
+	LiveWallpapersPicker \
 # 	VisualizationWallpapers \
 # 	MagicSmokeWallpapers \
-# 	SpareParts \
-# 	Development \
-# 	Term
+	SpareParts \
+	Development \
+	Term
 
 # This is the list of libraries to include in the build
 PRODUCT_PACKAGES += \
@@ -98,8 +98,8 @@ PRODUCT_COPY_FILES += \
 	device/odys/space/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
 	device/odys/space/AudioFilter.csv:system/etc/AudioFilter.csv \
 	device/odys/space/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
-	device/odys/space/vold.fstab:system/etc/vold.fstab
-#	device/odys/space/media_profiles.xml:system/etc/media_profiles.xml
+	device/odys/space/vold.fstab:system/etc/vold.fstab \
+	device/odys/space/media_profiles.xml:system/etc/media_profiles.xml
 
 # Proprietary files - BLOBS
 
@@ -120,9 +120,9 @@ PRODUCT_COPY_FILES += \
 # copybit, gralloc and lights are not copied due to warnings
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
-	vendor/odys/space/proprietary/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
-	vendor/odys/space/proprietary/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
+	vendor/odys/space/proprietary/hw/copybit.msm7k.so:system/lib/hw/copybit.7x27.so \
+	vendor/odys/space/proprietary/hw/gralloc.msm7k.so:system/lib/hw/gralloc.7x27.so \
+	vendor/odys/space/proprietary/hw/lights.msm7k.so:system/lib/hw/lights.7x27.so \
 	vendor/odys/space/proprietary/hw/sensors.7x27.so:system/lib/hw/sensors.7x27.so
 
 
@@ -160,7 +160,7 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
 	vendor/odys/space/proprietary/libwms.so:system/lib/libwms.so \
 	vendor/odys/space/proprietary/libwmsts.so:system/lib/libwmsts.so \
-	vendor/odys/space/proprietary/libsnd.so:system/lib/libsnd.so \
+# 	vendor/odys/space/proprietary/libsnd.so:system/lib/libsnd.so \
 	vendor/odys/space/proprietary/libdiag.so:system/lib/libdiag.so
 
 # Camera control and encoding libraries

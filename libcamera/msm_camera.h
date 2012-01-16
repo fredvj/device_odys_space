@@ -1,13 +1,31 @@
-
+/* Copyright (c) 2009, Code Aurora Forum. All rights reserved.
+ * Copyright (C) 2010 Sony Ericsson Mobile Communications AB.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ * 02110-1301, USA.
+ *
+ */
 
 #ifndef __LINUX_MSM_CAMERA_H
 #define __LINUX_MSM_CAMERA_H
 
-#include <sys/types.h>
 #include <linux/types.h>
 #include <asm/sizes.h>
 #include <linux/ioctl.h>
-#include <time.h>
+
+#define CONFIG_ES209_CAMERA_DRV	//Todo: Should not be here
+#define CONFIG_ES209RA_CAMERA_DRV	//Todo: Should not be here
 
 #define MSM_CAM_IOCTL_MAGIC 'm'
 
@@ -92,10 +110,6 @@
 #define MSM_CAM_IOCTL_AF_CTRL_DONE \
 	_IOW(MSM_CAM_IOCTL_MAGIC, 26, struct msm_ctrl_cmt_t *)
 
-
-#define MSM_CAM_IOCTL_FLASH_LED_ON_OFF_CFG \
-	_IOW(MSM_CAM_IOCTL_MAGIC, 27, uint32_t *)
-
 #define MAX_SENSOR_NUM  3
 #define MAX_SENSOR_NAME 32
 
@@ -107,14 +121,25 @@
 #define MSM_CAM_CTRL_CMD_DONE  0
 #define MSM_CAM_SENSOR_VFE_CMD 1
 
+/*****************************************************
+ *  structure
+ *****************************************************/
 
+/* define five type of structures for userspace <==> kernel
+ * space communication:
+ * command 1 - 2 are from userspace ==> kernel
+ * command 3 - 4 are from kernel ==> userspace
+ *
+ * 1. control command: control command(from control thread),
+ *                     control status (from config thread);
+ */
 struct msm_ctrl_cmd {
 	uint16_t type;
 	uint16_t length;
 	void *value;
 	uint16_t status;
 	uint32_t timeout_ms;
-	int resp_fd; /* FIXME: to be used by the kernel, pass-through for now */
+	int resp_fd;		/* FIXME: to be used by the kernel, pass-through for now */
 };
 
 struct msm_vfe_evt_msg {
@@ -127,7 +152,44 @@ struct msm_vfe_evt_msg {
 #define MSM_CAM_RESP_CTRL         0
 #define MSM_CAM_RESP_STAT_EVT_MSG 1
 #define MSM_CAM_RESP_V4L2         2
-#define MSM_CAM_RESP_MAX          3
+#define MSM_CAM_RESP_SENSOR_MSG   3
+#define MSM_CAM_RESP_MAX          4
+
+enum sensor_int_type_type {
+	SENSOR_INT_TYPE_CAMERA,
+	SENSOR_INT_TYPE_VSYNC,
+
+	SENSOR_INT_TYPE_INVALID
+};
+
+struct msm_sensor_resp_int_camera_t {
+	uint32_t dummy;
+};
+
+struct msm_sensor_resp_int_vsync_t {
+	uint32_t dummy;
+};
+
+struct msm_sensor_resp_int_t {
+	enum sensor_int_type_type int_type;
+	union {
+		struct msm_sensor_resp_int_camera_t camera;
+		struct msm_sensor_resp_int_vsync_t vsync;
+	} ext_data;
+};
+
+enum sensor_resp_msg_type {
+	SENSOR_RESP_MSG_EVENT,
+	SENSOR_RESP_MSG_INT_EVENT,
+	SENSOR_RESP_MSG_MSG_GENERAL,
+	SENSOR_RESP_MSG_MSG_INVALID
+};
+
+struct msm_sensor_resp_t {
+	enum sensor_resp_msg_type type;
+	void *extdata;
+	int32_t extlen;
+};
 
 /* this one is used to send ctrl/status up to config thread */
 struct msm_stats_event_ctrl {
@@ -137,16 +199,24 @@ struct msm_stats_event_ctrl {
 	int resptype;
 	int timeout_ms;
 	struct msm_ctrl_cmd ctrl_cmd;
+	/* struct  vfe_event_t  stats_event; */
 	struct msm_vfe_evt_msg stats_event;
+	struct msm_sensor_resp_t sensor_msg;
 };
+
+/* 2. config command: config command(from config thread); */
 struct msm_camera_cfg_cmd {
+	/* what to config:
+	 * 1 - sensor config, 2 - vfe config */
 	uint16_t cfg_type;
 
+	/* sensor config type */
 	uint16_t cmd_type;
 	uint16_t queue;
 	uint16_t length;
 	void *value;
 };
+
 #define CMD_GENERAL			0
 #define CMD_AXI_CFG_OUT1		1
 #define CMD_AXI_CFG_SNAP_O1_AND_O2	2
@@ -193,6 +263,8 @@ struct msm_camera_cfg_cmd {
 #define CMD_STATS_IHIST_ENABLE 38
 #define CMD_STATS_RS_ENABLE 39
 #define CMD_STATS_CS_ENABLE 40
+
+/* vfe config command: config command(from config thread)*/
 struct msm_vfe_cfg_cmd {
 	int cmd_type;
 	uint16_t length;
@@ -261,8 +333,8 @@ struct outputCfg {
 
 #define OUTPUT_1	0
 #define OUTPUT_2	1
-#define OUTPUT_1_AND_2            2   /* snapshot only */
-#define OUTPUT_1_AND_3            3   /* video */
+#define OUTPUT_1_AND_2            2	/* snapshot only */
+#define OUTPUT_1_AND_3            3	/* video */
 #define CAMIF_TO_AXI_VIA_OUTPUT_2 4
 #define OUTPUT_1_AND_CAMIF_TO_AXI_VIA_OUTPUT_2 5
 #define OUTPUT_2_AND_CAMIF_TO_AXI_VIA_OUTPUT_1 6
@@ -278,7 +350,6 @@ struct outputCfg {
 #define OUTPUT_TYPE_V		4
 
 struct msm_frame {
-	struct timespec ts;
 	int path;
 	unsigned long buffer;
 	uint32_t y_off;
@@ -324,146 +395,78 @@ struct msm_snapshot_pp_status {
 	void *status;
 };
 
-#define CFG_SET_MODE                0
-#define CFG_SET_EFFECT              1
-#define CFG_START                   2
-#define CFG_PWR_UP                  3
-#define CFG_PWR_DOWN                4
-#define CFG_WRITE_EXPOSURE_GAIN     5
-#define CFG_SET_DEFAULT_FOCUS       6
-#define CFG_MOVE_FOCUS              7
-#define CFG_REGISTER_TO_REAL_GAIN   8
-#define CFG_REAL_TO_REGISTER_GAIN   9
-#define CFG_SET_FPS                 10
-#define CFG_SET_PICT_FPS            11
-#define CFG_SET_BRIGHTNESS          12
-#define CFG_SET_CONTRAST            13
-#define CFG_SET_ZOOM                14
-#define CFG_SET_EXPOSURE_MODE       15
-#define CFG_SET_WB                  16
-#define CFG_SET_ANTIBANDING         17
-#define CFG_SET_EXP_GAIN            18
-#define CFG_SET_PICT_EXP_GAIN       19
-#define CFG_SET_LENS_SHADING        20
-#define CFG_GET_PICT_FPS            21
-#define CFG_GET_PREV_L_PF           22
-#define CFG_GET_PREV_P_PL           23
-#define CFG_GET_PICT_L_PF           24
-#define CFG_GET_PICT_P_PL           25
-#define CFG_GET_AF_MAX_STEPS        26
-#define CFG_GET_PICT_MAX_EXP_LC     27
+#define CFG_SET_MODE			0
+#define CFG_SET_EFFECT			1
+#define CFG_START			2
+#define CFG_PWR_UP			3
+#define CFG_PWR_DOWN			4
+#define CFG_WRITE_EXPOSURE_GAIN		5
+#define CFG_SET_DEFAULT_FOCUS		6
+#define CFG_MOVE_FOCUS			7
+#define CFG_REGISTER_TO_REAL_GAIN	8
+#define CFG_REAL_TO_REGISTER_GAIN	9
+#define CFG_SET_FPS			10
+#define CFG_SET_PICT_FPS		11
+#define CFG_SET_BRIGHTNESS		12
+#define CFG_SET_CONTRAST		13
+#define CFG_SET_ZOOM			14
+#define CFG_SET_EXPOSURE_MODE		15
+#define CFG_SET_WB			16
+#define CFG_SET_ANTIBANDING		17
+#define CFG_SET_EXP_GAIN		18
+#define CFG_SET_PICT_EXP_GAIN		19
+#define CFG_SET_LENS_SHADING		20
+#define CFG_GET_PICT_FPS		21
+#define CFG_GET_PREV_L_PF		22
+#define CFG_GET_PREV_P_PL		23
+#define CFG_GET_PICT_L_PF		24
+#define CFG_GET_PICT_P_PL		25
+#define CFG_GET_AF_MAX_STEPS		26
+#define CFG_GET_PICT_MAX_EXP_LC		27
+#define CFG_SEND_WB_INFO		28
+#define CFG_SET_DIMENSIONS		29
+#define CFG_SET_TEST_PATTERN		30
+#define CFG_GET_AF_STATUS		31
+#define CFG_GET_EXIF_INFO		32
+#define CFG_SET_SCENE			33
+#define CFG_GET_AF_ASSIST_LIGHT		34
 
-#define CFG_SET_SATURATION          28
-#define CFG_SET_SHARPNESS           29
+#define CFG_PARAM_WRITE			35
+#define CFG_PARAM_READ			36
+#define CFG_MEMORY_WRITE		37
+#define CFG_MEMORY_READ			38
+#define CFG_REGISTER_INT		39
+#define CFG_ENABLE_INT			40
+#define CFG_DISABLE_INT			41
+#define CFG_GPIO_CTRL			42
+#define CFG_SET_FOCUS_MODE		43
 
+#define CFG_MAX				44
 
-#define CFG_SET_AF                  30
-#define CFG_SET_ISO                 31
+#define MOVE_NEAR	0
+#define MOVE_FAR	1
 
+#define SENSOR_PREVIEW_MODE		0
+#define SENSOR_SNAPSHOT_MODE		1
+#define SENSOR_RAW_SNAPSHOT_MODE	2
+#define SENSOR_HALF_RELEASE_MODE	3
+#define SENSOR_SNAPSHOT_START	4
+#define SENSOR_RAW_SNAPSHOT_START	5
 
-#define CFG_SET_EXPOSURE_COMPENSATION   32
+#define SENSOR_QTR_SIZE			0
+#define SENSOR_FULL_SIZE		1
+#define SENSOR_INVALID_SIZE		2
 
-#define CFG_MAX				        32
-
-#define CFG_SEND_WB_INFO            28
-
-#define MOVE_NEAR	                0
-#define MOVE_FAR	                1
-
-#define SENSOR_PREVIEW_MODE         0
-#define SENSOR_SNAPSHOT_MODE        1
-#define SENSOR_RAW_SNAPSHOT_MODE    2
-
-#define SENSOR_QTR_SIZE             0
-#define SENSOR_FULL_SIZE            1
-#define SENSOR_INVALID_SIZE         2
-
-#define CAMERA_EFFECT_OFF           0
-#define CAMERA_EFFECT_MONO          1
-#define CAMERA_EFFECT_NEGATIVE      2
-#define CAMERA_EFFECT_SOLARIZE      3
-#define CAMERA_EFFECT_SEPIA         4
-#define CAMERA_EFFECT_POSTERIZE     5
-#define CAMERA_EFFECT_WHITEBOARD    6
-#define CAMERA_EFFECT_BLACKBOARD    7
-#define CAMERA_EFFECT_AQUA          8
-
-
-#define CAMERA_EFFECT_BULISH	    9
-#define CAMERA_EFFECT_REDDISH	    10
-#define CAMERA_EFFECT_GREENISH	    11
-#define CAMERA_EFFECT_MAX		    12
-
-#define CAMERA_WB_MODE_AWB              1
-#define CAMERA_WB_MODE_CUSTOM           2
-#define CAMERA_WB_MODE_INCANDESCENT     3
-#define CAMERA_WB_MODE_FLUORESCENT      4
-#define CAMERA_WB_MODE_SUNLIGHT         5
-#define CAMERA_WB_MODE_CLOUDY           6
-#define CAMERA_WB_MODE_NIGHT            7
-#define CAMERA_WB_MODE_SHADE            8
-#define CAMERA_WB_MODE_MAX              9
-
-#define CAMERA_BRIGHTNESS_0             0
-#define CAMERA_BRIGHTNESS_1             1
-#define CAMERA_BRIGHTNESS_2             2
-#define CAMERA_BRIGHTNESS_3             3
-#define CAMERA_BRIGHTNESS_4             4
-#define CAMERA_BRIGHTNESS_5             5
-#define CAMERA_BRIGHTNESS_6             6
-#define CAMERA_BRIGHTNESS_MAX           7
-
-/* Contrast */
-#define CAMERA_CONTRAST_0               0
-#define CAMERA_CONTRAST_1               1
-#define CAMERA_CONTRAST_2               2
-#define CAMERA_CONTRAST_3               3
-#define CAMERA_CONTRAST_4               4
-#define CAMERA_CONTRAST_MAX             5
-
-/* Saturation */
-#define CAMERA_SATURATION_0             0
-#define CAMERA_SATURATION_1             1
-#define CAMERA_SATURATION_2             2
-#define CAMERA_SATURATION_3             3
-#define CAMERA_SATURATION_4             4
-#define CAMERA_SATURATION_MAX           5
-
-
-#define CAMERA_EXPOSURE_0               0
-#define CAMERA_EXPOSURE_1               1
-#define CAMERA_EXPOSURE_2               2
-#define CAMERA_EXPOSURE_3               3
-#define CAMERA_EXPOSURE_4               4
-#define CAMERA_EXPOSURE_MAX             5
-
-
-#define CAMERA_ISO_SET_AUTO             0
-#define CAMERA_ISO_SET_HJR              1
-#define CAMERA_ISO_SET_100              2
-#define CAMERA_ISO_SET_200              3
-#define CAMERA_ISO_SET_400              4
-#define CAMERA_ISO_SET_800              5
-#define CAMERA_ISO_SET_MAX              6
-
-#define CAMERA_ANTIBANDING_SET_OFF      0
-#define CAMERA_ANTIBANDING_SET_60HZ     1
-#define CAMERA_ANTIBANDING_SET_50HZ     2
-#define CAMERA_ANTIBANDING_SET_AUTO     3
-#define CAMERA_ANTIBANDING_MAX          4
-
-#define CAMERA_SHARPNESS_0              0
-#define CAMERA_SHARPNESS_1              1
-#define CAMERA_SHARPNESS_2              2
-#define CAMERA_SHARPNESS_3              3
-#define CAMERA_SHARPNESS_4              4
-#define CAMERA_SHARPNESS_5              5
-#define CAMERA_SHARPNESS_6              6
-#define CAMERA_SHARPNESS_7              7
-#define CAMERA_SHARPNESS_8              8
-#define CAMERA_SHARPNESS_9              9
-#define CAMERA_SHARPNESS_10             10
-#define CAMERA_SHARPNESS_MAX            11
+#define CAMERA_EFFECT_OFF		0
+#define CAMERA_EFFECT_MONO		1
+#define CAMERA_EFFECT_NEGATIVE		2
+#define CAMERA_EFFECT_SOLARIZE		3
+#define CAMERA_EFFECT_SEPIA		4
+#define CAMERA_EFFECT_POSTERIZE		5
+#define CAMERA_EFFECT_WHITEBOARD	6
+#define CAMERA_EFFECT_BLACKBOARD	7
+#define CAMERA_EFFECT_AQUA		8
+#define CAMERA_EFFECT_MAX		9
 
 struct sensor_pict_fps {
 	uint16_t prevfps;
@@ -485,11 +488,93 @@ struct fps_cfg {
 	uint16_t fps_div;
 	uint32_t pict_fps_div;
 };
+
+struct camera_dimension {
+	uint16_t picture_width;
+	uint16_t picture_height;
+	uint16_t display_width;
+	uint16_t display_height;
+	uint16_t thumbnail_width;
+	uint16_t thumbnail_height;
+};
+
+enum set_test_pattern {
+	TEST_PATTERN_ON,
+	TEST_PATTERN_OFF
+};
+
+enum camera_af_status {
+	SENSOR_AF_IN_PROGRESS,
+	SENSOR_AF_SUCCESS,
+	SENSOR_AF_FAILED
+};
+
+struct cam_ctrl_rational {
+	uint32_t numerator;
+	uint32_t denominator;
+};
+
+struct cam_ctrl_exif_params {
+	uint32_t shutter_speed;	//in us
+	uint16_t iso_speed_index;
+	uint16_t camera_revision;
+	uint8_t flash_fired;
+};
+
+enum camera_scene {
+	SENSOR_SCENE_AUTO,
+	SENSOR_SCENE_TWILIGHT,
+	SENSOR_SCENE_SPORTS,
+	SENSOR_SCENE_BEACH,
+	SENSOR_SCENE_SNOW
+};
+
+enum camera_focus_mode {
+	SENSOR_FOCUS_MODE_AUTO,
+	SENSOR_FOCUS_MODE_MACRO,
+	SENSOR_FOCUS_MODE_CONTINUOUS,
+	SENSOR_FOCUS_MODE_FIXED
+};
+
+enum sensor_int_sync_type {
+	SENSOR_INT_DISABLE,
+	SENSOR_INT_ENABLE_NOT_USE,
+	SENSOR_INT_ENABLE_SYNC,
+	SENSOR_INT_ENABLE_ASYNC
+};
+
+struct sensor_int_enable_t {
+	enum sensor_int_type_type type;
+	enum sensor_int_sync_type sync;
+	uint32_t client_length;
+	uint8_t __user *client_data;
+	int32_t __user *timeout_ms;
+	int32_t count;
+};
+
+struct sensor_param_io_t {
+	uint16_t address;
+	uint8_t length;
+	uint8_t __user *data;
+};
+
+struct sensor_memory_io_t {
+	uint32_t address;
+	uint16_t length;
+	uint8_t __user *data;
+};
+
+struct sensor_gpio_ctrl_t {
+	unsigned int gpio;
+	int value;
+};
+
 struct wb_info_cfg {
 	uint16_t red_gain;
 	uint16_t green_gain;
 	uint16_t blue_gain;
 };
+
 struct sensor_cfg_data {
 	int cfgtype;
 	int mode;
@@ -505,25 +590,23 @@ struct sensor_cfg_data {
 		uint16_t pictp_pl;
 		uint32_t pict_max_exp_lc;
 		uint16_t p_fps;
-        
-       
-        int8_t wb_mode;
-        int8_t brightness;
-        int8_t contrast;
-        int8_t saturation;
-        int8_t sharpness;
-        int8_t iso_val;
-        int8_t antibanding;
-        int8_t lensshading;
-        
-     
-        int8_t exposure;
-        
 		struct sensor_pict_fps gfps;
 		struct exp_gain_cfg exp_gain;
 		struct focus_cfg focus;
 		struct fps_cfg fps;
 		struct wb_info_cfg wb_info;
+
+		struct sensor_param_io_t param_io;
+		struct sensor_memory_io_t memory_io;
+		struct sensor_int_enable_t int_enable;
+		struct sensor_gpio_ctrl_t gpio_ctrl;
+
+		struct camera_dimension dimension;
+		enum set_test_pattern set_test_pattern;
+		enum camera_af_status af_status;
+		struct cam_ctrl_exif_params exif;
+		enum camera_scene scene;
+		enum camera_focus_mode focus_mode;
 	} cfg;
 };
 
@@ -540,4 +623,4 @@ struct msm_camsensor_info {
 	uint8_t flash_enabled;
 	int8_t total_steps;
 };
-#endif /* __LINUX_MSM_CAMERA_H */
+#endif				/* __LINUX_MSM_CAMERA_H */
