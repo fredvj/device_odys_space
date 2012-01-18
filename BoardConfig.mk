@@ -21,12 +21,9 @@ TARGET_BOOTLOADER_BOARD_NAME := space
 
 WIFI_DRIVER_MODULE_NAME     := libra
 WIFI_DRIVER_MODULE_PATH     := /system/lib/modules/libra.ko
-WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/firmware/wlan/qcom_fw.bin nvram_path=/persist/qcom_wlan_nv.bin"
-WIFI_DRIVER_FW_PATH_AP      := "/system/etc/firmware/wlan/qcom_fw.bin"
-WIFI_DRIVER_FW_PATH_STA     := "/system/etc/firmware/wlan/qcom_wapi_fw.bin"
 
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-WPA_SUPPLICANT_VERSION      := VER_0_5_X
+# WPA_SUPPLICANT_VERSION      := VER_0_5_X
 
 WITH_JIT := true
 ENABLE_JSC_JIT := true

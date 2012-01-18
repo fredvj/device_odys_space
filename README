@@ -10,11 +10,12 @@
 USB Charging            : Okay
 USB ADB                 : Okay
 USB Mass Strorage       : Okay
-Video                   : WiP
-Audio                   : WiP
-Sensors                 : WiP
-WLAN                    : Have not been able to convince it
-GSM                     : No
+Video                   : WiP - Hardware accel. currently disabled
+Audio                   : WiP - Should be okay
+Sensors                 : WiP - Have seen first effects, but currently disabled
+WLAN                    : Have not been able to convince the GUI - Okay if activated from the command line
+GSM                     : No - rild keeps crashing
+Camera                  : No
 
 #
 
@@ -36,3 +37,6 @@ GSM                     : No
 2012-01-12:	Now we got init processing our startup scripts
 		init.qcom.rc is ours. ADB and USB charging is okay.
 		Now we can start the fun of adding other hardware.
+2012-01-19:	Sound seems okay.
+		First progress the get WLAN.
+		See details in /documentation/wlan-from-command-line.txt

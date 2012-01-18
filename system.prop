@@ -2,4 +2,16 @@
 # system.prop for space
 #
 wifi.interface=wlan0
+wifi.supplicant_scan_interval=15
+rild.libpath=/system/lib/libril-qc-1.so
+rild.libargs=-d /dev/smd0
+ro.com.android.dataroaming=false
+keyguard.no_require_sim=true
+ro.ril.hsxpa=2
+ro.ril.gprsclass=10
+ro.telephony.default_network=0
+ro.telephony.call_ring.multiple=false
+ro.opengles.version=131072
+ro.compcache.default=0
+persist.sys.timezone=Europe/Amsterdam
 

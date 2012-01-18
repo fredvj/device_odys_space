@@ -6,6 +6,9 @@ $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 $(call inherit-product-if-exists, vendor/odys/space/space-vendor.mk)
 
+# Build the mock-ril
+# $(call inherit-product, hardware/ril/mock-ril/Android.mk)
+
 DEVICE_PACKAGE_OVERLAYS += device/odys/space/overlay
 
 PRODUCT_PACKAGES += \
@@ -28,20 +31,6 @@ PRODUCT_PACKAGES += \
 	libOmxVidEnc
 
 
-PRODUCT_PROPERTY_OVERRIDES += \
-	rild.libpath=/system/lib/libril-qc-1.so \
-	rild.libargs=-d /dev/smd0 \
-	wifi.interface=wlan0 \
-	wifi.supplicant_scan_interval=15 \
-	ro.com.android.dataroaming=false \
-	keyguard.no_require_sim=true \
-	ro.ril.hsxpa=2 \
-	ro.ril.gprsclass=10 \
-	ro.telephony.default_network=0 \
-	ro.telephony.call_ring.multiple=false \
-	ro.opengles.version=131072  \
-	ro.compcache.default=0
-
 # This would be the way to rotate the screen
 # But the touchscreen would be missing
 
@@ -60,6 +49,10 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
+
+PRODUCT_COPY_FILES += \
+	device/odys/space/prebuilt/copybit.7x27.so:system/lib/hw/copybit.7x27.so \
+	device/odys/space/prebuilt/gralloc.7x27.so:system/lib/hw/gralloc.7x27.so
 
 # Install device features
 
@@ -91,6 +84,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	device/odys/space/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+	device/odys/space/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
 	device/odys/space/AudioFilter.csv:system/etc/AudioFilter.csv \
 	device/odys/space/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
 	device/odys/space/vold.fstab:system/etc/vold.fstab \
@@ -138,32 +132,36 @@ PRODUCT_COPY_FILES += \
 
 # Radio and associated libraries
 
-# PRODUCT_COPY_FILES += \
-# 	vendor/odys/space/proprietary/libcm.so:system/lib/libcm.so \
-# 	vendor/odys/space/proprietary/libdsm.so:system/lib/libdsm.so \
-# 	vendor/odys/space/proprietary/libdss.so:system/lib/libdss.so \
-# 	vendor/odys/space/proprietary/libdll.so:system/lib/libdll.so \
-# 	vendor/odys/space/proprietary/libgsdi_exp.so:system/lib/libgsdi_exp.so \
-# 	vendor/odys/space/proprietary/libgstk_exp.so:system/lib/libgstk_exp.so \
-# 	vendor/odys/space/proprietary/libmmgsdilib.so:system/lib/libmmgsdilib.so \
-# 	vendor/odys/space/proprietary/libnv.so:system/lib/libnv.so \
-# 	vendor/odys/space/proprietary/liboem_rapi.so:system/lib/liboem_rapi.so \
-# 	vendor/odys/space/proprietary/liboncrpc.so:system/lib/liboncrpc.so \
-# 	vendor/odys/space/proprietary/libqmi.so:system/lib/libqmi.so \
-# 	vendor/odys/space/proprietary/libqueue.so:system/lib/libqueue.so \
-# 	vendor/odys/space/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \
-# 	vendor/odys/space/proprietary/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
-# 	vendor/odys/space/proprietary/libwms.so:system/lib/libwms.so \
-# 	vendor/odys/space/proprietary/libwmsts.so:system/lib/libwmsts.so \
-# # 	vendor/odys/space/proprietary/libsnd.so:system/lib/libsnd.so \
-# 	vendor/odys/space/proprietary/libdiag.so:system/lib/libdiag.so
-
 PRODUCT_COPY_FILES += \
-        vendor/odys/space/proprietary/libdsm.so:system/lib/libdsm.so \
-        vendor/odys/space/proprietary/liboncrpc.so:system/lib/liboncrpc.so \
-        vendor/odys/space/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \
-        vendor/odys/space/proprietary/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
-        vendor/odys/space/proprietary/libdiag.so:system/lib/libdiag.so
+	vendor/odys/space/proprietary/libcm.so:system/lib/libcm.so \
+	vendor/odys/space/proprietary/libdsm.so:system/lib/libdsm.so \
+	vendor/odys/space/proprietary/libdss.so:system/lib/libdss.so \
+	vendor/odys/space/proprietary/libdll.so:system/lib/libdll.so \
+	vendor/odys/space/proprietary/libgsdi_exp.so:system/lib/libgsdi_exp.so \
+	vendor/odys/space/proprietary/libgstk_exp.so:system/lib/libgstk_exp.so \
+	vendor/odys/space/proprietary/libmmgsdilib.so:system/lib/libmmgsdilib.so \
+	vendor/odys/space/proprietary/libnv.so:system/lib/libnv.so \
+	vendor/odys/space/proprietary/liboem_rapi.so:system/lib/liboem_rapi.so \
+	vendor/odys/space/proprietary/liboncrpc.so:system/lib/liboncrpc.so \
+	vendor/odys/space/proprietary/libqmi.so:system/lib/libqmi.so \
+	vendor/odys/space/proprietary/libqueue.so:system/lib/libqueue.so \
+	vendor/odys/space/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \
+	vendor/odys/space/proprietary/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
+	vendor/odys/space/proprietary/libwms.so:system/lib/libwms.so \
+	vendor/odys/space/proprietary/libwmsts.so:system/lib/libwmsts.so \
+	vendor/odys/space/proprietary/libsnd.so:system/lib/libsnd.so \
+	vendor/odys/space/proprietary/libdiag.so:system/lib/libdiag.so \
+	vendor/odys/space/proprietary/libauth.so:system/lib/libauth.so \
+	vendor/odys/space/proprietary/libpbmlib.so:system/lib/libpbmlib.so \
+	vendor/odys/space/proprietary/libdsutils.so:system/lib/libdsutils.so \
+	vendor/odys/space/proprietary/libnetmgr.so:system/lib/libnetmgr.so
+
+# PRODUCT_COPY_FILES += \
+#         vendor/odys/space/proprietary/libdsm.so:system/lib/libdsm.so \
+#         vendor/odys/space/proprietary/liboncrpc.so:system/lib/liboncrpc.so \
+#         vendor/odys/space/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \
+#         vendor/odys/space/proprietary/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
+#         vendor/odys/space/proprietary/libdiag.so:system/lib/libdiag.so
 
 # Camera control and encoding libraries
 
@@ -260,8 +258,7 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/prebuilt/hostapd:system/bin/hostapd \
 	vendor/odys/space/proprietary/prebuilt/wiperiface:system/bin/wiperiface \
 	vendor/odys/space/proprietary/prebuilt/rmt_storage:system/bin/rmt_storage \
-	vendor/odys/space/proprietary/prebuilt/netmgrd:system/bin/netmgrd \
-	vendor/odys/space/proprietary/prebuilt/wpa_supplicant:system/bin/wpa_supplicant
+	vendor/odys/space/proprietary/prebuilt/netmgrd:system/bin/netmgrd
 
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
