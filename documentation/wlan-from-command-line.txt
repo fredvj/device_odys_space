@@ -1,0 +1,49 @@
+# 2012-01-19
+# Directory structure and access rights need cleanup
+# Not 100% sure what I did. Will have to flash again and write it down
+#
+# Make sure to add a network definition for your AP to
+# wpa_supplicant.conf first and "adb push" it to
+# /data/misc/wifi/
+#
+# And now the magic commands:
+
+sh /system/etc/init.qcom.sdio.sh 1
+insmod /system/lib/modules/libra.ko
+
+# Backgrounding the supplicant - use "adb logcat" to see output
+wpa_supplicant -Dwext -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf -B
+
+# Optional: Client interface to see scan results (access points)
+# wpa_cli -p/data/misc/wifi
+# help
+# scan_results
+# quit
+
+# If wlan0 has been associated with an access point, you can find out with
+# iwconfig wlan0
+
+# Start the DHCP client daemon for our interface
+
+dhcpcd -ABKL wlan0 &
+
+# ifconfig should now show an address
+
+ifconfig wlan0
+
+# We should be good to ping hosts on you internal network
+
+ping 192.168.2.3
+
+# Set a valid DNS server
+
+setprop net.dns1 192.168.2.1
+
+# Try something that requires name resolution
+
+ping www.google.com
+
+# New would be a good time to fire up your browser and give it a try
+# Ignore (dismiss) the "No network connection" message
+# The Google startpage is probably already loading behind the message
+
