@@ -13,7 +13,8 @@ USB Mass Strorage       : Okay
 Video                   : WiP - Hardware accel. currently disabled
 Audio                   : WiP - Should be okay
 Sensors                 : WiP - Have seen first effects, but currently disabled
-WLAN                    : Have not been able to convince the GUI - Okay if activated from the command line
+WLAN                    : Have not been able to convince the GUI
+			  Okay if activated from the command line
 GSM                     : No - rild keeps crashing
 Camera                  : No
 
