@@ -16,11 +16,6 @@ on fs
 
 on property:dev.bootcomplete=1
 
-   # This is a special treatment for wifi
-
-   chmod 0666 /dev/smd0
-   chmod 0666 /dev/ttyGS0 
-
    # Ported commands from init.qcom.post_boot.sh
 
    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor ondemand
@@ -101,12 +96,12 @@ on boot
 
     # Provide the access to hostapd.conf only to root and group
 
-    chmod 0666 /data/hostapd/hostapd.conf
+    chmod 0660 /data/hostapd/hostapd.conf
 
 # Services
 
-# on property:init.svc.wpa_supplicant=stopped
-#     stop dhcpcd_wlan0
+on property:init.svc.wpa_supplicant=stopped
+    stop dhcpcd_wlan0
 
 on property:init.svc.bluetoothd=running
     write /sys/devices/virtual/bluetooth/hci0/idle_timeout 7000

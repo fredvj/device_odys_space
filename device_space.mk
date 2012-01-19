@@ -232,10 +232,11 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/prebuilt/qcom_cfg.ini:system/etc/firmware/wlan/qcom_cfg.ini
 
 # HostAPd configuration files
+# has to end up in /data/hostapd - who is copying ?
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/prebuilt/qcom_cfg.ini:data/hostapd/qcom_cfg.ini \
-	vendor/odys/space/proprietary/prebuilt/hostapd.conf:data/hostapd/hostapd.conf
+	vendor/odys/space/proprietary/prebuilt/qcom_cfg.ini:system/etc/wifi/qcom_cfg.ini \
+	vendor/odys/space/proprietary/prebuilt/hostapd.conf:system/etc/wifi/hostapd.conf
 
 # Service and additional init script
 
