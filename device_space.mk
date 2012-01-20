@@ -28,8 +28,10 @@ PRODUCT_PACKAGES += \
 	libRS \
 	librs_jni \
 	libOmxCore \
-	libOmxVidEnc
+	libOmxVidEnc \
+	dexpreopt
 
+DISABLE_DEXPREOPT := false
 
 # This would be the way to rotate the screen
 # But the touchscreen would be missing
@@ -49,6 +51,20 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
+
+# Keyboard layouts don't hurt
+
+PRODUCT_COPY_FILES += \
+	device/odys/space/prebuilt/7k_ffa_keypad.kl:system/usr/keylayout/7k_ffa_keypad.kl \
+	device/odys/space/prebuilt/7k_ffa_tp_keypad.kl:system/usr/keylayout/7k_ffa_tp_keypad.kl \
+	device/odys/space/prebuilt/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
+	device/odys/space/prebuilt/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+	device/odys/space/prebuilt/qwerty.kl:system/usr/keylayout/qwerty.kl \
+	device/odys/space/prebuilt/7k_ffa_keypad.kcm.bin:system/usr/keychars/7k_ffa_keypad.kcm.bin \
+	device/odys/space/prebuilt/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
+	device/odys/space/prebuilt/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin
+
+# A little hardware specific stuff
 
 PRODUCT_COPY_FILES += \
 	device/odys/space/prebuilt/copybit.7x27.so:system/lib/hw/copybit.7x27.so \

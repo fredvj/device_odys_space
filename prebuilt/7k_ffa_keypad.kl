@@ -1,0 +1,90 @@
+# Copyright (c) 2009, Code Aurora Forum.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+#
+key 2     1                              # KEY_1
+key 3     2                              # KEY_2
+key 4     3                              # KEY_3
+key 5     4                              # KEY_4
+key 6     5                              # KEY_5     
+key 7     6                              # KEY_6
+key 8     7                              # KEY_7
+key 9     8                              # KEY_8
+key 10    9                              # KEY_9
+key 11    0                              # KEY_0
+key 158   BACK              WAKE_DROPPED # KEY_BACK
+key 102   HOME              WAKE         # KEY_HOME
+key 229   SOFT_RIGHT        WAKE         # KEY_SOFT1
+key 1     BACK              WAKE_DROPPED # KEY_ESC
+key 62    ENDCALL           WAKE_DROPPED # KEY_F4
+key 139   MENU              WAKE_DROPPED # KEY_MENU
+key 228   POUND                          # KEY_SHARP  
+key 227   STAR                           # KEY_STAR 
+key 231   CALL              WAKE_DROPPED # KEY_SEND
+key 61    CALL              WAKE_DROPPED # KEY_F3
+key 232   DPAD_CENTER       WAKE_DROPPED # KEY_CENTER
+key 108   DPAD_DOWN         WAKE_DROPPED # KEY_DOWN 
+key 103   DPAD_UP           WAKE_DROPPED # KEY_UP
+key 105   DPAD_LEFT         WAKE_DROPPED # KEY_LEFT
+key 106   DPAD_RIGHT        WAKE_DROPPED # KEY_RIGHT
+key 115   VOLUME_UP                      # KEY_VOLUMEUP
+key 114   VOLUME_DOWN                    # KEY_VOLUMEDOWN
+key 217   SEARCH            WAKE_DROPPED # KEY_SEARCH
+
+key 16    Q                              # KEY_Q
+key 17    W                              # KEY_W
+key 18    E                              # KEY_E
+key 19    R                              # KEY_R
+key 20    T                              # KEY_T
+key 21    Y                              # KEY_Y
+key 22    U                              # KEY_U
+key 23    I                              # KEY_I
+key 24    O                              # KEY_O
+key 25    P                              # KEY_P
+
+key 30    A                              # KEY_A
+key 31    S                              # KEY_S
+key 32    D                              # KEY_D
+key 33    F                              # KEY_F
+key 34    G                              # KEY_G
+key 35    H                              # KEY_H
+key 36    J                              # KEY_J
+key 37    K                              # KEY_K
+key 38    L                              # KEY_L
+key 14    DEL                            # KEY_BACKSPACE
+        
+key 44    Z                              # KEY_Z
+key 45    X                              # KEY_X
+key 46    C                              # KEY_C
+key 47    V                              # KEY_V
+key 48    B                              # KEY_B
+key 49    N                              # KEY_N
+key 50    M                              # KEY_M
+key 51    COMMA                          # KEY_COMMA
+key 52    PERIOD                         # KEY_DOT
+key 28    ENTER                          # KEY_ENTER
+        
+key 56    ALT_LEFT                       # KEY_LEFTALT
+key 42    SHIFT_LEFT                     # KEY_LEFTSHIFT
+key 100   ALT_RIGHT                      # KEY_RIGHTALT
+key 215   AT                             # KEY_EMAIL
+key 57    SPACE                          # KEY_SPACE
+key 53    SLASH                          # KEY_SLASH
+key 127   SYM                            # KEY_COMPOSE
+key 41    GRAVE                          # KEY_GRAVE
+
+key 111 DEL  WAKE_DROPPED                # KEY_DELETE
+
+
