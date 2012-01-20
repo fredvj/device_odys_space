@@ -9,7 +9,7 @@
 
 USB Charging            : Okay
 USB ADB                 : Okay
-USB Mass Strorage       : Okay
+USB Mass Strorage       : Okay - Micro SD only
 Video                   : WiP - Hardware accel. currently disabled
 Audio                   : Okay - needs testing
 Sensors                 : WiP - Have seen first effects, but currently disabled
@@ -17,6 +17,8 @@ WLAN                    : Okay - needs testing
 WLAN Hotspot            : Need GSM first
 GSM                     : No - rild keeps crashing
 Camera                  : No
+Keyboard                : Android is complaining
+Memory                  : 256MB device - needs special parameters?
 
 #
 
