@@ -12,10 +12,17 @@ USB ADB                 : Okay
 USB Mass Strorage       : Okay - Micro SD only
 Video                   : WiP - Hardware accel. currently disabled
 Audio                   : Okay - needs testing
+			: See GSM below. Microphone needs testing
 Sensors                 : WiP - Have seen first effects, but currently disabled
 WLAN                    : Okay - needs testing
+			: Disabling and reenabling will not work!
+			: Reboot or /system/bin/sh /system/etc/init.qcom.sdio.sh 1
 WLAN Hotspot            : Need GSM first
-GSM                     : No - rild keeps crashing
+GSM                     : Yes - Is asking for network unlock
+			: Can be discarded and IS working
+GSM Data		: Yes
+GSM Voice		: Yes - Microphone not working?
+GSM SMS			: Yes
 Bluetooth               : No
 Camera                  : No - crashes
 Keyboard                : Android is complaining
@@ -45,3 +52,5 @@ Memory                  : 256MB device - needs special parameters?
 		First progress to get WLAN.
 		See details in /documentation/wlan-from-command-line.txt
 2012-01-20:	WLAN now okay from the GUI.
+2012-01-21:	GSM seems to be an access rights thing.
+2012-01-22:	GSM working. Not fully tested.

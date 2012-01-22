@@ -25,6 +25,7 @@ PRODUCT_PACKAGES += \
 	lights.space \
 	copybit.space \
 	gralloc.space \
+	gps.space \
 	libRS \
 	librs_jni \
 	libOmxCore \
@@ -64,12 +65,6 @@ PRODUCT_COPY_FILES += \
 	device/odys/space/prebuilt/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
 	device/odys/space/prebuilt/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin
 
-# A little hardware specific stuff
-
-PRODUCT_COPY_FILES += \
-	device/odys/space/prebuilt/copybit.7x27.so:system/lib/hw/copybit.7x27.so \
-	device/odys/space/prebuilt/gralloc.7x27.so:system/lib/hw/gralloc.7x27.so
-
 # Install device features
 
 PRODUCT_COPY_FILES += \
@@ -92,9 +87,15 @@ PRODUCT_COPY_FILES += \
 # Startup scripts
 # If would like to name it init.space.rc, we would have to change the kernel parameter
 
+# Ouch. init honors the kernel command line. ueventd does not.
+# This lets it fall back to ask util.c for get_hardware_name.
+# This in turn will parse /proc/cpuinfo - on our platform:
+# Hardware	: QCT MSM7x27 FFA
+# If I get it right, get_hardware_name(...) := "qct"
+
 PRODUCT_COPY_FILES += \
 	device/odys/space/boot.space.rc:root/init.qcom.rc \
-	device/odys/space/ueventd.space.rc:root/ueventd.qcom.rc
+	device/odys/space/ueventd.space.rc:root/ueventd.qct.rc
 
 # Configuration files
 
@@ -124,11 +125,11 @@ PRODUCT_COPY_FILES += \
 
 # copybit, gralloc and lights are not copied due to warnings
 
-# PRODUCT_COPY_FILES += \
-# 	vendor/odys/space/proprietary/hw/copybit.space.so:system/lib/hw/copybit.7x27.so \
-# 	vendor/odys/space/proprietary/hw/gralloc.space.so:system/lib/hw/gralloc.7x27.so \
-# 	vendor/odys/space/proprietary/hw/lights.space.so:system/lib/hw/lights.7x27.so \
-# 	vendor/odys/space/proprietary/hw/sensors.space.so:system/lib/hw/sensors.7x27.so
+PRODUCT_COPY_FILES += \
+	vendor/odys/space/proprietary/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
+	vendor/odys/space/proprietary/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
+	vendor/odys/space/proprietary/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
+	vendor/odys/space/proprietary/hw/sensors.7x27.so:system/lib/hw/sensors.7x27.so
 
 
 # Graphic hardware

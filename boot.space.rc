@@ -80,6 +80,12 @@ on boot
     setprop wlan.driver.status ok
     setprop wlan.interface wlan0
 
+    # Directory for the Radio Interface Layer (RIL)
+
+    mkdir /data/radio 0770 radio radio
+    chown radio radio /data/radio
+    chmod 0770 /data/radio
+
     # This more or less the content of /system/etc/init.qcom.sdio.sh ...
 
     write /sys/devices/platform/msm_sdcc.2/polling 1
@@ -110,7 +116,8 @@ on property:init.svc.bluetoothd=running
 on property:init.svc.bluetoothd=stopped
     stop btwlancoex
 
-service hci_qcomm_init /system/bin/log -t qcom-bluetooth -p i "hci_qcomm_init service requested"
+# service hci_qcomm_init /system/bin/log -t qcom-bluetooth -p i "hci_qcomm_init service requested"
+service hci_qcomm_init /system/bin/logwrapper /system/xbin/echo "hci_qcomm_init service requested"
     user bluetooth
     group bluetooth net_bt_admin
     disabled
@@ -124,6 +131,11 @@ on property:ro.emmc=1
     start rmt_storage
 
 service wifiwritemac /system/bin/wifiwritemac
+    oneshot
+
+service wifipreloader /system/bin/sh /system/etc/init.qcom.sdio.sh 1
+    user root
+    disabled
     oneshot
 
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
