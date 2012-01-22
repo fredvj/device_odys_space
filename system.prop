@@ -15,7 +15,11 @@ ro.opengles.version=131072
 ro.compcache.default=0
 persist.sys.timezone=Europe/Amsterdam
 ro.sf.lcd_density=160
-ro.sf.hwrotation=270
+# ro.sf.hwrotation=270
 ro.build.baseband_version=R2D2C3PO
 ro.setupwizard.enable_bypass=1
-
+ro.build.camera=SINGLE
+ro.build.touchscreen=CA_FT5406
+ro.build.lightsensor=NO
+dalvik.vm.heapsize=48m
+net.bt.name=CM7-Space
