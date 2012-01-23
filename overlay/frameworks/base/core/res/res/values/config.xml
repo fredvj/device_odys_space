@@ -186,6 +186,4 @@
     <!-- Enable the screen-off animation -->
     <bool name="config_enableScreenOffAnimation">true</bool>
 
-
-
 </resources>
