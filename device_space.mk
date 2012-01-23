@@ -190,6 +190,7 @@ PRODUCT_COPY_FILES += \
 # Target
 
 PRODUCT_COPY_FILES += \
+	vendor/odys/space/proprietary/libcamera.so:system/lib/libcamera.so \
 	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so \
 	vendor/odys/space/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \
 	vendor/odys/space/proprietary/libmmipl.so:system/lib/libmmipl.so

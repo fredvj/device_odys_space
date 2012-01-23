@@ -1,4 +1,4 @@
-USE_CAMERA_STUB := false
+USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
 -include vendor/odys/space/BoardConfigVendor.mk
@@ -25,7 +25,9 @@ WIFI_PRE_LOADER             := wifipreloader
 
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION      := VER_0_6_X
-# WPA_SUPPLICANT_VERSION      := VER_0_5_X
+
+BOARD_WLAN_DEVICE := wl1271
+BOARD_SOFTAP_DEVICE := wl1271
 
 WITH_JIT := true
 ENABLE_JSC_JIT := true
@@ -34,7 +36,7 @@ TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 # TARGET_GRALLOC_USES_ASHMEM := true
 
 TARGET_USES_OLD_LIBSENSORS_HAL := true
-TARGET_HAS_FOXCONN_SENSORS := true
+# TARGET_HAS_FOXCONN_SENSORS := true
 
 JS_ENGINE := v8
 
@@ -53,6 +55,7 @@ BOARD_GPS_LIBRARIES := libloc
 BOARD_USES_GPSSHIM := true
 BOARD_GPS_NEEDS_XTRA := true
 
+# BOARD_VENDOR_QCOM_AMSS_VERSION := 1240
 # BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := space
 # BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
 
@@ -61,7 +64,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 BOARD_CUSTOM_USB_CONTROLLER := ../../device/odys/space/UsbController.cpp
 
-# BOARD_USE_FROYO_LIBCAMERA := true
+BOARD_USE_FROYO_LIBCAMERA := true
 
 TARGET_PROVIDES_LIBRIL := true
 TARGET_PROVIDES_LIBAUDIO := true

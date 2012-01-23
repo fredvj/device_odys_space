@@ -18,8 +18,6 @@ Sensors                 : WiP - Getting strange data
 			: Disable Settings->Display->Auto-rotate-screen
 Screen rotation		: Sensor calibration & 270 preset required
 WLAN                    : Okay - needs testing
-			: Disabling and reenabling will not work!
-			: Reboot or /system/bin/sh /system/etc/init.qcom.sdio.sh 1
 WLAN Hotspot            : Need GSM first
 GSM                     : Yes - Is asking for network unlock
 			: Can be discarded and IS working
@@ -60,3 +58,4 @@ Memory                  : 256MB device - needs special parameters?
 		apns-config.xml is outdated.
 		Manually add APN:
 		Settings->Wireless & networks->Mobile networks->Access Point Names
+2012-01-23:	Re-enabling WLAN seems to be okay now
