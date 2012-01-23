@@ -1,6 +1,6 @@
 # Build environment for:
 #
-# Odys Space
+# Odys Space - CyanogenMod 7.2 RC0
 #
 # See: http://www.odys.de/web/tablet-pc_space_de.html
 #
@@ -16,6 +16,7 @@ Audio                   : Okay - needs testing
 Sensors                 : WiP - Getting strange data
 			: Calibration required?
 			: Disable Settings->Display->Auto-rotate-screen
+Screen rotation		: Sensor calibration & 270 preset required
 WLAN                    : Okay - needs testing
 			: Disabling and reenabling will not work!
 			: Reboot or /system/bin/sh /system/etc/init.qcom.sdio.sh 1
