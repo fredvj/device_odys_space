@@ -88,7 +88,7 @@ chmod a+rx $PROPS/prebuilt/*
 # init.qcom.wifi.sh
 
 echo "    -------------------- Android 2.2.2 init scripts"
-for f in init.qcom.bt.sh init.qcom.coex.sh init.qcom.fm.sh init.qcom.post_boot.sh init.qcom.sdio.sh init.qcom.wifi.sh 01_qcomm_omx.cfg
+for f in init.qcom.bt.sh init.qcom.coex.sh init.qcom.fm.sh init.qcom.post_boot.sh init.qcom.sdio.sh init.qcom.wifi.sh 01_qcomm_omx.cfg loc_parameter.ini pvplayer.cfg
 	do adb pull /system/etc/$f $PROPS/etc/
 done
 
@@ -109,6 +109,8 @@ adb pull /system/bin/wifiwritemac $PROPS/prebuilt/
 adb pull /system/bin/port-bridge $PROPS/prebuilt/
 adb pull /system/bin/CKPD-daemon $PROPS/prebuilt/
 adb pull /system/bin/hostapd $PROPS/prebuilt/
+adb pull /system/bin/ndc $PROPS/prebuilt/
+adb pull /system/bin/netd $PROPS/prebuilt/
 adb pull /system/bin/fm_qsoc_patches $PROPS/prebuilt/
 adb pull /system/bin/wiperiface $PROPS/prebuilt/
 adb pull /system/bin/wpa_supplicant $PROPS/prebuilt/

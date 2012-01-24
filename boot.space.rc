@@ -149,13 +149,16 @@ service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
 # #    group system inet
 #     group system inet radio
 
+service netd /system/bin/netd
+    socket netd stream 0666 root system
+
 service qmuxd /system/bin/qmuxd
 
-# service netmgrd /system/bin/netmgrd -E
-#     disabled
+service netmgrd /system/bin/netmgrd -E
+    disabled
 
-# on property:ro.use_data_netmgrd=true
-#     start netmgrd
+on property:ro.use_data_netmgrd=true
+    start netmgrd
 
 service btwlancoex /system/bin/sh /system/etc/init.qcom.coex.sh
     user root
