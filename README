@@ -15,10 +15,12 @@ Audio                   : Okay - needs testing
 			: See GSM below. Microphone needs testing
 Sensors                 : WiP - Getting strange data
 			: Calibration required?
-			: Disable Settings->Display->Auto-rotate-screen
+			: Disabled per default
+			: Settings->Display->Auto-rotate-screen
 Screen rotation		: Sensor calibration & 270 preset required
 WLAN                    : Okay - needs testing
-WLAN Hotspot            : Need GSM first
+			: HW: WCN1312_2.10-3.0.0.49-3.0.0.20
+WLAN Hotspot            : Currently working on it
 GSM                     : Yes - Is asking for network unlock
 			: Can be discarded and IS working
 GSM Data		: Yes
