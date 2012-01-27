@@ -1,0 +1,10 @@
+Get and install the basic apps (CyanogenMod 7):
+
+http://wiki.cyanogenmod.com/wiki/Latest_Version#Google_Apps
+
+The initial setup will get you to a page with all Google Apps. 
+
+If you need the search string for later:
+
+"pub:Google Inc."
+

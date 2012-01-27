@@ -55,15 +55,15 @@ PRODUCT_COPY_FILES += \
 
 # Keyboard layouts don't hurt
 
-PRODUCT_COPY_FILES += \
-	device/odys/space/prebuilt/7k_ffa_keypad.kl:system/usr/keylayout/7k_ffa_keypad.kl \
-	device/odys/space/prebuilt/7k_ffa_tp_keypad.kl:system/usr/keylayout/7k_ffa_tp_keypad.kl \
-	device/odys/space/prebuilt/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
-	device/odys/space/prebuilt/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-	device/odys/space/prebuilt/qwerty.kl:system/usr/keylayout/qwerty.kl \
-	device/odys/space/prebuilt/7k_ffa_keypad.kcm.bin:system/usr/keychars/7k_ffa_keypad.kcm.bin \
-	device/odys/space/prebuilt/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
-	device/odys/space/prebuilt/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin
+# PRODUCT_COPY_FILES += \
+# 	device/odys/space/prebuilt/7k_ffa_keypad.kl:system/usr/keylayout/7k_ffa_keypad.kl \
+# 	device/odys/space/prebuilt/7k_ffa_tp_keypad.kl:system/usr/keylayout/7k_ffa_tp_keypad.kl \
+# 	device/odys/space/prebuilt/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
+# 	device/odys/space/prebuilt/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+# 	device/odys/space/prebuilt/qwerty.kl:system/usr/keylayout/qwerty.kl \
+# 	device/odys/space/prebuilt/7k_ffa_keypad.kcm.bin:system/usr/keychars/7k_ffa_keypad.kcm.bin \
+# 	device/odys/space/prebuilt/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
+# 	device/odys/space/prebuilt/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin
 
 # Install device features
 
@@ -185,12 +185,11 @@ PRODUCT_COPY_FILES += \
 # Build environment (obj)
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/liboemcamera.so:ob/lib/liboemcamera.so
+	vendor/odys/space/proprietary/liboemcamera.so:obj/lib/liboemcamera.so
 
 # Target
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/libcamera.so:system/lib/libcamera.so \
 	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so \
 	vendor/odys/space/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \
 	vendor/odys/space/proprietary/libmmipl.so:system/lib/libmmipl.so
