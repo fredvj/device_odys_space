@@ -207,10 +207,6 @@ board_property boardProperties[] = {
  */
 //sorted on column basis
 static const camera_size_type picture_sizes[] = {
-//    { 2592, 1944 }, // 5MP
-    { 2560, 1920 }, // 5MP (slightly reduced)
-    { 2048, 1536 }, // 3MP QXGA
-    //{ 1920, 1080 }, //HD1080
     { 1600, 1200 }, // 2MP UXGA
     { 1280, 768 }, //WXGA
     { 1280, 720 }, //HD720
@@ -613,11 +609,6 @@ struct SensorType {
 };
 
 static SensorType sensorTypes[] = {
-        { "5mp", 2608, 1960, true,  2592, 1944,0x00000fff },
-        { "5mp", 5184, 1944, true,  2592, 1944,0x00000fff }, // actual 5MP v9
-        { "5mp", 2560, 1920, true,  2560, 1920,0x00000fff }, //should be 5MP v9
-        { "3mp", 2064, 1544, false, 2048, 1536,0x000007ff },
-        { "3mp", 4096, 1536, true, 2048, 1536,0x000007ff }, // 3MP v9
         { "2mp", 3200, 1200, false, 1600, 1200,0x000007ff } };
 
 

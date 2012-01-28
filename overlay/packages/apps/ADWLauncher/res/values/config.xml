@@ -16,6 +16,6 @@
 
 <resources>
     <!-- config_desktopColumns/Rows min value is 3, so it will add 3 to whatever value you set here -->
-    <integer name="config_desktopColumns">3</integer>
-    <integer name="config_desktopRows">5</integer>
+    <integer name="config_desktopColumns">4</integer>
+    <integer name="config_desktopRows">4</integer>
 </resources>

@@ -52,6 +52,9 @@ BOARD_USES_QCOM_LIBS := true
 BOARD_USES_QCOM_LIBRPC := true
 # BOARD_USES_QCOM_GPS := true
 
+# At least /proc/config.gz is listing 6225
+BOARD_VENDOR_QCOM_AMSS_VERSION := 6225
+
 BOARD_GPS_LIBRARIES := libloc
 BOARD_USES_GPSSHIM := true
 BOARD_GPS_NEEDS_XTRA := true
@@ -65,7 +68,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 BOARD_CUSTOM_USB_CONTROLLER := ../../device/odys/space/UsbController.cpp
 
-BOARD_USE_FROYO_LIBCAMERA := true
+# BOARD_USE_FROYO_LIBCAMERA := true
 
 TARGET_PROVIDES_LIBRIL := true
 TARGET_PROVIDES_LIBAUDIO := true

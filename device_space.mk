@@ -104,8 +104,9 @@ PRODUCT_COPY_FILES += \
 	device/odys/space/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
 	device/odys/space/AudioFilter.csv:system/etc/AudioFilter.csv \
 	device/odys/space/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
-	device/odys/space/vold.fstab:system/etc/vold.fstab \
-	device/odys/space/media_profiles.xml:system/etc/media_profiles.xml
+	device/odys/space/vold.fstab:system/etc/vold.fstab
+
+# 	device/odys/space/media_profiles.xml:system/etc/media_profiles.xml
 
 # Proprietary files - BLOBS
 
