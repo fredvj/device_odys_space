@@ -71,16 +71,16 @@ struct board_property{
 #define CAMERA_MIN_CONTRAST 0
 #define CAMERA_MAX_CONTRAST 4
 #define CAMERA_MIN_SHARPNESS 0
-#define CAMERA_MIN_EXPOSURE_COMPENSATION -2
+#define CAMERA_MIN_EXPOSURE_COMPENSATION 0
 #define CAMERA_MAX_SHARPNESS 4
 #define CAMERA_MIN_SATURATION 0
 #define CAMERA_MAX_SATURATION 4
-#define CAMERA_MAX_EXPOSURE_COMPENSATION 2
+#define CAMERA_MAX_EXPOSURE_COMPENSATION 8
 #define CAMERA_DEF_SHARPNESS 2
-#define CAMERA_DEF_CONTRAST 2
+#define CAMERA_DEF_CONTRAST 3
 #define CAMERA_DEF_SATURATION 2
-#define CAMERA_DEF_EXPOSURE_COMPENSATION "0"
-#define CAMERA_EXPOSURE_COMPENSATION_STEP 1
+#define CAMERA_DEF_EXPOSURE_COMPENSATION "2.0"
+#define CAMERA_EXPOSURE_COMPENSATION_STEP 2
 
 #define CEILING16(x) (x&0xfffffff0)
 #define PAD_TO_WORD(x) ((x&1) ? x+1 : x)
@@ -132,19 +132,6 @@ typedef struct {
 	int16_t  altitude;   /* meters                          */
 } camera_position_type;
 typedef uint8_t jpeg_event_t;
-
-typedef enum {
-	CAMERA_WB_MIN_MINUS_1,
-	CAMERA_WB_AUTO = 1,  /* This list must match aeecamera.h */
-	CAMERA_WB_CUSTOM,
-	CAMERA_WB_INCANDESCENT,
-	CAMERA_WB_FLUORESCENT,
-	CAMERA_WB_DAYLIGHT,
-	CAMERA_WB_CLOUDY_DAYLIGHT,
-	CAMERA_WB_TWILIGHT,
-	CAMERA_WB_SHADE,
-	CAMERA_WB_MAX_PLUS_1
-} camera_wb_type;
 
 typedef enum {
     CAMERA_ANTIBANDING_OFF,
@@ -275,7 +262,7 @@ enum camera_ops {
     CAMERA_START_RECORDING,
     CAMERA_STOP_RECORDING,
     CAMERA_GET_PARM_MAXZOOM,
-    CAMERA_START_RAW_SNAPSHOT,
+    CAMERA_GET_PARM_ZOOMRATIOS,
     CAMERA_SET_PARM_LED_MODE,
     CAMERA_GET_PARM_AF_SHARPNESS,
     CAMERA_SET_MOTION_ISO,
@@ -285,6 +272,7 @@ enum camera_ops {
     CAMERA_PREPARE_SNAPSHOT,
     CAMERA_SET_FPS_MODE,
     CAMERA_SET_PARM_SCENE_MODE,
+    CAMERA_START_RAW_SNAPSHOT,
 };
 
 typedef enum {
@@ -401,7 +389,7 @@ public:
     void receiveJpegPicture(void);
     void jpeg_set_location();
     void receiveJpegPictureFragment(uint8_t *buf, uint32_t size);
-    void notifyShutter(common_crop_t *crop);
+    void notifyShutter(common_crop_t *crop, bool mPlayShutterSoundOnly);
     void receive_camframetimeout();
 
 private:
@@ -473,11 +461,13 @@ private:
         PmemPool(const char *pmem_pool,
                  int control_camera_fd, int flags, int pmem_type,
                  int buffer_size, int num_buffers,
-                 int frame_size,
-                 const char *name);
+                 int frame_size, int cbcr_offset,
+                 int yoffset, const char *name);
         virtual ~PmemPool();
         int mFd;
         int mPmemType;
+        int mCbCrOffset;
+        int myOffset;
         int mCameraControlFd;
         uint32_t mAlignedSize;
         struct pmem_region mSize;
@@ -490,7 +480,7 @@ private:
     sp<PmemPool> mDisplayHeap;
     sp<AshmemPool> mJpegHeap;
     sp<PmemPool> mRawSnapShotPmemHeap;
-    sp<PmemPool> mPostViewHeap;
+    sp<AshmemPool> mRawSnapshotAshmemHeap;
 
 
     bool startCamera();
@@ -545,11 +535,14 @@ private:
     void findSensorType();
 
     status_t setPreviewSize(const CameraParameters& params);
+    status_t setJpegThumbnailSize(const CameraParameters& params);
     status_t setPreviewFrameRate(const CameraParameters& params);
+    status_t setPreviewFrameRateMode(const CameraParameters& params);
     status_t setPictureSize(const CameraParameters& params);
     status_t setJpegQuality(const CameraParameters& params);
     status_t setAntibanding(const CameraParameters& params);
     status_t setEffect(const CameraParameters& params);
+    status_t setExposureCompensation(const CameraParameters &params);
     status_t setAutoExposure(const CameraParameters& params);
     status_t setWhiteBalance(const CameraParameters& params);
     status_t setFlash(const CameraParameters& params);
@@ -558,7 +551,6 @@ private:
     status_t setZoom(const CameraParameters& params);
     status_t setFocusMode(const CameraParameters& params);
     status_t setBrightness(const CameraParameters& params);
-    status_t setExposureCompensation(const CameraParameters& params);
     status_t setOrientation(const CameraParameters& params);
     status_t setLensshadeValue(const CameraParameters& params);
     status_t setISOValue(const CameraParameters& params);
@@ -566,8 +558,11 @@ private:
     status_t setSharpness(const CameraParameters& params);
     status_t setContrast(const CameraParameters& params);
     status_t setSaturation(const CameraParameters& params);
+    status_t setContinuousAf(const CameraParameters& params);
+    status_t setTouchAfAec(const CameraParameters& params);
+    status_t setSceneMode(const CameraParameters& params);
+
     void setGpsParameters();
-    void storePreviewFrameForPostview();
     bool isValidDimension(int w, int h);
 
     Mutex mLock;
@@ -620,6 +615,7 @@ private:
     int mHJR;
     struct msm_frame frames[kPreviewBufferCount];
     struct msm_frame *recordframes;
+    bool *record_buffers_tracking_flag;
     bool mInPreviewCallback;
     bool mUseOverlay;
     sp<Overlay>  mOverlay;
@@ -632,6 +628,10 @@ private:
     int mDebugFps;
     int kPreviewBufferCountActual;
     int previewWidth, previewHeight;
+    bool mSnapshotDone;
+    int videoWidth, videoHeight;
+
+    int mThumbnailWidth, mThumbnailHeight;
 };
 
 }; // namespace android

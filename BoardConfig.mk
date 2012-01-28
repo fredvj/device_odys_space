@@ -69,6 +69,7 @@ BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 BOARD_CUSTOM_USB_CONTROLLER := ../../device/odys/space/UsbController.cpp
 
 # BOARD_USE_FROYO_LIBCAMERA := true
+BOARD_USE_CAF_LIBCAMERA := true
 
 TARGET_PROVIDES_LIBRIL := true
 TARGET_PROVIDES_LIBAUDIO := true

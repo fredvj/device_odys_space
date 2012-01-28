@@ -1,12 +1,15 @@
 on early-init
     start ueventd
 
-# Let's see if we can get charging as well
+# Let's keep charging if USB is connected
 
 on boot-pause
-    exec system/bin/battery_charging
+    exec /sbin/battery_charging
 
 on init
+
+sysclktz 1
+
     export PATH /sbin
     export ANDROID_ROOT /system
     export ANDROID_DATA /data
@@ -43,7 +46,6 @@ service ueventd /sbin/ueventd
 service recovery /sbin/recovery
 
 service adbd /sbin/adbd recovery
-#    disabled
 
 on property:persist.service.adb.enable=1
     start adbd

@@ -15,21 +15,6 @@
  * 02110-1301, USA.
  *
  */
-/*-----------------------------------------------------------------------------------------
-  when         who      what, where, why                   comment tag
-  ----------   ----     ---------------------------------  ------------------------
- 2011-05-19   lijing   add two camera support             ZTE_CAM_LJ_20110519
- 2011-02-21   wt       add flash ioctl id                 ZTE_CAM_WT_20110221 
- 2010-12-15   lijing   add Touch AF and AntiShake         ZTE_CAM_LJ_20101214
-                        function
-  2010-10-26   zt       add the interface of exposure      ZTE_ZT_CAM_20101026_04
-                        compensation for foryo
-  2010-08-20   jia      remove additional CFG_MAX          ZTE_MSM_CAMERA_JIA_001
-  2010-03-03   zh.shj   add config for lens shading        ZTE_MSM_CAMERA_ZHSHJ_001
-  2010-02-21   zh.shj   add levels for sharpness values    ZTE_MSM_CAMERA_ZHSHJ_001
-  2010-02-04   zh.shj   Add parameters for sharpness,WB,   ZTE_MSM_CAMERA_ZHSHJ_001
-                        ISO,Antibanding & brightness setting
-------------------------------------------------------------------------------------------*/
 
 #ifndef __LINUX_MSM_CAMERA_H
 #define __LINUX_MSM_CAMERA_H
@@ -111,6 +96,19 @@
 #define MSM_CAM_IOCTL_SENSOR_IO_CFG \
 	_IOW(MSM_CAM_IOCTL_MAGIC, 21, struct sensor_cfg_data *)
 
+#define MSM_CAM_IOCTL_CONFIG_VPE \
+	_IOW(MSM_CAM_IOCTL_MAGIC, 27, struct msm_camera_vpe_cfg_cmd *)
+
+#define MSM_CAM_IOCTL_AXI_VPE_CONFIG \
+	_IOW(MSM_CAM_IOCTL_MAGIC, 28, struct msm_camera_vpe_cfg_cmd *)
+
+#define MSM_CAMERA_LED_OFF  0
+#define MSM_CAMERA_LED_LOW  1
+#define MSM_CAMERA_LED_HIGH 2
+
+#define MSM_CAMERA_STROBE_FLASH_NONE 0
+#define MSM_CAMERA_STROBE_FLASH_XENON 1
+
 #define MSM_CAM_IOCTL_FLASH_LED_CFG \
 	_IOW(MSM_CAM_IOCTL_MAGIC, 22, unsigned *)
 
@@ -122,15 +120,8 @@
 
 #define MSM_CAM_IOCTL_AF_CTRL \
 	_IOR(MSM_CAM_IOCTL_MAGIC, 25, struct msm_ctrl_cmt_t *)
-
 #define MSM_CAM_IOCTL_AF_CTRL_DONE \
 	_IOW(MSM_CAM_IOCTL_MAGIC, 26, struct msm_ctrl_cmt_t *)
-
-#define MSM_CAM_IOCTL_CONFIG_VPE \
-	_IOW(MSM_CAM_IOCTL_MAGIC, 27, struct msm_camera_vpe_cfg_cmd *)
-
-#define MSM_CAM_IOCTL_AXI_VPE_CONFIG \
-	_IOW(MSM_CAM_IOCTL_MAGIC, 28, struct msm_camera_vpe_cfg_cmd *)
 
 #define MSM_CAM_IOCTL_STROBE_FLASH_CFG \
 	_IOW(MSM_CAM_IOCTL_MAGIC, 29, uint32_t *)
@@ -141,32 +132,7 @@
 #define MSM_CAM_IOCTL_STROBE_FLASH_RELEASE \
 	_IO(MSM_CAM_IOCTL_MAGIC, 31)
 
-#define MSM_CAM_IOCTL_FLASH_CTRL \
-	_IOW(MSM_CAM_IOCTL_MAGIC, 32, struct flash_ctrl_data *)
-
-#define MSM_CAM_IOCTL_ERROR_CONFIG \
-	_IOW(MSM_CAM_IOCTL_MAGIC, 33, uint32_t *)
-
-#define MSM_CAM_IOCTL_ABORT_CAPTURE \
-	_IO(MSM_CAM_IOCTL_MAGIC, 34)
-
-#define MSM_CAM_IOCTL_SET_FD_ROI \
-	_IOW(MSM_CAM_IOCTL_MAGIC, 35, struct fd_roi_info *)
-
-#define MSM_CAM_IOCTL_GET_CAMERA_INFO \
-	_IOR(MSM_CAM_IOCTL_MAGIC, 36, struct msm_camera_info *)
-
-#define MSM_CAM_IOCTL_FLASH_LED_ON_OFF_CFG \
-	_IOW(MSM_CAM_IOCTL_MAGIC, 37, uint32_t *)
-	
-#define MSM_CAMERA_LED_OFF  0
-#define MSM_CAMERA_LED_LOW  1
-#define MSM_CAMERA_LED_HIGH 2
-
-#define MSM_CAMERA_STROBE_FLASH_NONE 0
-#define MSM_CAMERA_STROBE_FLASH_XENON 1
-
-#define MSM_MAX_CAMERA_SENSORS  5
+#define MAX_SENSOR_NUM  3
 #define MAX_SENSOR_NAME 32
 
 #define PP_SNAP  0x01
@@ -385,11 +351,6 @@ struct outputCfg {
 #define OUTPUT_TYPE_V		(1<<3)
 #define OUTPUT_TYPE_L		(1<<4)
 
-struct fd_roi_info {
-	void *info;
-	int info_len;
-};
-
 struct msm_frame {
 	struct timespec ts;
 	int path;
@@ -400,11 +361,7 @@ struct msm_frame {
 
 	void *cropinfo;
 	int croplen;
-	uint32_t error_code;
-	struct fd_roi_info roi_info;
 };
-
-#define MSM_CAMERA_ERR_MASK (0xFFFFFFFF & 1)
 
 struct msm_stats_buf {
 	int type;
@@ -469,34 +426,9 @@ struct msm_snapshot_pp_status {
 #define CFG_GET_PICT_P_PL		25
 #define CFG_GET_AF_MAX_STEPS		26
 #define CFG_GET_PICT_MAX_EXP_LC		27
-/* ZTE_MSM_CAMERA_ZHSHJ_001 */
-#define CFG_SET_SATURATION          28
-#define CFG_SET_SHARPNESS           29
-
-/*
- * Commented by zh.shj
- *
- * Add definitions of
- * autofocus with keypress,
- * ISO
- */
-#define CFG_SET_AF                  30
-#define CFG_SET_ISO                 31
-
-/* ZTE_ZT_CAM_20101026_04
- * add the interface of exposure compensation for foryo
- */
-#define CFG_SET_EXPOSURE_COMPENSATION   32
-
-/*
- * ZTE_CAM_LJ_20101214
- * add Touch AF and AntiShake function
- */
-#define CFG_SET_AEC_RIO             33
-#define CFG_SET_ANTI_SHAKE          34
-#define CFG_MAX                     35
 #define CFG_SEND_WB_INFO    28
-//#define CFG_MAX 			29
+#define CFG_MAX 			29
+#define CFG_SET_SCENE 		30
 
 #define MOVE_NEAR	0
 #define MOVE_FAR	1
@@ -505,6 +437,17 @@ struct msm_snapshot_pp_status {
 #define SENSOR_SNAPSHOT_MODE		1
 #define SENSOR_RAW_SNAPSHOT_MODE	2
 #define SENSOR_VIDEO_120FPS_MODE	3
+
+#define CAMERA_WB_MIN_MINUS_1 0
+#define CAMERA_WB_AUTO 1  /* This list must match aeecamera.h */
+#define CAMERA_WB_CUSTOM 2
+#define CAMERA_WB_INCANDESCENT 3
+#define CAMERA_WB_FLUORESCENT 4
+#define CAMERA_WB_DAYLIGHT 5
+#define CAMERA_WB_CLOUDY_DAYLIGHT 6
+#define CAMERA_WB_TWILIGHT 7
+#define CAMERA_WB_SHADE 8
+#define CAMERA_WB_MAX_PLUS_1 9
 
 #define SENSOR_QTR_SIZE			0
 #define SENSOR_FULL_SIZE		1
@@ -520,102 +463,31 @@ struct msm_snapshot_pp_status {
 #define CAMERA_EFFECT_WHITEBOARD	6
 #define CAMERA_EFFECT_BLACKBOARD	7
 #define CAMERA_EFFECT_AQUA		8
-/* ZTE_MSM_CAMERA_ZHSHJ_001 */
-#define CAMERA_EFFECT_BULISH	    9
-#define CAMERA_EFFECT_REDDISH	    10
-#define CAMERA_EFFECT_GREENISH	    11
-#define CAMERA_EFFECT_MAX		    12
+#define CAMERA_EFFECT_MAX		9
+#define CAMERA_EFFECT_BLUISH		10
+#define CAMERA_EFFECT_GREENISH		11
+#define CAMERA_EFFECT_REDDISH		12
 
-/* White Balance Modes */
-#define CAMERA_WB_MODE_AWB              1
-#define CAMERA_WB_MODE_CUSTOM           2
-#define CAMERA_WB_MODE_INCANDESCENT     3
-#define CAMERA_WB_MODE_FLUORESCENT      4
-#define CAMERA_WB_MODE_SUNLIGHT         5
-#define CAMERA_WB_MODE_CLOUDY           6
-#define CAMERA_WB_MODE_NIGHT            7
-#define CAMERA_WB_MODE_SHADE            8
-#define CAMERA_WB_MODE_MAX              9
-
-/* Brightness */
-#define CAMERA_BRIGHTNESS_0             0
-#define CAMERA_BRIGHTNESS_1             1
-#define CAMERA_BRIGHTNESS_2             2
-#define CAMERA_BRIGHTNESS_3             3
-#define CAMERA_BRIGHTNESS_4             4
-#define CAMERA_BRIGHTNESS_5             5
-#define CAMERA_BRIGHTNESS_6             6
-#define CAMERA_BRIGHTNESS_MAX           7
-
-/* Contrast */
-#define CAMERA_CONTRAST_0               0
-#define CAMERA_CONTRAST_1               1
-#define CAMERA_CONTRAST_2               2
-#define CAMERA_CONTRAST_3               3
-#define CAMERA_CONTRAST_4               4
-#define CAMERA_CONTRAST_MAX             5
-
-/* Saturation */
-#define CAMERA_SATURATION_0             0
-#define CAMERA_SATURATION_1             1
-#define CAMERA_SATURATION_2             2
-#define CAMERA_SATURATION_3             3
-#define CAMERA_SATURATION_4             4
-#define CAMERA_SATURATION_MAX           5
-
-/* ZTE_ZT_CAM_20101026_04
- * add the interface of exposure compensation for foryo
- * Exposure value
- */
-#define CAMERA_EXPOSURE_0               0
-#define CAMERA_EXPOSURE_1               1
-#define CAMERA_EXPOSURE_2               2
-#define CAMERA_EXPOSURE_3               3
-#define CAMERA_EXPOSURE_4               4
-#define CAMERA_EXPOSURE_MAX             5
-
-/*
- * Commented by zh.shj
- *
- * Add definitions of
- * ISO values,
- * antibanding values,
- * sharpness
- */
-#define CAMERA_ISO_SET_AUTO             0
-#define CAMERA_ISO_SET_HJR              1
-#define CAMERA_ISO_SET_100              2
-#define CAMERA_ISO_SET_200              3
-#define CAMERA_ISO_SET_400              4
-#define CAMERA_ISO_SET_800              5
-#define CAMERA_ISO_SET_MAX              6
-
-#define CAMERA_ANTIBANDING_SET_OFF      0
-#define CAMERA_ANTIBANDING_SET_60HZ     1
-#define CAMERA_ANTIBANDING_SET_50HZ     2
-#define CAMERA_ANTIBANDING_SET_AUTO     3
-#define CAMERA_ANTIBANDING_MAX          4
-
-#define CAMERA_SHARPNESS_0              0
-#define CAMERA_SHARPNESS_1              1
-#define CAMERA_SHARPNESS_2              2
-#define CAMERA_SHARPNESS_3              3
-#define CAMERA_SHARPNESS_4              4
-#define CAMERA_SHARPNESS_5              5
-#define CAMERA_SHARPNESS_6              6
-#define CAMERA_SHARPNESS_7              7
-#define CAMERA_SHARPNESS_8              8
-#define CAMERA_SHARPNESS_9              9
-#define CAMERA_SHARPNESS_10             10
-#define CAMERA_SHARPNESS_MAX            11
-
-
-/*
- * ZTE_CAM_LJ_20101214
- * add definitions of AntiShake values
- */
-#define CAMERA_ANTISHAKE_OFF            0
-#define CAMERA_ANTISHAKE_ON             1
+enum {
+  CAMERA_BESTSHOT_OFF = 0,
+  CAMERA_BESTSHOT_LANDSCAPE = 1,
+  CAMERA_BESTSHOT_SNOW,
+  CAMERA_BESTSHOT_BEACH,
+  CAMERA_BESTSHOT_SUNSET,
+  CAMERA_BESTSHOT_NIGHT,
+  CAMERA_BESTSHOT_PORTRAIT,
+  CAMERA_BESTSHOT_BACKLIGHT,
+  CAMERA_BESTSHOT_SPORTS,
+  CAMERA_BESTSHOT_ANTISHAKE,
+  CAMERA_BESTSHOT_FLOWERS,
+  CAMERA_BESTSHOT_CANDLELIGHT,
+  CAMERA_BESTSHOT_FIREWORKS,
+  CAMERA_BESTSHOT_PARTY,
+  CAMERA_BESTSHOT_NIGHT_PORTRAIT,
+  CAMERA_BESTSHOT_THEATRE,
+  CAMERA_BESTSHOT_ACTION,
+  CAMERA_BESTSHOT_MAX
+} ;
 
 struct sensor_pict_fps {
 	uint16_t prevfps;
@@ -642,18 +514,6 @@ struct wb_info_cfg {
 	uint16_t green_gain;
 	uint16_t blue_gain;
 };
-
-/*
- * ZTE_CAM_LJ_20101214
- * Add new type used for Touch AF function
- */
-typedef struct {
-	uint16_t x;
-	uint16_t y;
- uint16_t preview_width;
- uint16_t preview_height;
-} aec_rio_cfg;
-
 struct sensor_cfg_data {
 	int cfgtype;
 	int mode;
@@ -661,81 +521,23 @@ struct sensor_cfg_data {
 	uint8_t max_steps;
 
 	union {
-        int8_t effect;
-        uint8_t lens_shading;
-        uint16_t prevl_pf;
-        uint16_t prevp_pl;
-        uint16_t pictl_pf;
-        uint16_t pictp_pl;
-        uint32_t pict_max_exp_lc;
-        uint16_t p_fps;
-        
-        /*
-         * Commented by zh.shj, ZTE_MSM_CAMERA_ZHSHJ_001
-         */
-        int8_t wb_mode;
-        int8_t brightness;
-        int8_t contrast;
-        int8_t saturation;
-        int8_t sharpness;
-        int8_t iso_val;
-        int8_t antibanding;
-        int8_t lensshading;
-        
-        /* ZTE_ZT_CAM_20101026_04
-         * add the interface of exposure compensation for foryo
-         */
-        int8_t exposure;
-        
-        struct sensor_pict_fps gfps;
-        struct exp_gain_cfg exp_gain;
-        struct focus_cfg focus;
-        struct fps_cfg fps;
-        struct wb_info_cfg wb_info;
-        
-        /*
-         * ZTE_CAM_LJ_20101214
-         * add variables used for Touch AF and AntiShake function
-         */
-        aec_rio_cfg aec_rio;
-        int8_t antishake;
-
+		int8_t brightness;
+		int8_t effect;
+		int8_t wb;//add by lijiankun 2010-9-3
+		int8_t scene;//add by lijiankun 2010-9-11
+		uint8_t lens_shading;
+		uint16_t prevl_pf;
+		uint16_t prevp_pl;
+		uint16_t pictl_pf;
+		uint16_t pictp_pl;
+		uint32_t pict_max_exp_lc;
+		uint16_t p_fps;
+		struct sensor_pict_fps gfps;
+		struct exp_gain_cfg exp_gain;
+		struct focus_cfg focus;
+		struct fps_cfg fps;
+		struct wb_info_cfg wb_info;
 	} cfg;
-};
-
-enum flash_type {
-	LED_FLASH,
-	STROBE_FLASH,
-};
-
-enum strobe_flash_ctrl_type {
-	STROBE_FLASH_CTRL_INIT,
-	STROBE_FLASH_CTRL_CHARGE,
-	STROBE_FLASH_CTRL_RELEASE
-};
-
-struct strobe_flash_ctrl_data {
-	enum strobe_flash_ctrl_type type;
-	int charge_en;
-};
-
-struct msm_camera_info {
-	int num_cameras;
-	uint8_t has_3d_support[MSM_MAX_CAMERA_SENSORS];
-	uint8_t is_internal_cam[MSM_MAX_CAMERA_SENSORS];
-
-   /*
-    * add two camera support ZTE_CAM_LJ_20110519
-    */
-	uint32_t s_mount_angle[MSM_MAX_CAMERA_SENSORS];
-};
-
-struct flash_ctrl_data {
-	int flashtype;
-	union {
-		int led_state;
-		struct strobe_flash_ctrl_data strobe_ctrl;
-	} ctrl_data;
 };
 
 #define GET_NAME			0
