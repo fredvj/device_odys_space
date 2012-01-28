@@ -84,6 +84,11 @@ PRODUCT_COPY_FILES += \
 # PRODUCT_COPY_FILES += \
 # 	device/odys/space/prebuilt/initlogo.rle:root/initlogo.rle
 
+# APNS
+
+PRODUCT_COPY_FILES += \
+	device/odys/space/prebuilt/apns-conf.xml:system/etc/apns-conf.xml
+
 # Startup scripts
 # If would like to name it init.space.rc, we would have to change the kernel parameter
 
