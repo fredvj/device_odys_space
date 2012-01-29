@@ -85,14 +85,16 @@ PRODUCT_COPY_FILES += \
 # 	device/odys/space/prebuilt/initlogo.rle:root/initlogo.rle
 
 # APNS / SPN
-# It looks like Cyanogen has more power - apns-conf.xml get overwritten by
+# It looks like Cyanogen has more power - apns-conf.xml gets overwritten by
 # development/data/etc/apns-conf.xml
 #
 # Start here and edit:
 # vendor/cyanogen/prebuilt/etc/apns-conf.xml
 # copy to:
 # development/data/etc/apns-conf.xml
-# frameworks/base/core/res/res/xml/apns.xml (found this one pretty empty)
+#
+# Do not it here (would result in duplicate entries):
+# frameworks/base/core/res/res/xml/apns.xml
 
 PRODUCT_COPY_FILES += \
 	device/odys/space/prebuilt/apns-conf.xml:system/etc/apns-conf.xml \
