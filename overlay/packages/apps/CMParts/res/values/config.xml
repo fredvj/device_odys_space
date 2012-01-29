@@ -6,6 +6,6 @@
     <bool name="has_dual_notification_led">true</bool>
 
     <!-- Whether or not to display search button settings -->
-    <bool name="has_search_button">false</bool>
+    <bool name="has_search_button">true</bool>
 
 </resources>

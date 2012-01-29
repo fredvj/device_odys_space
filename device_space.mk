@@ -84,10 +84,19 @@ PRODUCT_COPY_FILES += \
 # PRODUCT_COPY_FILES += \
 # 	device/odys/space/prebuilt/initlogo.rle:root/initlogo.rle
 
-# APNS
+# APNS / SPN
+# It looks like Cyanogen has more power - apns-conf.xml get overwritten by
+# development/data/etc/apns-conf.xml
+#
+# Start here and edit:
+# vendor/cyanogen/prebuilt/etc/apns-conf.xml
+# copy to:
+# development/data/etc/apns-conf.xml
+# frameworks/base/core/res/res/xml/apns.xml (found this one pretty empty)
 
 PRODUCT_COPY_FILES += \
-	device/odys/space/prebuilt/apns-conf.xml:system/etc/apns-conf.xml
+	device/odys/space/prebuilt/apns-conf.xml:system/etc/apns-conf.xml \
+	device/odys/space/prebuilt/spn-conf.xml:system/etc/spn-conf.xml
 
 # Startup scripts
 # If would like to name it init.space.rc, we would have to change the kernel parameter
@@ -109,9 +118,8 @@ PRODUCT_COPY_FILES += \
 	device/odys/space/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
 	device/odys/space/AudioFilter.csv:system/etc/AudioFilter.csv \
 	device/odys/space/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
-	device/odys/space/vold.fstab:system/etc/vold.fstab
-
-# 	device/odys/space/media_profiles.xml:system/etc/media_profiles.xml
+	device/odys/space/vold.fstab:system/etc/vold.fstab \
+	device/odys/space/media_profiles.xml:system/etc/media_profiles.xml
 
 # Proprietary files - BLOBS
 
