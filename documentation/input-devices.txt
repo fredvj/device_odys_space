@@ -1,0 +1,104 @@
+Looks like we have more work to do:
+
+http://source.android.com/tech/input/overview.html
+
+---
+
+input: 7k_ffa_keypad as /devices/virtual/input/input0
+input: 7k_handset as /devices/virtual/input/input1
+input: ft5x0x_ts as /devices/virtual/input/input2
+
+adb shell dumpsys window:
+-------------------------
+Event Hub State:
+  HaveFirstKeyboard: false
+  FirstKeyboardId: 0x10000
+  Devices:
+    0x10000: ft5x0x_ts (aka device 0 - first keyboard)
+      Classes: 0x00000015
+      Path: /dev/input/event2
+      KeyLayoutFile: 
+    0x10001: 7k_handset
+      Classes: 0x00000081
+      Path: /dev/input/event1
+      KeyLayoutFile: 
+    0x10002: 7k_ffa_keypad
+      Classes: 0x00000001
+      Path: /dev/input/event0
+      KeyLayoutFile: 
+
+Input Reader State:
+  Device 0x0: ft5x0x_ts
+    Sources: 0x00001103
+    KeyboardType: 1
+    Motion Ranges:
+      X: min=0.000, max=800.000, flat=0.000, fuzz=1.000
+      Y: min=0.000, max=480.000, flat=0.000, fuzz=1.000
+      Pressure: min=0.000, max=1.000, flat=0.000, fuzz=0.000
+      Size: min=0.000, max=1.000, flat=0.000, fuzz=0.000
+      TouchMajor: min=0.000, max=932.952, flat=0.000, fuzz=0.000
+      TouchMinor: min=0.000, max=932.952, flat=0.000, fuzz=0.000
+      ToolMajor: min=0.000, max=932.952, flat=0.000, fuzz=0.000
+      ToolMinor: min=0.000, max=932.952, flat=0.000, fuzz=0.000
+    Keyboard Input Mapper:
+      AssociatedDisplayId: 0
+      KeyboardType: 1
+      KeyDowns: 0 keys currently down
+      MetaState: 0x0
+      DownTime: 12576108606298
+    Touch Input Mapper:
+      AssociatedDisplayId: 0
+      UseBadTouchFilter: false
+      UseAveragingTouchFilter: false
+      UseJumpyTouchFilter: false
+      Raw Axes:
+        X: min=0, max=800, flat=0, fuzz=0
+        Y: min=0, max=480, flat=0, fuzz=0
+        Pressure: unknown range
+        TouchMajor: min=0, max=255, flat=0, fuzz=0
+        TouchMinor: unknown range
+        ToolMajor: min=0, max=255, flat=0, fuzz=0
+        ToolMinor: unknown range
+        Orientation: unknown range
+      Calibration:
+        touch.touchSize.calibration: pressure
+        touch.toolSize.calibration: linear
+        touch.pressure.calibration: amplitude
+        touch.pressure.source: touch
+        touch.size.calibration: normalized
+        touch.orientation.calibration: none
+      SurfaceWidth: 800px
+      SurfaceHeight: 480px
+      SurfaceOrientation: 0
+      Translation and Scaling Factors:        XOrigin: 0
+        YOrigin: 0
+        XScale: 1.000
+        YScale: 1.000
+        XPrecision: 1.000
+        YPrecision: 1.000
+        GeometricScale: 1.000
+        ToolSizeLinearScale: 1.882
+        ToolSizeLinearBias: 0.000
+        ToolSizeAreaScale: 0.000
+        ToolSizeAreaBias: 0.000
+        PressureScale: 0.004
+        SizeScale: 0.004
+        OrientationSCale: 0.000
+  Device 0x10001: 7k_handset
+    Sources: 0x80000101
+    KeyboardType: 1
+    Keyboard Input Mapper:
+      AssociatedDisplayId: 0
+      KeyboardType: 1
+      KeyDowns: 0 keys currently down
+      MetaState: 0x0
+      DownTime: 12577382581289
+  Device 0x10002: 7k_ffa_keypad
+    Sources: 0x00000101
+    KeyboardType: 1
+    Keyboard Input Mapper:
+      AssociatedDisplayId: 0
+      KeyboardType: 1
+      KeyDowns: 0 keys currently down
+      MetaState: 0x0
+      DownTime: 0
