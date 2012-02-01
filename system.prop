@@ -24,4 +24,11 @@ ro.build.lightsensor=NO
 dalvik.vm.heapsize=48m
 net.bt.name=CM7-Space
 ro.teather.denied=false
-
+ro.rommanager.developerid=cyanogenmod
+#
+# Storage related settings
+#
+ro.phone_storage=1
+ro.additionalmounts=/mnt/sdcard/external_sd
+ro.vold.switchablerepair=/mnt/sdcard,/mnt/sdcard/external_sd
+persist.sys.vold.switchexternal=1
