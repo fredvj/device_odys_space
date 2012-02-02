@@ -79,6 +79,16 @@ PRODUCT_COPY_FILES += \
 	frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
 	frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml
 
+# Qualcomm permission files & framework extenstions ?
+
+PRODUCT_COPY_FILE += \
+	device/odys/space/config/com.qualcomm.location.vzw_library.xml:system/etc/permissions/com.qualcomm.location.vzw_library.xml \
+	device/odys/space/config/qcnvitems.xml:system/etc/permissions/qcnvitems.xml \
+	device/odys/space/config/qcrilhook.xml:system/etc/permissions/qcrilhook.xml \
+	device/odys/space/config/com.qualcomm.location.vzw_library.jar:system/framework/com.qualcomm.location.vzw_library.jar \
+	device/odys/space/config/qcnvitems.jar:system/framework/qcnvitems.jar \
+	device/odys/space/config/qcrilhook.jar:system/framework/qcrilhook.jar
+
 
 # Boot logo
 
