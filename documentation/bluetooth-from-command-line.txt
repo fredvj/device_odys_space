@@ -1,0 +1,5 @@
+# Power on Bluetooth
+echo 1 > /sys/class/rfkill/rfkill0/state
+
+# Load the firmware & attach to device
+/system/bin/sh /system/etc/init.qcom.bt.sh
