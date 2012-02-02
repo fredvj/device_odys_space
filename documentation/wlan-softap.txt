@@ -1,0 +1,9 @@
+# 2012-02-02
+#
+
+To start the software based access point:
+
+insmod /system/lib/modules/libra.ko con_mode=1
+
+iwconfig should now list a device called "softap.0"
+
