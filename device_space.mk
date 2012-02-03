@@ -172,7 +172,8 @@ PRODUCT_COPY_FILES += \
 # Bluetooth helpers
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/hci_qcomm_init:system/bin/hci_qcomm_init
+	vendor/odys/space/proprietary/hci_qcomm_init:system/bin/hci_qcomm_init \
+	vendor/odys/space/proprietary/hciattach:system/bin/hciattach
 
 # Radio and associated libraries
 

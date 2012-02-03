@@ -3,3 +3,9 @@ echo 1 > /sys/class/rfkill/rfkill0/state
 
 # Load the firmware & attach to device
 /system/bin/sh /system/etc/init.qcom.bt.sh
+
+# 2012-02-02
+# hciattach did not speak to qualcomm
+# Original exeutable is working okay
+# Will have to review source if we need something special in
+# Boardconfig.mk
