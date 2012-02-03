@@ -9,7 +9,7 @@
 
 USB Charging            : Okay
 USB ADB                 : Okay
-USB Mass Strorage       : Okay - Micro SD only
+USB Mass Strorage       : Okay - internal / external - needs testing
 Video                   : Okay - needs testing
 Audio                   : Okay - needs testing
 			: See GSM below. Microphone needs testing
@@ -30,13 +30,13 @@ GSM                     : Yes - Is asking for network unlock
 GSM Data		: Yes
 GSM Voice		: Yes - Microphone not working?
 GSM SMS			: Yes
-Bluetooth               : No
+Bluetooth               : Okay - needs testing
 Camera                  : No - crashes
 			: HW: MT9D112 (Aptina 2 Mp camera enabled in kernel)
 			:     Needs further investigation
 			:     This would match the Odys datasheet
 			:     Others are enabled as well
-Keyboard                : Android is complaining
+Keyboard                : Still work to do
 Memory                  : 256MB device - needs special parameters?
 
 #
