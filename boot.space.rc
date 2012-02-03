@@ -144,7 +144,7 @@ service wifipreloader /system/bin/sh /system/etc/init.qcom.sdio.sh 1
     disabled
     oneshot
 
-service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
+service hciattach /system/bin/sh /system/etc/init.bt.sh
     user bluetooth
     group qcom_oncrpc bluetooth net_bt_admin
     disabled

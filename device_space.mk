@@ -173,7 +173,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/hci_qcomm_init:system/bin/hci_qcomm_init \
-	vendor/odys/space/proprietary/hciattach:system/bin/hciattach
+	device/odys/space/init.bt.sh:system/etc/init.bt.sh
 
 # Radio and associated libraries
 
@@ -286,7 +286,6 @@ PRODUCT_COPY_FILES += \
 # Service and additional init script
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
 	vendor/odys/space/proprietary/etc/init.qcom.coex.sh:system/etc/init.qcom.coex.sh \
 	vendor/odys/space/proprietary/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
 	vendor/odys/space/proprietary/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
