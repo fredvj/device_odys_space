@@ -4,9 +4,18 @@ http://source.android.com/tech/input/overview.html
 
 ---
 
-input: 7k_ffa_keypad as /devices/virtual/input/input0
-input: 7k_handset as /devices/virtual/input/input1
-input: ft5x0x_ts as /devices/virtual/input/input2
+input:	7k_ffa_keypad as /devices/virtual/input/input0
+	Hardware buttons like volume-up, volume-down
+	/dev/input/event0
+
+input:	7k_handset as /devices/virtual/input/input1
+	Headset connected, etc.
+	/dev/input/event1
+
+input:	ft5x0x_ts as /devices/virtual/input/input2
+	Touchscreen
+	/dev/input/event2
+
 
 adb shell dumpsys window:
 -------------------------

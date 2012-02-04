@@ -1,4 +1,4 @@
-# Inherit AOSP device configuration for blade.
+# Inherit AOSP device configuration for space.
 $(call inherit-product, device/odys/space/device_space.mk)
 
 # Inherit some common cyanogenmod stuff.

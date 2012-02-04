@@ -21,7 +21,7 @@ PRODUCT_PACKAGES += \
 
 # This is the list of libraries to include in the build
 PRODUCT_PACKAGES += \
-	sensors.space \
+	sensors.msm7k \
 	lights.space \
 	copybit.space \
 	gralloc.space \
@@ -155,8 +155,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
 	vendor/odys/space/proprietary/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
-	vendor/odys/space/proprietary/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
-	vendor/odys/space/proprietary/hw/sensors.7x27.so:system/lib/hw/sensors.7x27.so
+	vendor/odys/space/proprietary/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so
+
+#	vendor/odys/space/proprietary/hw/sensors.7x27.so:system/lib/hw/sensors.7x27.so
 
 
 # Graphic hardware

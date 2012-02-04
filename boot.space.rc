@@ -15,6 +15,8 @@ on init
 on fs
     mount yaffs2 mtd@persist /persist nosuid nodev
 
+    mount auto /dev/block/mmcblk0p2 /sd-ext
+
 on post-fs
     mkdir /data/cache_download 0771 system cache
     chown system cache /data/cache_download
@@ -155,8 +157,9 @@ service hciattach /system/bin/sh /system/etc/init.bt.sh
 # #    group system inet
 #     group system inet radio
 
-service netd /system/bin/netd
-    socket netd stream 0666 root system
+# "netd" is already in "init.rc" - removing duplicate
+# service netd /system/bin/netd
+#     socket netd stream 0666 root system
 
 service qmuxd /system/bin/qmuxd
 
