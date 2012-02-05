@@ -29,6 +29,6 @@ ro.rommanager.developerid=cyanogenmod
 # Storage related settings
 #
 ro.phone_storage=1
-ro.additionalmounts=/mnt/sdcard/external_sd
-ro.vold.switchablerepair=/mnt/sdcard,/mnt/sdcard/external_sd
+ro.additionalmounts=/mnt/emmc
+ro.vold.switchablerepair=/mnt/sdcard,/mnt/emmc
 persist.sys.vold.switchexternal=1

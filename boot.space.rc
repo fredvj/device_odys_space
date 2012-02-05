@@ -8,9 +8,12 @@ on boot-pause
 on init
     export HOME /
     export DOWNLOAD_CACHE /data/cache_download
-    export PHONE_STORAGE /mnt/sdcard/external_sd
+    export PHONE_STORAGE /mnt/emmc
 
     mkdir /persist 0771 system system
+
+    # create mountpoint for internal 4GB SanDisk
+    mkdir /mnt/emmc 0000 system system
 
 on fs
     mount yaffs2 mtd@persist /persist nosuid nodev
