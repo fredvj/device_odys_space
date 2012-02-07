@@ -26,9 +26,9 @@ WIFI_PRE_LOADER             := wifipreloader
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION      := VER_0_6_X
 
-# HOSTAPD_VERSION := VER_0_6_X
-# BOARD_WLAN_DEVICE := libra
-# BOARD_SOFTAP_DEVICE := libra
+HOSTAPD_VERSION             := VER_0_6_X
+BOARD_WLAN_DEVICE           := wlan0
+# BOARD_SOFTAP_DEVICE         := softap.0
 
 # WITH_JIT := true
 # ENABLE_JSC_JIT := true

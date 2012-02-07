@@ -20,9 +20,12 @@ PRODUCT_PACKAGES += \
 	Term
 
 # This is the list of libraries to include in the build
+# Sensors are ours
+# Lights coming from hardware/msm7k/liblights
+
 PRODUCT_PACKAGES += \
 	sensors.msm7k \
-	lights.space \
+	lights.msm7k \
 	copybit.space \
 	gralloc.space \
 	gps.space \
@@ -150,13 +153,15 @@ PRODUCT_COPY_FILES += \
 
 # Hardware libraries
 
-# copybit, gralloc and lights are not copied due to warnings
+# copybit and gralloc are copied from old ROM
 
 PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
-	vendor/odys/space/proprietary/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
-	vendor/odys/space/proprietary/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so
+	vendor/odys/space/proprietary/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so
 
+# lights and sensors - we are trying to bring our own
+
+# 	vendor/odys/space/proprietary/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so
 #	vendor/odys/space/proprietary/hw/sensors.7x27.so:system/lib/hw/sensors.7x27.so
 
 
@@ -284,6 +289,14 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/prebuilt/qcom_cfg.ini:system/etc/wifi/qcom_cfg.ini \
 	vendor/odys/space/proprietary/prebuilt/hostapd.conf:system/etc/wifi/hostapd.conf
 
+# Looks like they have to be in /system/etc/wifi/softap to get copied - let's give it a try
+
+PRODUCT_COPY_FILES += \
+        vendor/odys/space/proprietary/prebuilt/qcom_cfg.ini:system/etc/wifi/softap/qcom_cfg.ini \
+        vendor/odys/space/proprietary/prebuilt/hostapd.conf:system/etc/wifi/softap/hostapd.conf \
+	vendor/odys/space/proprietary/prebuilt/hostapd.deny:system/etc/wifi/softap/hostapd.deny \
+	vendor/odys/space/proprietary/prebuilt/hostapd.accept:system/etc/wifi/softap/hostapd.accept
+
 # Service and additional init script
 
 PRODUCT_COPY_FILES += \
@@ -301,11 +314,11 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/prebuilt/wifiwritemac:system/bin/wifiwritemac \
 	vendor/odys/space/proprietary/prebuilt/port-bridge:system/bin/port-bridge \
 	vendor/odys/space/proprietary/prebuilt/CKPD-daemon:system/bin/CKPD-daemon \
-	vendor/odys/space/proprietary/prebuilt/hostapd:system/bin/hostapd \
 	vendor/odys/space/proprietary/prebuilt/wiperiface:system/bin/wiperiface \
-	vendor/odys/space/proprietary/prebuilt/rmt_storage:system/bin/rmt_storage \
 	vendor/odys/space/proprietary/prebuilt/netmgrd:system/bin/netmgrd
 
+#	vendor/odys/space/proprietary/prebuilt/hostapd:system/bin/hostapd
+#	vendor/odys/space/proprietary/prebuilt/rmt_storage:system/bin/rmt_storage
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := odys_space

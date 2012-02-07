@@ -74,6 +74,8 @@ adb pull /persist/qcom/softap/qcom_cfg_default.ini $PROPS/prebuilt/
 adb pull /persist/qcom/softap/hostapd_default.conf $PROPS/prebuilt/
 adb pull /data/hostapd/qcom_cfg.ini $PROPS/prebuilt/
 adb pull /data/hostapd/hostapd.conf $PROPS/prebuilt/
+touch $PROPS/prebuilt/hostapd.deny
+touch $PROPS/prebuilt/hostapd.accept
 adb pull /etc/firmware/wlan/cfg.dat $PROPS/prebuilt/
 adb pull /etc/firmware/wlan/qcom_wapi_fw.bin $PROPS/prebuilt/
 adb pull /etc/firmware/wlan/qcom_fw.bin $PROPS/prebuilt/
