@@ -1,0 +1,74 @@
+# i2cdetect -l
+i2c-0	i2c       	MSM I2C adapter-PRI             	I2C adapter
+i2c-1	i2c       	MSM I2C adapter-AUX             	I2C adapter
+
+# i2cdetect -F "MSM I2C adapter-PRI"
+Functionalities implemented by /dev/i2c-0:
+I2C                              yes
+SMBus Quick Command              no
+SMBus Send Byte                  yes
+SMBus Receive Byte               yes
+SMBus Write Byte                 yes
+SMBus Read Byte                  yes
+SMBus Write Word                 yes
+SMBus Read Word                  yes
+SMBus Process Call               yes
+SMBus Block Write                yes
+SMBus Block Read                 no
+SMBus Block Process Call         no
+SMBus PEC                        yes
+I2C Block Write                  yes
+I2C Block Read                   yes
+
+# i2cdetect "MSM I2C adapter-PRI"
+Error: Can't use SMBus Quick Write command on this bus
+
+# i2cdetect -r "MSM I2C adapter-PRI"
+WARNING! This program can confuse your I2C bus, cause data loss and worse!
+I will probe file /dev/i2c-0 using read byte commands.
+I will probe address range 0x03-0x77.
+Continue? [Y/n] 
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: UU -- -- -- -- -- -- -- -- -- -- -- -- -- UU -- 
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- -- -- UU UU -- -- UU -- -- -- 
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+70: -- -- -- -- -- -- -- --                         
+
+# i2cdetect -r "MSM I2C adapter-AUX"
+WARNING! This program can confuse your I2C bus, cause data loss and worse!
+I will probe file /dev/i2c-1 using read byte commands.
+I will probe address range 0x03-0x77.
+Continue? [Y/n] 
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+70: -- -- -- -- -- -- -- --                         
+
+********************************************************************
+********************************************************************
+
+Devices on "MSM I2C adapter-PRI":
+
+Hex:	0x10, 0x1e, 0x38, 0x39, 0x3c
+Dec:	16, 30, 56, 57, 60
+
+Infos from /sys filesystem + i2cdump:
+-------------------------------------
++	0x10 (16)	s5k3e2fx	Samsung QSXGA Camera Chip
+-	0x1b (xx)	mt9p012_km
++	0x1e (30)	hmc5883		Honeywell 3-axis digital compass
+-	0x21 (xx)	mt9t013
+-	0x36 (xx)	mt9p012
++	0x38 (56)	bma150		Bosch Sensortec 3-axis accelerometer
++	0x39 (57)	ft5x0x_ts	FocalTech touchscreen
++	0x3c (60)	mt9d112		Aptina 2Mp digital image sensor
+
