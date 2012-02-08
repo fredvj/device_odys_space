@@ -80,13 +80,13 @@ static int poll__poll(struct sensors_poll_device_t *device,
 	usleep(EVENT_DELAY);
 
 	ret = rand() % (981 * 2);
-        data->acceleration.x = (float)(ret-981) / 100.0f * CONVERT;
+        data->acceleration.x = (float)(ret-981) / 100.0f;
 
 	ret = rand() % (981 * 2);
-        data->acceleration.y = (float)(ret-981) / 100.0f * CONVERT;
+        data->acceleration.y = (float)(ret-981) / 100.0f;
 
 	ret = rand() % (981 * 2);
-        data->acceleration.z = (float)(ret-981) / 100.0f * CONVERT;
+        data->acceleration.z = (float)(ret-981) / 100.0f;
 
 	data->timestamp += EVENT_DELAY * 1000;
 
