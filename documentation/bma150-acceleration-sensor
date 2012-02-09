@@ -1,0 +1,20 @@
+Android documentation:
+hardware/libhardware/include/hardware/sensors.h
+
+Kernel:
+The kernel is registering drivers for a SMB380/BMA150 device.
+The driver is accessable through "/dev/bma150".
+Newer kernel version would use misc input devices.
+
+Device:
+It looks like we have a BMA020. The difference between BMA020 and BMA150:
+
+BMA150 has the ability to measure it's ambient temperature.
+
+Trying to run the ioctl Odys Space is always returning 0.
+This would be okay for BMA020, but for BMA150 this translates into -30° celsius.
+
+Let us assume it really is a BMA020 using the wrong (newer) kernel driver.
+
+Datasheet is available here:
+http://www.mikrocontroller.net/attachment/119803/BMA020_DataSheet_1.1_080114.pdf
