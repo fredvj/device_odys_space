@@ -4,7 +4,18 @@
 #include <linux/ioctl.h>
 
 
-#define BMA150_NAME	"/dev/bma150"
+#define BMA150_NAME				"/dev/bma150"
+
+#define BMA150_CALIBRATION_FILE			"/system/etc/bma150.cal"
+
+#define BMA150_CALIBRATION_VERSION		0xaa
+
+struct bma150_calibration_data {
+	unsigned char version;
+	float offset_x;
+	float offset_y;
+	float offset_z;
+};
 
 #define BMA150_MAJOR    100
 #define BMA150_MINOR    3
