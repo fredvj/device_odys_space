@@ -12,7 +12,7 @@
 
 #include "bma150_cli/bma150.h"
 
-#define DEBUG_SENSOR	1
+// #define DEBUG_SENSOR	1
 
 #define CONVERT		(GRAVITY_EARTH / 256)
 #define CONVERT_X	(CONVERT)
