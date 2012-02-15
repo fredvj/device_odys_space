@@ -26,8 +26,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	sensors.msm7k \
 	lights.msm7k \
-	copybit.space \
-	gralloc.space \
+	copybit.msm7k \
+	gralloc.msm7k \
 	gps.space \
 	libRS \
 	librs_jni \
@@ -218,15 +218,15 @@ PRODUCT_COPY_FILES += \
 
 # Build environment (obj)
 
-PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/liboemcamera.so:obj/lib/liboemcamera.so
+# PRODUCT_COPY_FILES += \
+# 	vendor/odys/space/proprietary/liboemcamera.so:obj/lib/liboemcamera.so
 
 # Target
 
-PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so \
-	vendor/odys/space/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \
-	vendor/odys/space/proprietary/libmmipl.so:system/lib/libmmipl.so
+# PRODUCT_COPY_FILES += \
+# 	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so \
+# 	vendor/odys/space/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \
+# 	vendor/odys/space/proprietary/libmmipl.so:system/lib/libmmipl.so
 
 # Media libraries
 
@@ -315,9 +315,10 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/prebuilt/port-bridge:system/bin/port-bridge \
 	vendor/odys/space/proprietary/prebuilt/CKPD-daemon:system/bin/CKPD-daemon \
 	vendor/odys/space/proprietary/prebuilt/wiperiface:system/bin/wiperiface \
-	vendor/odys/space/proprietary/prebuilt/netmgrd:system/bin/netmgrd
+	vendor/odys/space/proprietary/prebuilt/netmgrd:system/bin/netmgrd \
+	vendor/odys/space/proprietary/prebuilt/hostapd:system/bin/hostapd \
+	vendor/odys/space/proprietary/prebuilt/hostapd_cli:system/bin/hostapd_cli
 
-#	vendor/odys/space/proprietary/prebuilt/hostapd:system/bin/hostapd
 #	vendor/odys/space/proprietary/prebuilt/rmt_storage:system/bin/rmt_storage
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0

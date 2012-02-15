@@ -112,6 +112,7 @@ adb pull /system/bin/wifiwritemac $PROPS/prebuilt/
 adb pull /system/bin/port-bridge $PROPS/prebuilt/
 adb pull /system/bin/CKPD-daemon $PROPS/prebuilt/
 adb pull /system/bin/hostapd $PROPS/prebuilt/
+adb pull /system/bin/hostapd_cli $PROPS/prebuilt/
 adb pull /system/bin/ndc $PROPS/prebuilt/
 adb pull /system/bin/netd $PROPS/prebuilt/
 adb pull /system/bin/fm_qsoc_patches $PROPS/prebuilt/

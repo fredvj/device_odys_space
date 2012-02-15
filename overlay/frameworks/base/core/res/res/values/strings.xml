@@ -35,4 +35,7 @@
 
     <!-- Title of the Global Actions Dialog -->
     <string name="global_actions">Tablet options</string>
+
+    <!-- Do not translate. Default access point SSID used for tethering -->
+    <string name="wifi_tether_configure_ssid_default" translatable="false">CM7-Space</string>
 </resources>
