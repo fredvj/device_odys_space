@@ -260,15 +260,15 @@ PRODUCT_COPY_FILES += \
 
 # Built environment (obj)
 
-PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/libloc.so:obj/lib/libloc.so
+# PRODUCT_COPY_FILES += \
+# 	vendor/odys/space/proprietary/libloc.so:obj/lib/libloc.so
 
 # Target
 
-PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/libloc.so:system/lib/libloc.so \
-	vendor/odys/space/proprietary/libloc-rpc.so:system/lib/libloc-rpc.so \
-	vendor/odys/space/proprietary/libcommondefs.so:system/lib/libcommondefs.so
+# PRODUCT_COPY_FILES += \
+# 	vendor/odys/space/proprietary/libloc.so:system/lib/libloc.so \
+# 	vendor/odys/space/proprietary/libloc-rpc.so:system/lib/libloc-rpc.so \
+# 	vendor/odys/space/proprietary/libcommondefs.so:system/lib/libcommondefs.so
 
 
 # Firmware
