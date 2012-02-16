@@ -287,15 +287,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/prebuilt/qcom_cfg.ini:system/etc/wifi/qcom_cfg.ini \
-	vendor/odys/space/proprietary/prebuilt/hostapd.conf:system/etc/wifi/hostapd.conf
-
-# Looks like they have to be in /system/etc/wifi/softap to get copied - let's give it a try
-
-PRODUCT_COPY_FILES += \
-        vendor/odys/space/proprietary/prebuilt/qcom_cfg.ini:system/etc/wifi/softap/qcom_cfg.ini \
-        vendor/odys/space/proprietary/prebuilt/hostapd.conf:system/etc/wifi/softap/hostapd.conf \
-	vendor/odys/space/proprietary/prebuilt/hostapd.deny:system/etc/wifi/softap/hostapd.deny \
-	vendor/odys/space/proprietary/prebuilt/hostapd.accept:system/etc/wifi/softap/hostapd.accept
+	device/odys/space/hostapd.conf:system/etc/wifi/softap/hostapd.conf
 
 # Service and additional init script
 
