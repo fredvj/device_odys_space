@@ -28,7 +28,7 @@ PRODUCT_PACKAGES += \
 	lights.msm7k \
 	copybit.msm7k \
 	gralloc.msm7k \
-	gps.space \
+	gps.msm7k \
 	libRS \
 	librs_jni \
 	libOmxCore \
@@ -99,6 +99,7 @@ PRODUCT_COPY_FILES += \
 	device/odys/space/prebuilt/initlogo.rle:root/initlogo.rle
 
 # APNS / SPN
+#
 # It looks like Cyanogen has more power - apns-conf.xml gets overwritten by
 # development/data/etc/apns-conf.xml
 #
@@ -107,7 +108,7 @@ PRODUCT_COPY_FILES += \
 # copy to:
 # development/data/etc/apns-conf.xml
 #
-# Do not it here (would result in duplicate entries):
+# Do not edit here (would result in duplicate entries):
 # frameworks/base/core/res/res/xml/apns.xml
 
 PRODUCT_COPY_FILES += \
@@ -117,7 +118,7 @@ PRODUCT_COPY_FILES += \
 # Startup scripts
 # If would like to name it init.space.rc, we would have to change the kernel parameter
 
-# Ouch. init honors the kernel command line. ueventd does not.
+# Damned. init honors the kernel command line. ueventd does not.
 # This lets it fall back to ask util.c for get_hardware_name.
 # This in turn will parse /proc/cpuinfo - on our platform:
 # Hardware	: QCT MSM7x27 FFA
@@ -158,12 +159,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
 	vendor/odys/space/proprietary/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so
-
-# lights and sensors - we are trying to bring our own
-
-# 	vendor/odys/space/proprietary/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so
-#	vendor/odys/space/proprietary/hw/sensors.7x27.so:system/lib/hw/sensors.7x27.so
-
 
 # Graphic hardware
 
@@ -218,13 +213,20 @@ PRODUCT_COPY_FILES += \
 
 # Build environment (obj)
 
-# PRODUCT_COPY_FILES += \
-# 	vendor/odys/space/proprietary/liboemcamera.so:obj/lib/liboemcamera.so
+PRODUCT_COPY_FILES += \
+	vendor/odys/space/proprietary/libgps.so:obj/lib/libgps.so
+
+
+# 	vendor/odys/space/proprietary/libcamera.so:obj/lib/libcamera.so
 
 # Target
 
-# PRODUCT_COPY_FILES += \
-# 	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so \
+PRODUCT_COPY_FILES += \
+	vendor/odys/space/proprietary/libgps.so:system/lib/libgps.so
+
+
+# 	vendor/odys/space/proprietary/libcamera.so:system/lib/libcamera.so \
+# 	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so
 # 	vendor/odys/space/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \
 # 	vendor/odys/space/proprietary/libmmipl.so:system/lib/libmmipl.so
 

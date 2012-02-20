@@ -28,19 +28,14 @@ WPA_SUPPLICANT_VERSION      := VER_0_6_X
 
 HOSTAPD_VERSION             := VER_0_6_X
 BOARD_WLAN_DEVICE           := wlan0
-# BOARD_SOFTAP_DEVICE         := softap.0
-
-# WITH_JIT := true
-# ENABLE_JSC_JIT := true
 
 TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
-# TARGET_GRALLOC_USES_ASHMEM := true
 
 JS_ENGINE := v8
 
 BOARD_EGL_CFG := device/odys/space/egl.cfg
 
-# BOARD_NO_RGBX_8888 := true
+# BOARD_USE_FROYO_LIBCAMERA := true
 
 BOARD_HAVE_BLUETOOTH := true
 
@@ -48,20 +43,11 @@ BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
 BOARD_USES_QCOM_LIBRPC := true
 
-# At least /proc/config.gz is listing 6225
-# BOARD_VENDOR_QCOM_AMSS_VERSION := 6225
-
-# BOARD_GPS_LIBRARIES := libloc
-# BOARD_USES_GPSSHIM := true
-# BOARD_GPS_NEEDS_XTRA := true
-
-BOARD_GPS_LIBRARIES := libloc_api
-
 # See above - BOARD_USES_QCOM_HARDWARE := true
 # See above - BOARD_USES_QCOM_LIBS := true
 BOARD_USES_QCOM_GPS := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := msm7k
-BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
+BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 BOARD_GPS_NEEDS_XTRA := true
 
 BOARD_HAS_SDCARD_INTERNAL := true
@@ -69,9 +55,6 @@ BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 BOARD_CUSTOM_USB_CONTROLLER := ../../device/odys/space/UsbController.cpp
-
-# BOARD_USE_FROYO_LIBCAMERA := true
-# BOARD_USE_CAF_LIBCAMERA := true
 
 TARGET_PROVIDES_LIBRIL := true
 TARGET_PROVIDES_LIBAUDIO := true
