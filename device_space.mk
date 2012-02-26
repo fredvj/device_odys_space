@@ -26,9 +26,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	sensors.msm7k \
 	lights.msm7k \
-	copybit.msm7k \
-	gralloc.msm7k \
+	copybit.7x27 \
+	gralloc.7x27 \
 	gps.msm7k \
+	libcamera \
 	libRS \
 	librs_jni \
 	libOmxCore \
@@ -69,7 +70,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml \
-	frameworks/base/data/etc/platform.xml:system/etc/permissions/platform.xml \
 	frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 	frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
 	frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
@@ -152,14 +152,19 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/modules/libra_ftm.ko:system/lib/modules/libra_ftm.ko \
 	vendor/odys/space/proprietary/modules/libra.ko:system/lib/modules/libra.ko \
-	vendor/odys/space/proprietary/modules/librasdioif.ko:system/lib/modules/librasdioif.ko
+	vendor/odys/space/proprietary/modules/librasdioif.ko:system/lib/modules/librasdioif.ko \
+	device/odys/space/prebuilt/tun.ko:system/lib/modules/tun.ko \
+	device/odys/space/prebuilt/slow-work.ko:system/lib/modules/slow-work.ko \
+	device/odys/space/prebuilt/cifs.ko:system/lib/modules/cifs.ko
 
 # Hardware libraries
 
 # copybit and gralloc are copied from old ROM
 
+# PRODUCT_COPY_FILES += \
+# 	vendor/odys/space/proprietary/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
+
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
 	vendor/odys/space/proprietary/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so
 
 # Graphic hardware
@@ -218,19 +223,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/libgps.so:obj/lib/libgps.so
 
-
 # 	vendor/odys/space/proprietary/libcamera.so:obj/lib/libcamera.so
 
 # Target
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/libgps.so:system/lib/libgps.so
-
-
-# 	vendor/odys/space/proprietary/libcamera.so:system/lib/libcamera.so \
-# 	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so
-# 	vendor/odys/space/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \
-# 	vendor/odys/space/proprietary/libmmipl.so:system/lib/libmmipl.so
+	vendor/odys/space/proprietary/libgps.so:system/lib/libgps.so \
+	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so \
+	vendor/odys/space/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \
+	vendor/odys/space/proprietary/libmmipl.so:system/lib/libmmipl.so
 
 # Media libraries
 

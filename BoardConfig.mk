@@ -1,4 +1,4 @@
-USE_CAMERA_STUB := true
+USE_CAMERA_STUB := false
 
 # inherit from the proprietary version
 -include vendor/odys/space/BoardConfigVendor.mk
@@ -29,13 +29,18 @@ WPA_SUPPLICANT_VERSION      := VER_0_6_X
 HOSTAPD_VERSION             := VER_0_6_X
 BOARD_WLAN_DEVICE           := wlan0
 
-TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 
 JS_ENGINE := v8
+
+BOARD_NO_RGBX_8888 := true
+TARGET_USES_16BPPSURFACE_FOR_OPAQUE := true
+TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
+BOARD_AVOID_DRAW_TEXTURE_EXTENSION := true
 
 BOARD_EGL_CFG := device/odys/space/egl.cfg
 
 # BOARD_USE_FROYO_LIBCAMERA := true
+BOARD_USE_CAF_LIBCAMERA := true
 
 BOARD_HAVE_BLUETOOTH := true
 
