@@ -38,12 +38,6 @@ PRODUCT_PACKAGES += \
 
 DISABLE_DEXPREOPT := false
 
-# This would be the way to rotate the screen
-# But the touchscreen would be missing
-
-# PRODUCT_PROPERTY_OVERRIDES += \
-# 	ro.sf.hwrotation=270
-
 
 # A kernel seems like a good start
 
@@ -75,16 +69,11 @@ PRODUCT_COPY_FILES += \
 	frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
 	frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
 	frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-	frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
 	frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-	frameworks/base/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml \
-	frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
-	frameworks/base/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
-	frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-	frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
+	frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
 	frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml
 
-# Qualcomm permission files & framework extenstions ?
+# Qualcomm permission files & framework extensions ?
 
 PRODUCT_COPY_FILE += \
 	device/odys/space/config/com.qualcomm.location.vzw_library.xml:system/etc/permissions/com.qualcomm.location.vzw_library.xml \
@@ -223,15 +212,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/libgps.so:obj/lib/libgps.so
 
-# 	vendor/odys/space/proprietary/libcamera.so:obj/lib/libcamera.so
-
 # Target
 
 PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/libgps.so:system/lib/libgps.so \
-	vendor/odys/space/proprietary/liboemcamera.so:system/lib/liboemcamera.so \
-	vendor/odys/space/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \
-	vendor/odys/space/proprietary/libmmipl.so:system/lib/libmmipl.so
+	device/odys/space/prebuilt/liboemcamera.so:system/lib/liboemcamera.so \
+	device/odys/space/prebuilt/libmmjpeg.so:system/lib/libmmjpeg.so \
+	device/odys/space/prebuilt/libmmipl.so:system/lib/libmmipl.so
 
 # Media libraries
 

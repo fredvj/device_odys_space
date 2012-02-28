@@ -33,3 +33,8 @@ ro.phone_storage=1
 ro.additionalmounts=/mnt/emmc
 ro.vold.switchablerepair=/mnt/sdcard,/mnt/emmc
 persist.sys.vold.switchexternal=1
+#
+# Not sure, Huawei X3 seems to use it
+#
+debug.sf.hw=1
+

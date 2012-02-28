@@ -72,8 +72,8 @@ extern "C" {
 
 #include <msm_camera.h>
 
-#define DEFAULT_PICTURE_WIDTH  1024
-#define DEFAULT_PICTURE_HEIGHT 768
+#define DEFAULT_PICTURE_WIDTH  800
+#define DEFAULT_PICTURE_HEIGHT 480
 #define THUMBNAIL_BUFFER_SIZE (THUMBNAIL_WIDTH * THUMBNAIL_HEIGHT * 3/2)
 #define MAX_ZOOM_LEVEL 5
 #define NOT_FOUND -1
@@ -217,9 +217,6 @@ board_property boardProperties[] = {
  */
 //sorted on column basis
 static const camera_size_type picture_sizes[] = {
-    { 2592, 1944 }, // 5MP
-    { 2048, 1536 }, // 3MP QXGA
-    { 1920, 1080 }, //HD1080
     { 1600, 1200 }, // 2MP UXGA
     { 1280, 768 }, //WXGA
     { 1280, 720 }, //HD720
@@ -584,7 +581,7 @@ static const str_map scenemode[] = {
  * values from sensor in future
  */
 #define CAMERA_FOCAL_LENGTH_DEFAULT 4.31
-#define CAMERA_HORIZONTAL_VIEW_ANGLE_DEFULT 54.8
+#define CAMERA_HORIZONTAL_VIEW_ANGLE_DEFAULT 54.8
 #define CAMERA_VERTICAL_VIEW_ANGLE_DEFAULT  42.5
 
 /* Look up pre-sorted antibanding_type table by current MCC. */
@@ -1065,7 +1062,7 @@ void QualcommCameraHardware::filterPictureSizes(){
 
 void QualcommCameraHardware::initDefaultParameters()
 {
-    LOGV("initDefaultParameters E");
+    LOGV("initDefaultParameters - begin");
 
     findSensorType();
     // Initialize constant parameter strings. This will happen only once in the
@@ -1152,149 +1149,72 @@ void QualcommCameraHardware::initDefaultParameters()
     mDimension.display_height = DEFAULT_PREVIEW_HEIGHT;
 
     mParameters.setPreviewFrameRate(DEFAULT_FPS);
-    if((strcmp(mSensorInfo.name, "vx6953")) &&
-        (strcmp(mSensorInfo.name, "VX6953")) &&
-        (strcmp(sensorType->name, "2mp"))){
-        mParameters.set(
-            CameraParameters::KEY_SUPPORTED_PREVIEW_FRAME_RATES,
-            preview_frame_rate_values.string());
-    } else {
-        mParameters.set(
-            CameraParameters::KEY_SUPPORTED_PREVIEW_FRAME_RATES,
-            DEFAULT_FPS);
-    }
     mParameters.setPreviewFormat("yuv420sp"); // informative
 
     mParameters.setPictureSize(DEFAULT_PICTURE_WIDTH, DEFAULT_PICTURE_HEIGHT);
     mParameters.setPictureFormat("jpeg"); // informative
 
     mParameters.set(CameraParameters::KEY_JPEG_QUALITY, "85"); // max quality
-    mParameters.set(CameraParameters::KEY_JPEG_THUMBNAIL_WIDTH,
-                    THUMBNAIL_WIDTH_STR); // informative
-    mParameters.set(CameraParameters::KEY_JPEG_THUMBNAIL_HEIGHT,
-                    THUMBNAIL_HEIGHT_STR); // informative
-    mDimension.ui_thumbnail_width =
-            thumbnail_sizes[DEFAULT_THUMBNAIL_SETTING].width;
-    mDimension.ui_thumbnail_height =
-            thumbnail_sizes[DEFAULT_THUMBNAIL_SETTING].height;
+    mParameters.set(CameraParameters::KEY_JPEG_THUMBNAIL_WIDTH, THUMBNAIL_WIDTH_STR); // informative
+    mParameters.set(CameraParameters::KEY_JPEG_THUMBNAIL_HEIGHT, THUMBNAIL_HEIGHT_STR); // informative
+    mDimension.ui_thumbnail_width = thumbnail_sizes[DEFAULT_THUMBNAIL_SETTING].width;
+    mDimension.ui_thumbnail_height = thumbnail_sizes[DEFAULT_THUMBNAIL_SETTING].height;
     mParameters.set(CameraParameters::KEY_JPEG_THUMBNAIL_QUALITY, "90");
 
     String8 valuesStr = create_sizes_str(jpeg_thumbnail_sizes, JPEG_THUMBNAIL_SIZE_COUNT);
-    mParameters.set(CameraParameters::KEY_SUPPORTED_JPEG_THUMBNAIL_SIZES,
-                valuesStr.string());
+    mParameters.set(CameraParameters::KEY_SUPPORTED_JPEG_THUMBNAIL_SIZES, valuesStr.string());
 
-    if(zoomSupported){
-        mParameters.set(CameraParameters::KEY_ZOOM_SUPPORTED, "true");
-        LOGV("max zoom is %d", mMaxZoom);
-        mParameters.set("max-zoom",mMaxZoom);
-        mParameters.set(CameraParameters::KEY_ZOOM_RATIOS,
-                            zoom_ratio_values);
-    } else {
-        mParameters.set(CameraParameters::KEY_ZOOM_SUPPORTED, "false");
-    }
+    mParameters.set(CameraParameters::KEY_ZOOM_SUPPORTED, "false");
 
-    mParameters.set(CameraParameters::KEY_ANTIBANDING,
-                    CameraParameters::ANTIBANDING_OFF);
-    mParameters.set(CameraParameters::KEY_EFFECT,
-                    CameraParameters::EFFECT_NONE);
-    mParameters.set(CameraParameters::KEY_AUTO_EXPOSURE,
-                    CameraParameters::AUTO_EXPOSURE_FRAME_AVG);
-    mParameters.set(CameraParameters::KEY_WHITE_BALANCE,
-                    CameraParameters::WHITE_BALANCE_AUTO);
-    mParameters.set(CameraParameters::KEY_FOCUS_MODE,
-                    CameraParameters::FOCUS_MODE_AUTO);
-    mParameters.set(CameraParameters::KEY_SUPPORTED_PREVIEW_FORMATS,
-                    "yuv420sp");
+    mParameters.set(CameraParameters::KEY_ANTIBANDING, CameraParameters::ANTIBANDING_OFF);
+    mParameters.set(CameraParameters::KEY_EFFECT, CameraParameters::EFFECT_NONE);
+    mParameters.set(CameraParameters::KEY_AUTO_EXPOSURE, CameraParameters::AUTO_EXPOSURE_FRAME_AVG);
+    mParameters.set(CameraParameters::KEY_WHITE_BALANCE, CameraParameters::WHITE_BALANCE_AUTO);
+    mParameters.set(CameraParameters::KEY_FOCUS_MODE, CameraParameters::FOCUS_MODE_AUTO);
+    mParameters.set(CameraParameters::KEY_SUPPORTED_PREVIEW_FORMATS, "yuv420sp");
 
-    mParameters.set(CameraParameters::KEY_SUPPORTED_PREVIEW_SIZES,
-                    preview_size_values.string());
-    mParameters.set(CameraParameters::KEY_SUPPORTED_PICTURE_SIZES,
-                    picture_size_values.string());
-    mParameters.set(CameraParameters::KEY_SUPPORTED_ANTIBANDING,
-                    antibanding_values);
+    mParameters.set(CameraParameters::KEY_SUPPORTED_PREVIEW_SIZES, preview_size_values.string());
+    mParameters.set(CameraParameters::KEY_SUPPORTED_PICTURE_SIZES, picture_size_values.string());
+    mParameters.set(CameraParameters::KEY_SUPPORTED_ANTIBANDING, antibanding_values);
     mParameters.set(CameraParameters::KEY_SUPPORTED_EFFECTS, effect_values);
     mParameters.set(CameraParameters::KEY_SUPPORTED_AUTO_EXPOSURE, autoexposure_values);
-    mParameters.set(CameraParameters::KEY_SUPPORTED_WHITE_BALANCE,
-                    whitebalance_values);
-    if((strcmp(mSensorInfo.name, "vx6953")) &&
-        (strcmp(mSensorInfo.name, "VX6953")))
+    mParameters.set(CameraParameters::KEY_SUPPORTED_WHITE_BALANCE, whitebalance_values);
+    mParameters.set(CameraParameters::KEY_SUPPORTED_FOCUS_MODES, CameraParameters::FOCUS_MODE_INFINITY);
 
-    mParameters.set(CameraParameters::KEY_SUPPORTED_FOCUS_MODES,
-                    focus_mode_values);
-    else
-       mParameters.set(CameraParameters::KEY_SUPPORTED_FOCUS_MODES,
-                   CameraParameters::FOCUS_MODE_INFINITY);
+    mParameters.set(CameraParameters::KEY_SUPPORTED_PICTURE_FORMATS, picture_format_values);
 
-    mParameters.set(CameraParameters::KEY_SUPPORTED_PICTURE_FORMATS,
-                    picture_format_values);
+    mParameters.set(CameraParameters::KEY_MAX_SHARPNESS, CAMERA_MAX_SHARPNESS);
+    mParameters.set(CameraParameters::KEY_MAX_CONTRAST, CAMERA_MAX_CONTRAST);
+    mParameters.set(CameraParameters::KEY_MAX_SATURATION, CAMERA_MAX_SATURATION);
 
-    if (mSensorInfo.flash_enabled) {
-        mParameters.set(CameraParameters::KEY_FLASH_MODE,
-                        CameraParameters::FLASH_MODE_OFF);
-        mParameters.set(CameraParameters::KEY_SUPPORTED_FLASH_MODES,
-                        flash_values);
-    }
-
-    mParameters.set(CameraParameters::KEY_MAX_SHARPNESS,
-            CAMERA_MAX_SHARPNESS);
-    mParameters.set(CameraParameters::KEY_MAX_CONTRAST,
-            CAMERA_MAX_CONTRAST);
-    mParameters.set(CameraParameters::KEY_MAX_SATURATION,
-            CAMERA_MAX_SATURATION);
-
-    mParameters.set(
-            CameraParameters::KEY_MAX_EXPOSURE_COMPENSATION,
-            EXPOSURE_COMPENSATION_MAXIMUM_NUMERATOR);
-    mParameters.set(
-            CameraParameters::KEY_MIN_EXPOSURE_COMPENSATION,
-            EXPOSURE_COMPENSATION_MINIMUM_NUMERATOR);
-    mParameters.set(
-            CameraParameters::KEY_EXPOSURE_COMPENSATION,
-            EXPOSURE_COMPENSATION_DEFAULT_NUMERATOR);
-    mParameters.setFloat(
-            CameraParameters::KEY_EXPOSURE_COMPENSATION_STEP,
-            EXPOSURE_COMPENSATION_STEP);
+    mParameters.set(CameraParameters::KEY_MAX_EXPOSURE_COMPENSATION, EXPOSURE_COMPENSATION_MAXIMUM_NUMERATOR);
+    mParameters.set(CameraParameters::KEY_MIN_EXPOSURE_COMPENSATION, EXPOSURE_COMPENSATION_MINIMUM_NUMERATOR);
+    mParameters.set(CameraParameters::KEY_EXPOSURE_COMPENSATION, EXPOSURE_COMPENSATION_DEFAULT_NUMERATOR);
+    mParameters.setFloat(CameraParameters::KEY_EXPOSURE_COMPENSATION_STEP, EXPOSURE_COMPENSATION_STEP);
 
     mParameters.set("luma-adaptation", "3");
     mParameters.set("zoom-supported", "true");
     mParameters.set("zoom", 0);
-    mParameters.set(CameraParameters::KEY_PICTURE_FORMAT,
-                    CameraParameters::PIXEL_FORMAT_JPEG);
+    mParameters.set(CameraParameters::KEY_PICTURE_FORMAT, CameraParameters::PIXEL_FORMAT_JPEG);
 
-    mParameters.set(CameraParameters::KEY_SHARPNESS,
-                    CAMERA_DEF_SHARPNESS);
-    mParameters.set(CameraParameters::KEY_CONTRAST,
-                    CAMERA_DEF_CONTRAST);
-    mParameters.set(CameraParameters::KEY_SATURATION,
-                    CAMERA_DEF_SATURATION);
+    mParameters.set(CameraParameters::KEY_SHARPNESS, CAMERA_DEF_SHARPNESS);
+    mParameters.set(CameraParameters::KEY_CONTRAST, CAMERA_DEF_CONTRAST);
+    mParameters.set(CameraParameters::KEY_SATURATION, CAMERA_DEF_SATURATION);
 
-    mParameters.set(CameraParameters::KEY_ISO_MODE,
-                    CameraParameters::ISO_AUTO);
-    mParameters.set(CameraParameters::KEY_LENSSHADE,
-                    CameraParameters::LENSSHADE_ENABLE);
-    mParameters.set(CameraParameters::KEY_SUPPORTED_ISO_MODES,
-                    iso_values);
-        mParameters.set(CameraParameters::KEY_SUPPORTED_LENSSHADE_MODES,
-                    lensshade_values);
-    mParameters.set(CameraParameters::KEY_SCENE_MODE,
-                    CameraParameters::SCENE_MODE_AUTO);
+    mParameters.set(CameraParameters::KEY_ISO_MODE, CameraParameters::ISO_AUTO);
+    mParameters.set(CameraParameters::KEY_LENSSHADE, CameraParameters::LENSSHADE_ENABLE);
+    mParameters.set(CameraParameters::KEY_SUPPORTED_ISO_MODES, iso_values);
+    mParameters.set(CameraParameters::KEY_SUPPORTED_LENSSHADE_MODES, lensshade_values);
+    mParameters.set(CameraParameters::KEY_SCENE_MODE, CameraParameters::SCENE_MODE_AUTO);
 
-    mParameters.set(CameraParameters::KEY_CONTINUOUS_AF,
-                    CameraParameters::CONTINUOUS_AF_OFF);
-    mParameters.set(CameraParameters::KEY_SUPPORTED_CONTINUOUS_AF,
-                    continuous_af_values);
-    mParameters.set(CameraParameters::KEY_TOUCH_AF_AEC,
-                    CameraParameters::TOUCH_AF_AEC_OFF);
-    mParameters.set(CameraParameters::KEY_SUPPORTED_TOUCH_AF_AEC,
-                    touchafaec_values);
-    mParameters.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES,
-                    scenemode_values);
-    mParameters.setFloat(CameraParameters::KEY_FOCAL_LENGTH,
-                    CAMERA_FOCAL_LENGTH_DEFAULT);
-    mParameters.setFloat(CameraParameters::KEY_HORIZONTAL_VIEW_ANGLE,
-                    CAMERA_HORIZONTAL_VIEW_ANGLE_DEFULT);
-    mParameters.setFloat(CameraParameters::KEY_VERTICAL_VIEW_ANGLE,
-                    CAMERA_VERTICAL_VIEW_ANGLE_DEFAULT);
+    mParameters.set(CameraParameters::KEY_CONTINUOUS_AF, CameraParameters::CONTINUOUS_AF_OFF);
+    mParameters.set(CameraParameters::KEY_SUPPORTED_CONTINUOUS_AF, continuous_af_values);
+    mParameters.set(CameraParameters::KEY_TOUCH_AF_AEC, CameraParameters::TOUCH_AF_AEC_OFF);
+    mParameters.set(CameraParameters::KEY_SUPPORTED_TOUCH_AF_AEC, touchafaec_values);
+    mParameters.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES, scenemode_values);
+    mParameters.setFloat(CameraParameters::KEY_FOCAL_LENGTH, CAMERA_FOCAL_LENGTH_DEFAULT);
+    mParameters.setFloat(CameraParameters::KEY_HORIZONTAL_VIEW_ANGLE, CAMERA_HORIZONTAL_VIEW_ANGLE_DEFAULT);
+    mParameters.setFloat(CameraParameters::KEY_VERTICAL_VIEW_ANGLE, CAMERA_VERTICAL_VIEW_ANGLE_DEFAULT);
 
     if (setParameters(mParameters) != NO_ERROR) {
         LOGE("Failed to set default parameters?!");
@@ -1308,7 +1228,7 @@ void QualcommCameraHardware::initDefaultParameters()
 
     mInitialized = true;
 
-    LOGV("initDefaultParameters X");
+    LOGV("initDefaultParameters - end");
 }
 
 void QualcommCameraHardware::findSensorType(){

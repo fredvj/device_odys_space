@@ -149,6 +149,14 @@ service wifipreloader /system/bin/sh /system/etc/init.qcom.sdio.sh 1
     disabled
     oneshot
 
+service bugreport /system/bin/dumpstate -d -z -o /mnt/emmc/bugreport
+    user root
+    disabled
+    oneshot
+    keycodes 25 84
+
+# 25 84 - Volume down, Search
+
 service hciattach /system/bin/sh /system/etc/init.bt.sh
     user bluetooth
     group qcom_oncrpc bluetooth net_bt_admin
