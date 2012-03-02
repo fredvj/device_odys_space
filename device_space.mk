@@ -30,10 +30,10 @@ PRODUCT_PACKAGES += \
 	gralloc.7x27 \
 	gps.msm7k \
 	libcamera \
+	libaudio \
+	libOmxCore \
 	libRS \
 	librs_jni \
-	libOmxCore \
-	libOmxVidEnc \
 	dexpreopt
 
 DISABLE_DEXPREOPT := false
@@ -66,11 +66,15 @@ PRODUCT_COPY_FILES += \
 	packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml \
 	frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 	frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
+	frameworks/base/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
 	frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+	frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+	frameworks/base/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
 	frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
 	frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
 	frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
 	frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
+	frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
 	frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml
 
 # Qualcomm permission files & framework extensions ?
@@ -148,10 +152,7 @@ PRODUCT_COPY_FILES += \
 
 # Hardware libraries
 
-# copybit and gralloc are copied from old ROM
-
-# PRODUCT_COPY_FILES += \
-# 	vendor/odys/space/proprietary/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
+# gralloc are copied from old ROM (the new one is using to much memory?)
 
 PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so
@@ -194,16 +195,12 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/libsnd.so:system/lib/libsnd.so \
 	vendor/odys/space/proprietary/libdiag.so:system/lib/libdiag.so \
 	vendor/odys/space/proprietary/libauth.so:system/lib/libauth.so \
-	vendor/odys/space/proprietary/libpbmlib.so:system/lib/libpbmlib.so \
-	vendor/odys/space/proprietary/libdsutils.so:system/lib/libdsutils.so \
-	vendor/odys/space/proprietary/libnetmgr.so:system/lib/libnetmgr.so
+	vendor/odys/space/proprietary/libpbmlib.so:system/lib/libpbmlib.so
 
-# PRODUCT_COPY_FILES += \
-#         vendor/odys/space/proprietary/libdsm.so:system/lib/libdsm.so \
-#         vendor/odys/space/proprietary/liboncrpc.so:system/lib/liboncrpc.so \
-#         vendor/odys/space/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \
-#         vendor/odys/space/proprietary/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
-#         vendor/odys/space/proprietary/libdiag.so:system/lib/libdiag.so
+
+# 	vendor/odys/space/proprietary/libdsutils.so:system/lib/libdsutils.so \
+# 	vendor/odys/space/proprietary/libnetmgr.so:system/lib/libnetmgr.so
+
 
 # Camera control and encoding libraries
 
@@ -238,29 +235,7 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/libOmxVidEnc.so:system/lib/libOmxVidEnc.so \
 	vendor/odys/space/proprietary/libOmxWmaDec.so:system/lib/libOmxWmaDec.so \
 	vendor/odys/space/proprietary/libOmxWmvDec.so:system/lib/libOmxWmvDec.so \
-	vendor/odys/space/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
-	vendor/odys/space/proprietary/libomx_aacdec_sharedlibrary.so:system/lib/libomx_aacdec_sharedlibrary.so \
-	vendor/odys/space/proprietary/libomx_amrdec_sharedlibrary.so:system/lib/libomx_amrdec_sharedlibrary.so \
-	vendor/odys/space/proprietary/libomx_amrenc_sharedlibrary.so:system/lib/libomx_amrenc_sharedlibrary.so \
-	vendor/odys/space/proprietary/libomx_avcdec_sharedlibrary.so:system/lib/libomx_avcdec_sharedlibrary.so \
-	vendor/odys/space/proprietary/libomx_m4vdec_sharedlibrary.so:system/lib/libomx_m4vdec_sharedlibrary.so \
-	vendor/odys/space/proprietary/libomx_mp3dec_sharedlibrary.so:system/lib/libomx_mp3dec_sharedlibrary.so \
-	vendor/odys/space/proprietary/libomx_sharedlibrary.so:system/lib/libomx_sharedlibrary.so
-
-
-# GPS library
-
-# Built environment (obj)
-
-# PRODUCT_COPY_FILES += \
-# 	vendor/odys/space/proprietary/libloc.so:obj/lib/libloc.so
-
-# Target
-
-# PRODUCT_COPY_FILES += \
-# 	vendor/odys/space/proprietary/libloc.so:system/lib/libloc.so \
-# 	vendor/odys/space/proprietary/libloc-rpc.so:system/lib/libloc-rpc.so \
-# 	vendor/odys/space/proprietary/libcommondefs.so:system/lib/libcommondefs.so
+	vendor/odys/space/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so
 
 
 # Firmware
@@ -303,7 +278,6 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/prebuilt/hostapd:system/bin/hostapd \
 	vendor/odys/space/proprietary/prebuilt/hostapd_cli:system/bin/hostapd_cli
 
-#	vendor/odys/space/proprietary/prebuilt/rmt_storage:system/bin/rmt_storage
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := odys_space
