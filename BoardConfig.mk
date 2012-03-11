@@ -29,6 +29,10 @@ WPA_SUPPLICANT_VERSION      := VER_0_6_X
 HOSTAPD_VERSION             := VER_0_6_X
 BOARD_WLAN_DEVICE           := wlan0
 
+WIFI_AP_DRIVER_MODULE_NAME  := libra
+WIFI_AP_DRIVER_MODULE_PATH  := /system/lib/modules/libra.ko
+WIFI_AP_DRIVER_MODULE_ARG   := con_mode=1
+
 
 JS_ENGINE := v8
 
