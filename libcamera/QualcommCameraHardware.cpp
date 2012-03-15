@@ -303,9 +303,7 @@ static int exif_table_numEntries = 0;
 exif_tags_info_t exif_data[MAX_EXIF_TABLE_ENTRIES];
 static zoom_crop_info zoomCropInfo;
 static void *mLastQueuedFrame = NULL;
-#define RECORD_BUFFERS_7x30 8
 #define RECORD_BUFFERS 8
-#define RECORD_BUFFERS_8x50 8
 static int kRecordBufferCount;
 
 
@@ -879,15 +877,6 @@ static void cam_frame_post_video (struct msm_frame *p)
 }
 
 void QualcommCameraHardware::storeTargetType(void) {
-    char mDeviceName[PROPERTY_VALUE_MAX];
-    property_get("ro.product.device",mDeviceName," ");
-    mCurrentTarget = TARGET_MAX;
-    for( int i = 0; i < TARGET_MAX ; i++) {
-        if( !strncmp(mDeviceName, targetList[i].targetStr, 7)) {
-            mCurrentTarget = targetList[i].targetEnum;
-            break;
-        }
-    }
     mCurrentTarget = TARGET_MSM7627;
     LOGV(" Storing the current target type as %d ", mCurrentTarget );
     return;
@@ -977,6 +966,7 @@ QualcommCameraHardware::QualcommCameraHardware()
     // initializes the sensor hardware, this can take a long time. So,
     // start the process here so it will be ready by the time it's
     // needed.
+
     if ((pthread_create(&w_thread, NULL, opencamerafd, NULL)) != 0) {
         LOGE("Camera open thread creation failed");
     }
@@ -984,37 +974,19 @@ QualcommCameraHardware::QualcommCameraHardware()
     memset(&mDimension, 0, sizeof(mDimension));
     memset(&mCrop, 0, sizeof(mCrop));
     memset(&zoomCropInfo, 0, sizeof(zoom_crop_info));
+
     storeTargetType();
     char value[PROPERTY_VALUE_MAX];
     property_get("persist.debug.sf.showfps", value, "0");
     mDebugFps = atoi(value);
-    if( mCurrentTarget == TARGET_MSM7630 ) {
-        kPreviewBufferCountActual = kPreviewBufferCount;
-        kRecordBufferCount = RECORD_BUFFERS_7x30;
-        recordframes = new msm_frame[kRecordBufferCount];
-        record_buffers_tracking_flag = new bool[kRecordBufferCount];
-    }
-    else {
-        kPreviewBufferCountActual = kPreviewBufferCount + NUM_MORE_BUFS;
-        if( mCurrentTarget == TARGET_QSD8250 ) {
-            kRecordBufferCount = RECORD_BUFFERS_8x50;
-            recordframes = new msm_frame[kRecordBufferCount];
-            record_buffers_tracking_flag = new bool[kRecordBufferCount];
-        }
-    }
 
-    switch(mCurrentTarget){
-        case TARGET_MSM7627:
-            jpegPadding = 0; // to be checked.
-            break;
-        case TARGET_QSD8250:
-        case TARGET_MSM7630:
-            jpegPadding = 0;
-            break;
-        default:
-            jpegPadding = 0;
-            break;
-    }
+    kPreviewBufferCountActual = kPreviewBufferCount;
+    kRecordBufferCount = RECORD_BUFFERS;
+    recordframes = new msm_frame[kRecordBufferCount];
+    record_buffers_tracking_flag = new bool[kRecordBufferCount];
+
+    jpegPadding = 0; // to be checked.
+
     LOGV("constructor EX");
 }
 
