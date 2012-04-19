@@ -1,5 +1,6 @@
 #!/system/bin/sh
 # Copyright (c) 2009, Code Aurora Forum. All rights reserved.
+# Copyright (c) 2012, Cryptophon
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -51,7 +52,7 @@ failed ()
 start_hciattach ()
 {
   echo 1 > $BLUETOOTH_SLEEP_PATH
-  /system/bin/hciattach -n $QSOC_DEVICE $QSOC_TYPE $QSOC_BAUD &
+  /system/bin/hciattach -n $QSOC_DEVICE $QSOC_TYPE $QSOC_BAUD flow $QSOC_BDADDR &
   hciattach_pid=$!
   logi "start_hciattach: pid = $hciattach_pid"
 }
@@ -82,8 +83,9 @@ shift $(($OPTIND-1))
 QSOC_DEVICE=${1:-"/dev/ttyHS0"}
 QSOC_TYPE=${2:-"any"}
 QSOC_BAUD=${3:-"3000000"}
+QSOC_BDADDR=`cat /system/etc/bluetooth/bluetooth.addr`
 
-/system/bin/hci_qcomm_init -d $QSOC_DEVICE -s $QSOC_BAUD 
+/system/bin/hci_qcomm_init -b $QSOC_BDADDR -d $QSOC_DEVICE -s $QSOC_BAUD 
 
 exit_code_hci_qcomm_init=$?
 

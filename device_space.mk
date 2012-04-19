@@ -171,7 +171,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/hci_qcomm_init:system/bin/hci_qcomm_init \
-	device/odys/space/init.bt.sh:system/etc/init.bt.sh
+	device/odys/space/init.bt.sh:system/etc/init.bt.sh \
+	device/odys/space/bluetooth.addr:system/etc/bluetooth/bluetooth.addr
 
 # Radio and associated libraries
 
