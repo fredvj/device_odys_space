@@ -214,9 +214,9 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/libgps.so:system/lib/libgps.so \
-	device/odys/space/prebuilt/liboemcamera.so:system/lib/liboemcamera.so \
-	device/odys/space/prebuilt/libmmjpeg.so:system/lib/libmmjpeg.so \
-	device/odys/space/prebuilt/libmmipl.so:system/lib/libmmipl.so
+	vendor/odys/space/proprietary/233/liboemcamera.so:system/lib/liboemcamera.so \
+	vendor/odys/space/proprietary/233/libmmjpeg.so:system/lib/libmmjpeg.so \
+	vendor/odys/space/proprietary/233/libmmipl.so:system/lib/libmmipl.so
 
 # Media libraries
 
