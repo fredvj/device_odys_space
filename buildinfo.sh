@@ -59,5 +59,6 @@ echo "ro.build.description=$PRIVATE_BUILD_DESC"
 echo "ro.build.fingerprint=$BUILD_FINGERPRINT"
 
 echo "ro.cm.device=$CM_DEVICE"
+echo "ro.cryptophon.tag=233-based"
 
 echo "# end build properties"
