@@ -20,7 +20,7 @@
 #include "common.h"
 #include "extendedcommands.h"
 
-char* MENU_HEADERS[] = { "Use Volume + Home Keys * Odys Space 2012/04/27 rev 1",
+char* MENU_HEADERS[] = { "Use Volume + Home Keys * Odys Space 2012/04/27 rev 2",
                          NULL };
 
 char* MENU_ITEMS[] = { "reboot system now",
@@ -52,22 +52,29 @@ int device_handle_key(int key_code, int visible) {
     if (visible) {
         switch (key_code) {
             case KEY_VOLUMEUP:
+	    case 115:
                 return HIGHLIGHT_UP;
 
             case KEY_VOLUMEDOWN:
+	    case 114:
                 return HIGHLIGHT_DOWN;
 
 	    case KEY_SEARCH:
+	    case 217:
 		break;
 
 	    case KEY_HOME:
 	    case KEY_MENU:
+	    case 59:
+	    case 230:
                 return SELECT_ITEM;
             
             case KEY_END:
             case KEY_BACKSPACE:
             case KEY_BACK:
 	    case KEY_POWER:
+	    case 158:
+	    case 107:
 		if(ui_get_showing_back_button()) return SELECT_ITEM;
                 if(!get_allow_toggle_display()) return GO_BACK;
 		break;
