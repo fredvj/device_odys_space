@@ -143,9 +143,9 @@ PRODUCT_COPY_FILES += \
 # Kernel modules
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/modules/libra_ftm.ko:system/lib/modules/libra_ftm.ko \
-	vendor/odys/space/proprietary/modules/libra.ko:system/lib/modules/libra.ko \
-	vendor/odys/space/proprietary/modules/librasdioif.ko:system/lib/modules/librasdioif.ko \
+	vendor/odys/space/proprietary/233/modules/libra_ftm.ko:system/lib/modules/libra_ftm.ko \
+	vendor/odys/space/proprietary/233/modules/libra.ko:system/lib/modules/libra.ko \
+	vendor/odys/space/proprietary/233/modules/librasdioif.ko:system/lib/modules/librasdioif.ko \
 	device/odys/space/prebuilt/tun.ko:system/lib/modules/tun.ko \
 	device/odys/space/prebuilt/slow-work.ko:system/lib/modules/slow-work.ko \
 	device/odys/space/prebuilt/cifs.ko:system/lib/modules/cifs.ko
@@ -155,52 +155,51 @@ PRODUCT_COPY_FILES += \
 # gralloc are copied from old ROM (the new one is using to much memory?)
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so
+	vendor/odys/space/proprietary/233/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so
 
 # Graphic hardware
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
-	vendor/odys/space/proprietary/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
-	vendor/odys/space/proprietary/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
-	vendor/odys/space/proprietary/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
-	vendor/odys/space/proprietary/libgsl.so:system/lib/libgsl.so
+	vendor/odys/space/proprietary/233/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
+	vendor/odys/space/proprietary/233/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
+	vendor/odys/space/proprietary/233/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
+	vendor/odys/space/proprietary/233/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
+	vendor/odys/space/proprietary/233/libgsl.so:system/lib/libgsl.so
 
 
 # Bluetooth helpers
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/hci_qcomm_init:system/bin/hci_qcomm_init \
+	vendor/odys/space/proprietary/233/hci_qcomm_init:system/bin/hci_qcomm_init \
 	device/odys/space/init.bt.sh:system/etc/init.bt.sh \
 	device/odys/space/bluetooth.addr:system/etc/bluetooth/bluetooth.addr
 
 # Radio and associated libraries
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/libcm.so:system/lib/libcm.so \
-	vendor/odys/space/proprietary/libdsm.so:system/lib/libdsm.so \
-	vendor/odys/space/proprietary/libdss.so:system/lib/libdss.so \
-	vendor/odys/space/proprietary/libdll.so:system/lib/libdll.so \
-	vendor/odys/space/proprietary/libgsdi_exp.so:system/lib/libgsdi_exp.so \
-	vendor/odys/space/proprietary/libgstk_exp.so:system/lib/libgstk_exp.so \
-	vendor/odys/space/proprietary/libmmgsdilib.so:system/lib/libmmgsdilib.so \
-	vendor/odys/space/proprietary/libnv.so:system/lib/libnv.so \
-	vendor/odys/space/proprietary/liboem_rapi.so:system/lib/liboem_rapi.so \
-	vendor/odys/space/proprietary/liboncrpc.so:system/lib/liboncrpc.so \
-	vendor/odys/space/proprietary/libqmi.so:system/lib/libqmi.so \
-	vendor/odys/space/proprietary/libqueue.so:system/lib/libqueue.so \
-	vendor/odys/space/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \
-	vendor/odys/space/proprietary/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
-	vendor/odys/space/proprietary/libwms.so:system/lib/libwms.so \
-	vendor/odys/space/proprietary/libwmsts.so:system/lib/libwmsts.so \
-	vendor/odys/space/proprietary/libsnd.so:system/lib/libsnd.so \
-	vendor/odys/space/proprietary/libdiag.so:system/lib/libdiag.so \
-	vendor/odys/space/proprietary/libauth.so:system/lib/libauth.so \
-	vendor/odys/space/proprietary/libpbmlib.so:system/lib/libpbmlib.so
+	vendor/odys/space/proprietary/233/libcm.so:system/lib/libcm.so \
+	vendor/odys/space/proprietary/233/libdsm.so:system/lib/libdsm.so \
+	vendor/odys/space/proprietary/233/libdss.so:system/lib/libdss.so \
+	vendor/odys/space/proprietary/233/libgsdi_exp.so:system/lib/libgsdi_exp.so \
+	vendor/odys/space/proprietary/233/libgstk_exp.so:system/lib/libgstk_exp.so \
+	vendor/odys/space/proprietary/233/libmmgsdilib.so:system/lib/libmmgsdilib.so \
+	vendor/odys/space/proprietary/233/libnv.so:system/lib/libnv.so \
+	vendor/odys/space/proprietary/233/liboem_rapi.so:system/lib/liboem_rapi.so \
+	vendor/odys/space/proprietary/233/liboncrpc.so:system/lib/liboncrpc.so \
+	vendor/odys/space/proprietary/233/libqmi.so:system/lib/libqmi.so \
+	vendor/odys/space/proprietary/233/libqueue.so:system/lib/libqueue.so \
+	vendor/odys/space/proprietary/233/libril-qc-1.so:system/lib/libril-qc-1.so \
+	vendor/odys/space/proprietary/233/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
+	vendor/odys/space/proprietary/233/libwms.so:system/lib/libwms.so \
+	vendor/odys/space/proprietary/233/libwmsts.so:system/lib/libwmsts.so \
+	vendor/odys/space/proprietary/233/libsnd.so:system/lib/libsnd.so \
+	vendor/odys/space/proprietary/233/libdiag.so:system/lib/libdiag.so \
+	vendor/odys/space/proprietary/233/libauth.so:system/lib/libauth.so \
+	vendor/odys/space/proprietary/233/libpbmlib.so:system/lib/libpbmlib.so
 
 
-# 	vendor/odys/space/proprietary/libdsutils.so:system/lib/libdsutils.so \
-# 	vendor/odys/space/proprietary/libnetmgr.so:system/lib/libnetmgr.so
+# 	vendor/odys/space/proprietary/233/libdsutils.so:system/lib/libdsutils.so \
+# 	vendor/odys/space/proprietary/233/libnetmgr.so:system/lib/libnetmgr.so
 
 
 # Camera control and encoding libraries
@@ -208,12 +207,12 @@ PRODUCT_COPY_FILES += \
 # Build environment (obj)
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/libgps.so:obj/lib/libgps.so
+	vendor/odys/space/proprietary/233/libgps.so:obj/lib/libgps.so
 
 # Target
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/libgps.so:system/lib/libgps.so \
+	vendor/odys/space/proprietary/233/libgps.so:system/lib/libgps.so \
 	vendor/odys/space/proprietary/233/liboemcamera.so:system/lib/liboemcamera.so \
 	vendor/odys/space/proprietary/233/libmmjpeg.so:system/lib/libmmjpeg.so \
 	vendor/odys/space/proprietary/233/libmmipl.so:system/lib/libmmipl.so
@@ -221,63 +220,61 @@ PRODUCT_COPY_FILES += \
 # Media libraries
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/libOmxAacDec.so:system/lib/libOmxAacDec.so \
-	vendor/odys/space/proprietary/libOmxAacEnc.so:system/lib/libOmxAacEnc.so \
-	vendor/odys/space/proprietary/libOmxAdpcmDec.so:system/lib/libOmxAdpcmDec.so \
-	vendor/odys/space/proprietary/libOmxAmrDec.so:system/lib/libOmxAmrDec.so \
-	vendor/odys/space/proprietary/libOmxAmrEnc.so:system/lib/libOmxAmrEnc.so \
-	vendor/odys/space/proprietary/libOmxAmrRtpDec.so:system/lib/libOmxAmrRtpDec.so \
-	vendor/odys/space/proprietary/libOmxAmrwbDec.so:system/lib/libOmxAmrwbDec.so \
-	vendor/odys/space/proprietary/libOmxEvrcEnc.so:system/lib/libOmxEvrcEnc.so \
-	vendor/odys/space/proprietary/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
-	vendor/odys/space/proprietary/libOmxMp3Dec.so:system/lib/libOmxMp3Dec.so \
-	vendor/odys/space/proprietary/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
-	vendor/odys/space/proprietary/libOmxQcelp13Enc.so:system/lib/libOmxQcelp13Enc.so \
-	vendor/odys/space/proprietary/libOmxVidEnc.so:system/lib/libOmxVidEnc.so \
-	vendor/odys/space/proprietary/libOmxWmaDec.so:system/lib/libOmxWmaDec.so \
-	vendor/odys/space/proprietary/libOmxWmvDec.so:system/lib/libOmxWmvDec.so \
-	vendor/odys/space/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so
+	vendor/odys/space/proprietary/233/libOmxAacDec.so:system/lib/libOmxAacDec.so \
+	vendor/odys/space/proprietary/233/libOmxAacEnc.so:system/lib/libOmxAacEnc.so \
+	vendor/odys/space/proprietary/233/libOmxAdpcmDec.so:system/lib/libOmxAdpcmDec.so \
+	vendor/odys/space/proprietary/233/libOmxAmrDec.so:system/lib/libOmxAmrDec.so \
+	vendor/odys/space/proprietary/233/libOmxAmrEnc.so:system/lib/libOmxAmrEnc.so \
+	vendor/odys/space/proprietary/233/libOmxAmrRtpDec.so:system/lib/libOmxAmrRtpDec.so \
+	vendor/odys/space/proprietary/233/libOmxAmrwbDec.so:system/lib/libOmxAmrwbDec.so \
+	vendor/odys/space/proprietary/233/libOmxEvrcEnc.so:system/lib/libOmxEvrcEnc.so \
+	vendor/odys/space/proprietary/233/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
+	vendor/odys/space/proprietary/233/libOmxMp3Dec.so:system/lib/libOmxMp3Dec.so \
+	vendor/odys/space/proprietary/233/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
+	vendor/odys/space/proprietary/233/libOmxQcelp13Enc.so:system/lib/libOmxQcelp13Enc.so \
+	vendor/odys/space/proprietary/233/libOmxVidEnc.so:system/lib/libOmxVidEnc.so \
+	vendor/odys/space/proprietary/233/libOmxWmaDec.so:system/lib/libOmxWmaDec.so \
+	vendor/odys/space/proprietary/233/libOmxWmvDec.so:system/lib/libOmxWmvDec.so \
+	vendor/odys/space/proprietary/233/libmm-adspsvc.so:system/lib/libmm-adspsvc.so
 
 
 # Firmware
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/prebuilt/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \
-	vendor/odys/space/proprietary/prebuilt/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
-	vendor/odys/space/proprietary/prebuilt/cfg.dat:system/etc/firmware/wlan/cfg.dat \
-	vendor/odys/space/proprietary/prebuilt/qcom_wapi_fw.bin:system/etc/firmware/wlan/qcom_wapi_fw.bin \
-	vendor/odys/space/proprietary/prebuilt/qcom_fw.bin:system/etc/firmware/wlan/qcom_fw.bin \
-	vendor/odys/space/proprietary/prebuilt/qcom_wlan_nv.bin:system/etc/firmware/wlan/qcom_wlan_nv.bin \
-	vendor/odys/space/proprietary/prebuilt/qcom_cfg.ini:system/etc/firmware/wlan/qcom_cfg.ini
+	vendor/odys/space/proprietary/233/prebuilt/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \
+	vendor/odys/space/proprietary/233/prebuilt/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
+	vendor/odys/space/proprietary/233/prebuilt/cfg.dat:system/etc/firmware/wlan/cfg.dat \
+	vendor/odys/space/proprietary/233/prebuilt/qcom_wapi_fw.bin:system/etc/firmware/wlan/qcom_wapi_fw.bin \
+	vendor/odys/space/proprietary/233/prebuilt/qcom_fw.bin:system/etc/firmware/wlan/qcom_fw.bin \
+	vendor/odys/space/proprietary/233/prebuilt/qcom_wlan_nv.bin:system/etc/firmware/wlan/qcom_wlan_nv.bin \
+	device/odys/space/qcom_cfg.ini:system/etc/firmware/wlan/qcom_cfg.ini
 
 # HostAPd configuration files
 # has to end up in /data/hostapd - who is copying ?
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/prebuilt/qcom_cfg.ini:system/etc/wifi/qcom_cfg.ini \
+	device/odys/space/qcom_cfg.ini:system/etc/wifi/qcom_cfg.ini \
 	device/odys/space/hostapd.conf:system/etc/wifi/softap/hostapd.conf
 
 # Service and additional init script
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/etc/init.qcom.coex.sh:system/etc/init.qcom.coex.sh \
-	vendor/odys/space/proprietary/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
-	vendor/odys/space/proprietary/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
-	vendor/odys/space/proprietary/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh
+	vendor/odys/space/proprietary/233/etc/init.qcom.coex.sh:system/etc/init.qcom.coex.sh \
+	vendor/odys/space/proprietary/233/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
+	vendor/odys/space/proprietary/233/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
+	vendor/odys/space/proprietary/233/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh
 
 # And last but not least a couple of prebuilt binaries
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/prebuilt/battery_charging:system/bin/battery_charging \
-	vendor/odys/space/proprietary/prebuilt/qmuxd:system/bin/qmuxd \
-	vendor/odys/space/proprietary/prebuilt/btwlancoex:system/bin/btwlancoex \
-	vendor/odys/space/proprietary/prebuilt/wifiwritemac:system/bin/wifiwritemac \
-	vendor/odys/space/proprietary/prebuilt/port-bridge:system/bin/port-bridge \
-	vendor/odys/space/proprietary/prebuilt/CKPD-daemon:system/bin/CKPD-daemon \
-	vendor/odys/space/proprietary/prebuilt/wiperiface:system/bin/wiperiface \
-	vendor/odys/space/proprietary/prebuilt/netmgrd:system/bin/netmgrd \
-	vendor/odys/space/proprietary/prebuilt/hostapd:system/bin/hostapd \
-	vendor/odys/space/proprietary/prebuilt/hostapd_cli:system/bin/hostapd_cli
+	vendor/odys/space/proprietary/233/prebuilt/battery_charging:system/bin/battery_charging \
+	vendor/odys/space/proprietary/233/prebuilt/qmuxd:system/bin/qmuxd \
+	vendor/odys/space/proprietary/233/prebuilt/btwlancoex:system/bin/btwlancoex \
+	vendor/odys/space/proprietary/233/prebuilt/wifiwritemac:system/bin/wifiwritemac \
+	vendor/odys/space/proprietary/233/prebuilt/port-bridge:system/bin/port-bridge \
+	vendor/odys/space/proprietary/233/prebuilt/netmgrd:system/bin/netmgrd \
+	vendor/odys/space/proprietary/233/prebuilt/hostapd:system/bin/hostapd \
+	vendor/odys/space/proprietary/233/prebuilt/hostapd_cli:system/bin/hostapd_cli
 
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0

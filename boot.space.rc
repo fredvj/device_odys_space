@@ -154,9 +154,9 @@ service bugreport /system/bin/dumpstate -d -z -o /mnt/emmc/bugreport
     user root
     disabled
     oneshot
-    keycodes 25 84
+    keycodes 114 217
 
-# 25 84 - Volume down, Search
+# 114 217 - Volume down, Search
 
 service hciattach /system/bin/sh /system/etc/init.bt.sh
     user bluetooth
@@ -197,11 +197,6 @@ service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL wlan0
     disabled
     oneshot
 
-service wiperiface /system/bin/wiperiface
-    user location
-    group qcom_oncrpc
-    oneshot
-
 # service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
 #     user system
 #     group system
@@ -221,15 +216,6 @@ service qcom-wifi /system/bin/sh /system/etc/init.qcom.wifi.sh
 on property:init.svc.bootanim=stopped
     start qcom-post-boot
     start qcom-wifi
-
-service ckpd /system/bin/CKPD-daemon
-    user system
-    group system radio
-    disabled
-    onrestart /system/bin/log -t RIL-CKPD -p w "CKPD daemon restarted"
-
-on property:ro.service.ckpd.enable=1
-    start ckpd
 
 service hostapd /system/bin/hostapd -dddd /data/hostapd/hostapd.conf
     user root
