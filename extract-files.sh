@@ -22,7 +22,7 @@ for f in libra_ftm.ko libra.ko librasdioif.ko
 done
 
 echo "    -------------------- Hardware libraries"
-for f in copybit.msm7k.so gralloc.msm7k.so lights.msm7k.so sensors.default.so
+for f in copybit.msm7k.so gps.default.so gralloc.msm7k.so lights.msm7k.so sensors.default.so
 	do adb pull /system/lib/hw/$f $PROPS/hw
 done
 

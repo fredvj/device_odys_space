@@ -24,11 +24,6 @@ PRODUCT_PACKAGES += \
 # Lights coming from hardware/msm7k/liblights
 
 PRODUCT_PACKAGES += \
-	sensors.msm7k \
-	lights.msm7k \
-	copybit.7x27 \
-	gralloc.7x27 \
-	gps.msm7k \
 	libcamera \
 	libaudio \
 	libOmxCore \
@@ -155,7 +150,11 @@ PRODUCT_COPY_FILES += \
 # gralloc are copied from old ROM (the new one is using to much memory?)
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/233/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so
+	vendor/odys/space/proprietary/233/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
+	vendor/odys/space/proprietary/233/hw/gps.default.so:system/lib/hw/gps.default.so \
+	vendor/odys/space/proprietary/233/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
+	vendor/odys/space/proprietary/233/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
+	vendor/odys/space/proprietary/233/hw/sensors.default.so:system/lib/hw/sensors.default.so
 
 # Graphic hardware
 
