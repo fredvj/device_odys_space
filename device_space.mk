@@ -278,6 +278,12 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/233/prebuilt/netmgrd:system/bin/netmgrd \
 	vendor/odys/space/proprietary/233/prebuilt/hostapd:system/bin/hostapd \
 	vendor/odys/space/proprietary/233/prebuilt/hostapd_cli:system/bin/hostapd_cli
+	vendor/odys/space/proprietary/233/prebuilt/usbhub:system/bin/usbhub \
+	vendor/odys/space/proprietary/233/prebuilt/usbhub_init:system/bin/usbhub_init \
+	vendor/odys/space/proprietary/233/prebuilt/diag_klog:system/bin/diag_klog \
+	vendor/odys/space/proprietary/233/prebuilt/diag_mdlog:system/bin/diag_mdlog \
+	vendor/odys/space/proprietary/233/prebuilt/cnd:system/bin/cnd \
+	vendor/odys/space/proprietary/233/prebuilt/ds_fmc_appd:system/bin/ds_fmx_appd
 
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
