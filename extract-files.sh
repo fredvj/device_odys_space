@@ -36,7 +36,7 @@ adb pull /system/bin/hci_qcomm_init $PROPS
 adb pull /system/bin/hciattach $PROPS
 
 echo "    -------------------- Radio and associated libraries"
-for f in libcm.so libdsm.so libdss.so libdl.so libgsdi_exp.so libgstk_exp.so libmmgsdilib.so libnv.so liboem_rapi.so liboncrpc.so libqmi.so libqueue.so libril-qc-1.so libwms.so libwmsts.so libsnd.so libdiag.so libril-qcril-hook-oem.so libgsl.so libauth.so libpbmlib.so libdsutils.so libnetmgr.so
+for f in libcm.so libdsm.so libdss.so libdl.so libgsdi_exp.so libgstk_exp.so libmmgsdilib.so libnv.so liboem_rapi.so liboncrpc.so libqmi.so libqueue.so libril-qc-1.so libwms.so libwmsts.so libsnd.so libdiag.so libril-qcril-hook-oem.so libgsl.so libauth.so libpbmlib.so libdsutils.so libnetmgr.so libidl.so libril-qc-qmi-1.so
 	do adb pull /system/lib/$f $PROPS
 done
 

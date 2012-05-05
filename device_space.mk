@@ -194,7 +194,10 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/233/libsnd.so:system/lib/libsnd.so \
 	vendor/odys/space/proprietary/233/libdiag.so:system/lib/libdiag.so \
 	vendor/odys/space/proprietary/233/libauth.so:system/lib/libauth.so \
-	vendor/odys/space/proprietary/233/libpbmlib.so:system/lib/libpbmlib.so
+	vendor/odys/space/proprietary/233/libpbmlib.so:system/lib/libpbmlib.so \
+	vendor/odys/space/proprietary/233/libdsutils.so:system/lib/libdsutils.so \
+	vendor/odys/space/proprietary/233/libidl.so:system/lib/libidl.so \
+	vendor/odys/space/proprietary/233/libril-qc-qmi-1.so:system/lib/libril-qc-qmi-1.so
 
 
 # 	vendor/odys/space/proprietary/233/libdsutils.so:system/lib/libdsutils.so \
