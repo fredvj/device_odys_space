@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<voicemail>
+
+    <voicemail carrier="TWN"
+               numeric="46697"
+               vmnumber="123"
+               vmtag="VoiceMail"
+            />
+    <voicemail carrier="CHT"
+               numeric="46692"
+               vmnumber="777"
+               vmtag="VoiceMail"
+            />
+    <voicemail carrier="FET"
+               numeric="46601"
+               vmnumber="222"
+               vmtag="VoiceMail"
+            />
+    <voicemail carrier="Vibo"
+               numeric="46689"
+               vmnumber="777"
+               vmtag="VoiceMail"
+            />            
+    <voicemail carrier="Guatemala"
+               numeric="70403"
+               vmnumber="*86"
+               vmtag="VoiceMail"
+            />
+    <voicemail carrier="Guatemala"
+               numeric="70402"
+               vmnumber="*77"
+               vmtag="VoiceMail"
+            />            
+    <voicemail carrier="Guatemala"
+               numeric="70401"
+               vmnumber="*80"
+               vmtag="VoiceMail"
+            />
+
+    <voicemail carrier="El Salvador"
+               numeric="70604"
+               vmnumber="*86"
+               vmtag="VoiceMail"
+            />
+    <voicemail carrier="El Salvador"
+               numeric="70605"
+               vmnumber="*80"
+               vmtag="VoiceMail"
+            />
+    <voicemail carrier="El Salvador"
+               numeric="70603"
+               vmnumber="*80"
+               vmtag="VoiceMail"
+            />
+                                               
+    <voicemail carrier="Nicaragua"
+               numeric="71030"
+               vmnumber="*86"
+               vmtag="VoiceMail"
+            />
+    <voicemail carrier="Nicaragua"
+               numeric="71021"
+               vmnumber="*80"
+               vmtag="VoiceMail"
+            />
+
+    <voicemail carrier="Panama"
+               numeric="71402"
+               vmnumber="*86"
+               vmtag="VoiceMail"
+            />
+                                    
+    <voicemail carrier="Ecuador"
+               numeric="74000"
+               vmnumber="*82"
+               vmtag="VoiceMail"
+            />
+    <voicemail carrier="Ecuador"
+               numeric="74001"
+               vmnumber="999"
+               vmtag="VoiceMail"
+            />
+    <voicemail carrier="Ecuador"
+               numeric="74002"
+               vmnumber="*123"
+               vmtag="VoiceMail"
+            />
+            
+    <voicemail carrier="COSTA RICA"
+               numeric="71204"
+               vmnumber="*1690"
+               vmtag="VoiceMail"
+            />
+              
+    <voicemail carrier="MEXICO"
+               numeric="46001"
+               vmnumber="186"
+               vmtag="VoiceMail"
+            />
+    <voicemail carrier="MEXICO"
+               numeric="33402"
+               vmnumber="*86"
+               vmtag="VoiceMail"
+            />
+            
+    <voicemail carrier="URUGUAY"
+               numeric="74807"
+               vmnumber="6684"
+               vmtag="VoiceMail"
+            />
+    <voicemail carrier="URUGUAY"
+               numeric="74810"
+               vmnumber="*2747"
+               vmtag="VoiceMail"
+            />
+                                                           
+    <voicemail carrier="Chile movistar"
+               numeric="73002"
+               vmnumber="500"
+               vmtag="VoiceMail"
+            />
+            
+    <voicemail carrier="Colombia movistar"
+               numeric="732123"
+               vmnumber="*123"
+               vmtag="VoiceMail"
+            />
+    <voicemail carrier="Colombia"
+               numeric="732111"
+               vmnumber="*123"
+               vmtag="VoiceMail"
+            />            
+    <voicemail carrier="Colombia"
+               numeric="732103"
+               vmnumber="*123"
+               vmtag="VoiceMail"
+            />
+            
+    <voicemail carrier="Venezuela movistar"
+               numeric="73404"
+               vmnumber="133"
+               vmtag="VoiceMail"
+            />
+
+    <voicemail carrier="Peru movistar"
+               numeric="71606"
+               vmnumber="*169"
+               vmtag="VoiceMail"
+            />
+    <voicemail carrier="Peru"
+               numeric="71610"
+               vmnumber="131"
+               vmtag="VoiceMail"
+            /> 
+    <voicemail carrier="Peru movistar"
+               numeric="71616"
+               vmnumber="*169"
+               vmtag="VoiceMail"
+            />     
+	<!-- new added --> 
+    <voicemail carrier="Guatemala movistar"
+               numeric="70403"
+               vmnumber="*86"
+               vmtag="VoiceMail"
+            />     
+    <voicemail carrier="EI Salvdor movistar"
+               numeric="70604"
+               vmnumber="*86"
+               vmtag="VoiceMail"
+            />     
+    <voicemail carrier="Nicaragua movistar"
+               numeric="71030"
+               vmnumber="*86"
+               vmtag="VoiceMail"
+            />     
+    <voicemail carrier="Panama movistar"
+               numeric="71402"
+               vmnumber="*86"
+               vmtag="VoiceMail"
+            />     
+    <voicemail carrier="Ecuador movistar"
+               numeric="74000"
+               vmnumber="*82"
+               vmtag="VoiceMail"
+            />     
+    <voicemail carrier="Colombia movistar"
+               numeric="732102"
+               vmnumber="*123"
+               vmtag="VoiceMail"
+            />
+    <voicemail carrier="china unicom"
+	       numeric="46001"
+	       vmnumber="13010314300"
+	       vmtag="VoiceMail"
+    />
+    <voicemail carrier="cmcc"
+	       numeric="46002"
+	       vmnumber="13800XYZ166"
+	       vmtag="VoiceMail"
+    />
+</voicemail>

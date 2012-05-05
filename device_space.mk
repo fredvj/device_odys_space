@@ -103,7 +103,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	device/odys/space/prebuilt/apns-conf.xml:system/etc/apns-conf.xml \
-	device/odys/space/prebuilt/spn-conf.xml:system/etc/spn-conf.xml
+	device/odys/space/prebuilt/spn-conf.xml:system/etc/spn-conf.xml \
+	device/odys/space/prebuilt/voicemail-conf.xml:system/etc/voicemail-conf.xml
 
 # Startup scripts
 # If would like to name it init.space.rc, we would have to change the kernel parameter
