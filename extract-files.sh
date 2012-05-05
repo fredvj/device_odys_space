@@ -119,4 +119,11 @@ adb pull /system/bin/wpa_supplicant $PROPS/prebuilt/
 adb pull /system/bin/rmt_storage $PROPS/prebuilt/
 adb pull /system/bin/netmgrd $PROPS/prebuilt/
 
+adb pull /system/bin/usbhub $PROPS/prebuilt/
+adb pull /system/bin/usbhub_init $PROPS/prebuilt/
+adb pull /system/bin/diag_klog $PROPS/prebuilt/
+adb pull /system/bin/diag_mdlog $PROPS/prebuilt/
+adb pull /system/bin/cnd $PROPS/prebuilt/
+adb pull /system/bin/ds_fmc_appd $PROPS/prebuilt/
+
 echo "    -------------------- DONE. check the above lines for errors"

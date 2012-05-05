@@ -135,7 +135,7 @@ service hci_qcomm_init /system/bin/log -t qcom-bluetooth -p i "hci_qcomm_init se
     disabled
     oneshot
 
-# service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p10 /dev/block/mmcblk0p11
+# service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p10 /dev/block/mmcblk0p11 /dev/block/mmcblk0p17
 #     user root
 #     disabled
 
@@ -165,17 +165,17 @@ service hciattach /system/bin/sh /system/etc/init.bt.sh
     oneshot
 
 # service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyGS0
-#     user system
-# #    group system inet
-#     group system inet radio
 
 # "netd" is already in "init.rc" - removing duplicate
 # service netd /system/bin/netd
 #     socket netd stream 0666 root system
 
 service qmuxd /system/bin/qmuxd
+    user radio
+    group radio
+    disabled
 
-service netmgrd /system/bin/netmgrd -E
+service netmgrd /system/bin/netmgrd
     disabled
 
 on property:ro.use_data_netmgrd=true
@@ -224,6 +224,6 @@ service hostapd /system/bin/hostapd -dddd /data/hostapd/hostapd.conf
     disabled
 
 on property:ro.data.large_tcp_window_size=true
-    # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
+    # Adjust socket buffer to enlarge TCP receive window
     write /proc/sys/net/ipv4/tcp_adv_win_scale  1
 
