@@ -207,7 +207,7 @@ service hciattach /system/bin/sh /system/etc/init.bt.sh
 service qmuxd /system/bin/qmuxd
     user radio
     group radio
-    disabled
+#    disabled
 
 service netmgrd /system/bin/netmgrd
     disabled

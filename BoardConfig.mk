@@ -65,7 +65,8 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 BOARD_CUSTOM_USB_CONTROLLER := ../../device/odys/space/UsbController.cpp
 
-TARGET_PROVIDES_LIBRIL := true
+# TARGET_PROVIDES_LIBRIL := true
+# BOARD_USE_NEW_LIBRIL_HTC := true
 TARGET_PROVIDES_LIBAUDIO := true
 
 # The name of the init file can be controlled from the kernel command line

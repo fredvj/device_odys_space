@@ -2554,8 +2554,7 @@ RIL_register (const RIL_RadioFunctions *callbacks) {
     int ret;
     int flags;
 
-    if (callbacks == NULL || ((callbacks->version != RIL_VERSION)
-                && (callbacks->version != 2))) { // Remove when partners upgrade to version 3
+    if (callbacks == NULL || (callbacks->version != RIL_VERSION)) {
         LOGE(
             "RIL_register: RIL_RadioFunctions * null or invalid version"
             " (expected %d)", RIL_VERSION);
