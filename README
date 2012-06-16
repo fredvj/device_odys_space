@@ -1,6 +1,6 @@
 # Build environment for:
 #
-# Odys Space - CyanogenMod 7.2 RC1
+# Odys Space - CyanogenMod 7.2
 #
 # See: http://www.odys.de/web/tablet-pc_space_de.html
 #
@@ -64,3 +64,4 @@ Memory                  : 256MB device - needs special parameters?
 		Settings->Wireless & networks->Mobile networks->Access Point Names
 2012-01-23:	Re-enabling WLAN seems to be okay now
 2012-04-19:	Update README status with all the updates since last change
+2012-06-16:	A couple of updates after CM 7.2 released
