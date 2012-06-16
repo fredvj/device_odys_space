@@ -3,7 +3,7 @@ echo "***"
 echo "*** Odys Space - ClockworkMod Recovery ***
 echo "***"
 echo "*** Recovery does not support logcat!"
-echo "*** However, \"adb shell\" is supported"
+echo "*** However, <adb shell> is supported"
 echo "***"
 exit 0
 
