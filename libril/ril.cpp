@@ -2554,12 +2554,23 @@ RIL_register (const RIL_RadioFunctions *callbacks) {
     int ret;
     int flags;
 
-    if (callbacks == NULL || (callbacks->version != RIL_VERSION)) {
-        LOGE(
-            "RIL_register: RIL_RadioFunctions * null or invalid version"
-            " (expected %d)", RIL_VERSION);
-        return;
+    if(callbacks == NULL) {
+	LOGE("RIL_register: RIL_RadioFunctions is null!");
     }
+
+    if(callbacks->version != RIL_VERSION) {
+        LOGE("RIL_register: RIL_RadioFunctions have invalid version"
+            " - expected(%d), is(%d)", RIL_VERSION, callbacks->version);
+        // return;
+
+	if(callbacks->version == 4) {
+		LOGW("Odys Space Android 2.3.3 basebands are version 4. Ignoring RIL_VERSION := %d for the moment.", RIL_VERSION);
+	}
+	else {
+		return;
+	}
+    }
+
     if (callbacks->version < 3) {
         LOGE ("RIL_register: upgrade RIL to version 3 current version=%d", callbacks->version);
     }
