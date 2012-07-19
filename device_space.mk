@@ -1,4 +1,3 @@
-$(call inherit-product, build/target/product/full.mk)
 $(call inherit-product, build/target/product/languages_small.mk)
 
 # The gps config appropriate for this device
@@ -6,32 +5,30 @@ $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 $(call inherit-product-if-exists, vendor/odys/space/space-vendor.mk)
 
-# Build the mock-ril
-# $(call inherit-product, hardware/ril/mock-ril/Android.mk)
-
-DEVICE_PACKAGE_OVERLAYS += device/odys/space/overlay
-
 PRODUCT_PACKAGES += \
-	Gallery \
-	LiveWallpapers \
-	LiveWallpapersPicker \
-	SpareParts \
-	Development \
-	Term
+	make_ext4fs \
+	gralloc.msm7x27 \
+	hwcomposer.msm7x27 \
+	audio.a2dp.default \
+	audio.primary.space \
+	audio_policy.space \
+	hwcomposer.default \
+	DSPManager \
+	MusicFX
 
 # This is the list of libraries to include in the build
 # Sensors are ours
 # Lights coming from hardware/msm7k/liblights
 
 PRODUCT_PACKAGES += \
-	libcamera \
-	libaudio \
 	libOmxCore \
-	libRS \
-	librs_jni \
-	dexpreopt
-
-DISABLE_DEXPREOPT := false
+	libOmxVidEnc \
+	libmm-omxcore \
+	libstagefrighthw \
+	libgenlock \
+	liboverlay \
+	libtilerenderer \
+	libQcomUI
 
 
 # A kernel seems like a good start
@@ -101,10 +98,10 @@ PRODUCT_COPY_FILES += \
 # Do not edit here (would result in duplicate entries):
 # frameworks/base/core/res/res/xml/apns.xml
 
-PRODUCT_COPY_FILES += \
-	device/odys/space/prebuilt/apns-conf.xml:system/etc/apns-conf.xml \
-	device/odys/space/prebuilt/spn-conf.xml:system/etc/spn-conf.xml \
-	device/odys/space/prebuilt/voicemail-conf.xml:system/etc/voicemail-conf.xml
+# PRODUCT_COPY_FILES += \
+#	device/odys/space/prebuilt/apns-conf.xml:system/etc/apns-conf.xml \
+#	device/odys/space/prebuilt/spn-conf.xml:system/etc/spn-conf.xml \
+#	device/odys/space/prebuilt/voicemail-conf.xml:system/etc/voicemail-conf.xml
 
 # Startup scripts
 # If would like to name it init.space.rc, we would have to change the kernel parameter
@@ -117,7 +114,11 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	device/odys/space/boot.space.rc:root/init.qcom.rc \
-	device/odys/space/ueventd.space.rc:root/ueventd.qct.rc
+	device/odys/space/boot.space.rc:root/init.qct.rc \
+	device/odys/space/boot.space.rc:root/init.space.rc \
+	device/odys/space/ueventd.space.rc:root/ueventd.qcom.rc \
+	device/odys/space/ueventd.space.rc:root/ueventd.qct.rc \
+	device/odys/space/ueventd.space.rc:root/ueventd.space.rc
 
 # Configuration files
 
@@ -139,32 +140,34 @@ PRODUCT_COPY_FILES += \
 # Kernel modules
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/233/modules/libra_ftm.ko:system/lib/modules/libra_ftm.ko \
 	vendor/odys/space/proprietary/233/modules/libra.ko:system/lib/modules/libra.ko \
-	vendor/odys/space/proprietary/233/modules/librasdioif.ko:system/lib/modules/librasdioif.ko \
-	device/odys/space/prebuilt/tun.ko:system/lib/modules/tun.ko \
-	device/odys/space/prebuilt/slow-work.ko:system/lib/modules/slow-work.ko \
-	device/odys/space/prebuilt/cifs.ko:system/lib/modules/cifs.ko
+	vendor/odys/space/proprietary/233/modules/librasdioif.ko:system/lib/modules/librasdioif.ko
 
 # Hardware libraries
 
-# gralloc are copied from old ROM (the new one is using to much memory?)
+# gralloc are copied from old ROM (the new one is using too much memory?)
 
-PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/233/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
-	vendor/odys/space/proprietary/233/hw/gps.default.so:system/lib/hw/gps.default.so \
-	vendor/odys/space/proprietary/233/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
-	vendor/odys/space/proprietary/233/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
-	vendor/odys/space/proprietary/233/hw/sensors.default.so:system/lib/hw/sensors.default.so
+# PRODUCT_COPY_FILES += \
+# 	vendor/odys/space/proprietary/233/hw/gps.default.so:system/lib/hw/gps.default.so \
+# 	vendor/odys/space/proprietary/233/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
+# 	vendor/odys/space/proprietary/233/hw/sensors.default.so:system/lib/hw/sensors.default.so \
+# 	vendor/odys/space/proprietary/233/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
+# 	vendor/odys/space/proprietary/233/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so
 
 # Graphic hardware
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/233/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
-	vendor/odys/space/proprietary/233/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
-	vendor/odys/space/proprietary/233/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
-	vendor/odys/space/proprietary/233/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
-	vendor/odys/space/proprietary/233/libgsl.so:system/lib/libgsl.so
+	device/odys/space/prebuilt/adreno200/system/lib/egl/egl.cfg:system/lib/egl/egl.cfg \
+	device/odys/space/prebuilt/adreno200/system/lib/egl/eglsubAndroid.so:system/lib/egl/eglsubAndroid.so \
+	device/odys/space/prebuilt/adreno200/system/lib/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
+	device/odys/space/prebuilt/adreno200/system/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
+	device/odys/space/prebuilt/adreno200/system/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
+	device/odys/space/prebuilt/adreno200/system/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \
+	device/odys/space/prebuilt/adreno200/system/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
+	device/odys/space/prebuilt/adreno200/system/lib/libC2D2.so:system/lib/libC2D2.so \
+	device/odys/space/prebuilt/adreno200/system/lib/libgsl.so:system/lib/libgsl.so \
+	device/odys/space/prebuilt/adreno200/system/lib/libOpenVG.so:system/lib/libOpenVG.so \
+	device/odys/space/prebuilt/adreno200/system/lib/libsc-a2xx.so:system/lib/libsc-a2xx.so
 
 
 # Bluetooth helpers
@@ -215,37 +218,38 @@ PRODUCT_COPY_FILES += \
 # Target
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/233/libgps.so:system/lib/libgps.so \
-	vendor/odys/space/proprietary/233/liboemcamera.so:system/lib/liboemcamera.so \
-	vendor/odys/space/proprietary/233/libmmjpeg.so:system/lib/libmmjpeg.so \
-	vendor/odys/space/proprietary/233/libmmipl.so:system/lib/libmmipl.so
+	vendor/odys/space/proprietary/233/libgps.so:system/lib/libgps.so
 
-# Media libraries
+#	vendor/odys/space/proprietary/233/liboemcamera.so:system/lib/liboemcamera.so \
+#	vendor/odys/space/proprietary/233/libmmjpeg.so:system/lib/libmmjpeg.so \
+#	vendor/odys/space/proprietary/233/libmmipl.so:system/lib/libmmipl.so
 
+## Camera
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/233/libOmxAacDec.so:system/lib/libOmxAacDec.so \
-	vendor/odys/space/proprietary/233/libOmxAacEnc.so:system/lib/libOmxAacEnc.so \
-	vendor/odys/space/proprietary/233/libOmxAdpcmDec.so:system/lib/libOmxAdpcmDec.so \
-	vendor/odys/space/proprietary/233/libOmxAmrDec.so:system/lib/libOmxAmrDec.so \
-	vendor/odys/space/proprietary/233/libOmxAmrEnc.so:system/lib/libOmxAmrEnc.so \
-	vendor/odys/space/proprietary/233/libOmxAmrRtpDec.so:system/lib/libOmxAmrRtpDec.so \
-	vendor/odys/space/proprietary/233/libOmxAmrwbDec.so:system/lib/libOmxAmrwbDec.so \
-	vendor/odys/space/proprietary/233/libOmxEvrcEnc.so:system/lib/libOmxEvrcEnc.so \
-	vendor/odys/space/proprietary/233/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
-	vendor/odys/space/proprietary/233/libOmxMp3Dec.so:system/lib/libOmxMp3Dec.so \
-	vendor/odys/space/proprietary/233/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
-	vendor/odys/space/proprietary/233/libOmxQcelp13Enc.so:system/lib/libOmxQcelp13Enc.so \
-	vendor/odys/space/proprietary/233/libOmxVidEnc.so:system/lib/libOmxVidEnc.so \
-	vendor/odys/space/proprietary/233/libOmxWmaDec.so:system/lib/libOmxWmaDec.so \
-	vendor/odys/space/proprietary/233/libOmxWmvDec.so:system/lib/libOmxWmvDec.so \
-	vendor/odys/space/proprietary/233/libmm-adspsvc.so:system/lib/libmm-adspsvc.so
-
+	device/samsung/gio/prebuilt/camera.gio.so:system/lib/hw/camera.gio.so \
+	device/samsung/gio/prebuilt/camera.gio.so:system/lib/hw/camera.space.so \
+	device/samsung/gio/prebuilt/libcamera.so:system/lib/libcamera.so \
+	device/samsung/gio/prebuilt/libcamera_client.so:system/lib/libcamera_client.so \
+	device/samsung/gio/prebuilt/libcameraservice.so:system/lib/libcameraservice.so \
+	device/samsung/gio/prebuilt/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
+	device/samsung/gio/prebuilt/libmmgsdilib.so:system/lib/libmmgsdilib.so \
+	device/samsung/gio/prebuilt/libmmipl.so:system/lib/libmmipl.so \
+	device/samsung/gio/prebuilt/libmmjpeg.so:system/lib/libmmjpeg.so \
+	device/samsung/gio/prebuilt/libmm-omxcore.so:system/lib/libmm-omxcore.so \
+	device/samsung/gio/prebuilt/liboemcamera.so:system/lib/liboemcamera.so
 
 # Firmware
 
 PRODUCT_COPY_FILES += \
-	vendor/odys/space/proprietary/233/prebuilt/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \
-	vendor/odys/space/proprietary/233/prebuilt/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
+        device/odys/space/prebuilt/adreno200/system/etc/firmware/a225p5_pm4.fw:system/etc/firmware/a225p5_pm4.fw \
+        device/odys/space/prebuilt/adreno200/system/etc/firmware/a225_pfp.fw:system/etc/firmware/a225_pfp.fw \
+        device/odys/space/prebuilt/adreno200/system/etc/firmware/a225_pm4.fw:system/etc/firmware/a225_pm4.fw \
+        device/odys/space/prebuilt/adreno200/system/etc/firmware/a300_pfp.fw:system/etc/firmware/a300_pfp.fw \
+        device/odys/space/prebuilt/adreno200/system/etc/firmware/a300_pm4.fw:system/etc/firmware/a300_pm4.fw \
+        device/odys/space/prebuilt/adreno200/system/etc/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
+        device/odys/space/prebuilt/adreno200/system/etc/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw \
+	device/odys/space/prebuilt/adreno200/system/etc/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \
+	device/odys/space/prebuilt/adreno200/system/etc/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
 	vendor/odys/space/proprietary/233/prebuilt/cfg.dat:system/etc/firmware/wlan/cfg.dat \
 	vendor/odys/space/proprietary/233/prebuilt/qcom_wapi_fw.bin:system/etc/firmware/wlan/qcom_wapi_fw.bin \
 	vendor/odys/space/proprietary/233/prebuilt/qcom_fw.bin:system/etc/firmware/wlan/qcom_fw.bin \
@@ -285,6 +289,23 @@ PRODUCT_COPY_FILES += \
 	vendor/odys/space/proprietary/233/prebuilt/cnd:system/bin/cnd \
 	vendor/odys/space/proprietary/233/prebuilt/ds_fmc_appd:system/bin/ds_fmx_appd
 
+
+# LDPI assets
+PRODUCT_LOCALES += en
+PRODUCT_AAPT_CONFIG := normal ldpi mdpi
+PRODUCT_AAPT_PREF_CONFIG := mdpi
+# $(call inherit-product, build/target/product/full_base.mk)
+# $(call inherit-product, build/target/product/languages_small.mk)
+
+# HardwareRenderer properties
+# dirty_regions: "false" to disable partial invalidates, override if enabletr=true
+PRODUCT_PROPERTY_OVERRIDES += \
+    hwui.render_dirty_regions=false
+
+# Misc properties
+# events_per_sec: default 90
+PRODUCT_PROPERTY_OVERRIDES += \
+    pm.sleep_mode=1
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := odys_space

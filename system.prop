@@ -21,11 +21,21 @@ persist.sys.use_16bpp_alpha=1
 ro.sf.lcd_density=160
 ro.sf.hwrotation=270
 ro.build.baseband_version=R2-D2_C-3PO_2012
+ro.com.google.locationfeatures=1
 ro.setupwizard.enable_bypass=1
-dalvik.vm.heapsize=24m
+ro.config.play.bootsound=0
+dalvik.vm.lockprof.threshold=500
+dalvik.vm.dexopt-flags=m=y
+dalvik.vm.heapsize=48m
+dalvik.vm.execution-mode=int:jit
+dalvik.vm.dexopt-data-only=1
 net.bt.name=CM7-Space
 ro.teather.denied=false
 ro.rommanager.developerid=cyanogenmod
+sys.checkfs.fat=false
+video.accelerate.hw=1
+media.stagefright.enable-player=true
+windowsmgr.max_events_per_sec=150
 #
 # Storage related settings
 #
@@ -37,4 +47,6 @@ persist.sys.vold.switchexternal=1
 # Not sure, Huawei X3 seems to use it
 #
 debug.sf.hw=1
+#
+ro.workaround.noautofocus=1
 

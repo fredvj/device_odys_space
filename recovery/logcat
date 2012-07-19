@@ -1,6 +1,6 @@
 #!/sbin/sh
 echo "***"
-echo "*** Odys Space - ClockworkMod Recovery ***
+echo "*** Odys Space - ClockworkMod Recovery"
 echo "***"
 echo "*** Recovery does not support logcat!"
 echo "*** However, <adb shell> is supported"

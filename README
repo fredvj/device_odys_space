@@ -1,66 +1,31 @@
 # Build environment for:
 #
-# Odys Space - CyanogenMod 7.2 RC1
+# Odys Space - CyanogenMod 9.0 RC1
 #
 # See: http://www.odys.de/web/tablet-pc_space_de.html
 #
 # Device is available from Amazon and Conrad in Germany
 #
 
-USB Charging            : Okay
-USB ADB                 : Okay
-USB Mass Strorage       : Okay - internal / external - needs testing
-Video                   : Okay - needs testing
-Audio                   : Okay - needs testing
-			: See GSM below. Microphone needs testing
-Sensors                 : Okay - New sensor lib for kernel 2.6.32.9
-			: HW: BMA020 (Bosch Sensortec - 3 axis acceleration)
-Screen rotation		: Okay
-Touchscreen		: HW: FT5406 (Focal Tech) Controller
-WLAN                    : Okay
-			: HW: WCN1312_2.10-3.0.0.49-3.0.0.20
-WLAN Hotspot            : Okay - New settings will get picked up when re-enabling the Hotspot
-GSM                     : Okay
-GSM Data		: Okay
-GSM Voice		: Okay
-GSM SMS			: Okay
-Bluetooth               : Okay, but MAC address is randomly picked with every reboot
-Camera                  : No - crashes
-			: HW: MT9D112 (Aptina 2 Mp camera enabled in kernel)
-			:     Needs further investigation
-			:     This would match the Odys datasheet
-			:     Others are enabled as well
-Keyboard                : Still work to do
-Memory                  : 256MB device - needs special parameters?
+USB Charging            : tbd
+USB ADB                 : tbd
+USB Mass Strorage       : tbd
+Video                   : tbd
+Audio                   : tbd
+Sensors                 : tbd
+Screen rotation		: tbd
+Touchscreen		: tbd
+WLAN                    : tbd
+WLAN Hotspot            : tbd
+GSM                     : tbd
+GSM Data		: tbd
+GSM Voice		: tbd
+GSM SMS			: tbd
+Bluetooth               : tbd
+Camera                  : tbd
+Keyboard                : tbd
+Memory                  : tbd
 
 #
 
-2012-01-06:	First steps. Settings up environment
-		File for CWM Recovery & Odys Space
-2012-01-07:	Compiled recovery. Trying to push to GitHub ... done.
-		QA Cycle:	Backup
-				Install Update (2.3.7)
-				Wipe partitions
-				Restore 2.2.2 from backup
-		Looks promising
-		Compile recoveryimage. Push updates.
-2012-01-08:	Had to hardcode some settings in buildinfo.sh
-		Original update.zip will not install without
-		Modified nandroid to allow backup of splash
-		Backup of splash seems to be okay
-		Toggeling script assert does NOTHING!
-2012-01-09:	Started to work on script to pull blobs
-2012-01-12:	Now we got init processing our startup scripts
-		init.qcom.rc is ours. ADB and USB charging is okay.
-		Now we can start the fun of adding other hardware.
-2012-01-19:	Sound seems okay.
-		First progress to get WLAN.
-		See details in /documentation/wlan-from-command-line.txt
-2012-01-20:	WLAN now okay from the GUI.
-2012-01-21:	GSM seems to be an access rights thing.
-2012-01-22:	GSM working. Not fully tested.
-		apns-config.xml is outdated.
-		Manually add APN:
-		Settings->Wireless & networks->Mobile networks->Access Point Names
-2012-01-23:	Re-enabling WLAN seems to be okay now
-2012-04-19:	Update README status with all the updates since last change
+2012-06-29:	First steps. Settings up environment
