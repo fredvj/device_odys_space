@@ -48,7 +48,6 @@
 #include <assert.h>
 #include <netinet/in.h>
 #include <cutils/properties.h>
-#include <termios.h>
 
 #include <ril_event.h>
 
@@ -142,6 +141,7 @@ typedef struct UserCallbackInfo {
     struct ril_event event;
     struct UserCallbackInfo *p_next;
 } UserCallbackInfo;
+
 
 /*******************************************************************/
 
@@ -242,9 +242,8 @@ extern "C" void RIL_onUnsolicitedResponse(int unsolResponse, void *data,
 #endif
 
 static UserCallbackInfo * internalRequestTimedCallback
-    (RIL_TimedCallback callback, void *param, const struct timeval *relativeTime);
-
-static void internalRemoveTimedCallback(void *callbackInfo);
+    (RIL_TimedCallback callback, void *param,
+        const struct timeval *relativeTime);
 
 /** Index == requestNumber */
 static CommandInfo s_commands[] = {
@@ -2555,7 +2554,7 @@ RIL_register (const RIL_RadioFunctions *callbacks) {
     int flags;
 
     if(callbacks == NULL) {
-	LOGE("RIL_register: RIL_RadioFunctions is null!");
+        LOGE("RIL_register: RIL_RadioFunctions is null!");
     }
 
     if(callbacks->version != RIL_VERSION) {
@@ -2563,12 +2562,12 @@ RIL_register (const RIL_RadioFunctions *callbacks) {
             " - expected(%d), is(%d)", RIL_VERSION, callbacks->version);
         // return;
 
-	if(callbacks->version == 4) {
-		LOGW("Odys Space Android 2.3.3 basebands are version 4. Ignoring RIL_VERSION := %d for the moment.", RIL_VERSION);
-	}
-	else {
-		return;
-	}
+        if(callbacks->version == 4) {
+                LOGW("Odys Space Android 2.3.3 basebands are version 4. Ignoring RIL_VERSION := %d for the moment.", RIL_VERSION);
+        }
+        else {
+                return;
+        }
     }
 
     if (callbacks->version < 3) {
@@ -2660,6 +2659,7 @@ RIL_register (const RIL_RadioFunctions *callbacks) {
 
     rilEventAddWakeup (&s_debug_event);
 #endif
+
 }
 
 static int
@@ -2689,6 +2689,7 @@ checkAndDequeueRequestInfo(struct RequestInfo *pRI) {
     return ret;
 }
 
+
 extern "C" void
 RIL_onRequestComplete(RIL_Token t, RIL_Errno e, void *response, size_t responselen) {
     RequestInfo *pRI;
@@ -2712,13 +2713,6 @@ RIL_onRequestComplete(RIL_Token t, RIL_Errno e, void *response, size_t responsel
 
     appendPrintBuf("[%04d]< %s",
         pRI->token, requestToString(pRI->pCI->requestNumber));
-
-    if (pRI->pCI->requestNumber == RIL_REQUEST_BASEBAND_VERSION) {
-        char baseband[PROPERTY_VALUE_MAX];
-
-        property_get("ro.build.baseband_version", baseband, "QCT unknown");
-        response=strdup(baseband);
-    }
 
     if (pRI->cancelled == 0) {
         Parcel p;
@@ -2906,7 +2900,7 @@ error_exit:
 */
 static UserCallbackInfo *
 internalRequestTimedCallback (RIL_TimedCallback callback, void *param,
-                              const struct timeval *relativeTime)
+                                const struct timeval *relativeTime)
 {
     struct timeval myRelativeTime;
     UserCallbackInfo *p_info;
@@ -2915,6 +2909,7 @@ internalRequestTimedCallback (RIL_TimedCallback callback, void *param,
 
     p_info->p_callback = callback;
     p_info->userParam = param;
+
     if (relativeTime == NULL) {
         /* treat null parameter as a 0 relative time */
         memset (&myRelativeTime, 0, sizeof(myRelativeTime));
@@ -2931,27 +2926,11 @@ internalRequestTimedCallback (RIL_TimedCallback callback, void *param,
     return p_info;
 }
 
-static void
-internalRemoveTimedCallback(void *callbackInfo)
-{
-    UserCallbackInfo *p_info;
-    p_info = (UserCallbackInfo *)callbackInfo;
-    LOGI("remove timer callback event");
-    if(p_info) {
-        if (ril_timer_delete(&(p_info->event)))
-			free(p_info);
-    }
-}
-
-extern "C" void *
-RIL_requestTimedCallback (RIL_TimedCallback callback, void *param,
-                                const struct timeval *relativeTime) {
-   return internalRequestTimedCallback (callback, param, relativeTime);
-}
 
 extern "C" void
-RIL_removeTimedCallback (void *callbackInfo) {
-    internalRemoveTimedCallback(callbackInfo);
+RIL_requestTimedCallback (RIL_TimedCallback callback, void *param,
+                                const struct timeval *relativeTime) {
+    internalRequestTimedCallback (callback, param, relativeTime);
 }
 
 const char *
