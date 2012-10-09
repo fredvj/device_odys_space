@@ -20,5 +20,10 @@
 # In particular, you can add lunch options with the add_lunch_combo
 # function: add_lunch_combo generic-eng
 
+cp device/odys/space/vendor/cyanogen/products/cyanogen_space.mk vendor/cyanogen/products
+
 add_lunch_combo odys_space-eng
 add_lunch_combo odys_space-userdebug
+
+add_lunch_combo cyanogen_space-eng
+add_lunch_combo cyanogen_space-userdebug
