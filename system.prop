@@ -1,9 +1,15 @@
 #
-# system.prop for space
+# system.prop for Odys Space
 #
+
+# WLAN
+
 wifi.interface=wlan0
 wifi.debug=true
 wifi.supplicant_scan_interval=15
+
+# Radio Interface Layer (RIL)
+
 rild.libpath=/system/lib/libril-qc-1.so
 rild.libargs=-d /dev/smd0
 # ro.com.android.dataroaming=false
@@ -12,6 +18,9 @@ ro.ril.hsxpa=2
 ro.ril.gprsclass=10
 ro.telephony.default_network=0
 ro.telephony.call_ring.multiple=false
+
+# OpenGL
+
 ro.opengles.version=131072
 ro.compcache.default=0
 persist.sys.timezone=Europe/Amsterdam
@@ -26,15 +35,18 @@ dalvik.vm.heapsize=24m
 net.bt.name=CM7-Space
 ro.teather.denied=false
 ro.rommanager.developerid=cyanogenmod
-#
+
 # Storage related settings
-#
+
 ro.phone_storage=1
 ro.additionalmounts=/mnt/emmc
 ro.vold.switchablerepair=/mnt/sdcard,/mnt/emmc
 persist.sys.vold.switchexternal=1
-#
+
 # Not sure, Huawei X3 seems to use it
-#
+
 debug.sf.hw=1
 
+# Lockscreen rotation
+
+lockscreen.rot_override=true
