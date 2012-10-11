@@ -4,10 +4,7 @@ $(call inherit-product, build/target/product/languages_small.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
-$(call inherit-product-if-exists, vendor/odys/space/space-vendor.mk)
-
-# Build the mock-ril
-# $(call inherit-product, hardware/ril/mock-ril/Android.mk)
+$(call inherit-product-if-exists, vendor/odys/space/space-vendor-blobs.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/odys/space/overlay
 
