@@ -108,7 +108,7 @@ PRODUCT_COPY_FILES += \
 # If I get it right, get_hardware_name(...) := "qct"
 
 PRODUCT_COPY_FILES += \
-	device/odys/space/boot.space.rc:root/init.qcom.rc \
+	device/odys/space/configuration/boot.space.rc:root/init.qcom.rc \
 	device/odys/space/ueventd.space.rc:root/ueventd.qct.rc
 
 # Configuration files
