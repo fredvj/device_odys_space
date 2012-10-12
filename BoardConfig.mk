@@ -41,7 +41,7 @@ TARGET_USES_16BPPSURFACE_FOR_OPAQUE := true
 TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 BOARD_AVOID_DRAW_TEXTURE_EXTENSION := true
 
-BOARD_EGL_CFG := device/odys/space/egl.cfg
+BOARD_EGL_CFG := device/odys/space/configuration/egl.cfg
 
 BOARD_USE_FROYO_LIBCAMERA := true
 BOARD_USE_CAF_LIBCAMERA := true
