@@ -118,7 +118,7 @@ PRODUCT_COPY_FILES += \
 	device/odys/space/configuration/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
 	device/odys/space/configuration/AudioFilter.csv:system/etc/AudioFilter.csv \
 	device/odys/space/configuration/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
-	device/odys/space/vold.fstab:system/etc/vold.fstab \
+	device/odys/space/configuration/vold.fstab:system/etc/vold.fstab \
 	device/odys/space/configuration/media_profiles.xml:system/etc/media_profiles.xml \
 	device/odys/space/configuration/init.bt.sh:system/etc/init.bt.sh \
 	device/odys/space/configuration/bluetooth.addr:system/etc/bluetooth/bluetooth.addr
