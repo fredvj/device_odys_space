@@ -22,7 +22,18 @@ ro.telephony.call_ring.multiple=false
 # OpenGL
 
 ro.opengles.version=131072
-ro.compcache.default=0
+
+# Dalvik
+
+dalvik.vm.dexopt-flags=m=y
+dalvik.vm.heapsize=24m
+dalvik.vm.dexopt-data-only=1
+dalvik.vm.lockprof.threshold=500
+dalvik.vm.execution-mode=int:jit
+dalvik.vm.checkjni=false
+ro.kernel.android.checkjni=0
+
+# ro.compcache.default=0
 persist.sys.timezone=Europe/Amsterdam
 persist.sys.purgeable_assets=1
 persist.sys.use_dithering=0
@@ -31,7 +42,6 @@ ro.sf.lcd_density=160
 # ro.sf.hwrotation=270
 ro.build.baseband_version=R2-D2_C-3PO_2012
 ro.setupwizard.enable_bypass=1
-dalvik.vm.heapsize=24m
 net.bt.name=CM7-Space
 ro.teather.denied=false
 ro.rommanager.developerid=cyanogenmod
@@ -50,3 +60,8 @@ debug.sf.hw=1
 # Lockscreen rotation
 
 lockscreen.rot_override=true
+
+# Camera
+
+ro.config.PicMaxSize=2mp
+

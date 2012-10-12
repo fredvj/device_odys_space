@@ -4,12 +4,20 @@ lib/modules/libra_ftm.ko
 lib/modules/libra.ko
 lib/modules/librasdioif.ko
 
+# Keyboard layouts
+
+usr/keylayout/7k_ffa_keypad.kl
+usr/keylayout/7k_ffa_tp_keypad.kl
+usr/keylayout/7k_handset.kl
+usr/keychars/7k_ffa_keypad.kcm.bin
+usr/idc/ft5x0x_ts.idc
+
 # Hardware libraries
 
-lib/hw/copybit.msm7k.so
+# lib/hw/copybit.msm7k.so
 lib/hw/gralloc.msm7k.so
-lib/hw/lights.msm7k.so
-lib/hw/sensors.7x27.so
+# lib/hw/lights.msm7k.so
+# lib/hw/sensors.7x27.so
 
 # Adreno 200 files
 
@@ -17,11 +25,12 @@ lib/egl/libGLESv1_CM_adreno200.so
 lib/egl/libGLESv2_adreno200.so
 lib/egl/libEGL_adreno200.so
 lib/egl/libq3dtools_adreno200.so
+lib/libgsl.so
 
 # Bluetooth helpers
 
 bin/hci_qcomm_init
-bin/hciattach
+# bin/hciattach
 
 # Radio Interface Layer (RIL)
 
@@ -38,79 +47,85 @@ lib/liboncrpc.so
 lib/libqmi.so
 lib/libqueue.so
 lib/libril-qc-1.so
+lib/libril-qcril-hook-oem.so
 lib/libwms.so
 lib/libwmsts.so
 lib/libsnd.so
 lib/libdiag.so
-lib/libril-qcril-hook-oem.so
-lib/libgsl.so
 lib/libauth.so
 lib/libpbmlib.so
-lib/libdsutils.so
-lib/libnetmgr.so
+# lib/libdsutils.so
+# lib/libnetmgr.so
 
 # Camera libraries
 
-lib/libcamera.so
+# lib/libcamera.so
 lib/liboemcamera.so
 lib/libmmjpeg.so
 lib/libmmipl.so
 
 # Media libraries
 
-lib/libOmxAacDec.so
-lib/libOmxAacEnc.so
-lib/libOmxAdpcmDec.so
-lib/libOmxAmrDec.so
-lib/libOmxAmrEnc.so
-lib/libOmxAmrRtpDec.so
-lib/libOmxAmrwbDec.so
-lib/libOmxCore.so
-lib/libOmxEvrcEnc.so
-lib/libOmxH264Dec.so
-lib/libOmxMp3Dec.so
-lib/libOmxMpeg4Dec.so
-lib/libOmxQcelp13Enc.so
-lib/libOmxVidEnc.so
-lib/libOmxWmaDec.so
-lib/libOmxWmvDec.so
-lib/libmm-adspsvc.so
-lib/libomx_aacdec_sharedlibrary.so
-lib/libomx_amrdec_sharedlibrary.so
-lib/libomx_amrenc_sharedlibrary.so
-lib/libomx_avcdec_sharedlibrary.so
-lib/libomx_m4vdec_sharedlibrary.so
-lib/libomx_mp3dec_sharedlibrary.so
-lib/libomx_sharedlibrary.so
+# lib/libOmxAacDec.so
+# lib/libOmxAacEnc.so
+# lib/libOmxAdpcmDec.so
+# lib/libOmxAmrDec.so
+# lib/libOmxAmrEnc.so
+# lib/libOmxAmrRtpDec.so
+# lib/libOmxAmrwbDec.so
+# lib/libOmxCore.so
+# lib/libOmxEvrcEnc.so
+# lib/libOmxH264Dec.so
+# lib/libOmxMp3Dec.so
+# lib/libOmxMpeg4Dec.so
+# lib/libOmxQcelp13Enc.so
+# lib/libOmxVidEnc.so
+# lib/libOmxWmaDec.so
+# lib/libOmxWmvDec.so
+# lib/libmm-adspsvc.so
+# lib/libomx_aacdec_sharedlibrary.so
+# lib/libomx_amrdec_sharedlibrary.so
+# lib/libomx_amrenc_sharedlibrary.so
+# lib/libomx_avcdec_sharedlibrary.so
+# lib/libomx_m4vdec_sharedlibrary.so
+# lib/libomx_mp3dec_sharedlibrary.so
+# lib/libomx_sharedlibrary.so
 
 # GPS libraries
 
 lib/libgps.so
-lib/libloc-rpc.so
-lib/libloc.so
-lib/libloc_api.so
-lib/libloc_ext.so
-lib/libcommondefs.so
+# lib/libloc-rpc.so
+# lib/libloc.so
+# lib/libloc_api.so
+# lib/libloc_ext.so
+# lib/libcommondefs.so
+
+# WLAN
+
+etc/wifi/qcom_cfg.ini
+etc/wifi/softap/hostapd.conf
 
 # Firmware files
 
 etc/firmware/yamato_pm4.fw
 etc/firmware/yamato_pfp.fw
 etc/firmware/wlan/cfg.dat
+etc/firmware/wlan/qcom_cfg.ini
 etc/firmware/wlan/qcom_wapi_fw.bin
 etc/firmware/wlan/qcom_fw.bin
+etc/firmware/wlan/qcom_wlan_nv.bin
 
 # Android 2.2.2 init script
 
-etc/init.qcom.bt.sh
 etc/init.qcom.coex.sh
-etc/init.qcom.fm.sh
 etc/init.qcom.post_boot.sh
 etc/init.qcom.sdio.sh
 etc/init.qcom.wifi.sh
-etc/01_qcomm_omx.cfg
-etc/loc_parameter.ini
-etc/pvplayer.cfg
+# etc/init.qcom.bt.sh
+# etc/init.qcom.fm.sh
+# etc/01_qcomm_omx.cfg
+# etc/loc_parameter.ini
+# etc/pvplayer.cfg
 
 # Android 2.2.2 binaries
 
@@ -120,13 +135,13 @@ bin/btwlancoex
 bin/wifiwritemac
 bin/port-bridge
 bin/CKPD-daemon
+bin/wiperiface
+bin/netmgrd
 bin/hostapd
 bin/hostapd_cli
-bin/ndc
-bin/netd
-bin/fm_qsoc_patches
-bin/wiperiface
-bin/wpa_supplicant
-bin/rmt_storage
-bin/netmgrd
+# bin/ndc
+# bin/netd
+# bin/fm_qsoc_patches
+# bin/wpa_supplicant
+# bin/rmt_storage
 
