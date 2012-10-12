@@ -114,7 +114,7 @@ PRODUCT_COPY_FILES += \
 # Configuration files
 
 PRODUCT_COPY_FILES += \
-	device/odys/space/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+	device/odys/space/configuration/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
 	device/odys/space/configuration/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
 	device/odys/space/configuration/AudioFilter.csv:system/etc/AudioFilter.csv \
 	device/odys/space/configuration/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
