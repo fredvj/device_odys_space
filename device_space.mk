@@ -130,13 +130,6 @@ PRODUCT_COPY_FILES += \
 	device/odys/space/prebuilt/slow-work.ko:system/lib/modules/slow-work.ko \
 	device/odys/space/prebuilt/cifs.ko:system/lib/modules/cifs.ko
 
-# HostAPd configuration files
-# has to end up in /data/hostapd - who is copying ?
-
-# PRODUCT_COPY_FILES += \
-#	vendor/odys/space/proprietary/prebuilt/qcom_cfg.ini:system/etc/wifi/qcom_cfg.ini \
-#	device/odys/space/hostapd.conf:system/etc/wifi/softap/hostapd.conf
-
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := odys_space
