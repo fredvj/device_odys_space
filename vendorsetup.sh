@@ -21,6 +21,7 @@
 # function: add_lunch_combo generic-eng
 
 cp device/odys/space/vendor/cyanogen/products/cyanogen_space.mk vendor/cyanogen/products
+cp device/odys/space/build/tools/buildinfo.sh build/tools
 
 add_lunch_combo odys_space-eng
 add_lunch_combo odys_space-userdebug
