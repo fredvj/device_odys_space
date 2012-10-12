@@ -130,11 +130,6 @@ PRODUCT_COPY_FILES += \
 	device/odys/space/prebuilt/slow-work.ko:system/lib/modules/slow-work.ko \
 	device/odys/space/prebuilt/cifs.ko:system/lib/modules/cifs.ko
 
-# Build environment (obj)
-
-# PRODUCT_COPY_FILES += \
-#	vendor/odys/space/proprietary/libgps.so:obj/lib/libgps.so
-
 # HostAPd configuration files
 # has to end up in /data/hostapd - who is copying ?
 
