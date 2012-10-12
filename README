@@ -66,3 +66,4 @@ Memory                  : 256MB device - needs special parameters?
 2012-04-19:	Update README status with all the updates since last change
 2012-06-16:	A couple of updates after CM 7.2 released
 2012-10-11:	Added lockscreen rotation
+2012-10-12:	Moved config files to configuration folder
