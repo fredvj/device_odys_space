@@ -121,7 +121,7 @@ PRODUCT_COPY_FILES += \
 	device/odys/space/vold.fstab:system/etc/vold.fstab \
 	device/odys/space/media_profiles.xml:system/etc/media_profiles.xml \
 	device/odys/space/init.bt.sh:system/etc/init.bt.sh \
-	device/odys/space/bluetooth.addr:system/etc/bluetooth/bluetooth.addr
+	device/odys/space/configuration/bluetooth.addr:system/etc/bluetooth/bluetooth.addr
 
 # Additional kernel modules
 
