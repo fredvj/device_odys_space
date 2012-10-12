@@ -109,7 +109,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	device/odys/space/configuration/boot.space.rc:root/init.qcom.rc \
-	device/odys/space/ueventd.space.rc:root/ueventd.qct.rc
+	device/odys/space/configuration/ueventd.space.rc:root/ueventd.qct.rc
 
 # Configuration files
 
