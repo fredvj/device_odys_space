@@ -36,8 +36,8 @@ ro.kernel.android.checkjni=0
 # ro.compcache.default=0
 persist.sys.timezone=Europe/Amsterdam
 persist.sys.purgeable_assets=1
-persist.sys.use_dithering=0
-persist.sys.use_16bpp_alpha=1
+# persist.sys.use_dithering=0
+# persist.sys.use_16bpp_alpha=1
 ro.sf.lcd_density=160
 # ro.sf.hwrotation=270
 ro.build.baseband_version=R2-D2_C-3PO_2012
@@ -53,7 +53,7 @@ ro.additionalmounts=/mnt/emmc
 ro.vold.switchablerepair=/mnt/sdcard,/mnt/emmc
 persist.sys.vold.switchexternal=1
 
-# Not sure, Huawei X3 seems to use it
+# Enable GPU acceleration
 
 debug.sf.hw=1
 
