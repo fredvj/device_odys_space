@@ -1,0 +1,22 @@
+<6>[    1.918606] Found a supported NAND device
+<6>[    1.922606] NAND Id  : 0x5500bcec
+<6>[    1.925894] Buswidth : 16 Bits 
+<6>[    1.929019] Density  : 512 MByte
+<6>[    1.932239] Pagesize : 2048 Bytes
+<6>[    1.935529] Erasesize: 131072 Bytes
+<6>[    1.939001] Oobsize  : 64 Bytes
+<6>[    1.942136] CFG0 Init  : 0xa85408c0 
+<6>[    1.945686] CFG1 Init  : 0x0004745e 
+<6>[    1.949244] ECCBUFCFG  : 0x00000203 
+<5>[    1.952823] Creating 7 MTD partitions on "msm_nand":
+<5>[    1.957768] 0x0000044e0000-0x0000049e0000 : "boot"
+<5>[    1.966124] 0x0000049e0000-0x00000dfe0000 : "system"
+<5>[    2.054456] 0x00000dfe0000-0x00000e0e0000 : "splash"
+<5>[    2.055589] 0x00000e0e0000-0x0000103e0000 : "cache"
+<5>[    2.079406] 0x0000103e0000-0x0000108e0000 : "recovery"
+<5>[    2.082889] 0x0000108e0000-0x000010a60000 : "persist"
+<5>[    2.085281] 0x000010a60000-0x00001f960000 : "userdata"
+
+==>
+
+mtdparts=msm_nand:5120K@0x0000044E0000(boot),153600k@0x0000049E0000(userdata),1024k@0x00000DFE0000(splash)35840k@0xDFE0000(cache),5120K@0x0000103E0000(recovery),1536k@0x0000108E0000(persist),244736k@0x000010a60000(system)
