@@ -1,0 +1,1252 @@
+<5>[    0.000000] Linux version 2.6.32.9-perf (test@test-desktop) (gcc version 4.4.0 (GCC) ) #1 PREEMPT Wed Oct 19 15:29:18 CST 2011
+<4>[    0.000000] CPU: ARMv6-compatible processor [4117b365] revision 5 (ARMv6TEJ), cr=00c5387f
+<4>[    0.000000] CPU: VIPT aliasing data cache, VIPT aliasing instruction cache
+<4>[    0.000000] Machine: QCT MSM7x27 FFA
+<6>[    0.000000] Partition (from atag) boot -- Offset:227 Size:28
+<6>[    0.000000] Partition (from atag) system -- Offset:24f Size:4b0
+<6>[    0.000000] Partition (from atag) splash -- Offset:6ff Size:8
+<6>[    0.000000] Partition (from atag) cache -- Offset:707 Size:118
+<6>[    0.000000] Partition (from atag) recovery -- Offset:81f Size:28
+<6>[    0.000000] Partition (from atag) persist -- Offset:847 Size:c
+<6>[    0.000000] Partition (from atag) userdata -- Offset:853 Size:778
+<4>[    0.000000] Memory policy: ECC disabled, Data cache writeback
+<7>[    0.000000] On node 0 totalpages: 54272
+<7>[    0.000000] free_area_init_node: node 0, pgdat c06bdda4, node_mem_map c080e000
+<7>[    0.000000]   Normal zone: 424 pages used for memmap
+<7>[    0.000000]   Normal zone: 0 pages reserved
+<7>[    0.000000]   Normal zone: 53848 pages, LIFO batch:15
+<6>[    0.000000] allocating 28794880 bytes at c1030000 (1230000 physical) for mdp pmem arena
+<6>[    0.000000] allocating 11997184 bytes at c2ba6000 (2da6000 physical) for adsp pmem arena
+<6>[    0.000000] allocating 372736 bytes (at 80000 physical) for audio pmem arena
+<6>[    0.000000] allocating 1536000 bytes at c3717000 (3917000 physical) for fb
+<6>[    0.000000] allocating 114688 bytes at c3900000 (3b00000 physical) for kernel ebi1 pmem arena
+<6>[    0.000000] allocating 2097152 bytes (at d600000 physical) for KGSL
+<3>[    0.000000] smem_find(137, 64): wrong size 56
+<6>[    0.000000] socinfo_init: v2, id=67, ver=3.0, raw_id=961, raw_ver=5
+<6>[    0.000000] L210 cache controller enabled
+<4>[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 53848
+<5>[    0.000000] Kernel command line: mem=212M console=ttyMSM2 androidboot.hardware=qcom
+<6>[    0.000000] PID hash table entries: 1024 (order: 0, 4096 bytes)
+<6>[    0.000000] Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
+<6>[    0.000000] Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
+<6>[    0.000000] Memory: 212MB = 212MB total
+<5>[    0.000000] Memory: 164992KB available (6272K code, 1599K data, 160K init, 0K highmem)
+<6>[    0.000000] Hierarchical RCU implementation.
+<6>[    0.000000] NR_IRQS:261
+<4>[    0.000000] Console: colour dummy device 80x30
+<6>[    0.000000] Calibrating delay loop... 799.53 BogoMIPS (lpj=3997696)
+<4>[    0.230050] Mount-cache hash table entries: 512
+<6>[    0.230480] CPU: Testing write buffer coherency: 
+<1>[    0.230561] Initialized Zero page successfully
+<4>[    0.230610] ok
+<6>[    0.232520] NET: Registered protocol family 16
+<3>[    0.233058] smem_find(137, 64): wrong size 56
+<6>[    0.233078] socinfo_init: v2, id=67, ver=3.0, raw_id=961, raw_ver=5
+<6>[    0.249855] acpu_clock_init()
+<6>[    0.249870] Shared PLL control available.
+<6>[    0.250033] L val: PLL0: 50, PLL1: 12, PLL2: 41
+<6>[    0.250151] ACPU running at 800000 KHz
+<6>[    0.250163] Id CPU-KHz PLL DIV AHB-KHz ADIV AXI-KHz D0 D1 D2 U0 U1 U2
+<6>[    0.250186]  0   19200  -1   1   19200    1   30720 -1 -1 -1  5  4  6
+<6>[    0.250206]  1  120000   0   8   60000    2   61440 -1 -1 -1  7  4  6
+<6>[    0.250226]  2  122880   1   2   61440    2   61440  1 -1 -1  7  4  6
+<6>[    0.250246]  3  200000   2   4   66667    3   61440  1  2 -1  7  4  6
+<6>[    0.250266]  4  245760   1   1  122880    2   61440  1  2  3  7 -1  6
+<6>[    0.250286]  5  320000   0   3  160000    2  160000  1  2  3  7 -1  6
+<6>[    0.250306]  6  400000   2   2  133333    3  160000  1  2  3  7 -1  8
+<6>[    0.250326]  7  480000   0   2  160000    3  160000  1  2  3 -1 -1  8
+<6>[    0.250348]  8  800000   2   1  200000    4  200000  7 -1  6 -1 -1 -1
+<6>[    0.250361] 5 scaling frequencies supported.
+<4>[    0.252135] 
+<4>[    0.252138] camera vreg off.
+<4>[    0.252143] 
+<4>[    0.252153] config_camera_off_gpios
+<4>[    0.290791] WCN1312: pull down gpio_101 (wlan sleep) 
+<4>[    0.297573] bio: create slab <bio-0> at 0
+<5>[    0.298383] SCSI subsystem initialized
+<6>[    0.298613] usbcore: registered new interface driver usbfs
+<6>[    0.298720] usbcore: registered new interface driver hub
+<6>[    0.298835] usbcore: registered new device driver usb
+<6>[    0.299073] msm_i2c_probe
+<6>[    0.299170] msm_i2c_probe: clk_ctl 35d, 100000 Hz
+<6>[    0.300788] Bluetooth: Core ver 2.15
+<6>[    0.300908] NET: Registered protocol family 31
+<6>[    0.300920] Bluetooth: HCI device and connection manager initialized
+<6>[    0.300936] Bluetooth: HCI socket layer initialized
+<6>[    0.301083] Switching to clocksource dg_timer
+<6>[    0.306221] NET: Registered protocol family 2
+<6>[    0.306416] IP route cache hash table entries: 2048 (order: 1, 8192 bytes)
+<6>[    0.306808] TCP established hash table entries: 8192 (order: 4, 65536 bytes)
+<6>[    0.307013] TCP bind hash table entries: 8192 (order: 3, 32768 bytes)
+<6>[    0.307141] TCP: Hash tables configured (established 8192 bind 8192)
+<6>[    0.307156] TCP reno registered
+<6>[    0.307311] NET: Registered protocol family 1
+<6>[    0.307648] RPC: Registered udp transport module.
+<6>[    0.307661] RPC: Registered tcp transport module.
+<6>[    0.307671] RPC: Registered tcp NFSv4.1 backchannel transport module.
+<6>[    0.307888] Trying to unpack rootfs image as initramfs...
+<6>[    0.322648] Freeing initrd memory: 156K
+<6>[    0.324831] smd probe
+<6>[    0.324846] smd_core_init()
+<6>[    0.324923] smd_core_init() done
+<6>[    0.324938] smd_alloc_loopback_channel: 'local_loopback' cid=100
+<6>[    0.325828] smd_alloc_channel() 'DS' cid=0
+<6>[    0.325925] smd_alloc_channel() 'DIAG' cid=1
+<6>[    0.326005] smd_alloc_channel() 'RPCCALL' cid=2
+<6>[    0.326096] smd_alloc_channel() 'DATA1' cid=7
+<6>[    0.326173] smd_alloc_channel() 'DATA2' cid=8
+<6>[    0.326248] smd_alloc_channel() 'DATA3' cid=9
+<6>[    0.326328] smd_alloc_channel() 'DATA4' cid=10
+<6>[    0.326406] smd_alloc_channel() 'DATA5' cid=11
+<6>[    0.326483] smd_alloc_channel() 'DATA6' cid=12
+<6>[    0.326566] smd_alloc_channel() 'DATA7' cid=13
+<6>[    0.326645] smd_alloc_channel() 'DATA11' cid=17
+<6>[    0.326731] smd_alloc_channel() 'DAL00' cid=38
+<6>[    0.326808] smd_alloc_channel() 'DATA5_CNTL' cid=39
+<6>[    0.326895] smd_alloc_channel() 'DATA6_CNTL' cid=40
+<6>[    0.326986] smd_alloc_channel() 'DATA7_CNTL' cid=41
+<3>[    0.327143] Notify: smsm init
+<6>[    0.327873] SMD Packet Port Driver Initialized.
+<6>[    0.328303] SMD: ch 2 0 -> 1
+<6>[    0.328420] SMD: ch 2 1 -> 2
+<6>[    0.328708] [adsp.c:adsp_init] rs3000000a -- 0
+<6>[    0.329245] [audpp.c:audpp_probe] Number of decoder supported 5
+<6>[    0.329260] [audpp.c:audpp_probe] Number of concurrency supported 7
+<6>[    0.329275] [audpp.c:audpp_probe] module_name:AUDPLAY0TASK
+<6>[    0.329286] [audpp.c:audpp_probe] queueid:13
+<6>[    0.329296] [audpp.c:audpp_probe] decid:0
+<6>[    0.329308] [audpp.c:audpp_probe] nr_codec_support:11
+<6>[    0.329320] [audpp.c:audpp_probe] module_name:AUDPLAY1TASK
+<6>[    0.329331] [audpp.c:audpp_probe] queueid:14
+<6>[    0.329341] [audpp.c:audpp_probe] decid:1
+<6>[    0.329351] [audpp.c:audpp_probe] nr_codec_support:4
+<6>[    0.329363] [audpp.c:audpp_probe] module_name:AUDPLAY2TASK
+<6>[    0.329375] [audpp.c:audpp_probe] queueid:15
+<6>[    0.329385] [audpp.c:audpp_probe] decid:2
+<6>[    0.329395] [audpp.c:audpp_probe] nr_codec_support:4
+<6>[    0.329406] [audpp.c:audpp_probe] module_name:AUDPLAY3TASK
+<6>[    0.329418] [audpp.c:audpp_probe] queueid:16
+<6>[    0.329428] [audpp.c:audpp_probe] decid:3
+<6>[    0.329438] [audpp.c:audpp_probe] nr_codec_support:4
+<6>[    0.329450] [audpp.c:audpp_probe] module_name:AUDPLAY4TASK
+<6>[    0.329461] [audpp.c:audpp_probe] queueid:17
+<6>[    0.329473] [audpp.c:audpp_probe] decid:4
+<6>[    0.329483] [audpp.c:audpp_probe] nr_codec_support:1
+<6>[    0.345631] RPC_TIME_TOD_SET_APPS_BASES:
+<6>[    0.345640] 	tick = 304594
+<6>[    0.345645] 	stamp = 808464432
+<4>[    0.345668] /home/test/SouceCode/arm11_42_003_TELSTAR/kernel/drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+<6>[    0.349481] ashmem: initialized
+<4>[    0.350698] yaffs Oct 19 2011 15:27:00 Installing. 
+<6>[    0.350740] msgmni has been set to 323
+<6>[    0.353871] alg: No test for stdrng (krng)
+<6>[    0.353938] io scheduler noop registered
+<6>[    0.353951] io scheduler deadline registered (default)
+<6>[    0.354918] msm_fb_probe:  phy_Addr = 0x3917000 virt = 0xcda00000
+<6>[    0.355420] MDP HW Base phy_Address = 0xaa200000 virt = 0xcd900000
+<6>[    0.460991] ****************lcdc config
+<3>[    0.461673] ***************entry lcdc_gordon_panel_on  !
+<6>[    0.521125] __msm_rpc_connect: server not found 30000061:30001
+<6>[    0.521140] __msm_rpc_connect: server not found 30000061:20001
+<6>[    1.041121] FrameBuffer[0] 800x480 size=1536000 bytes is registered successfully!
+<6>[    1.049786] Registered led device: lcd-backlight
+<6>[    1.066078] diagfwd initializing ..
+<6>[    1.066393] SMD: ch 1 0 -> 1
+<6>[    1.066406] diag opened SMD port ; r = 0
+<6>[    1.066493] SMD: ch 1 1 -> 2
+<6>[    1.066554] diagchar initializing ..
+<6>[    1.066728] diagchar initialized
+<6>[    1.066799] msm_serial: detected port #2
+<6>[    1.066904] msm_serial.2: ttyMSM2 at MMIO 0xa9c00000 (irq = 11) is a MSM
+<6>[    1.067009] msm_serial: console setup on port #2
+<6>[    1.837436] console [ttyMSM2] enabled
+<6>[    1.841264] msm_serial: driver initialized
+<6>[    1.845234] msm_serial_hs.0: ttyHS0 at MMIO 0xa0200000 (irq = 45) is a MSM HS UART
+<6>[    1.852934] msm_serial_hs module loaded
+<6>[    1.858791] brd: module loaded
+<6>[    1.862049] loop: module loaded
+<6>[    1.862749] pmem: Initializing pmem_kernel_ebi1 (in-kernel)
+<6>[    1.868238] pmem: Initializing pmem (user-space) as cached
+<6>[    1.874699] pmem: Initializing pmem_adsp (user-space) as non-cached
+<6>[    1.880438] pmem: Initializing pmem_audio (user-space) as non-cached
+<6>[    1.887549] SCSI Media Changer driver v0.25 
+<6>[    1.890783] msm_nand_probe: phys addr 0xa0a00000 
+<6>[    1.895206] msm_nand_probe: dmac 0x7
+<6>[    1.898759] msm_nand_probe: allocated dma buffer at ffc0f000, dma_addr d240000
+<6>[    1.906103] ONFI probe : Found a nonONFI Compliant device 
+<6>[    1.911451] status: c00020
+<6>[    1.914091] nandid: 5500bcec maker ec device bc
+<6>[    1.918606] Found a supported NAND device
+<6>[    1.922606] NAND Id  : 0x5500bcec
+<6>[    1.925894] Buswidth : 16 Bits 
+<6>[    1.929019] Density  : 512 MByte
+<6>[    1.932239] Pagesize : 2048 Bytes
+<6>[    1.935529] Erasesize: 131072 Bytes
+<6>[    1.939001] Oobsize  : 64 Bytes
+<6>[    1.942136] CFG0 Init  : 0xa85408c0 
+<6>[    1.945686] CFG1 Init  : 0x0004745e 
+<6>[    1.949244] ECCBUFCFG  : 0x00000203 
+<5>[    1.952823] Creating 7 MTD partitions on "msm_nand":
+<5>[    1.957768] 0x0000044e0000-0x0000049e0000 : "boot"
+<5>[    1.966124] 0x0000049e0000-0x00000dfe0000 : "system"
+<5>[    2.054456] 0x00000dfe0000-0x00000e0e0000 : "splash"
+<5>[    2.055589] 0x00000e0e0000-0x0000103e0000 : "cache"
+<5>[    2.079406] 0x0000103e0000-0x0000108e0000 : "recovery"
+<5>[    2.082889] 0x0000108e0000-0x000010a60000 : "persist"
+<5>[    2.085281] 0x000010a60000-0x00001f960000 : "userdata"
+<6>[    2.228451] SLIP: version 0.8.4-NET3.019-NEWTTY (dynamic channels, max=256) (6 bit encapsulation enabled).
+<6>[    2.232489] CSLIP: code copyright 1989 Regents of the University of California.
+<4>[    2.240238] rmnet_init
+<6>[    2.243289] msm_otg_probe: rpc_connect(0)
+<6>[    2.471351] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+<6>[    2.472306] msm_hsusb_rpc_connect: usb_ep already connected
+<6>[    2.478439] host driver registered w/ tranceiver
+<6>[    2.482579] usbcore: registered new interface driver cdc_acm
+<6>[    2.488043] cdc_acm: v0.26:USB Abstract Control Model driver for USB modems and ISDN adapters
+<6>[    2.496561] Initializing USB Mass Storage driver...
+<6>[    2.501483] usbcore: registered new interface driver usb-storage
+<6>[    2.507399] USB Mass Storage support registered.
+<6>[    2.512053] usbcore: registered new interface driver ums-alauda
+<6>[    2.517949] usbcore: registered new interface driver ums-cypress
+<6>[    2.523953] usbcore: registered new interface driver ums-datafab
+<6>[    2.529929] usbcore: registered new interface driver ums-freecom
+<6>[    2.535944] usbcore: registered new interface driver ums-isd200
+<6>[    2.541834] usbcore: registered new interface driver ums-jumpshot
+<6>[    2.547896] usbcore: registered new interface driver ums-karma
+<6>[    2.553728] usbcore: registered new interface driver ums-onetouch
+<6>[    2.559791] usbcore: registered new interface driver ums-sddr09
+<6>[    2.565704] usbcore: registered new interface driver ums-sddr55
+<6>[    2.571618] usbcore: registered new interface driver ums-usbat
+<6>[    2.577531] usbcore: registered new interface driver usbserial
+<6>[    2.583191] usbserial: USB Serial Driver core
+<6>[    2.587571] USB Serial support registered for pl2303
+<6>[    2.592541] usbcore: registered new interface driver pl2303
+<6>[    2.598019] pl2303: Prolific PL2303 USB to serial adaptor driver
+<6>[    2.604078] __msm_rpc_connect: server not found 3000001a:20001
+<6>[    2.610159] peripheral driver registered w/ tranceiver
+<6>[    2.615088] adb_function_init
+<6>[    2.618653] GPIO Matrix Keypad Driver: Start keypad matrix for 7k_ffa_keypad in interrupt mode
+<6>[    2.626779] input: 7k_ffa_keypad as /devices/virtual/input/input0
+<6>[    2.633566] ########## Bosch Sensortec Device detected!
+<6>[    2.633576] BMA150/SMB380 registered I2C driver!
+<6>[    2.642514] ##########bma150 device create ok
+<7>[    2.647834] RTC Registering with rs30000048
+<3>[    2.648753] msm_rpc_client_req: RPC call was not successful (3)
+<7>[    2.652649] msmrtc_setup_cb: RPC client registration for PROC:12 failed
+<7>[    2.652663] msmrtc_probe: Could not initialize RPC callback
+<6>[    2.653103] using rtc device, msm_rtc, for alarms
+<7>[    2.657139] msm_rtc: dev (254:0)
+<6>[    2.657336] rs30000048 rs30000048.65536: rtc core: registered msm_rtc as rtc0
+<7>[    2.664603] msm_rtc_secure: dev (254:1)
+<6>[    2.664616] rs30000048 rs30000048.65536: rtc core: registered msm_rtc_secure as rtc1
+<6>[    2.672236] i2c /dev entries driver
+<6>[    2.675983] hmc5883_init.
+<6>[    2.678258] ********************hmc5883_probe, id name=hmc5883
+<6>[    2.684066] ********************hmc5883_probe, client addrss=1e
+<3>[    2.690088] msm_i2c msm_i2c.0: Error during data xfer (-5)
+<3>[    2.695549] msm_i2c msm_i2c.0: Error during data xfer (-5)
+<3>[    2.700996] msm_i2c msm_i2c.0: Error during data xfer (-5)
+<6>[    2.706369] **********hmc5883_probe, den_1=fb, den_3=fb, den_3=fb.
+<6>[    2.712526] ********************AMIT  hmc5883 magnetic Sensortec not found, i2c error value=251. 
+<6>[    2.721429] Linux video capture interface: v2.00
+<4>[    2.726008] <><><><><><><><>,mt9d112 init
+<4>[    2.730023] ~~~~~~~~~~~~~~~~~~~~~kernel __mt9d112_probe
+<4>[    2.735229] 
+<4>[    2.735233] camera vreg on.
+<4>[    2.735238] 
+<4>[    2.741034] config_camera_on_gpios
+<4>[    2.745029] mt9d112 i2c_probe succeeded!
+<4>[    2.748321] <><><><><><><><><><>mt9d112 sensor probe
+<4>[    2.753358] <><><><><><><><><><>mt9D112 sensor probe
+<4>[    2.758178] ------------[ cut here ]------------
+<4>[    2.762798] WARNING: at /home/test/SouceCode/arm11_42_003_TELSTAR/kernel/drivers/gpio/gpiolib.c:101 gpio_ensure_requested+0x4c/0x19c()
+<4>[    2.774841] autorequest GPIO-124
+<4>[    2.778054] Modules linked in:
+<4>[    2.781133] [<c0037214>] (unwind_backtrace+0x0/0x150) from [<c009fe10>] (warn_slowpath_common+0x48/0x60)
+<4>[    2.790569] [<c009fe10>] (warn_slowpath_common+0x48/0x60) from [<c009fe60>] (warn_slowpath_fmt+0x24/0x30)
+<4>[    2.800116] [<c009fe60>] (warn_slowpath_fmt+0x24/0x30) from [<c02064ec>] (gpio_ensure_requested+0x4c/0x19c)
+<4>[    2.809839] [<c02064ec>] (gpio_ensure_requested+0x4c/0x19c) from [<c02066c4>] (gpio_direction_output+0x88/0x1a8)
+<4>[    2.820009] [<c02066c4>] (gpio_direction_output+0x88/0x1a8) from [<c030bb88>] (mt9d112_sensor_probe+0xa8/0x398)
+<4>[    2.830068] [<c030bb88>] (mt9d112_sensor_probe+0xa8/0x398) from [<c03089dc>] (msm_camera_drv_start+0x1b0/0x414)
+<4>[    2.840144] [<c03089dc>] (msm_camera_drv_start+0x1b0/0x414) from [<c0252274>] (platform_drv_probe+0x18/0x1c)
+<4>[    2.849944] [<c0252274>] (platform_drv_probe+0x18/0x1c) from [<c0250f64>] (driver_probe_device+0x140/0x2c0)
+<4>[    2.859664] [<c0250f64>] (driver_probe_device+0x140/0x2c0) from [<c0251144>] (__driver_attach+0x60/0x84)
+<4>[    2.869126] [<c0251144>] (__driver_attach+0x60/0x84) from [<c02504bc>] (bus_for_each_dev+0x48/0x84)
+<4>[    2.878154] [<c02504bc>] (bus_for_each_dev+0x48/0x84) from [<c024fd00>] (bus_add_driver+0x174/0x320)
+<4>[    2.887269] [<c024fd00>] (bus_add_driver+0x174/0x320) from [<c0251414>] (driver_register+0xa8/0x138)
+<4>[    2.896393] [<c0251414>] (driver_register+0xa8/0x138) from [<c00303cc>] (do_one_initcall+0x5c/0x1b0)
+<4>[    2.905499] [<c00303cc>] (do_one_initcall+0x5c/0x1b0) from [<c00083fc>] (kernel_init+0x9c/0x114)
+<4>[    2.914268] [<c00083fc>] (kernel_init+0x9c/0x114) from [<c0031f04>] (kernel_thread_exit+0x0/0x8)
+<4>[    2.923043] ---[ end trace 4e7e2065e6c0f0d6 ]---
+<4>[    2.952306] 
+<4>[    2.952309] 
+<4>[    2.952314] set pwd pin
+<4>[    2.993038] model_id_h=51
+<4>[    2.993043] 
+<4>[    2.993704] model_id_l=38
+<4>[    2.993709] 
+<4>[    2.995571] <><><><><><><><>model_id(0x5138)/home/test/SouceCode/arm11_42_003_TELSTAR/kernel/drivers/media/video/msm/mt9d112.c mt9d112_sensor_probe:2041
+<4>[    3.009213] 
+<4>[    3.009216] camera vreg off.
+<4>[    3.009221] 
+<4>[    3.015164] config_camera_off_gpios
+<4>[    3.019631]  mt9p012_init
+<4>[    3.021258] kernel __mt9p012_probe
+<4>[    3.024564] kernel __mt9p112_probe
+<4>[    3.027953] 
+<4>[    3.027956] camera vreg on.
+<4>[    3.027961] 
+<4>[    3.033804] config_camera_on_gpios
+<3>[    3.037824] Error: Driver 'mt9d112' is already registered, aborting...
+<4>[    3.043676] /home/test/SouceCode/arm11_42_003_TELSTAR/kernel/drivers/media/video/msm/mt9p012.c mt9p012_sensor_probe:1295
+<4>[    3.054521] 
+<4>[    3.054524] camera vreg off.
+<4>[    3.054529] 
+<4>[    3.060463] config_camera_off_gpios
+<3>[    3.064489] msm_sync_init: failed to initialize mt9p012
+<4>[    3.069114] msm_camera_mt9p012: probe of msm_camera_mt9p012.0 failed with error -524
+<4>[    3.076948] 
+<4>[    3.076953] camera vreg on.
+<4>[    3.076958] 
+<4>[    3.082711] config_camera_on_gpios
+<7>[    3.156843] gpio_request: gpio-89 (s5k3e2fx) status -16
+<4>[    3.156854] 
+<4>[    3.156858] camera vreg off.
+<4>[    3.156863] 
+<4>[    3.157176] config_camera_off_gpios
+<3>[    3.161204] msm_sync_init: failed to initialize s5k3e2fx
+<4>[    3.165913] msm_camera_s5k3e2fx: probe of msm_camera_s5k3e2fx.0 failed with error -16
+<7>[    3.173791] msm_batt_init: enter
+<6>[    3.173919] __msm_rpc_connect: server not found 3000001a:20002
+<7>[    3.180416] msm_batt_get_charger_api_version: num_of_chg_api_versions = 3. The chg api version = 0x00010003
+<6>[    3.180453] __msm_rpc_connect: server not found 30000089:20001
+<7>[    3.186469] msm_batt_register: got handle = 2
+<7>[    3.186984] msm_batt_enable_filter: enable vbatt filter: OK
+<6>[    3.189948] msm_batt_init: Charger/Battery = 0x00010003/0x00010001 (RPC version)
+<6>[    3.192973] device-mapper: uevent: version 1.0.3
+<6>[    3.197753] device-mapper: ioctl: 4.15.0-ioctl (2009-04-01) initialised: dm-devel@redhat.com
+<6>[    3.205996] device-mapper: multipath: version 1.1.0 loaded
+<6>[    3.211236] device-mapper: multipath round-robin: version 1.0.0 loaded
+<6>[    3.217728] device-mapper: multipath queue-length: version 0.1.0 loaded
+<6>[    3.224383] device-mapper: multipath service-time: version 0.2.0 loaded
+<6>[    3.231016] device-mapper: dm-log-userspace: version 1.0.0 loaded
+<6>[    3.237011] Bluetooth: HCI UART driver ver 2.2
+<6>[    3.241434] Bluetooth: HCI H4 protocol initialized
+<6>[    3.246198] Bluetooth: HCI BCSP protocol initialized
+<6>[    3.251154] Bluetooth: MSM Sleep Mode Driver Ver 1.1
+<7>[    3.256308] bluetooth_power_init
+<7>[    3.256356] bt_power_probe
+<6>[    3.257421] mmc0: Qualcomm MSM SDCC at 0x00000000a0400000 irq 24,113 dma 8
+<6>[    3.262983] mmc0: 8 bit data mode disabled
+<6>[    3.267031] mmc0: 4 bit data mode enabled
+<6>[    3.271024] mmc0: polling status mode disabled
+<6>[    3.275463] mmc0: MMC clock 144000 -> 49152000 Hz, PCLK 100000000 Hz
+<6>[    3.281796] mmc0: Slot eject status = 0
+<6>[    3.285608] mmc0: Power save feature enable = 1
+<6>[    3.290124] mmc0: DM non-cached buffer at ffc13000, dma_addr 0x0d28c000
+<6>[    3.296729] mmc0: DM cmd busaddr 0x0d28c000, cmdptr busaddr 0x0d28c300
+<3>[    3.303543] mmc1: No card detect facilities available
+<7>[    3.308574] gpio_unexport: gpio67 status -22
+<7>[    3.308588] gpio_unexport: gpio66 status -22
+<7>[    3.308599] gpio_unexport: gpio65 status -22
+<7>[    3.308611] gpio_unexport: gpio64 status -22
+<7>[    3.308623] gpio_unexport: gpio63 status -22
+<7>[    3.308633] gpio_unexport: gpio62 status -22
+<6>[    3.308778] mmc1: Qualcomm MSM SDCC at 0x00000000a0500000 irq 26,0 dma 8
+<6>[    3.314968] mmc1: 8 bit data mode disabled
+<6>[    3.319028] mmc1: 4 bit data mode enabled
+<6>[    3.323031] mmc1: polling status mode disabled
+<6>[    3.327449] mmc1: MMC clock 144000 -> 49152000 Hz, PCLK 100000000 Hz
+<6>[    3.333793] mmc1: Slot eject status = 0
+<6>[    3.337604] mmc1: Power save feature enable = 1
+<6>[    3.342128] mmc1: DM non-cached buffer at ffc14000, dma_addr 0x0d28f000
+<6>[    3.348716] mmc1: DM cmd busaddr 0x0d28f000, cmdptr busaddr 0x0d28f300
+<6>[    3.355276] id = 3!!
+<3>[    3.377641] mmc2: No card detect facilities available
+<7>[    3.378008] gpio_unexport: gpio93 status -22
+<7>[    3.378019] gpio_unexport: gpio92 status -22
+<7>[    3.378031] gpio_unexport: gpio91 status -22
+<7>[    3.378043] gpio_unexport: gpio90 status -22
+<7>[    3.378054] gpio_unexport: gpio89 status -22
+<7>[    3.378064] gpio_unexport: gpio88 status -22
+<6>[    3.378209] mmc2: Qualcomm MSM SDCC at 0x00000000a0600000 irq 48,0 dma 8
+<6>[    3.383756] mmc2: 8 bit data mode disabled
+<6>[    3.387816] mmc2: 4 bit data mode enabled
+<6>[    3.391819] mmc2: polling status mode disabled
+<6>[    3.396239] mmc2: MMC clock 144000 -> 49152000 Hz, PCLK 100000000 Hz
+<6>[    3.402581] mmc2: Slot eject status = 0
+<6>[    3.406393] mmc2: Power save feature enable = 1
+<6>[    3.410909] mmc2: DM non-cached buffer at ffc15000, dma_addr 0x0d293000
+<6>[    3.417514] mmc2: DM cmd busaddr 0x0d293000, cmdptr busaddr 0x0d293300
+<6>[    3.424334] Registered led device: keyboard-backlight
+<6>[    3.430611] usbcore: registered new interface driver usbhid
+<6>[    3.434638] usbhid: v2.6:USB HID core driver
+<6>[    3.439283] logger: created 64K log 'log_main'
+<6>[    3.443414] logger: created 256K log 'log_events'
+<6>[    3.448063] logger: created 64K log 'log_radio'
+<6>[    3.452594] logger: created 64K log 'log_system'
+<6>[    3.457176] Advanced Linux Sound Architecture Driver Version 1.0.21.
+<4>[    3.463728] No device for DAI CODEC_DAI
+<4>[    3.467244] No device for DAI CPU_DAI
+<3>[    3.471168] msm_soc: create pcms
+<6>[    3.474348] asoc: CODEC_DAI <-> CPU_DAI mapping ok
+<3>[    3.478876] msm_soc: ALSA MSM Mixer Setting
+<6>[    3.483593] ALSA device list:
+<6>[    3.485994]   #0: msm-audio (MSM-CARD)
+<4>[    3.489821] u32 classifier
+<4>[    3.492448] Netfilter messages via NETLINK v0.30.
+<4>[    3.497178] nf_conntrack version 0.5.0 (2585 buckets, 10340 max)
+<4>[    3.503488] ctnetlink v0.93: registering with nfnetlink.
+<6>[    3.508541] xt_time: kernel timezone is -0000
+<6>[    3.512999] ip_tables: (C) 2000-2006 Netfilter Core Team
+<6>[    3.518118] arp_tables: (C) 2002 David S. Miller
+<6>[    3.522691] TCP cubic registered
+<6>[    3.526086] NET: Registered protocol family 10
+<6>[    3.530839] lo: Disabled Privacy Extensions
+<6>[    3.535191] Mobile IPv6
+<6>[    3.536864] IPv6 over IPv4 tunneling driver
+<6>[    3.541541] sit0: Disabled Privacy Extensions
+<6>[    3.545889] ip6tnl0: Disabled Privacy Extensions
+<6>[    3.550081] NET: Registered protocol family 17
+<6>[    3.554459] Bluetooth: L2CAP ver 2.14
+<6>[    3.558041] Bluetooth: L2CAP socket layer initialized
+<6>[    3.563098] Bluetooth: SCO (Voice Link) ver 0.6
+<6>[    3.567589] Bluetooth: SCO socket layer initialized
+<6>[    3.572746] Bluetooth: RFCOMM TTY layer initialized
+<6>[    3.577319] Bluetooth: RFCOMM socket layer initialized
+<6>[    3.582456] Bluetooth: RFCOMM ver 1.11
+<6>[    3.586169] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+<6>[    3.591478] Bluetooth: BNEP filters: protocol multicast
+<6>[    3.596673] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+<6>[    3.603119] clock_late_init() disabled 16 unused clocks
+<6>[    3.608514] input: 7k_handset as /devices/virtual/input/input1
+<6>[    3.613846] __msm_rpc_connect: server not found 30000091:30001
+<3>[    3.623984] msm_rpc_client_req: RPC call was not successful (4)
+<3>[    3.630344] hs_rpc_cb_init: RPC client request failed for pwr key delay cmd, using normal mode
+<6>[    3.639484] VFP support v0.3: implementor 41 architecture 1 part 20 variant b rev 5
+<6>[    3.653236] input: ft5x0x_ts as /devices/virtual/input/input2
+<7>[    3.654439] msmrtc_tod_proc_result: 12/07/2012 14:38:15 (04)
+<6>[    3.654499] rs30000048 rs30000048.65536: setting system clock to 2012-12-07 14:38:15 UTC (1354891095)
+<6>[    3.662583] msm_v4l2: msm_v4l2_init
+<6>[    3.666324] Freeing init memory: 160K
+<3>[    3.677059] init: /init.qcom.rc: 130: invalid command '/system/bin/log'
+<4>[    3.710859] mmc0: host does not support reading read-only switch. assuming write-enable.
+<6>[    3.719078] mmc0: new high speed SD card at address 0002
+<6>[    3.719596] mmcblk0: mmc0:0002 00000 1.86 GiB 
+<6>[    3.723759]  mmcblk0: p1
+<7>[    3.824661] gpio_unexport: gpio67 status -22
+<7>[    3.824681] gpio_unexport: gpio66 status -22
+<7>[    3.824693] gpio_unexport: gpio65 status -22
+<7>[    3.824703] gpio_unexport: gpio64 status -22
+<7>[    3.824714] gpio_unexport: gpio63 status -22
+<7>[    3.824724] gpio_unexport: gpio62 status -22
+<6>[    3.882761] yaffs: dev is 32505857 name is "mtdblock1"
+<6>[    3.882871] yaffs: passed flags ""
+<4>[    3.890683] yaffs: Attempting MTD mount on 31.1, "mtdblock1"
+<4>[    3.981779] yaffs: restored from checkpoint
+<4>[    3.982189] yaffs_read_super: isCheckpointed 1
+<6>[    4.011243] yaffs: dev is 32505862 name is "mtdblock6"
+<6>[    4.011348] yaffs: passed flags ""
+<4>[    4.014131] yaffs: Attempting MTD mount on 31.6, "mtdblock6"
+<4>[    4.087128] yaffs: restored from checkpoint
+<4>[    4.090881] yaffs_read_super: isCheckpointed 0
+<6>[    4.091219] yaffs: dev is 32505859 name is "mtdblock3"
+<6>[    4.095231] yaffs: passed flags ""
+<4>[    4.098621] yaffs: Attempting MTD mount on 31.3, "mtdblock3"
+<4>[    4.105656] yaffs: restored from checkpoint
+<4>[    4.108461] yaffs_read_super: isCheckpointed 1
+<6>[    4.112976] yaffs: dev is 32505861 name is "mtdblock5"
+<6>[    4.117974] yaffs: passed flags ""
+<4>[    4.121378] yaffs: Attempting MTD mount on 31.5, "mtdblock5"
+<4>[    4.127663] yaffs: restored from checkpoint
+<4>[    4.131216] yaffs_read_super: isCheckpointed 1
+<6>[    4.260144] mmc2: Controller has been reset
+<6>[    4.260384] Setting the bus width to 4 bit
+<6>[    4.263979] mmc2: new high speed MMC card at address 0001
+<6>[    4.268809] mmcblk1: mmc2:0001 SEM04G 3.68 GiB 
+<6>[    4.273051]  mmcblk1: p1
+<6>[    4.604129] SMD: ch 39 0 -> 1
+<6>[    4.604299] SMD: ch 39 1 -> 2
+<6>[    4.607234] SMD: ch 40 0 -> 1
+<6>[    4.607439] SMD: ch 40 1 -> 2
+<7>[    4.685973] gpio_unexport: gpio67 status -22
+<7>[    4.685994] gpio_unexport: gpio66 status -22
+<7>[    4.686006] gpio_unexport: gpio65 status -22
+<7>[    4.686016] gpio_unexport: gpio64 status -22
+<7>[    4.686028] gpio_unexport: gpio63 status -22
+<7>[    4.686039] gpio_unexport: gpio62 status -22
+<6>[    4.691498] libra_sdioif_init: Loaded Successfully
+<4>[    4.701994] android_usb gadget: using random self ethernet address
+<4>[    4.702608] android_usb gadget: using random host ethernet address
+<6>[    4.728494] usb0: MAC 96:4d:dd:0e:e2:27
+<6>[    4.728631] usb0: HOST MAC e2:d2:ba:45:3a:74
+<6>[    4.731909] mass_storage_function_add
+<6>[    4.736454] android_usb gadget: Number of LUNs=2
+<6>[    4.739281] android_usb gadget: android_usb ready
+<6>[    4.744329] msm_hsusb msm_hsusb: registered gadget driver 'android_usb'
+<6>[    4.750569] msm_hsusb msm_hsusb: msm72k_udc: IDLE -> ONLINE
+<6>[    4.757619] diag_function_add
+<6>[    4.759009] android_usb gadget: adb_function_add
+<6>[    4.763706] mass_storage_function_add
+<6>[    4.768456] android_usb gadget: Number of LUNs=2
+<6>[    4.771909] android_usb gadget: android_usb ready
+<6>[    4.776549] msm_hsusb msm_hsusb: registered gadget driver 'android_usb'
+<6>[    4.906094] warning: `rild' uses 32-bit capabilities (legacy support in use)
+<6>[    5.014376] msm_hsusb msm_hsusb: suspend
+<6>[    5.138694] msm_hsusb msm_hsusb: reset
+<6>[    5.140976] msm_hsusb msm_hsusb: portchange USB_SPEED_HIGH
+<6>[    5.252909] msm_hsusb msm_hsusb: reset
+<6>[    5.255191] msm_hsusb msm_hsusb: portchange USB_SPEED_HIGH
+<6>[    5.385729] android_usb gadget: high speed config #1: android
+<7>[    5.385988] diag: USB connected
+<3>[    5.387878] msm_hsusb_send_serial_number: rpc call failed! error: -22
+<6>[    5.693474] [snd.c:snd_ioctl] snd_avc_ctl 1
+<6>[    5.694419] [snd.c:snd_ioctl] snd_agc_ctl 1
+<6>[    5.697948] [snd.c:snd_ioctl] snd_set_volume 0 0 7
+<6>[    5.701793] [snd.c:snd_ioctl] snd_set_volume 6 0 7
+<6>[    5.706463] [snd.c:snd_ioctl] snd_set_volume 12 0 7
+<6>[    5.711634] [snd.c:snd_ioctl] snd_set_volume 3 0 7
+<6>[    5.716289] [snd.c:snd_ioctl] snd_set_volume 16 0 7
+<6>[    5.720976] [snd.c:snd_ioctl] snd_set_volume 25 0 7
+<7>[    5.788709] gpio_unexport: gpio67 status -22
+<7>[    5.788729] gpio_unexport: gpio66 status -22
+<7>[    5.788739] gpio_unexport: gpio65 status -22
+<7>[    5.788751] gpio_unexport: gpio64 status -22
+<7>[    5.788763] gpio_unexport: gpio63 status -22
+<7>[    5.788773] gpio_unexport: gpio62 status -22
+<6>[    5.796278] [snd.c:snd_ioctl] snd_set_device 6 1 1
+<6>[    5.799964] [snd.c:snd_ioctl] snd_set_volume 27 0 7
+<6>[    6.011144] 
+<6>[    6.011156] Charger Type: STD DOWNSTREAM PORT
+<7>[    6.883438] gpio_unexport: gpio67 status -22
+<7>[    6.883461] gpio_unexport: gpio66 status -22
+<7>[    6.883471] gpio_unexport: gpio65 status -22
+<7>[    6.883483] gpio_unexport: gpio64 status -22
+<7>[    6.883494] gpio_unexport: gpio63 status -22
+<7>[    6.883504] gpio_unexport: gpio62 status -22
+<7>[    7.983346] gpio_unexport: gpio67 status -22
+<7>[    7.983368] gpio_unexport: gpio66 status -22
+<7>[    7.983379] gpio_unexport: gpio65 status -22
+<7>[    7.983391] gpio_unexport: gpio64 status -22
+<7>[    7.983401] gpio_unexport: gpio63 status -22
+<7>[    7.983413] gpio_unexport: gpio62 status -22
+<7>[    9.083471] gpio_unexport: gpio67 status -22
+<7>[    9.083493] gpio_unexport: gpio66 status -22
+<7>[    9.083503] gpio_unexport: gpio65 status -22
+<7>[    9.083514] gpio_unexport: gpio64 status -22
+<7>[    9.083526] gpio_unexport: gpio63 status -22
+<7>[    9.083536] gpio_unexport: gpio62 status -22
+<7>[   10.183333] gpio_unexport: gpio67 status -22
+<7>[   10.183354] gpio_unexport: gpio66 status -22
+<7>[   10.183366] gpio_unexport: gpio65 status -22
+<7>[   10.183376] gpio_unexport: gpio64 status -22
+<7>[   10.183388] gpio_unexport: gpio63 status -22
+<7>[   10.183399] gpio_unexport: gpio62 status -22
+<7>[   11.283471] gpio_unexport: gpio67 status -22
+<7>[   11.283494] gpio_unexport: gpio66 status -22
+<7>[   11.283506] gpio_unexport: gpio65 status -22
+<7>[   11.283516] gpio_unexport: gpio64 status -22
+<7>[   11.283528] gpio_unexport: gpio63 status -22
+<7>[   11.283538] gpio_unexport: gpio62 status -22
+<6>[   11.613659] msm_kgsl: initialized dev=0 mmu=on per_process_pagetable=off
+<6>[   11.615329] msm_kgsl kgsl-3d0: firmware: requesting yamato_pm4.fw
+<6>[   11.623681] msm_kgsl kgsl-3d0: firmware: requesting yamato_pfp.fw
+<7>[   12.385238] gpio_unexport: gpio67 status -22
+<7>[   12.385261] gpio_unexport: gpio66 status -22
+<7>[   12.385271] gpio_unexport: gpio65 status -22
+<7>[   12.385283] gpio_unexport: gpio64 status -22
+<7>[   12.385294] gpio_unexport: gpio63 status -22
+<7>[   12.385304] gpio_unexport: gpio62 status -22
+<7>[   13.483521] gpio_unexport: gpio67 status -22
+<7>[   13.483543] gpio_unexport: gpio66 status -22
+<7>[   13.483553] gpio_unexport: gpio65 status -22
+<7>[   13.483564] gpio_unexport: gpio64 status -22
+<7>[   13.483576] gpio_unexport: gpio63 status -22
+<7>[   13.483586] gpio_unexport: gpio62 status -22
+<7>[   14.583719] gpio_unexport: gpio67 status -22
+<7>[   14.583741] gpio_unexport: gpio66 status -22
+<7>[   14.583753] gpio_unexport: gpio65 status -22
+<7>[   14.583763] gpio_unexport: gpio64 status -22
+<7>[   14.583774] gpio_unexport: gpio63 status -22
+<7>[   14.583784] gpio_unexport: gpio62 status -22
+<7>[   15.683479] gpio_unexport: gpio67 status -22
+<7>[   15.683501] gpio_unexport: gpio66 status -22
+<7>[   15.683511] gpio_unexport: gpio65 status -22
+<7>[   15.683523] gpio_unexport: gpio64 status -22
+<7>[   15.683534] gpio_unexport: gpio63 status -22
+<7>[   15.683544] gpio_unexport: gpio62 status -22
+<7>[   16.783456] gpio_unexport: gpio67 status -22
+<7>[   16.783478] gpio_unexport: gpio66 status -22
+<7>[   16.783488] gpio_unexport: gpio65 status -22
+<7>[   16.783499] gpio_unexport: gpio64 status -22
+<7>[   16.783511] gpio_unexport: gpio63 status -22
+<7>[   16.783521] gpio_unexport: gpio62 status -22
+<7>[   17.887339] gpio_unexport: gpio67 status -22
+<7>[   17.887363] gpio_unexport: gpio66 status -22
+<7>[   17.887373] gpio_unexport: gpio65 status -22
+<7>[   17.887384] gpio_unexport: gpio64 status -22
+<7>[   17.887396] gpio_unexport: gpio63 status -22
+<7>[   17.887406] gpio_unexport: gpio62 status -22
+<7>[   18.984293] gpio_unexport: gpio67 status -22
+<7>[   18.984316] gpio_unexport: gpio66 status -22
+<7>[   18.984326] gpio_unexport: gpio65 status -22
+<7>[   18.984338] gpio_unexport: gpio64 status -22
+<7>[   18.984348] gpio_unexport: gpio63 status -22
+<7>[   18.984359] gpio_unexport: gpio62 status -22
+<7>[   20.083496] gpio_unexport: gpio67 status -22
+<7>[   20.083516] gpio_unexport: gpio66 status -22
+<7>[   20.083528] gpio_unexport: gpio65 status -22
+<7>[   20.083539] gpio_unexport: gpio64 status -22
+<7>[   20.083549] gpio_unexport: gpio63 status -22
+<7>[   20.083561] gpio_unexport: gpio62 status -22
+<6>[   20.189746] [snd.c:snd_ioctl] snd_set_volume 27 0 6
+<6>[   20.659063] CPUFREQ: Per core ondemand sysfs interface is deprecated - up_threshold
+<6>[   20.662069] CPUFREQ: Per core ondemand sysfs interface is deprecated - sampling_rate
+<6>[   20.677584] request_suspend_state: wakeup (3->0) at 20676460067 (2012-12-07 14:38:32.523065012 UTC)
+<7>[   21.194394] gpio_unexport: gpio67 status -22
+<7>[   21.194424] gpio_unexport: gpio66 status -22
+<7>[   21.194434] gpio_unexport: gpio65 status -22
+<7>[   21.194446] gpio_unexport: gpio64 status -22
+<7>[   21.194458] gpio_unexport: gpio63 status -22
+<7>[   21.194468] gpio_unexport: gpio62 status -22
+<7>[   22.305501] gpio_unexport: gpio67 status -22
+<7>[   22.305521] gpio_unexport: gpio66 status -22
+<7>[   22.305533] gpio_unexport: gpio65 status -22
+<7>[   22.305543] gpio_unexport: gpio64 status -22
+<7>[   22.305554] gpio_unexport: gpio63 status -22
+<7>[   22.305566] gpio_unexport: gpio62 status -22
+<7>[   23.413073] gpio_unexport: gpio67 status -22
+<7>[   23.413094] gpio_unexport: gpio66 status -22
+<7>[   23.413104] gpio_unexport: gpio65 status -22
+<7>[   23.413116] gpio_unexport: gpio64 status -22
+<7>[   23.413128] gpio_unexport: gpio63 status -22
+<7>[   23.413138] gpio_unexport: gpio62 status -22
+<7>[   24.537369] gpio_unexport: gpio67 status -22
+<7>[   24.537393] gpio_unexport: gpio66 status -22
+<7>[   24.537403] gpio_unexport: gpio65 status -22
+<7>[   24.537414] gpio_unexport: gpio64 status -22
+<7>[   24.537424] gpio_unexport: gpio63 status -22
+<7>[   24.537436] gpio_unexport: gpio62 status -22
+<7>[   25.647433] gpio_unexport: gpio67 status -22
+<7>[   25.647456] gpio_unexport: gpio66 status -22
+<7>[   25.647466] gpio_unexport: gpio65 status -22
+<7>[   25.647478] gpio_unexport: gpio64 status -22
+<7>[   25.647489] gpio_unexport: gpio63 status -22
+<7>[   25.647499] gpio_unexport: gpio62 status -22
+<7>[   26.746531] gpio_unexport: gpio67 status -22
+<7>[   26.746553] gpio_unexport: gpio66 status -22
+<7>[   26.746564] gpio_unexport: gpio65 status -22
+<7>[   26.746574] gpio_unexport: gpio64 status -22
+<7>[   26.746586] gpio_unexport: gpio63 status -22
+<7>[   26.746598] gpio_unexport: gpio62 status -22
+<7>[   27.884913] gpio_unexport: gpio67 status -22
+<7>[   27.884929] gpio_unexport: gpio66 status -22
+<7>[   27.884939] gpio_unexport: gpio65 status -22
+<7>[   27.884949] gpio_unexport: gpio64 status -22
+<7>[   27.884958] gpio_unexport: gpio63 status -22
+<7>[   27.884968] gpio_unexport: gpio62 status -22
+<7>[   28.987464] gpio_unexport: gpio67 status -22
+<7>[   28.987481] gpio_unexport: gpio66 status -22
+<7>[   28.987491] gpio_unexport: gpio65 status -22
+<7>[   28.987499] gpio_unexport: gpio64 status -22
+<7>[   28.987509] gpio_unexport: gpio63 status -22
+<7>[   28.987519] gpio_unexport: gpio62 status -22
+<7>[   30.085376] gpio_unexport: gpio67 status -22
+<7>[   30.085391] gpio_unexport: gpio66 status -22
+<7>[   30.085401] gpio_unexport: gpio65 status -22
+<7>[   30.085411] gpio_unexport: gpio64 status -22
+<7>[   30.085419] gpio_unexport: gpio63 status -22
+<7>[   30.085429] gpio_unexport: gpio62 status -22
+<7>[   31.197568] gpio_unexport: gpio67 status -22
+<7>[   31.197589] gpio_unexport: gpio66 status -22
+<7>[   31.197601] gpio_unexport: gpio65 status -22
+<7>[   31.197613] gpio_unexport: gpio64 status -22
+<7>[   31.197623] gpio_unexport: gpio63 status -22
+<7>[   31.197634] gpio_unexport: gpio62 status -22
+<7>[   32.323331] gpio_unexport: gpio67 status -22
+<7>[   32.323354] gpio_unexport: gpio66 status -22
+<7>[   32.323364] gpio_unexport: gpio65 status -22
+<7>[   32.323376] gpio_unexport: gpio64 status -22
+<7>[   32.323386] gpio_unexport: gpio63 status -22
+<7>[   32.323398] gpio_unexport: gpio62 status -22
+<7>[   33.425784] gpio_unexport: gpio67 status -22
+<7>[   33.425806] gpio_unexport: gpio66 status -22
+<7>[   33.425818] gpio_unexport: gpio65 status -22
+<7>[   33.425829] gpio_unexport: gpio64 status -22
+<7>[   33.425841] gpio_unexport: gpio63 status -22
+<7>[   33.425851] gpio_unexport: gpio62 status -22
+<7>[   34.528523] gpio_unexport: gpio67 status -22
+<7>[   34.528546] gpio_unexport: gpio66 status -22
+<7>[   34.528558] gpio_unexport: gpio65 status -22
+<7>[   34.528568] gpio_unexport: gpio64 status -22
+<7>[   34.528579] gpio_unexport: gpio63 status -22
+<7>[   34.528591] gpio_unexport: gpio62 status -22
+<7>[   35.639669] gpio_unexport: gpio67 status -22
+<7>[   35.639691] gpio_unexport: gpio66 status -22
+<7>[   35.639701] gpio_unexport: gpio65 status -22
+<7>[   35.639713] gpio_unexport: gpio64 status -22
+<7>[   35.639724] gpio_unexport: gpio63 status -22
+<7>[   35.639734] gpio_unexport: gpio62 status -22
+<7>[   36.753836] gpio_unexport: gpio67 status -22
+<7>[   36.753858] gpio_unexport: gpio66 status -22
+<7>[   36.753869] gpio_unexport: gpio65 status -22
+<7>[   36.753879] gpio_unexport: gpio64 status -22
+<7>[   36.753891] gpio_unexport: gpio63 status -22
+<7>[   36.753901] gpio_unexport: gpio62 status -22
+<7>[   37.853524] gpio_unexport: gpio67 status -22
+<7>[   37.853548] gpio_unexport: gpio66 status -22
+<7>[   37.853559] gpio_unexport: gpio65 status -22
+<7>[   37.853569] gpio_unexport: gpio64 status -22
+<7>[   37.853581] gpio_unexport: gpio63 status -22
+<7>[   37.853593] gpio_unexport: gpio62 status -22
+<7>[   38.961751] gpio_unexport: gpio67 status -22
+<7>[   38.961773] gpio_unexport: gpio66 status -22
+<7>[   38.961784] gpio_unexport: gpio65 status -22
+<7>[   38.961796] gpio_unexport: gpio64 status -22
+<7>[   38.961806] gpio_unexport: gpio63 status -22
+<7>[   38.961818] gpio_unexport: gpio62 status -22
+<7>[   40.075809] gpio_unexport: gpio67 status -22
+<7>[   40.075831] gpio_unexport: gpio66 status -22
+<7>[   40.075841] gpio_unexport: gpio65 status -22
+<7>[   40.075853] gpio_unexport: gpio64 status -22
+<7>[   40.075863] gpio_unexport: gpio63 status -22
+<7>[   40.075874] gpio_unexport: gpio62 status -22
+<7>[   41.174109] gpio_unexport: gpio67 status -22
+<7>[   41.174133] gpio_unexport: gpio66 status -22
+<7>[   41.174144] gpio_unexport: gpio65 status -22
+<7>[   41.174154] gpio_unexport: gpio64 status -22
+<7>[   41.174166] gpio_unexport: gpio63 status -22
+<7>[   41.174178] gpio_unexport: gpio62 status -22
+<4>[   41.792778] select 328 (ndroid.settings), adj 15, size 5951, to kill
+<4>[   41.793516] send sigkill to 328 (ndroid.settings), adj 15, size 5951
+<7>[   42.287056] gpio_unexport: gpio67 status -22
+<7>[   42.287078] gpio_unexport: gpio66 status -22
+<7>[   42.287089] gpio_unexport: gpio65 status -22
+<7>[   42.287099] gpio_unexport: gpio64 status -22
+<7>[   42.287111] gpio_unexport: gpio63 status -22
+<7>[   42.287123] gpio_unexport: gpio62 status -22
+<4>[   43.207918] select 296 (ogenmod.cmparts), adj 10, size 5078, to kill
+<4>[   43.208648] select 345 (droid.apps.maps), adj 12, size 6120, to kill
+<4>[   43.215103] send sigkill to 345 (droid.apps.maps), adj 12, size 6120
+<4>[   43.292451] select 296 (ogenmod.cmparts), adj 10, size 5078, to kill
+<4>[   43.293183] select 400 (droid.bluetooth), adj 11, size 5206, to kill
+<4>[   43.299524] send sigkill to 400 (droid.bluetooth), adj 11, size 5206
+<7>[   43.383758] gpio_unexport: gpio67 status -22
+<7>[   43.383781] gpio_unexport: gpio66 status -22
+<7>[   43.383793] gpio_unexport: gpio65 status -22
+<7>[   43.383803] gpio_unexport: gpio64 status -22
+<7>[   43.383814] gpio_unexport: gpio63 status -22
+<7>[   43.383826] gpio_unexport: gpio62 status -22
+<4>[   44.274914] select 296 (ogenmod.cmparts), adj 12, size 5078, to kill
+<4>[   44.275656] select 415 (anogenmod.stats), adj 13, size 4736, to kill
+<4>[   44.282033] send sigkill to 415 (anogenmod.stats), adj 13, size 4736
+<4>[   44.290446] select 296 (ogenmod.cmparts), adj 12, size 5078, to kill
+<4>[   44.294699] select 415 (anogenmod.stats), adj 13, size 4736, to kill
+<4>[   44.300989] process 415 is suffering a slow death
+<4>[   44.332261] select 296 (ogenmod.cmparts), adj 12, size 5078, to kill
+<4>[   44.332993] select 427 (viders.calendar), adj 12, size 5236, to kill
+<4>[   44.339333] send sigkill to 427 (viders.calendar), adj 12, size 5236
+<7>[   44.497348] gpio_unexport: gpio67 status -22
+<7>[   44.497369] gpio_unexport: gpio66 status -22
+<7>[   44.497381] gpio_unexport: gpio65 status -22
+<7>[   44.497391] gpio_unexport: gpio64 status -22
+<7>[   44.497403] gpio_unexport: gpio63 status -22
+<7>[   44.497414] gpio_unexport: gpio62 status -22
+<7>[   45.594211] gpio_unexport: gpio67 status -22
+<7>[   45.594233] gpio_unexport: gpio66 status -22
+<7>[   45.594243] gpio_unexport: gpio65 status -22
+<7>[   45.594254] gpio_unexport: gpio64 status -22
+<7>[   45.594264] gpio_unexport: gpio63 status -22
+<7>[   45.594276] gpio_unexport: gpio62 status -22
+<4>[   45.783399] select 296 (ogenmod.cmparts), adj 12, size 5051, to kill
+<4>[   45.784163] send sigkill to 296 (ogenmod.cmparts), adj 12, size 5051
+<4>[   45.902298] select 310 (d.process.acore), adj 9, size 10620, to kill
+<4>[   45.903066] select 383 (d.process.media), adj 11, size 5445, to kill
+<4>[   45.909414] send sigkill to 383 (d.process.media), adj 11, size 5445
+<4>[   46.022348] select 310 (d.process.acore), adj 9, size 10612, to kill
+<4>[   46.023103] select 440 (droid.deskclock), adj 11, size 5072, to kill
+<4>[   46.029444] send sigkill to 440 (droid.deskclock), adj 11, size 5072
+<7>[   46.693716] gpio_unexport: gpio67 status -22
+<7>[   46.693738] gpio_unexport: gpio66 status -22
+<7>[   46.693748] gpio_unexport: gpio65 status -22
+<7>[   46.693759] gpio_unexport: gpio64 status -22
+<7>[   46.693771] gpio_unexport: gpio63 status -22
+<7>[   46.693781] gpio_unexport: gpio62 status -22
+<4>[   47.265799] select 449 (m.android.email), adj 15, size 5966, to kill
+<4>[   47.266536] send sigkill to 449 (m.android.email), adj 15, size 5966
+<7>[   47.808978] gpio_unexport: gpio67 status -22
+<7>[   47.809001] gpio_unexport: gpio66 status -22
+<7>[   47.809013] gpio_unexport: gpio65 status -22
+<7>[   47.809023] gpio_unexport: gpio64 status -22
+<7>[   47.809034] gpio_unexport: gpio63 status -22
+<7>[   47.809046] gpio_unexport: gpio62 status -22
+<4>[   48.856854] select 310 (d.process.acore), adj 12, size 10279, to kill
+<4>[   48.862811] send sigkill to 310 (d.process.acore), adj 12, size 10279
+<7>[   48.904631] gpio_unexport: gpio67 status -22
+<7>[   48.904649] gpio_unexport: gpio66 status -22
+<7>[   48.904661] gpio_unexport: gpio65 status -22
+<7>[   48.904673] gpio_unexport: gpio64 status -22
+<7>[   48.904683] gpio_unexport: gpio63 status -22
+<7>[   48.904694] gpio_unexport: gpio62 status -22
+<7>[   50.003576] gpio_unexport: gpio67 status -22
+<7>[   50.003624] gpio_unexport: gpio66 status -22
+<7>[   50.003661] gpio_unexport: gpio65 status -22
+<7>[   50.003694] gpio_unexport: gpio64 status -22
+<7>[   50.003729] gpio_unexport: gpio63 status -22
+<7>[   50.003764] gpio_unexport: gpio62 status -22
+<7>[   51.104474] gpio_unexport: gpio67 status -22
+<7>[   51.104496] gpio_unexport: gpio66 status -22
+<7>[   51.104506] gpio_unexport: gpio65 status -22
+<7>[   51.104518] gpio_unexport: gpio64 status -22
+<7>[   51.104529] gpio_unexport: gpio63 status -22
+<7>[   51.104539] gpio_unexport: gpio62 status -22
+<7>[   52.207613] gpio_unexport: gpio67 status -22
+<7>[   52.207634] gpio_unexport: gpio66 status -22
+<7>[   52.207644] gpio_unexport: gpio65 status -22
+<7>[   52.207656] gpio_unexport: gpio64 status -22
+<7>[   52.207668] gpio_unexport: gpio63 status -22
+<7>[   52.207678] gpio_unexport: gpio62 status -22
+<7>[   53.303356] gpio_unexport: gpio67 status -22
+<7>[   53.303378] gpio_unexport: gpio66 status -22
+<7>[   53.303389] gpio_unexport: gpio65 status -22
+<7>[   53.303401] gpio_unexport: gpio64 status -22
+<7>[   53.303411] gpio_unexport: gpio63 status -22
+<7>[   53.303423] gpio_unexport: gpio62 status -22
+<7>[   54.407549] gpio_unexport: gpio67 status -22
+<7>[   54.407571] gpio_unexport: gpio66 status -22
+<7>[   54.407581] gpio_unexport: gpio65 status -22
+<7>[   54.407593] gpio_unexport: gpio64 status -22
+<7>[   54.407604] gpio_unexport: gpio63 status -22
+<7>[   54.407614] gpio_unexport: gpio62 status -22
+<7>[   55.514201] gpio_unexport: gpio67 status -22
+<7>[   55.514223] gpio_unexport: gpio66 status -22
+<7>[   55.514234] gpio_unexport: gpio65 status -22
+<7>[   55.514244] gpio_unexport: gpio64 status -22
+<7>[   55.514256] gpio_unexport: gpio63 status -22
+<7>[   55.514266] gpio_unexport: gpio62 status -22
+<4>[   56.342016] select 494 (oid.voicedialer), adj 14, size 4651, to kill
+<4>[   56.342758] send sigkill to 494 (oid.voicedialer), adj 14, size 4651
+<7>[   56.626764] gpio_unexport: gpio67 status -22
+<7>[   56.626788] gpio_unexport: gpio66 status -22
+<7>[   56.626798] gpio_unexport: gpio65 status -22
+<7>[   56.626809] gpio_unexport: gpio64 status -22
+<7>[   56.626821] gpio_unexport: gpio63 status -22
+<7>[   56.626831] gpio_unexport: gpio62 status -22
+<7>[   57.725431] gpio_unexport: gpio67 status -22
+<7>[   57.725453] gpio_unexport: gpio66 status -22
+<7>[   57.725464] gpio_unexport: gpio65 status -22
+<7>[   57.725474] gpio_unexport: gpio64 status -22
+<7>[   57.725486] gpio_unexport: gpio63 status -22
+<7>[   57.725498] gpio_unexport: gpio62 status -22
+<4>[   57.862219] select 531 (ufou.android.su), adj 14, size 5037, to kill
+<4>[   57.862961] send sigkill to 531 (ufou.android.su), adj 14, size 5037
+<4>[   57.912123] select 545 (d.maps.mytracks), adj 13, size 5494, to kill
+<4>[   57.912864] send sigkill to 545 (d.maps.mytracks), adj 13, size 5494
+<7>[   58.823554] gpio_unexport: gpio67 status -22
+<7>[   58.823604] gpio_unexport: gpio66 status -22
+<7>[   58.823639] gpio_unexport: gpio65 status -22
+<7>[   58.823674] gpio_unexport: gpio64 status -22
+<7>[   58.823709] gpio_unexport: gpio63 status -22
+<7>[   58.823744] gpio_unexport: gpio62 status -22
+<7>[   59.924326] gpio_unexport: gpio67 status -22
+<7>[   59.924376] gpio_unexport: gpio66 status -22
+<7>[   59.924413] gpio_unexport: gpio65 status -22
+<7>[   59.924448] gpio_unexport: gpio64 status -22
+<7>[   59.924483] gpio_unexport: gpio63 status -22
+<7>[   59.924518] gpio_unexport: gpio62 status -22
+<7>[   61.023826] gpio_unexport: gpio67 status -22
+<7>[   61.023874] gpio_unexport: gpio66 status -22
+<7>[   61.023909] gpio_unexport: gpio65 status -22
+<7>[   61.023944] gpio_unexport: gpio64 status -22
+<7>[   61.023978] gpio_unexport: gpio63 status -22
+<7>[   61.024013] gpio_unexport: gpio62 status -22
+<7>[   62.124438] gpio_unexport: gpio67 status -22
+<7>[   62.124488] gpio_unexport: gpio66 status -22
+<7>[   62.124523] gpio_unexport: gpio65 status -22
+<7>[   62.124558] gpio_unexport: gpio64 status -22
+<7>[   62.124594] gpio_unexport: gpio63 status -22
+<7>[   62.124629] gpio_unexport: gpio62 status -22
+<7>[   63.223699] gpio_unexport: gpio67 status -22
+<7>[   63.223749] gpio_unexport: gpio66 status -22
+<7>[   63.223786] gpio_unexport: gpio65 status -22
+<7>[   63.223821] gpio_unexport: gpio64 status -22
+<7>[   63.223856] gpio_unexport: gpio63 status -22
+<7>[   63.223891] gpio_unexport: gpio62 status -22
+<7>[   64.323554] gpio_unexport: gpio67 status -22
+<7>[   64.323601] gpio_unexport: gpio66 status -22
+<7>[   64.323638] gpio_unexport: gpio65 status -22
+<7>[   64.323673] gpio_unexport: gpio64 status -22
+<7>[   64.323708] gpio_unexport: gpio63 status -22
+<7>[   64.323743] gpio_unexport: gpio62 status -22
+<7>[   65.425178] gpio_unexport: gpio67 status -22
+<7>[   65.425228] gpio_unexport: gpio66 status -22
+<7>[   65.425263] gpio_unexport: gpio65 status -22
+<7>[   65.425298] gpio_unexport: gpio64 status -22
+<7>[   65.425333] gpio_unexport: gpio63 status -22
+<7>[   65.425368] gpio_unexport: gpio62 status -22
+<7>[   66.523568] gpio_unexport: gpio67 status -22
+<7>[   66.523614] gpio_unexport: gpio66 status -22
+<7>[   66.523649] gpio_unexport: gpio65 status -22
+<7>[   66.523686] gpio_unexport: gpio64 status -22
+<7>[   66.523721] gpio_unexport: gpio63 status -22
+<7>[   66.523756] gpio_unexport: gpio62 status -22
+<7>[   67.623914] gpio_unexport: gpio67 status -22
+<7>[   67.623958] gpio_unexport: gpio66 status -22
+<7>[   67.623994] gpio_unexport: gpio65 status -22
+<7>[   67.624029] gpio_unexport: gpio64 status -22
+<7>[   67.624064] gpio_unexport: gpio63 status -22
+<7>[   67.624099] gpio_unexport: gpio62 status -22
+<7>[   68.723618] gpio_unexport: gpio67 status -22
+<7>[   68.723666] gpio_unexport: gpio66 status -22
+<7>[   68.723703] gpio_unexport: gpio65 status -22
+<7>[   68.723738] gpio_unexport: gpio64 status -22
+<7>[   68.723773] gpio_unexport: gpio63 status -22
+<7>[   68.723808] gpio_unexport: gpio62 status -22
+<7>[   69.823524] gpio_unexport: gpio67 status -22
+<7>[   69.823568] gpio_unexport: gpio66 status -22
+<7>[   69.823604] gpio_unexport: gpio65 status -22
+<7>[   69.823639] gpio_unexport: gpio64 status -22
+<7>[   69.823674] gpio_unexport: gpio63 status -22
+<7>[   69.823709] gpio_unexport: gpio62 status -22
+<7>[   70.924559] gpio_unexport: gpio67 status -22
+<7>[   70.924604] gpio_unexport: gpio66 status -22
+<7>[   70.924639] gpio_unexport: gpio65 status -22
+<7>[   70.924676] gpio_unexport: gpio64 status -22
+<7>[   70.924711] gpio_unexport: gpio63 status -22
+<7>[   70.924746] gpio_unexport: gpio62 status -22
+<7>[   72.023591] gpio_unexport: gpio67 status -22
+<7>[   72.023639] gpio_unexport: gpio66 status -22
+<7>[   72.023674] gpio_unexport: gpio65 status -22
+<7>[   72.023709] gpio_unexport: gpio64 status -22
+<7>[   72.023744] gpio_unexport: gpio63 status -22
+<7>[   72.023778] gpio_unexport: gpio62 status -22
+<7>[   73.123584] gpio_unexport: gpio67 status -22
+<7>[   73.123631] gpio_unexport: gpio66 status -22
+<7>[   73.123668] gpio_unexport: gpio65 status -22
+<7>[   73.123703] gpio_unexport: gpio64 status -22
+<7>[   73.123738] gpio_unexport: gpio63 status -22
+<7>[   73.123773] gpio_unexport: gpio62 status -22
+<7>[   74.224368] gpio_unexport: gpio67 status -22
+<7>[   74.224414] gpio_unexport: gpio66 status -22
+<7>[   74.224449] gpio_unexport: gpio65 status -22
+<7>[   74.224486] gpio_unexport: gpio64 status -22
+<7>[   74.224521] gpio_unexport: gpio63 status -22
+<7>[   74.224556] gpio_unexport: gpio62 status -22
+<7>[   75.323943] gpio_unexport: gpio67 status -22
+<7>[   75.323993] gpio_unexport: gpio66 status -22
+<7>[   75.324028] gpio_unexport: gpio65 status -22
+<7>[   75.324063] gpio_unexport: gpio64 status -22
+<7>[   75.324098] gpio_unexport: gpio63 status -22
+<7>[   75.324133] gpio_unexport: gpio62 status -22
+<7>[   76.424674] gpio_unexport: gpio67 status -22
+<7>[   76.424719] gpio_unexport: gpio66 status -22
+<7>[   76.424756] gpio_unexport: gpio65 status -22
+<7>[   76.424791] gpio_unexport: gpio64 status -22
+<7>[   76.424826] gpio_unexport: gpio63 status -22
+<7>[   76.424861] gpio_unexport: gpio62 status -22
+<7>[   77.523574] gpio_unexport: gpio67 status -22
+<7>[   77.523624] gpio_unexport: gpio66 status -22
+<7>[   77.523661] gpio_unexport: gpio65 status -22
+<7>[   77.523696] gpio_unexport: gpio64 status -22
+<7>[   77.523731] gpio_unexport: gpio63 status -22
+<7>[   77.523766] gpio_unexport: gpio62 status -22
+<7>[   78.623674] gpio_unexport: gpio67 status -22
+<7>[   78.623723] gpio_unexport: gpio66 status -22
+<7>[   78.623758] gpio_unexport: gpio65 status -22
+<7>[   78.623794] gpio_unexport: gpio64 status -22
+<7>[   78.623829] gpio_unexport: gpio63 status -22
+<7>[   78.623864] gpio_unexport: gpio62 status -22
+<7>[   79.723879] gpio_unexport: gpio67 status -22
+<7>[   79.723926] gpio_unexport: gpio66 status -22
+<7>[   79.723963] gpio_unexport: gpio65 status -22
+<7>[   79.723998] gpio_unexport: gpio64 status -22
+<7>[   79.724033] gpio_unexport: gpio63 status -22
+<7>[   79.724068] gpio_unexport: gpio62 status -22
+<7>[   80.823563] gpio_unexport: gpio67 status -22
+<7>[   80.823613] gpio_unexport: gpio66 status -22
+<7>[   80.823648] gpio_unexport: gpio65 status -22
+<7>[   80.823683] gpio_unexport: gpio64 status -22
+<7>[   80.823718] gpio_unexport: gpio63 status -22
+<7>[   80.823753] gpio_unexport: gpio62 status -22
+<7>[   81.923573] gpio_unexport: gpio67 status -22
+<7>[   81.923619] gpio_unexport: gpio66 status -22
+<7>[   81.923656] gpio_unexport: gpio65 status -22
+<7>[   81.923691] gpio_unexport: gpio64 status -22
+<7>[   81.923726] gpio_unexport: gpio63 status -22
+<7>[   81.923761] gpio_unexport: gpio62 status -22
+<7>[   83.023893] gpio_unexport: gpio67 status -22
+<7>[   83.023938] gpio_unexport: gpio66 status -22
+<7>[   83.023973] gpio_unexport: gpio65 status -22
+<7>[   83.024008] gpio_unexport: gpio64 status -22
+<7>[   83.024043] gpio_unexport: gpio63 status -22
+<7>[   83.024076] gpio_unexport: gpio62 status -22
+<7>[   84.123566] gpio_unexport: gpio67 status -22
+<7>[   84.123614] gpio_unexport: gpio66 status -22
+<7>[   84.123649] gpio_unexport: gpio65 status -22
+<7>[   84.123684] gpio_unexport: gpio64 status -22
+<7>[   84.123719] gpio_unexport: gpio63 status -22
+<7>[   84.123754] gpio_unexport: gpio62 status -22
+<7>[   85.224321] gpio_unexport: gpio67 status -22
+<7>[   85.224368] gpio_unexport: gpio66 status -22
+<7>[   85.224403] gpio_unexport: gpio65 status -22
+<7>[   85.224438] gpio_unexport: gpio64 status -22
+<7>[   85.224473] gpio_unexport: gpio63 status -22
+<7>[   85.224508] gpio_unexport: gpio62 status -22
+<7>[   86.323539] gpio_unexport: gpio67 status -22
+<7>[   86.323584] gpio_unexport: gpio66 status -22
+<7>[   86.323619] gpio_unexport: gpio65 status -22
+<7>[   86.323656] gpio_unexport: gpio64 status -22
+<7>[   86.323691] gpio_unexport: gpio63 status -22
+<7>[   86.323726] gpio_unexport: gpio62 status -22
+<7>[   87.423589] gpio_unexport: gpio67 status -22
+<7>[   87.423639] gpio_unexport: gpio66 status -22
+<7>[   87.423676] gpio_unexport: gpio65 status -22
+<7>[   87.423711] gpio_unexport: gpio64 status -22
+<7>[   87.423746] gpio_unexport: gpio63 status -22
+<7>[   87.423781] gpio_unexport: gpio62 status -22
+<7>[   88.523874] gpio_unexport: gpio67 status -22
+<7>[   88.523923] gpio_unexport: gpio66 status -22
+<7>[   88.523959] gpio_unexport: gpio65 status -22
+<7>[   88.523994] gpio_unexport: gpio64 status -22
+<7>[   88.524029] gpio_unexport: gpio63 status -22
+<7>[   88.524064] gpio_unexport: gpio62 status -22
+<7>[   89.623681] gpio_unexport: gpio67 status -22
+<7>[   89.623731] gpio_unexport: gpio66 status -22
+<7>[   89.623768] gpio_unexport: gpio65 status -22
+<7>[   89.623803] gpio_unexport: gpio64 status -22
+<7>[   89.623838] gpio_unexport: gpio63 status -22
+<7>[   89.623873] gpio_unexport: gpio62 status -22
+<7>[   90.723889] gpio_unexport: gpio67 status -22
+<7>[   90.723936] gpio_unexport: gpio66 status -22
+<7>[   90.723971] gpio_unexport: gpio65 status -22
+<7>[   90.724006] gpio_unexport: gpio64 status -22
+<7>[   90.724043] gpio_unexport: gpio63 status -22
+<7>[   90.724078] gpio_unexport: gpio62 status -22
+<7>[   91.823568] gpio_unexport: gpio67 status -22
+<7>[   91.823618] gpio_unexport: gpio66 status -22
+<7>[   91.823653] gpio_unexport: gpio65 status -22
+<7>[   91.823689] gpio_unexport: gpio64 status -22
+<7>[   91.823724] gpio_unexport: gpio63 status -22
+<7>[   91.823759] gpio_unexport: gpio62 status -22
+<7>[   92.923626] gpio_unexport: gpio67 status -22
+<7>[   92.923676] gpio_unexport: gpio66 status -22
+<7>[   92.923711] gpio_unexport: gpio65 status -22
+<7>[   92.923746] gpio_unexport: gpio64 status -22
+<7>[   92.923781] gpio_unexport: gpio63 status -22
+<7>[   92.923816] gpio_unexport: gpio62 status -22
+<7>[   94.025756] gpio_unexport: gpio67 status -22
+<7>[   94.025804] gpio_unexport: gpio66 status -22
+<7>[   94.025839] gpio_unexport: gpio65 status -22
+<7>[   94.025874] gpio_unexport: gpio64 status -22
+<7>[   94.025909] gpio_unexport: gpio63 status -22
+<7>[   94.025944] gpio_unexport: gpio62 status -22
+<7>[   95.123564] gpio_unexport: gpio67 status -22
+<7>[   95.123611] gpio_unexport: gpio66 status -22
+<7>[   95.123648] gpio_unexport: gpio65 status -22
+<7>[   95.123683] gpio_unexport: gpio64 status -22
+<7>[   95.123718] gpio_unexport: gpio63 status -22
+<7>[   95.123753] gpio_unexport: gpio62 status -22
+<7>[   96.223759] gpio_unexport: gpio67 status -22
+<7>[   96.223809] gpio_unexport: gpio66 status -22
+<7>[   96.223844] gpio_unexport: gpio65 status -22
+<7>[   96.223881] gpio_unexport: gpio64 status -22
+<7>[   96.223916] gpio_unexport: gpio63 status -22
+<7>[   96.223951] gpio_unexport: gpio62 status -22
+<7>[   97.325196] gpio_unexport: gpio67 status -22
+<7>[   97.325241] gpio_unexport: gpio66 status -22
+<7>[   97.325278] gpio_unexport: gpio65 status -22
+<7>[   97.325313] gpio_unexport: gpio64 status -22
+<7>[   97.325348] gpio_unexport: gpio63 status -22
+<7>[   97.325383] gpio_unexport: gpio62 status -22
+<7>[   98.424334] gpio_unexport: gpio67 status -22
+<7>[   98.424383] gpio_unexport: gpio66 status -22
+<7>[   98.424419] gpio_unexport: gpio65 status -22
+<7>[   98.424454] gpio_unexport: gpio64 status -22
+<7>[   98.424489] gpio_unexport: gpio63 status -22
+<7>[   98.424524] gpio_unexport: gpio62 status -22
+<7>[   99.524313] gpio_unexport: gpio67 status -22
+<7>[   99.524361] gpio_unexport: gpio66 status -22
+<7>[   99.524398] gpio_unexport: gpio65 status -22
+<7>[   99.524433] gpio_unexport: gpio64 status -22
+<7>[   99.524468] gpio_unexport: gpio63 status -22
+<7>[   99.524503] gpio_unexport: gpio62 status -22
+<7>[  100.623638] gpio_unexport: gpio67 status -22
+<7>[  100.623684] gpio_unexport: gpio66 status -22
+<7>[  100.623721] gpio_unexport: gpio65 status -22
+<7>[  100.623756] gpio_unexport: gpio64 status -22
+<7>[  100.623791] gpio_unexport: gpio63 status -22
+<7>[  100.623826] gpio_unexport: gpio62 status -22
+<7>[  101.723646] gpio_unexport: gpio67 status -22
+<7>[  101.723696] gpio_unexport: gpio66 status -22
+<7>[  101.723733] gpio_unexport: gpio65 status -22
+<7>[  101.723768] gpio_unexport: gpio64 status -22
+<7>[  101.723803] gpio_unexport: gpio63 status -22
+<7>[  101.723839] gpio_unexport: gpio62 status -22
+<7>[  102.823829] gpio_unexport: gpio67 status -22
+<7>[  102.823878] gpio_unexport: gpio66 status -22
+<7>[  102.823914] gpio_unexport: gpio65 status -22
+<7>[  102.823949] gpio_unexport: gpio64 status -22
+<7>[  102.823984] gpio_unexport: gpio63 status -22
+<7>[  102.824019] gpio_unexport: gpio62 status -22
+<7>[  103.923588] gpio_unexport: gpio67 status -22
+<7>[  103.923636] gpio_unexport: gpio66 status -22
+<7>[  103.923671] gpio_unexport: gpio65 status -22
+<7>[  103.923708] gpio_unexport: gpio64 status -22
+<7>[  103.923743] gpio_unexport: gpio63 status -22
+<7>[  103.923778] gpio_unexport: gpio62 status -22
+<7>[  105.023603] gpio_unexport: gpio67 status -22
+<7>[  105.023651] gpio_unexport: gpio66 status -22
+<7>[  105.023686] gpio_unexport: gpio65 status -22
+<7>[  105.023721] gpio_unexport: gpio64 status -22
+<7>[  105.023756] gpio_unexport: gpio63 status -22
+<7>[  105.023791] gpio_unexport: gpio62 status -22
+<7>[  106.123958] gpio_unexport: gpio67 status -22
+<7>[  106.124004] gpio_unexport: gpio66 status -22
+<7>[  106.124039] gpio_unexport: gpio65 status -22
+<7>[  106.124074] gpio_unexport: gpio64 status -22
+<7>[  106.124111] gpio_unexport: gpio63 status -22
+<7>[  106.124146] gpio_unexport: gpio62 status -22
+<7>[  107.223726] gpio_unexport: gpio67 status -22
+<7>[  107.223774] gpio_unexport: gpio66 status -22
+<7>[  107.223879] gpio_unexport: gpio65 status -22
+<7>[  107.223948] gpio_unexport: gpio64 status -22
+<7>[  107.223984] gpio_unexport: gpio63 status -22
+<7>[  107.224019] gpio_unexport: gpio62 status -22
+<7>[  108.323528] gpio_unexport: gpio67 status -22
+<7>[  108.323549] gpio_unexport: gpio66 status -22
+<7>[  108.323559] gpio_unexport: gpio65 status -22
+<7>[  108.323571] gpio_unexport: gpio64 status -22
+<7>[  108.323583] gpio_unexport: gpio63 status -22
+<7>[  108.323593] gpio_unexport: gpio62 status -22
+<7>[  109.423598] gpio_unexport: gpio67 status -22
+<7>[  109.423644] gpio_unexport: gpio66 status -22
+<7>[  109.423679] gpio_unexport: gpio65 status -22
+<7>[  109.423716] gpio_unexport: gpio64 status -22
+<7>[  109.423751] gpio_unexport: gpio63 status -22
+<7>[  109.423786] gpio_unexport: gpio62 status -22
+<7>[  110.523666] gpio_unexport: gpio67 status -22
+<7>[  110.523713] gpio_unexport: gpio66 status -22
+<7>[  110.523749] gpio_unexport: gpio65 status -22
+<7>[  110.523784] gpio_unexport: gpio64 status -22
+<7>[  110.523819] gpio_unexport: gpio63 status -22
+<7>[  110.523854] gpio_unexport: gpio62 status -22
+<7>[  111.624584] gpio_unexport: gpio67 status -22
+<7>[  111.624631] gpio_unexport: gpio66 status -22
+<7>[  111.624668] gpio_unexport: gpio65 status -22
+<7>[  111.624703] gpio_unexport: gpio64 status -22
+<7>[  111.624738] gpio_unexport: gpio63 status -22
+<7>[  111.624773] gpio_unexport: gpio62 status -22
+<7>[  112.723621] gpio_unexport: gpio67 status -22
+<7>[  112.723671] gpio_unexport: gpio66 status -22
+<7>[  112.723708] gpio_unexport: gpio65 status -22
+<7>[  112.723743] gpio_unexport: gpio64 status -22
+<7>[  112.723778] gpio_unexport: gpio63 status -22
+<7>[  112.723813] gpio_unexport: gpio62 status -22
+<7>[  113.825576] gpio_unexport: gpio67 status -22
+<7>[  113.825626] gpio_unexport: gpio66 status -22
+<7>[  113.825663] gpio_unexport: gpio65 status -22
+<7>[  113.825698] gpio_unexport: gpio64 status -22
+<7>[  113.825733] gpio_unexport: gpio63 status -22
+<7>[  113.825768] gpio_unexport: gpio62 status -22
+<7>[  114.923583] gpio_unexport: gpio67 status -22
+<7>[  114.923628] gpio_unexport: gpio66 status -22
+<7>[  114.923664] gpio_unexport: gpio65 status -22
+<7>[  114.923699] gpio_unexport: gpio64 status -22
+<7>[  114.923734] gpio_unexport: gpio63 status -22
+<7>[  114.923769] gpio_unexport: gpio62 status -22
+<7>[  116.023579] gpio_unexport: gpio67 status -22
+<7>[  116.023623] gpio_unexport: gpio66 status -22
+<7>[  116.023658] gpio_unexport: gpio65 status -22
+<7>[  116.023693] gpio_unexport: gpio64 status -22
+<7>[  116.023728] gpio_unexport: gpio63 status -22
+<7>[  116.023763] gpio_unexport: gpio62 status -22
+<7>[  117.123816] gpio_unexport: gpio67 status -22
+<7>[  117.123838] gpio_unexport: gpio66 status -22
+<7>[  117.123849] gpio_unexport: gpio65 status -22
+<7>[  117.123859] gpio_unexport: gpio64 status -22
+<7>[  117.123871] gpio_unexport: gpio63 status -22
+<7>[  117.123881] gpio_unexport: gpio62 status -22
+<7>[  118.223568] gpio_unexport: gpio67 status -22
+<7>[  118.223614] gpio_unexport: gpio66 status -22
+<7>[  118.223651] gpio_unexport: gpio65 status -22
+<7>[  118.223686] gpio_unexport: gpio64 status -22
+<7>[  118.223721] gpio_unexport: gpio63 status -22
+<7>[  118.223758] gpio_unexport: gpio62 status -22
+<7>[  119.323581] gpio_unexport: gpio67 status -22
+<7>[  119.323629] gpio_unexport: gpio66 status -22
+<7>[  119.323664] gpio_unexport: gpio65 status -22
+<7>[  119.323699] gpio_unexport: gpio64 status -22
+<7>[  119.323734] gpio_unexport: gpio63 status -22
+<7>[  119.323769] gpio_unexport: gpio62 status -22
+<7>[  120.423603] gpio_unexport: gpio67 status -22
+<7>[  120.423653] gpio_unexport: gpio66 status -22
+<7>[  120.423689] gpio_unexport: gpio65 status -22
+<7>[  120.423724] gpio_unexport: gpio64 status -22
+<7>[  120.423759] gpio_unexport: gpio63 status -22
+<7>[  120.423794] gpio_unexport: gpio62 status -22
+<7>[  121.534014] gpio_unexport: gpio67 status -22
+<7>[  121.534036] gpio_unexport: gpio66 status -22
+<7>[  121.534046] gpio_unexport: gpio65 status -22
+<7>[  121.534058] gpio_unexport: gpio64 status -22
+<7>[  121.534069] gpio_unexport: gpio63 status -22
+<7>[  121.534079] gpio_unexport: gpio62 status -22
+<7>[  122.634123] gpio_unexport: gpio67 status -22
+<7>[  122.634173] gpio_unexport: gpio66 status -22
+<7>[  122.634208] gpio_unexport: gpio65 status -22
+<7>[  122.634243] gpio_unexport: gpio64 status -22
+<7>[  122.634279] gpio_unexport: gpio63 status -22
+<7>[  122.634314] gpio_unexport: gpio62 status -22
+<7>[  123.733696] gpio_unexport: gpio67 status -22
+<7>[  123.733744] gpio_unexport: gpio66 status -22
+<7>[  123.733781] gpio_unexport: gpio65 status -22
+<7>[  123.733816] gpio_unexport: gpio64 status -22
+<7>[  123.733851] gpio_unexport: gpio63 status -22
+<7>[  123.733886] gpio_unexport: gpio62 status -22
+<7>[  124.833573] gpio_unexport: gpio67 status -22
+<7>[  124.833618] gpio_unexport: gpio66 status -22
+<7>[  124.833654] gpio_unexport: gpio65 status -22
+<7>[  124.833689] gpio_unexport: gpio64 status -22
+<7>[  124.833724] gpio_unexport: gpio63 status -22
+<7>[  124.833759] gpio_unexport: gpio62 status -22
+<7>[  125.934159] gpio_unexport: gpio67 status -22
+<7>[  125.934209] gpio_unexport: gpio66 status -22
+<7>[  125.934244] gpio_unexport: gpio65 status -22
+<7>[  125.934281] gpio_unexport: gpio64 status -22
+<7>[  125.934316] gpio_unexport: gpio63 status -22
+<7>[  125.934351] gpio_unexport: gpio62 status -22
+<7>[  127.033563] gpio_unexport: gpio67 status -22
+<7>[  127.033608] gpio_unexport: gpio66 status -22
+<7>[  127.033643] gpio_unexport: gpio65 status -22
+<7>[  127.033678] gpio_unexport: gpio64 status -22
+<7>[  127.033713] gpio_unexport: gpio63 status -22
+<7>[  127.033748] gpio_unexport: gpio62 status -22
+<7>[  128.135704] gpio_unexport: gpio67 status -22
+<7>[  128.135754] gpio_unexport: gpio66 status -22
+<7>[  128.135791] gpio_unexport: gpio65 status -22
+<7>[  128.135826] gpio_unexport: gpio64 status -22
+<7>[  128.135861] gpio_unexport: gpio63 status -22
+<7>[  128.135896] gpio_unexport: gpio62 status -22
+<7>[  129.233921] gpio_unexport: gpio67 status -22
+<7>[  129.233971] gpio_unexport: gpio66 status -22
+<7>[  129.234008] gpio_unexport: gpio65 status -22
+<7>[  129.234043] gpio_unexport: gpio64 status -22
+<7>[  129.234078] gpio_unexport: gpio63 status -22
+<7>[  129.234113] gpio_unexport: gpio62 status -22
+<7>[  130.333563] gpio_unexport: gpio67 status -22
+<7>[  130.333609] gpio_unexport: gpio66 status -22
+<7>[  130.333646] gpio_unexport: gpio65 status -22
+<7>[  130.333681] gpio_unexport: gpio64 status -22
+<7>[  130.333716] gpio_unexport: gpio63 status -22
+<7>[  130.333751] gpio_unexport: gpio62 status -22
+<7>[  131.448509] gpio_unexport: gpio67 status -22
+<7>[  131.448533] gpio_unexport: gpio66 status -22
+<7>[  131.448543] gpio_unexport: gpio65 status -22
+<7>[  131.448554] gpio_unexport: gpio64 status -22
+<7>[  131.448566] gpio_unexport: gpio63 status -22
+<7>[  131.448576] gpio_unexport: gpio62 status -22
+<7>[  132.543563] gpio_unexport: gpio67 status -22
+<7>[  132.543611] gpio_unexport: gpio66 status -22
+<7>[  132.543646] gpio_unexport: gpio65 status -22
+<7>[  132.543683] gpio_unexport: gpio64 status -22
+<7>[  132.543718] gpio_unexport: gpio63 status -22
+<7>[  132.543753] gpio_unexport: gpio62 status -22
