@@ -104,7 +104,7 @@ BOARD_USE_LEGACY_TOUCHSCREEN := true
 # The name of the init file can be controlled from the kernel command line
 # androidboot.hardware=qcom will result in init calling init.qcom.rc in addition to init.rc
 
-BOARD_KERNEL_CMDLINE := mem=212M console=ttyMSM2 androidboot.hardware=qcom mtdparts=msm_nand:5120K@0x0000044E0000(boot),153600k@0x0000049E0000(userdata),1024k@0x00000DFE0000(splash)35840k@0xDFE0000(cache),5120K@0x0000103E0000(recovery),1536k@0x0000108E0000(persist),244736k@0x000010a60000(system)
+BOARD_KERNEL_CMDLINE := mem=212M console=ttyMSM2 androidboot.hardware=qcom mtdparts=msm_nand:5120K@0x044E0000(boot),153600k@0x049E0000(userdata),1024k@0x0DFE0000(splash),35840k@0x0E0E0000(cache),5120K@0x0103E0000(recovery),1536k@0x0108E0000(persist),244736k@0x010a60000(system)
 # BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_BASE := 0x00208000
 BOARD_KERNEL_PAGESIZE := 2048
