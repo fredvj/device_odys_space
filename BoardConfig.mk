@@ -61,9 +61,9 @@ BOARD_GPS_NEEDS_XTRA := true
 
 BOARD_HAS_SDCARD_INTERNAL := true
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun
-BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
-BOARD_CUSTOM_USB_CONTROLLER := ../../device/odys/space/configuration/UsbController.cpp
+# TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun
+BOARD_UMS_LUNFILE := "/sys/devices/platform/usb_mass_storage/lun0/file"
+# BOARD_CUSTOM_USB_CONTROLLER := ../../device/odys/space/configuration/UsbController.cpp
 
 TARGET_PROVIDES_LIBRIL := true
 TARGET_PROVIDES_LIBAUDIO := true
@@ -93,6 +93,8 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x0ef00000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_PREBUILT_KERNEL := device/odys/space/prebuilt/kernel
+
+BOARD_HAS_NO_SELECT_BUTTON := true
 
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/odys/space/recovery/space_recovery_ui.c
 TARGET_RECOVERY_INITRC := device/odys/space/recovery/recovery.rc

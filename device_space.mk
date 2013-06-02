@@ -25,10 +25,6 @@ PRODUCT_PACKAGES += \
 # Lights coming from hardware/msm7k/liblights
 
 PRODUCT_PACKAGES += \
-	sensors.msm7k \
-	lights.msm7k \
-	copybit.7x27 \
-	gralloc.7x27 \
 	gps.msm7k \
 	libcamera \
 	libaudio \
@@ -38,7 +34,8 @@ PRODUCT_PACKAGES += \
 	librs_jni \
 	dexpreopt \
 	rzscontrol \
-	screencap
+	screencap \
+	com.android.future.usb.accessory
 
 DISABLE_DEXPREOPT := false
 

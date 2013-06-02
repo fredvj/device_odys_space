@@ -1,0 +1,1504 @@
+--------- beginning of /dev/log/main
+I/cm      (   87): Welcome to Android 2.3.7 / CyanogenMod-7-20130601-UNOFFICIAL-space 
+I/cm      (   88):                                                 _  
+I/cm      (   89):  __ __ _ ___  _ _  __  ___  __ _ _  _  _  __  __)) 
+I/cm      (   90): ((_ \(/'((_( ((\( ((_)((_( (('((\( ((`1( ((_)((_(  
+I/cm      (   91):      ))                 _)) 
+I/cm      (   92):   
+I/mountsd (  106): Checking filesystems.. 
+I/run-parts(   82): e2fsck 1.41.12 (17-May-2010)
+I/run-parts(   82): /dev/block/mmcblk0p2: clean, 11/92928 files, 14050/371455 blocks
+I/mountsd (  120): /sd-ext successfully mounted 
+I/DEBUG   (  141): debuggerd: Jun  2 2013 00:53:06
+--------- beginning of /dev/log/system
+I/Vold    (  139): Vold 2.1 (the revenge) firing up
+E/Vold    (  139): Mount switch requested, but no switchable mountpoints found
+D/Vold    (  139): Volume emmc state changing -1 (Initializing) -> 0 (No-Media)
+E/Vold    (  139): Mount switch requested, but no switchable mountpoints found
+D/Vold    (  139): Volume sdcard state changing -1 (Initializing) -> 0 (No-Media)
+D/Vold    (  139): Volume sdcard state changing 0 (No-Media) -> 2 (Pending)
+D/Vold    (  139): Volume sdcard state changing 2 (Pending) -> 1 (Idle-Unmounted)
+D/Vold    (  139): Volume emmc state changing 0 (No-Media) -> 2 (Pending)
+D/Vold    (  139): Volume emmc state changing 2 (Pending) -> 1 (Idle-Unmounted)
+I/Netd    (  140): Netd 1.0 starting
+F//system/bin/wifiwritemac(  148): stack corruption detected: aborted
+W/Vold    (  139): Ignoring unknown switch 'MSM72K_UDC'
+W/Vold    (  139): Ignoring unknown switch 'MSM72K_UDC'
+D/AndroidRuntime(  143): 
+D/AndroidRuntime(  143): >>>>>> AndroidRuntime START com.android.internal.os.ZygoteInit <<<<<<
+I/AndroidRuntime(  143): Heap size: -Xmx24m
+D/AndroidRuntime(  143): CheckJNI is OFF
+I/        (  144): ServiceManager: 0xad50
+I/AudioHardwareMSM72XX(  144): get_audpp_filter
+I/AudioHardwareMSM72XX(  144): open /system/etc/AudioFilter.csv success.
+D/AudioHardwareInterface(  144): setMode(NORMAL)
+I/AudioHardwareMSM72XX(  144): Set master volume to 7.
+I/CameraService(  144): CameraService started (pid=144)
+D/AudioFlinger(  144): setParameters(): io 1, keyvalue routing=2, tid 199, calling tid 144
+I/AudioFlinger(  144): AudioFlinger's thread 0xc960 ready to run
+I/AudioHardwareMSM72XX(  144): Routing audio to Speakerphone
+D/AudioHardwareMSM72XX(  144): doAudioRouteOrMute() device 6, mMode 0, mMicMute 1, mBuiltinMicSelected 0, muted
+I/AudioHardwareMSM72XX(  144): Routing audio to Speakerphone
+D/AudioHardwareMSM72XX(  144): setVoiceVolume(1.000000)
+I/AudioHardwareMSM72XX(  144): Setting in-call volume to 7 (available range is 0 to 7)
+D/dalvikvm(  143): DexOpt: --- BEGIN 'core.jar' (bootstrap=1) ---
+D/dalvikvm(  202): Ignoring duplicate verify attempt on Ljava/lang/Object;
+D/dalvikvm(  202): Ignoring duplicate verify attempt on Ljava/lang/Class;
+D/dalvikvm(  202): DexOpt: load 223ms, verify+opt 2784ms
+D/dalvikvm(  143): DexOpt: --- END 'core.jar' (success) ---
+D/dalvikvm(  143): DEX prep '/system/framework/core.jar': unzip in 1234ms, rewrite 4091ms
+D/dalvikvm(  143): DexOpt: --- BEGIN 'bouncycastle.jar' (bootstrap=1) ---
+D/dalvikvm(  207): DexOpt: load 28ms, verify+opt 548ms
+D/dalvikvm(  143): DexOpt: --- END 'bouncycastle.jar' (success) ---
+D/dalvikvm(  143): DEX prep '/system/framework/bouncycastle.jar': unzip in 169ms, rewrite 764ms
+D/dalvikvm(  143): DexOpt: --- BEGIN 'ext.jar' (bootstrap=1) ---
+D/dalvikvm(  208): DexOpt: load 66ms, verify+opt 987ms
+D/dalvikvm(  143): DexOpt: --- END 'ext.jar' (success) ---
+D/dalvikvm(  143): DEX prep '/system/framework/ext.jar': unzip in 304ms, rewrite 1436ms
+D/dalvikvm(  143): DexOpt: --- BEGIN 'framework.jar' (bootstrap=1) ---
+D/dalvikvm(  210): Note: class Landroid/opengl/GLWrapperBase; has 211 unimplemented (abstract) methods
+D/dalvikvm(  210): DexOpt: load 568ms, verify+opt 5129ms
+D/dalvikvm(  143): DexOpt: --- END 'framework.jar' (success) ---
+D/dalvikvm(  143): DEX prep '/system/framework/framework.jar': unzip in 1915ms, rewrite 7573ms
+D/dalvikvm(  143): DexOpt: --- BEGIN 'android.policy.jar' (bootstrap=1) ---
+D/dalvikvm(  213): DexOpt: load 37ms, verify+opt 313ms
+D/dalvikvm(  143): DexOpt: --- END 'android.policy.jar' (success) ---
+D/dalvikvm(  143): DEX prep '/system/framework/android.policy.jar': unzip in 60ms, rewrite 449ms
+D/dalvikvm(  143): DexOpt: --- BEGIN 'services.jar' (bootstrap=1) ---
+D/dalvikvm(  214): DexOpt: load 66ms, verify+opt 1686ms
+D/dalvikvm(  143): DexOpt: --- END 'services.jar' (success) ---
+D/dalvikvm(  143): DEX prep '/system/framework/services.jar': unzip in 380ms, rewrite 2112ms
+D/dalvikvm(  143): DexOpt: --- BEGIN 'core-junit.jar' (bootstrap=1) ---
+D/dalvikvm(  216): DexOpt: load 2ms, verify+opt 16ms
+D/dalvikvm(  143): DexOpt: --- END 'core-junit.jar' (success) ---
+D/dalvikvm(  143): DEX prep '/system/framework/core-junit.jar': unzip in 4ms, rewrite 61ms
+I/SamplingProfilerIntegration(  143): Profiler is disabled.
+I/Zygote  (  143): Preloading classes...
+E/Zygote  (  143): setreuid() failed. errno: 2
+D/dalvikvm(  143): GC_EXPLICIT freed 48K, 77% free 239K/1024K, external 0K/0K, paused 5ms
+I/bluetooth_ScoSocket.cpp(  143): Entry name = MY-CAR ScoTypes = 0x7f
+I/bluetooth_ScoSocket.cpp(  143): Entry name = Motorola HF850 ScoTypes = 0x7
+D/szipinf (  143): Initializing inflate state
+D/dalvikvm(  143): GC_FOR_MALLOC freed 2916K, 57% free 2206K/5123K, external 0K/0K, paused 61ms
+D/dalvikvm(  143): GC_FOR_MALLOC freed 2634K, 52% free 2485K/5123K, external 0K/0K, paused 55ms
+I/Zygote  (  143): ...preloaded 1829 classes in 4206ms.
+D/Zygote  (  143): setreuid() error ignored, same uid.
+D/dalvikvm(  143): GC_EXPLICIT freed 847K, 48% free 2677K/5123K, external 0K/0K, paused 45ms
+I/Zygote  (  143): Preload resources disabled, skipped.
+D/dalvikvm(  143): GC_EXPLICIT freed 25K, 49% free 2652K/5123K, external 0K/0K, paused 37ms
+D/dalvikvm(  143): GC_EXPLICIT freed <1K, 49% free 2652K/5123K, external 0K/0K, paused 36ms
+D/dalvikvm(  143): GC_EXPLICIT freed <1K, 49% free 2652K/5123K, external 0K/0K, paused 36ms
+I/dalvikvm(  143): System server process 218 has been created
+I/Zygote  (  143): Accepting command socket connections
+D/SystemClock(  218): Setting time of day to sec=86400
+W/SystemServer(  218): System clock is before 1970; setting to 1970.
+E/BatteryService(  218): batteryTemperaturePath not found
+I/sysproc (  218): Entered system_init()
+I/sysproc (  218): ServiceManager: 0x101578
+I/SurfaceFlinger(  218): SurfaceFlinger is starting
+I/SurfaceFlinger(  218): dithering enabled
+I/SurfaceFlinger(  218): SurfaceFlinger's main thread ready to run. Initializing graphics H/W...
+D/libEGL  (  218): loaded /system/lib/egl/libGLES_android.so
+D/libEGL  (  218): loaded /system/lib/egl/libEGL_adreno200.so
+D/libEGL  (  218): loaded /system/lib/egl/libGLESv1_CM_adreno200.so
+D/libEGL  (  218): loaded /system/lib/egl/libGLESv2_adreno200.so
+E/libEGL  (  218): eglSetSwapRectangleANDROID:1909 error 3008 (EGL_BAD_DISPLAY)
+I/SurfaceFlinger(  218): EGL informations:
+I/SurfaceFlinger(  218): # of configs : 35
+I/SurfaceFlinger(  218): vendor    : Android
+I/SurfaceFlinger(  218): version   : 1.4 Android META-EGL
+I/SurfaceFlinger(  218): extensions: EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_ANDROID_image_native_buffer EGL_ANDROID_swap_rectangle EGL_ANDROID_get_render_buffer 
+I/SurfaceFlinger(  218): Client API: OpenGL ES
+I/SurfaceFlinger(  218): EGLSurface: 5-6-5-0, config=0x0
+I/SurfaceFlinger(  218): OpenGL informations:
+I/SurfaceFlinger(  218): vendor    : Qualcomm
+I/SurfaceFlinger(  218): renderer  : Adreno (TM) 200
+I/SurfaceFlinger(  218): version   : OpenGL ES-CM 1.1
+I/SurfaceFlinger(  218): extensions: GL_AMD_compressed_ATC_texture GL_AMD_performance_monitor GL_APPLE_texture_2D_limited_npot GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_type_2_10_10_10_REV GL_OES_blend_equation_separate GL_OES_blend_func_separate GL_OES_blend_subtract GL_OES_compressed_ETC1_RGB8_texture GL_OES_compressed_paletted_texture GL_OES_depth_texture GL_OES_draw_texture GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_framebuffer_object GL_OES_matrix_palette GL_OES_packed_depth_stencil GL_OES_point_size_array GL_OES_point_sprite GL_OES_read_format GL_OES_rgb8_rgba8 GL_OES_stencil_wrap GL_OES_texture_cube_map GL_OES_texture_env_crossbar GL_OES_texture_float GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_mirrored_repeat GL_QCOM_binning_control GL_QCOM_extended_get GL_QCOM_tiled_rendering GL_AMD_compressed_3DC_texture 
+I/SurfaceFlinger(  218): GL_MAX_TEXTURE_SIZE = 4096
+I/SurfaceFlinger(  218): GL_MAX_VIEWPORT_DIMS = 4096
+I/SurfaceFlinger(  218): flags = 00000000
+D/SensorService(  218): nuSensorService starting...
+E/Sensors (  218): Failed to open "/dev/bma150"
+I/SensorService(  218): BMA020 3-axis accelerometer
+I/sysproc (  218): System server: starting Android runtime.
+I/sysproc (  218): System server: starting Android services.
+I/SystemServer(  218): Entered the Android system server!
+I/sysproc (  218): System server: entering thread pool.
+D/SensorService(  218): nuSensorService thread starting...
+I/SystemServer(  218): Entropy Service
+W/EntropyService(  218): unable to load initial entropy (first boot?)
+W/EntropyService(  218): java.io.FileNotFoundException: /data/system/entropy.dat (No such file or directory)
+W/EntropyService(  218): 	at org.apache.harmony.luni.platform.OSFileSystem.open(Native Method)
+W/EntropyService(  218): 	at dalvik.system.BlockGuard$WrappedFileSystem.open(BlockGuard.java:232)
+W/EntropyService(  218): 	at java.io.FileInputStream.<init>(FileInputStream.java:80)
+W/EntropyService(  218): 	at java.io.FileInputStream.<init>(FileInputStream.java:132)
+W/EntropyService(  218): 	at com.android.server.RandomBlock.fromFile(RandomBlock.java:45)
+W/EntropyService(  218): 	at com.android.server.EntropyService.loadInitialEntropy(EntropyService.java:99)
+W/EntropyService(  218): 	at com.android.server.EntropyService.<init>(EntropyService.java:86)
+W/EntropyService(  218): 	at com.android.server.EntropyService.<init>(EntropyService.java:76)
+W/EntropyService(  218): 	at com.android.server.ServerThread.run(SystemServer.java:163)
+I/SystemServer(  218): Power Manager
+I/SystemServer(  218): Activity Manager
+I/ActivityManager(  218): Memory class: 24
+D/libEGL  (  232): loaded /system/lib/egl/libGLES_android.so
+D/libEGL  (  232): loaded /system/lib/egl/libEGL_adreno200.so
+D/libEGL  (  232): loaded /system/lib/egl/libGLESv1_CM_adreno200.so
+D/libEGL  (  232): loaded /system/lib/egl/libGLESv2_adreno200.so
+W/zipro   (  232): Unable to open zip '/data/local/bootanimation.zip': No such file or directory
+I/SystemServer(  218): Telephony Registry
+I/SystemServer(  218): Package Manager
+I/Installer(  218): connecting...
+I/installd(  146): new connection
+D/dalvikvm(  218): GC_CONCURRENT freed 128K, 47% free 3040K/5639K, external 0K/0K, paused 4ms+4ms
+I/PackageManager(  218): No settings file; creating initial state
+D/installd(  146): DexInv: --- BEGIN '/system/framework/android.test.runner.jar' ---
+D/dalvikvm(  243): DexOpt: load 19ms, verify+opt 179ms
+D/installd(  146): DexInv: --- END '/system/framework/android.test.runner.jar' (success) ---
+D/installd(  146): DexInv: --- BEGIN '/system/framework/com.android.location.provider.jar' ---
+D/dalvikvm(  244): DexOpt: load 2ms, verify+opt 5ms
+D/installd(  146): DexInv: --- END '/system/framework/com.android.location.provider.jar' (success) ---
+D/installd(  146): DexInv: --- BEGIN '/system/framework/javax.obex.jar' ---
+D/dalvikvm(  245): DexOpt: load 2ms, verify+opt 54ms
+D/installd(  146): DexInv: --- END '/system/framework/javax.obex.jar' (success) ---
+D/installd(  146): DexInv: --- BEGIN '/system/framework/com.android.future.usb.accessory.jar' ---
+D/dalvikvm(  246): DexOpt: load 0ms, verify+opt 7ms
+D/installd(  146): DexInv: --- END '/system/framework/com.android.future.usb.accessory.jar' (success) ---
+D/installd(  146): DexInv: --- BEGIN '/system/framework/bmgr.jar' ---
+D/dalvikvm(  247): DexOpt: load 1ms, verify+opt 22ms
+D/installd(  146): DexInv: --- END '/system/framework/bmgr.jar' (success) ---
+D/installd(  146): DexInv: --- BEGIN '/system/framework/ime.jar' ---
+D/dalvikvm(  248): DexOpt: load 0ms, verify+opt 12ms
+D/installd(  146): DexInv: --- END '/system/framework/ime.jar' (success) ---
+D/installd(  146): DexInv: --- BEGIN '/system/framework/input.jar' ---
+D/dalvikvm(  249): DexOpt: load 0ms, verify+opt 7ms
+D/installd(  146): DexInv: --- END '/system/framework/input.jar' (success) ---
+D/installd(  146): DexInv: --- BEGIN '/system/framework/monkey.jar' ---
+D/dalvikvm(  250): DexOpt: load 6ms, verify+opt 85ms
+D/installd(  146): DexInv: --- END '/system/framework/monkey.jar' (success) ---
+D/installd(  146): DexInv: --- BEGIN '/system/framework/pm.jar' ---
+D/dalvikvm(  251): DexOpt: load 3ms, verify+opt 30ms
+D/installd(  146): DexInv: --- END '/system/framework/pm.jar' (success) ---
+D/installd(  146): DexInv: --- BEGIN '/system/framework/sqlite-jdbc.jar' ---
+D/dalvikvm(  252): DexOpt: load 22ms, verify+opt 122ms
+D/installd(  146): DexInv: --- END '/system/framework/sqlite-jdbc.jar' (success) ---
+D/installd(  146): DexInv: --- BEGIN '/system/framework/svc.jar' ---
+D/dalvikvm(  253): DexOpt: load 1ms, verify+opt 8ms
+D/installd(  146): DexInv: --- END '/system/framework/svc.jar' (success) ---
+D/installd(  146): DexInv: --- BEGIN '/system/framework/am.jar' ---
+D/dalvikvm(  254): DexOpt: load 2ms, verify+opt 41ms
+D/installd(  146): DexInv: --- END '/system/framework/am.jar' (success) ---
+I/PackageManager(  218): /system/framework/framework-res.apk changed; collecting certs
+D/dalvikvm(  218): GC_CONCURRENT freed 367K, 47% free 3238K/6087K, external 0K/0K, paused 4ms+6ms
+D/dalvikvm(  218): GC_CONCURRENT freed 362K, 46% free 3408K/6279K, external 0K/0K, paused 4ms+4ms
+D/dalvikvm(  218): GC_FOR_MALLOC freed 68K, 46% free 3480K/6407K, external 0K/0K, paused 42ms
+I/dalvikvm-heap(  218): Grow heap (frag case) to 6.004MB for 194578-byte allocation
+D/dalvikvm(  218): GC_FOR_MALLOC freed 0K, 45% free 3670K/6599K, external 0K/0K, paused 49ms
+D/dalvikvm(  218): GC_FOR_MALLOC freed 94K, 46% free 3576K/6599K, external 0K/0K, paused 50ms
+I/dalvikvm-heap(  218): Grow heap (frag case) to 6.092MB for 188280-byte allocation
+D/dalvikvm(  218): GC_FOR_MALLOC freed 0K, 45% free 3760K/6791K, external 0K/0K, paused 50ms
+D/dalvikvm(  218): GC_FOR_MALLOC freed 279K, 47% free 3666K/6791K, external 0K/0K, paused 49ms
+D/dalvikvm(  218): GC_FOR_MALLOC freed 94K, 45% free 3762K/6791K, external 0K/0K, paused 47ms
+D/dalvikvm(  218): GC_FOR_MALLOC freed 215K, 45% free 3799K/6791K, external 0K/0K, paused 34ms
+D/dalvikvm(  218): GC_FOR_MALLOC freed 40K, 44% free 3847K/6791K, external 0K/0K, paused 51ms
+I/dalvikvm-heap(  218): Grow heap (frag case) to 6.358MB for 188434-byte allocation
+D/dalvikvm(  218): GC_FOR_MALLOC freed 0K, 43% free 4031K/6983K, external 0K/0K, paused 50ms
+D/dalvikvm(  218): GC_FOR_MALLOC freed 88K, 44% free 3943K/6983K, external 0K/0K, paused 50ms
+D/dalvikvm(  218): GC_CONCURRENT freed 219K, 40% free 4235K/6983K, external 0K/0K, paused 4ms+6ms
+D/dalvikvm(  218): GC_CONCURRENT freed 46K, 35% free 4713K/7239K, external 0K/0K, paused 4ms+6ms
+D/dalvikvm(  218): GC_CONCURRENT freed 92K, 34% free 5150K/7751K, external 0K/0K, paused 4ms+5ms
+D/dalvikvm(  218): GC_CONCURRENT freed 417K, 36% free 5366K/8263K, external 0K/0K, paused 4ms+7ms
+D/dalvikvm(  218): GC_CONCURRENT freed 208K, 32% free 5895K/8583K, external 0K/0K, paused 4ms+7ms
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/ADWLauncher.apk changed; collecting certs
+D/dalvikvm(  218): GC_CONCURRENT freed 789K, 36% free 5953K/9223K, external 0K/0K, paused 4ms+36ms
+D/installd(  146): DexInv: --- BEGIN '/system/app/ADWLauncher.apk' ---
+D/dalvikvm(  257): DexOpt: load 147ms, verify+opt 685ms
+D/installd(  146): DexInv: --- END '/system/app/ADWLauncher.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/AccountAndSyncSettings.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/AccountAndSyncSettings.apk' ---
+D/dalvikvm(  258): DexOpt: load 15ms, verify+opt 97ms
+D/installd(  146): DexInv: --- END '/system/app/AccountAndSyncSettings.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/AndroidTerm.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/AndroidTerm.apk' ---
+D/dalvikvm(  259): DexOpt: load 45ms, verify+opt 105ms
+D/installd(  146): DexInv: --- END '/system/app/AndroidTerm.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+W/PackageParser(  218): Unknown element under <manifest>: meta-data at /system/app/Androidian.apk Binary XML file line #43
+I/PackageManager(  218): /system/app/Androidian.apk changed; collecting certs
+D/dalvikvm(  218): GC_CONCURRENT freed 3069K, 60% free 3738K/9287K, external 0K/0K, paused 9ms+15ms
+D/dalvikvm(  218): GC_FOR_MALLOC freed 682K, 65% free 3337K/9287K, external 0K/0K, paused 62ms
+D/dalvikvm(  218): GC_CONCURRENT freed 181K, 61% free 3660K/9287K, external 0K/0K, paused 4ms+5ms
+D/dalvikvm(  218): GC_FOR_MALLOC freed 546K, 62% free 3595K/9287K, external 0K/0K, paused 51ms
+D/dalvikvm(  218): GC_CONCURRENT freed 138K, 58% free 3969K/9287K, external 0K/0K, paused 4ms+14ms
+D/dalvikvm(  218): GC_CONCURRENT freed 236K, 55% free 4244K/9287K, external 0K/0K, paused 4ms+6ms
+D/dalvikvm(  218): GC_CONCURRENT freed 334K, 53% free 4422K/9287K, external 0K/0K, paused 3ms+8ms
+D/dalvikvm(  218): GC_CONCURRENT freed 45K, 48% free 4888K/9287K, external 0K/0K, paused 3ms+7ms
+I/PackageManager(  218): /system/app/ApplicationsProvider.apk changed; collecting certs
+I/PackageManager(  218): New shared user android.uid.shared: id=10003
+D/installd(  146): DexInv: --- BEGIN '/system/app/ApplicationsProvider.apk' ---
+D/dalvikvm(  260): DexOpt: load 19ms, verify+opt 56ms
+D/installd(  146): DexInv: --- END '/system/app/ApplicationsProvider.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+W/PackageParser(  218): No actions in intent filter at /system/app/Bluetooth.apk Binary XML file line #132
+W/PackageParser(  218): No actions in intent filter at /system/app/Bluetooth.apk Binary XML file line #154
+I/PackageManager(  218): /system/app/Bluetooth.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/Bluetooth.apk' ---
+D/dalvikvm(  262): DexOpt: load 22ms, verify+opt 338ms
+D/installd(  146): DexInv: --- END '/system/app/Bluetooth.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/Browser.apk changed; collecting certs
+D/dalvikvm(  218): GC_CONCURRENT freed 638K, 49% free 4809K/9287K, external 0K/0K, paused 5ms+23ms
+D/installd(  146): DexInv: --- BEGIN '/system/app/Browser.apk' ---
+D/dalvikvm(  263): DexOpt: load 67ms, verify+opt 301ms
+D/installd(  146): DexInv: --- END '/system/app/Browser.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/CMParts.apk changed; collecting certs
+D/dalvikvm(  218): GC_CONCURRENT freed 2016K, 65% free 3333K/9287K, external 0K/0K, paused 3ms+8ms
+D/installd(  146): DexInv: --- BEGIN '/system/app/CMParts.apk' ---
+D/dalvikvm(  264): DexOpt: load 63ms, verify+opt 297ms
+D/installd(  146): DexInv: --- END '/system/app/CMParts.apk' (success) ---
+I/PackageManager(  218): /system/app/CMScreenshot.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/CMScreenshot.apk' ---
+D/dalvikvm(  265): DexOpt: load 7ms, verify+opt 15ms
+D/installd(  146): DexInv: --- END '/system/app/CMScreenshot.apk' (success) ---
+I/PackageManager(  218): /system/app/CMStats.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/CMStats.apk' ---
+D/dalvikvm(  266): DexOpt: 'Landroid/os/SystemProperties;' has an earlier definition; blocking out
+D/dalvikvm(  266): DexOpt: not verifying 'Landroid/os/SystemProperties;': multiple definitions
+I/dalvikvm(  266): DexOpt: not resolving ambiguous class 'Landroid/os/SystemProperties;'
+D/dalvikvm(  266): DexOpt: load 14ms, verify+opt 110ms
+D/installd(  146): DexInv: --- END '/system/app/CMStats.apk' (success) ---
+I/PackageManager(  218): /system/app/CMUpdateNotify.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/CMUpdateNotify.apk' ---
+D/dalvikvm(  267): DexOpt: 'Landroid/os/SystemProperties;' has an earlier definition; blocking out
+D/dalvikvm(  218): GC_CONCURRENT freed 487K, 65% free 3280K/9287K, external 0K/0K, paused 4ms+8ms
+D/dalvikvm(  267): DexOpt: not verifying 'Landroid/os/SystemProperties;': multiple definitions
+I/dalvikvm(  267): DexOpt: not resolving ambiguous class 'Landroid/os/SystemProperties;'
+D/dalvikvm(  267): DexOpt: load 12ms, verify+opt 43ms
+D/installd(  146): DexInv: --- END '/system/app/CMUpdateNotify.apk' (success) ---
+I/PackageManager(  218): /system/app/CMWallpapers.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/CMWallpapers.apk' ---
+D/dalvikvm(  268): DexOpt: load 7ms, verify+opt 41ms
+D/installd(  146): DexInv: --- END '/system/app/CMWallpapers.apk' (success) ---
+I/PackageManager(  218): /system/app/Calculator.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/Calculator.apk' ---
+D/dalvikvm(  218): GC_CONCURRENT freed 456K, 66% free 3245K/9287K, external 0K/0K, paused 18ms+7ms
+D/dalvikvm(  269): DexOpt: load 36ms, verify+opt 86ms
+D/installd(  146): DexInv: --- END '/system/app/Calculator.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/Calendar.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/Calendar.apk' ---
+D/dalvikvm(  270): DexOpt: load 72ms, verify+opt 305ms
+D/installd(  146): DexInv: --- END '/system/app/Calendar.apk' (success) ---
+I/PackageManager(  218): /system/app/CalendarProvider.apk changed; collecting certs
+I/PackageManager(  218): New shared user android.uid.calendar: id=10012
+D/installd(  146): DexInv: --- BEGIN '/system/app/CalendarProvider.apk' ---
+D/dalvikvm(  218): GC_CONCURRENT freed 383K, 65% free 3306K/9287K, external 0K/0K, paused 3ms+15ms
+D/dalvikvm(  271): DexOpt: load 62ms, verify+opt 510ms
+D/installd(  146): DexInv: --- END '/system/app/CalendarProvider.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/Camera.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/Camera.apk' ---
+D/dalvikvm(  273): DexOpt: load 41ms, verify+opt 221ms
+D/installd(  146): DexInv: --- END '/system/app/Camera.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/CertInstaller.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/CertInstaller.apk' ---
+D/dalvikvm(  218): GC_CONCURRENT freed 491K, 65% free 3321K/9287K, external 0K/0K, paused 4ms+20ms
+D/dalvikvm(  274): DexOpt: load 11ms, verify+opt 53ms
+D/installd(  146): DexInv: --- END '/system/app/CertInstaller.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/Contacts.apk changed; collecting certs
+D/dalvikvm(  218): GC_CONCURRENT freed 400K, 64% free 3402K/9287K, external 0K/0K, paused 3ms+4ms
+D/dalvikvm(  218): GC_CONCURRENT freed 252K, 61% free 3661K/9287K, external 0K/0K, paused 4ms+6ms
+D/installd(  146): DexInv: --- BEGIN '/system/app/Contacts.apk' ---
+D/dalvikvm(  275): DexOpt: load 99ms, verify+opt 444ms
+D/installd(  146): DexInv: --- END '/system/app/Contacts.apk' (success) ---
+I/PackageManager(  218): /system/app/ContactsProvider.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/ContactsProvider.apk' ---
+D/dalvikvm(  276): DexOpt: load 15ms, verify+opt 261ms
+D/installd(  146): DexInv: --- END '/system/app/ContactsProvider.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+W/PackageParser(  218): Unknown element under <manifest>: meta-data at /system/app/Cyanbread.apk Binary XML file line #43
+I/PackageManager(  218): /system/app/Cyanbread.apk changed; collecting certs
+D/dalvikvm(  218): GC_CONCURRENT freed 312K, 59% free 3861K/9287K, external 0K/0K, paused 5ms+15ms
+D/dalvikvm(  218): GC_CONCURRENT freed 681K, 62% free 3602K/9287K, external 0K/0K, paused 5ms+4ms
+D/dalvikvm(  218): GC_CONCURRENT freed 419K, 61% free 3676K/9287K, external 0K/0K, paused 4ms+5ms
+D/dalvikvm(  218): GC_FOR_MALLOC freed 349K, 60% free 3791K/9287K, external 0K/0K, paused 39ms
+D/dalvikvm(  218): GC_CONCURRENT freed 294K, 57% free 4009K/9287K, external 0K/0K, paused 4ms+7ms
+D/dalvikvm(  218): GC_CONCURRENT freed 45K, 52% free 4460K/9287K, external 0K/0K, paused 4ms+7ms
+D/dalvikvm(  218): GC_CONCURRENT freed 316K, 50% free 4655K/9287K, external 0K/0K, paused 3ms+6ms
+I/PackageManager(  218): /system/app/DSPManager.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/DSPManager.apk' ---
+D/dalvikvm(  218): GC_CONCURRENT freed 417K, 50% free 4702K/9287K, external 0K/0K, paused 3ms+44ms
+D/dalvikvm(  277): DexOpt: load 18ms, verify+opt 29ms
+D/installd(  146): DexInv: --- END '/system/app/DSPManager.apk' (success) ---
+I/PackageManager(  218): /system/app/DefaultContainerService.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/DefaultContainerService.apk' ---
+D/dalvikvm(  278): DexOpt: load 4ms, verify+opt 16ms
+D/installd(  146): DexInv: --- END '/system/app/DefaultContainerService.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/DeskClock.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/DeskClock.apk' ---
+D/dalvikvm(  218): GC_CONCURRENT freed 1749K, 64% free 3407K/9287K, external 0K/0K, paused 4ms+22ms
+D/dalvikvm(  279): DexOpt: load 27ms, verify+opt 118ms
+D/installd(  146): DexInv: --- END '/system/app/DeskClock.apk' (success) ---
+I/PackageManager(  218): /system/app/Development.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/Development.apk' ---
+D/dalvikvm(  281): DexOpt: load 38ms, verify+opt 159ms
+D/installd(  146): DexInv: --- END '/system/app/Development.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/DownloadProvider.apk changed; collecting certs
+I/PackageManager(  218): New shared user android.media: id=10020
+D/installd(  146): DexInv: --- BEGIN '/system/app/DownloadProvider.apk' ---
+D/dalvikvm(  282): DexOpt: load 65ms, verify+opt 423ms
+D/installd(  146): DexInv: --- END '/system/app/DownloadProvider.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/DownloadProviderUi.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/DownloadProviderUi.apk' ---
+D/dalvikvm(  218): GC_CONCURRENT freed 413K, 63% free 3490K/9287K, external 0K/0K, paused 3ms+9ms
+D/dalvikvm(  283): DexOpt: load 18ms, verify+opt 67ms
+D/installd(  146): DexInv: --- END '/system/app/DownloadProviderUi.apk' (success) ---
+I/PackageManager(  218): /system/app/DrmProvider.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/DrmProvider.apk' ---
+D/dalvikvm(  284): DexOpt: load 2ms, verify+opt 12ms
+D/installd(  146): DexInv: --- END '/system/app/DrmProvider.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/Email.apk changed; collecting certs
+D/dalvikvm(  218): GC_CONCURRENT freed 467K, 62% free 3535K/9287K, external 0K/0K, paused 4ms+7ms
+D/installd(  146): DexInv: --- BEGIN '/system/app/Email.apk' ---
+D/dalvikvm(  285): DexOpt: load 97ms, verify+opt 1096ms
+D/installd(  146): DexInv: --- END '/system/app/Email.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/FileManager.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/FileManager.apk' ---
+D/dalvikvm(  218): GC_CONCURRENT freed 392K, 62% free 3609K/9287K, external 0K/0K, paused 4ms+15ms
+D/dalvikvm(  287): DexOpt: load 43ms, verify+opt 261ms
+D/installd(  146): DexInv: --- END '/system/app/FileManager.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/Gallery3D.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/Gallery3D.apk' ---
+D/dalvikvm(  218): GC_CONCURRENT freed 465K, 63% free 3529K/9287K, external 0K/0K, paused 5ms+11ms
+D/dalvikvm(  288): DexOpt: load 39ms, verify+opt 493ms
+D/installd(  146): DexInv: --- END '/system/app/Gallery3D.apk' (success) ---
+I/PackageManager(  218): /system/app/HTMLViewer.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/HTMLViewer.apk' ---
+D/dalvikvm(  289): DexOpt: load 7ms, verify+opt 32ms
+D/installd(  146): DexInv: --- END '/system/app/HTMLViewer.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/LatinIME.apk changed; collecting certs
+D/dalvikvm(  218): GC_CONCURRENT freed 524K, 63% free 3506K/9287K, external 0K/0K, paused 4ms+5ms
+D/dalvikvm(  218): GC_CONCURRENT freed 285K, 60% free 3725K/9287K, external 0K/0K, paused 5ms+7ms
+D/installd(  146): DexInv: --- BEGIN '/system/app/LatinIME.apk' ---
+D/dalvikvm(  290): DexOpt: load 30ms, verify+opt 253ms
+D/installd(  146): DexInv: --- END '/system/app/LatinIME.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/LiveWallpapers.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/LiveWallpapers.apk' ---
+D/dalvikvm(  291): DexOpt: load 16ms, verify+opt 55ms
+D/installd(  146): DexInv: --- END '/system/app/LiveWallpapers.apk' (success) ---
+I/PackageManager(  218): /system/app/LiveWallpapersPicker.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/LiveWallpapersPicker.apk' ---
+D/dalvikvm(  292): DexOpt: load 9ms, verify+opt 58ms
+D/installd(  146): DexInv: --- END '/system/app/LiveWallpapersPicker.apk' (success) ---
+I/PackageManager(  218): /system/app/MediaProvider.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/MediaProvider.apk' ---
+D/dalvikvm(  218): GC_CONCURRENT freed 408K, 59% free 3820K/9287K, external 0K/0K, paused 3ms+27ms
+D/dalvikvm(  293): DexOpt: load 5ms, verify+opt 86ms
+D/installd(  146): DexInv: --- END '/system/app/MediaProvider.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/Mms.apk changed; collecting certs
+D/dalvikvm(  218): GC_CONCURRENT freed 735K, 62% free 3596K/9287K, external 0K/0K, paused 4ms+5ms
+D/installd(  146): DexInv: --- BEGIN '/system/app/Mms.apk' ---
+D/dalvikvm(  294): DexOpt: load 128ms, verify+opt 566ms
+D/installd(  146): DexInv: --- END '/system/app/Mms.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/Music.apk changed; collecting certs
+D/dalvikvm(  218): GC_CONCURRENT freed 293K, 60% free 3807K/9287K, external 0K/0K, paused 3ms+12ms
+D/installd(  146): DexInv: --- BEGIN '/system/app/Music.apk' ---
+D/dalvikvm(  296): DexOpt: load 61ms, verify+opt 260ms
+D/installd(  146): DexInv: --- END '/system/app/Music.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/PackageInstaller.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/PackageInstaller.apk' ---
+D/dalvikvm(  297): DexOpt: load 27ms, verify+opt 51ms
+D/installd(  146): DexInv: --- END '/system/app/PackageInstaller.apk' (success) ---
+I/PackageManager(  218): /system/app/Pacman.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/Pacman.apk' ---
+D/dalvikvm(  218): GC_CONCURRENT freed 528K, 61% free 3690K/9287K, external 0K/0K, paused 3ms+14ms
+D/dalvikvm(  298): DexOpt: load 28ms, verify+opt 57ms
+D/installd(  146): DexInv: --- END '/system/app/Pacman.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/Phone.apk changed; collecting certs
+D/dalvikvm(  218): GC_CONCURRENT freed 536K, 61% free 3665K/9287K, external 0K/0K, paused 3ms+8ms
+D/installd(  146): DexInv: --- BEGIN '/system/app/Phone.apk' ---
+D/dalvikvm(  218): GC_CONCURRENT freed 251K, 59% free 3840K/9287K, external 0K/0K, paused 5ms+7ms
+D/dalvikvm(  299): DexOpt: load 77ms, verify+opt 564ms
+D/installd(  146): DexInv: --- END '/system/app/Phone.apk' (success) ---
+I/PackageManager(  218): /system/app/PicoTts.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/PicoTts.apk' ---
+D/dalvikvm(  300): DexOpt: load 9ms, verify+opt 15ms
+D/installd(  146): DexInv: --- END '/system/app/PicoTts.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/Protips.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/Protips.apk' ---
+D/dalvikvm(  301): DexOpt: load 1ms, verify+opt 8ms
+D/installd(  146): DexInv: --- END '/system/app/Protips.apk' (success) ---
+I/PackageManager(  218): /system/app/Provision.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/Provision.apk' ---
+D/dalvikvm(  302): DexOpt: load 6ms, verify+opt 14ms
+D/installd(  146): DexInv: --- END '/system/app/Provision.apk' (success) ---
+D/dalvikvm(  218): GC_CONCURRENT freed 323K, 58% free 3948K/9287K, external 0K/0K, paused 4ms+20ms
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/QuickSearchBox.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/QuickSearchBox.apk' ---
+D/dalvikvm(  303): DexOpt: load 125ms, verify+opt 569ms
+D/installd(  146): DexInv: --- END '/system/app/QuickSearchBox.apk' (success) ---
+I/PackageManager(  218): /system/app/RomManager.apk changed; collecting certs
+D/dalvikvm(  218): GC_CONCURRENT freed 755K, 61% free 3698K/9287K, external 0K/0K, paused 5ms+8ms
+D/installd(  146): DexInv: --- BEGIN '/system/app/RomManager.apk' ---
+D/dalvikvm(  304): DexOpt: 'Landroid/os/SystemProperties;' has an earlier definition; blocking out
+D/dalvikvm(  304): DexOpt: not verifying 'Landroid/os/SystemProperties;': multiple definitions
+I/dalvikvm(  304): DexOpt: not resolving ambiguous class 'Landroid/os/SystemProperties;'
+D/dalvikvm(  304): DexOpt: couldn't find static field
+I/dalvikvm(  304): DexOpt: not resolving ambiguous class 'Landroid/os/SystemProperties;'
+I/dalvikvm(  304): DexOpt: not resolving ambiguous class 'Landroid/os/SystemProperties;'
+I/dalvikvm(  304): DexOpt: not resolving ambiguous class 'Landroid/os/SystemProperties;'
+I/dalvikvm(  304): DexOpt: not resolving ambiguous class 'Landroid/os/SystemProperties;'
+I/dalvikvm(  304): DexOpt: not resolving ambiguous class 'Landroid/os/SystemProperties;'
+I/dalvikvm(  304): DexOpt: not resolving ambiguous class 'Landroid/os/SystemProperties;'
+I/dalvikvm(  304): DexOpt: not resolving ambiguous class 'Landroid/os/SystemProperties;'
+I/dalvikvm(  304): DexOpt: not resolving ambiguous class 'Landroid/os/SystemProperties;'
+D/dalvikvm(  304): DexOpt: load 136ms, verify+opt 859ms
+D/installd(  146): DexInv: --- END '/system/app/RomManager.apk' (success) ---
+D/szipinf (  218): Initializing inflate state
+I/PackageManager(  218): /system/app/Settings.apk changed; collecting certs
+D/dalvikvm(  218): GC_CONCURRENT freed 374K, 59% free 3835K/9287K, external 0K/0K, paused 4ms+9ms
+D/dalvikvm(  218): GC_CONCURRENT freed 427K, 58% free 3919K/9287K, external 0K/0K, paused 3ms+8ms
+D/dalvikvm(  218): GC_CONCURRENT freed 257K, 56% free 4169K/9287K, external 0K/0K, paused 4ms+8ms
+D/installd(  146): DexInv: --- BEGIN '/system/app/Settings.apk' ---
+D/dalvikvm(  306): DexOpt: load 101ms, verify+opt 739ms
+D/installd(  146): DexInv: --- END '/system/app/Settings.apk' (success) ---
+I/PackageManager(  218): /system/app/SettingsProvider.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/SettingsProvider.apk' ---
+D/dalvikvm(  307): DexOpt: load 5ms, verify+opt 53ms
+D/installd(  146): DexInv: --- END '/system/app/SettingsProvider.apk' (success) ---
+I/PackageManager(  218): /system/app/SoundRecorder.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/SoundRecorder.apk' ---
+D/dalvikvm(  308): DexOpt: load 9ms, verify+opt 87ms
+D/installd(  146): DexInv: --- END '/system/app/SoundRecorder.apk' (success) ---
+I/PackageManager(  218): /system/app/SpareParts.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/SpareParts.apk' ---
+D/dalvikvm(  218): GC_CONCURRENT freed 349K, 55% free 4253K/9287K, external 0K/0K, paused 3ms+42ms
+D/dalvikvm(  309): DexOpt: load 13ms, verify+opt 22ms
+D/installd(  146): DexInv: --- END '/system/app/SpareParts.apk' (success) ---
+I/PackageManager(  218): /system/app/Stk.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/Stk.apk' ---
+D/dalvikvm(  310): DexOpt: load 11ms, verify+opt 79ms
+D/installd(  146): DexInv: --- END '/system/app/Stk.apk' (success) ---
+I/PackageManager(  218): /system/app/Superuser.apk changed; collecting certs
+D/dalvikvm(  218): GC_CONCURRENT freed 877K, 59% free 3886K/9287K, external 0K/0K, paused 3ms+7ms
+D/installd(  146): DexInv: --- BEGIN '/system/app/Superuser.apk' ---
+D/dalvikvm(  311): DexOpt: load 73ms, verify+opt 415ms
+D/installd(  146): DexInv: --- END '/system/app/Superuser.apk' (success) ---
+I/PackageManager(  218): /system/app/SystemUI.apk changed; collecting certs
+D/dalvikvm(  218): GC_CONCURRENT freed 377K, 57% free 4012K/9287K, external 0K/0K, paused 5ms+9ms
+D/installd(  146): DexInv: --- BEGIN '/system/app/SystemUI.apk' ---
+D/dalvikvm(  218): GC_CONCURRENT freed 510K, 58% free 3942K/9287K, external 0K/0K, paused 3ms+14ms
+D/dalvikvm(  313): DexOpt: load 54ms, verify+opt 189ms
+D/installd(  146): DexInv: --- END '/system/app/SystemUI.apk' (success) ---
+I/PackageManager(  218): /system/app/TelephonyProvider.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/TelephonyProvider.apk' ---
+D/dalvikvm(  314): DexOpt: load 4ms, verify+opt 88ms
+D/installd(  146): DexInv: --- END '/system/app/TelephonyProvider.apk' (success) ---
+I/PackageManager(  218): /system/app/ThemeChooser.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/ThemeChooser.apk' ---
+D/dalvikvm(  315): DexOpt: load 20ms, verify+opt 48ms
+D/installd(  146): DexInv: --- END '/system/app/ThemeChooser.apk' (success) ---
+I/PackageManager(  218): /system/app/ThemeManager.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/ThemeManager.apk' ---
+D/dalvikvm(  218): GC_CONCURRENT freed 330K, 57% free 3997K/9287K, external 0K/0K, paused 5ms+20ms
+D/dalvikvm(  316): DexOpt: load 16ms, verify+opt 59ms
+D/installd(  146): DexInv: --- END '/system/app/ThemeManager.apk' (success) ---
+I/PackageManager(  218): /system/app/TtsService.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/TtsService.apk' ---
+D/dalvikvm(  317): DexOpt: load 4ms, verify+opt 36ms
+D/installd(  146): DexInv: --- END '/system/app/TtsService.apk' (success) ---
+I/PackageManager(  218): /system/app/UserDictionaryProvider.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/UserDictionaryProvider.apk' ---
+D/dalvikvm(  318): DexOpt: load 3ms, verify+opt 20ms
+D/installd(  146): DexInv: --- END '/system/app/UserDictionaryProvider.apk' (success) ---
+I/PackageManager(  218): /system/app/VoiceDialer.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/VoiceDialer.apk' ---
+D/dalvikvm(  218): GC_CONCURRENT freed 657K, 60% free 3728K/9287K, external 0K/0K, paused 4ms+13ms
+D/dalvikvm(  319): DexOpt: load 17ms, verify+opt 173ms
+D/installd(  146): DexInv: --- END '/system/app/VoiceDialer.apk' (success) ---
+I/PackageManager(  218): /system/app/VpnServices.apk changed; collecting certs
+D/installd(  146): DexInv: --- BEGIN '/system/app/VpnServices.apk' ---
+D/dalvikvm(  320): DexOpt: load 5ms, verify+opt 34ms
+D/installd(  146): DexInv: --- END '/system/app/VpnServices.apk' (success) ---
+D/PackageManager(  218): No files in app dir /vendor/app
+I/PackageManager(  218): Time to scan packages: 39.798 seconds
+I/PackageManager(  218): Platform changed from 0 to 10; regranting permissions for internal storage
+W/PackageManager(  218): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.mail in package com.android.contacts
+W/PackageManager(  218): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.providers.calendar
+W/PackageManager(  218): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.cl in package com.android.providers.calendar
+W/PackageManager(  218): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.mail in package com.android.calendar
+W/PackageManager(  218): Not granting permission android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS to package com.android.browser (protectionLevel=2 flags=0x9be45)
+W/PackageManager(  218): Unknown permission com.google.android.c2dm.permission.RECEIVE in package com.koushikdutta.rommanager
+W/PackageManager(  218): Unknown permission com.android.vending.BILLING in package com.koushikdutta.rommanager
+W/PackageManager(  218): Unknown permission com.google.android.gm.permission.WRITE_GMAIL in package com.android.settings
+W/PackageManager(  218): Unknown permission com.google.android.gm.permission.READ_GMAIL in package com.android.settings
+W/PackageManager(  218): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.settings
+W/PackageManager(  218): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.providers.contacts
+W/PackageManager(  218): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.cp in package com.android.providers.contacts
+W/PackageManager(  218): Unknown permission com.google.android.c2dm.permission.RECEIVE in package com.cyanogenmod.updatenotify
+W/PackageManager(  218): Unknown permission com.google.android.googleapps.permission.ACCESS_GOOGLE_PASSWORD in package com.android.development
+W/PackageManager(  218): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.development
+W/PackageManager(  218): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.ALL_SERVICES in package com.android.development
+W/PackageManager(  218): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.YouTubeUser in package com.android.development
+W/PackageManager(  218): Unknown permission android.permission.READ_OWNER_DATA in package com.android.email
+W/PackageManager(  218): Not granting permission android.permission.DEVICE_POWER to package com.android.deskclock (protectionLevel=2 flags=0x8be45)
+D/dalvikvm(  218): GC_EXPLICIT freed 360K, 60% free 3742K/9287K, external 0K/0K, paused 59ms
+I/SystemServer(  218): Account Manager
+D/szipinf (  218): Initializing inflate state
+I/SystemServer(  218): Content Manager
+I/SyncManager(  218): No initial accounts
+I/SyncManager(  218): No initial status
+I/SyncManager(  218): No initial pending operations
+I/SyncManager(  218): No initial statistics
+D/szipinf (  218): Initializing inflate state
+I/ActivityThread(  218): Pub settings: com.android.providers.settings.SettingsProvider
+I/SystemServer(  218): System Content Providers
+D/szipinf (  218): Initializing inflate state
+D/szipinf (  218): Initializing inflate state
+W/SettingsProvider(  218): Unable to add bookmark: com.google.android.gm/com.google.android.gm.ConversationListActivityGmail
+W/SettingsProvider(  218): android.content.pm.PackageManager$NameNotFoundException: ComponentInfo{com.google.android.gm/com.google.android.gm.ConversationListActivityGmail}
+W/SettingsProvider(  218): 	at android.app.ContextImpl$ApplicationPackageManager.getActivityInfo(ContextImpl.java:1891)
+W/SettingsProvider(  218): 	at com.android.providers.settings.DatabaseHelper.loadBookmarks(DatabaseHelper.java:887)
+W/SettingsProvider(  218): 	at com.android.providers.settings.DatabaseHelper.loadBookmarks(DatabaseHelper.java:925)
+W/SettingsProvider(  218): 	at com.android.providers.settings.DatabaseHelper.onCreate(DatabaseHelper.java:135)
+W/SettingsProvider(  218): 	at android.database.sqlite.SQLiteOpenHelper.getWritableDatabase(SQLiteOpenHelper.java:126)
+W/SettingsProvider(  218): 	at android.database.sqlite.SQLiteOpenHelper.getReadableDatabase(SQLiteOpenHelper.java:187)
+W/SettingsProvider(  218): 	at com.android.providers.settings.SettingsProvider.query(SettingsProvider.java:405)
+W/SettingsProvider(  218): 	at com.android.providers.settings.SettingsProvider.ensureAndroidIdIsSet(SettingsProvider.java:324)
+W/SettingsProvider(  218): 	at com.android.providers.settings.SettingsProvider.onCreate(SettingsProvider.java:260)
+W/SettingsProvider(  218): 	at android.content.ContentProvider.attachInfo(ContentProvider.java:798)
+W/SettingsProvider(  218): 	at android.app.ActivityThread.installProvider(ActivityThread.java:3706)
+W/SettingsProvider(  218): 	at android.app.ActivityThread.installContentProviders(ActivityThread.java:3461)
+W/SettingsProvider(  218): 	at android.app.ActivityThread.installSystemProviders(ActivityThread.java:3812)
+W/SettingsProvider(  218): 	at com.android.server.am.ActivityManagerService.installSystemProviders(ActivityManagerService.java:5645)
+W/SettingsProvider(  218): 	at com.android.server.ServerThread.run(SystemServer.java:199)
+W/SettingsProvider(  218): Unable to add bookmark: com.android.im/com.android.im.app.LandingPage
+W/SettingsProvider(  218): android.content.pm.PackageManager$NameNotFoundException: ComponentInfo{com.android.im/com.android.im.app.LandingPage}
+W/SettingsProvider(  218): 	at android.app.ContextImpl$ApplicationPackageManager.getActivityInfo(ContextImpl.java:1891)
+W/SettingsProvider(  218): 	at com.android.providers.settings.DatabaseHelper.loadBookmarks(DatabaseHelper.java:887)
+W/SettingsProvider(  218): 	at com.android.providers.settings.DatabaseHelper.loadBookmarks(DatabaseHelper.java:925)
+W/SettingsProvider(  218): 	at com.android.providers.settings.DatabaseHelper.onCreate(DatabaseHelper.java:135)
+W/SettingsProvider(  218): 	at android.database.sqlite.SQLiteOpenHelper.getWritableDatabase(SQLiteOpenHelper.java:126)
+W/SettingsProvider(  218): 	at android.database.sqlite.SQLiteOpenHelper.getReadableDatabase(SQLiteOpenHelper.java:187)
+W/SettingsProvider(  218): 	at com.android.providers.settings.SettingsProvider.query(SettingsProvider.java:405)
+W/SettingsProvider(  218): 	at com.android.providers.settings.SettingsProvider.ensureAndroidIdIsSet(SettingsProvider.java:324)
+W/SettingsProvider(  218): 	at com.android.providers.settings.SettingsProvider.onCreate(SettingsProvider.java:260)
+W/SettingsProvider(  218): 	at android.content.ContentProvider.attachInfo(ContentProvider.java:798)
+W/SettingsProvider(  218): 	at android.app.ActivityThread.installProvider(ActivityThread.java:3706)
+W/SettingsProvider(  218): 	at android.app.ActivityThread.installContentProviders(ActivityThread.java:3461)
+W/SettingsProvider(  218): 	at android.app.ActivityThread.installSystemProviders(ActivityThread.java:3812)
+W/SettingsProvider(  218): 	at com.android.server.am.ActivityManagerService.installSystemProviders(ActivityManagerService.java:5645)
+W/SettingsProvider(  218): 	at com.android.server.ServerThread.run(SystemServer.java:199)
+D/szipinf (  218): Initializing inflate state
+D/szipinf (  218): Initializing inflate state
+D/szipinf (  218): Initializing inflate state
+D/SettingsProvider(  218): Generated and saved new ANDROID_ID [8c400530bb2383b7]
+I/SystemServer(  218): Battery Service
+D/SettingsProvider(  218): cache for settings table 'secure' rows=21; fullycached=true
+I/SystemServer(  218): Lights Service
+I/SystemServer(  218): Vibrator Service
+D/SettingsProvider(  218): cache for settings table 'system' rows=44; fullycached=true
+D/AlarmManagerService(  218): Kernel timezone updated to -60 minutes west of GMT
+I/SystemServer(  218): Alarm Manager
+I/SystemServer(  218): Init Watchdog
+I/SystemServer(  218): Window Manager
+W/dalvikvm(  218): threadid=16: thread exiting with uncaught exception (group=0x40018560)
+E/ActivityManager(  218): Attempt to launch receivers of broadcast intent Intent { act=android.intent.action.TIME_SET flg=0x20000000 } before boot completion
+E/AndroidRuntime(  218): *** FATAL EXCEPTION IN SYSTEM PROCESS: AlarmManager
+E/AndroidRuntime(  218): java.lang.IllegalStateException: Cannot broadcast before boot completed
+E/AndroidRuntime(  218): 	at com.android.server.am.ActivityManagerService.verifyBroadcastLocked(ActivityManagerService.java:10570)
+E/AndroidRuntime(  218): 	at com.android.server.am.ActivityManagerService.broadcastIntent(ActivityManagerService.java:10587)
+E/AndroidRuntime(  218): 	at android.app.ContextImpl.sendBroadcast(ContextImpl.java:683)
+E/AndroidRuntime(  218): 	at com.android.server.AlarmManagerService$AlarmThread.run(AlarmManagerService.java:665)
+E/AndroidRuntime(  218): Error reporting crash
+E/AndroidRuntime(  218): java.lang.NullPointerException
+E/AndroidRuntime(  218): 	at android.os.DropBoxManager.isTagEnabled(DropBoxManager.java:288)
+E/AndroidRuntime(  218): 	at com.android.server.am.ActivityManagerService.addErrorToDropBox(ActivityManagerService.java:6863)
+E/AndroidRuntime(  218): 	at com.android.server.am.ActivityManagerService.handleApplicationCrash(ActivityManagerService.java:6572)
+E/AndroidRuntime(  218): 	at com.android.internal.os.RuntimeInit$UncaughtHandler.uncaughtException(RuntimeInit.java:76)
+E/AndroidRuntime(  218): 	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:854)
+E/AndroidRuntime(  218): 	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:851)
+I/Process (  218): Sending signal. PID: 218 SIG: 9
+I/InputManager(  218): Initializing input manager
+D/BootAnimation(  232): SurfaceFlinger died, exiting...
+I/ServiceManager(  138): service 'SurfaceFlinger' died
+I/ServiceManager(  138): service 'permission' died
+I/ServiceManager(  138): service 'sensorservice' died
+I/ServiceManager(  138): service 'entropy' died
+I/ServiceManager(  138): service 'power' died
+I/ServiceManager(  138): service 'usagestats' died
+I/ServiceManager(  138): service 'batteryinfo' died
+I/ServiceManager(  138): service 'package' died
+I/ServiceManager(  138): service 'activity' died
+I/ServiceManager(  138): service 'meminfo' died
+I/ServiceManager(  138): service 'cpuinfo' died
+I/ServiceManager(  138): service 'telephony.registry' died
+I/ServiceManager(  138): service 'account' died
+I/ServiceManager(  138): service 'content' died
+I/ServiceManager(  138): service 'battery' died
+I/ServiceManager(  138): service 'alarm' died
+I/ServiceManager(  138): service 'hardware' died
+I/ServiceManager(  138): service 'vibrator' died
+E/installd(  146): eof
+E/installd(  146): failed to read size
+I/installd(  146): closing connection
+I/Zygote  (  143): Exit zygote because system server (218) has terminated
+I/ServiceManager(  138): service 'media.audio_flinger' died
+I/ServiceManager(  138): service 'media.audio_policy' died
+I/ServiceManager(  138): service 'media.player' died
+I/ServiceManager(  138): service 'media.camera' died
+I/Netd    (  333): Netd 1.0 starting
+D/AndroidRuntime(  334): 
+D/AndroidRuntime(  334): >>>>>> AndroidRuntime START com.android.internal.os.ZygoteInit <<<<<<
+I/AndroidRuntime(  334): Heap size: -Xmx24m
+D/AndroidRuntime(  334): CheckJNI is OFF
+I/        (  332): ServiceManager: 0xad50
+I/AudioHardwareMSM72XX(  332): get_audpp_filter
+I/AudioHardwareMSM72XX(  332): open /system/etc/AudioFilter.csv success.
+D/AudioHardwareInterface(  332): setMode(NORMAL)
+I/AudioHardwareMSM72XX(  332): Set master volume to 7.
+I/CameraService(  332): CameraService started (pid=332)
+D/AudioFlinger(  332): setParameters(): io 1, keyvalue routing=2, tid 345, calling tid 332
+I/AudioFlinger(  332): AudioFlinger's thread 0xc9b0 ready to run
+I/AudioHardwareMSM72XX(  332): Routing audio to Speakerphone
+D/AudioHardwareMSM72XX(  332): doAudioRouteOrMute() device 6, mMode 0, mMicMute 1, mBuiltinMicSelected 0, muted
+I/AudioHardwareMSM72XX(  332): Routing audio to Speakerphone
+D/AudioHardwareMSM72XX(  332): setVoiceVolume(1.000000)
+I/AudioHardwareMSM72XX(  332): Setting in-call volume to 7 (available range is 0 to 7)
+I/SamplingProfilerIntegration(  334): Profiler is disabled.
+I/Zygote  (  334): Preloading classes...
+D/dalvikvm(  334): GC_EXPLICIT freed 47K, 77% free 237K/1024K, external 0K/0K, paused 3ms
+I/bluetooth_ScoSocket.cpp(  334): Entry name = MY-CAR ScoTypes = 0x7f
+I/bluetooth_ScoSocket.cpp(  334): Entry name = Motorola HF850 ScoTypes = 0x7
+D/szipinf (  334): Initializing inflate state
+D/dalvikvm(  334): GC_FOR_MALLOC freed 2916K, 57% free 2207K/5123K, external 0K/0K, paused 61ms
+D/dalvikvm(  334): GC_FOR_MALLOC freed 2635K, 52% free 2484K/5123K, external 0K/0K, paused 55ms
+I/Zygote  (  334): ...preloaded 1829 classes in 3655ms.
+D/Zygote  (  334): setreuid() error ignored, same uid.
+D/dalvikvm(  334): GC_EXPLICIT freed 847K, 48% free 2677K/5123K, external 0K/0K, paused 46ms
+I/Zygote  (  334): Preload resources disabled, skipped.
+D/dalvikvm(  334): GC_EXPLICIT freed 25K, 49% free 2652K/5123K, external 0K/0K, paused 101ms
+D/dalvikvm(  334): GC_EXPLICIT freed <1K, 49% free 2652K/5123K, external 0K/0K, paused 36ms
+D/dalvikvm(  334): GC_EXPLICIT freed <1K, 49% free 2652K/5123K, external 0K/0K, paused 36ms
+I/dalvikvm(  334): System server process 349 has been created
+I/Zygote  (  334): Accepting command socket connections
+D/SystemClock(  349): Setting time of day to sec=86400
+W/SystemServer(  349): System clock is before 1970; setting to 1970.
+E/BatteryService(  349): batteryTemperaturePath not found
+I/sysproc (  349): Entered system_init()
+I/sysproc (  349): ServiceManager: 0x1346e8
+I/SurfaceFlinger(  349): SurfaceFlinger is starting
+I/SurfaceFlinger(  349): dithering enabled
+I/SurfaceFlinger(  349): SurfaceFlinger's main thread ready to run. Initializing graphics H/W...
+D/libEGL  (  349): loaded /system/lib/egl/libGLES_android.so
+D/libEGL  (  349): loaded /system/lib/egl/libEGL_adreno200.so
+D/libEGL  (  349): loaded /system/lib/egl/libGLESv1_CM_adreno200.so
+D/libEGL  (  349): loaded /system/lib/egl/libGLESv2_adreno200.so
+E/libEGL  (  349): eglSetSwapRectangleANDROID:1909 error 3008 (EGL_BAD_DISPLAY)
+I/SurfaceFlinger(  349): EGL informations:
+I/SurfaceFlinger(  349): # of configs : 35
+I/SurfaceFlinger(  349): vendor    : Android
+I/SurfaceFlinger(  349): version   : 1.4 Android META-EGL
+I/SurfaceFlinger(  349): extensions: EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_ANDROID_image_native_buffer EGL_ANDROID_swap_rectangle EGL_ANDROID_get_render_buffer 
+I/SurfaceFlinger(  349): Client API: OpenGL ES
+I/SurfaceFlinger(  349): EGLSurface: 5-6-5-0, config=0x0
+I/SurfaceFlinger(  349): OpenGL informations:
+I/SurfaceFlinger(  349): vendor    : Qualcomm
+I/SurfaceFlinger(  349): renderer  : Adreno (TM) 200
+I/SurfaceFlinger(  349): version   : OpenGL ES-CM 1.1
+I/SurfaceFlinger(  349): extensions: GL_AMD_compressed_ATC_texture GL_AMD_performance_monitor GL_APPLE_texture_2D_limited_npot GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_type_2_10_10_10_REV GL_OES_blend_equation_separate GL_OES_blend_func_separate GL_OES_blend_subtract GL_OES_compressed_ETC1_RGB8_texture GL_OES_compressed_paletted_texture GL_OES_depth_texture GL_OES_draw_texture GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_framebuffer_object GL_OES_matrix_palette GL_OES_packed_depth_stencil GL_OES_point_size_array GL_OES_point_sprite GL_OES_read_format GL_OES_rgb8_rgba8 GL_OES_stencil_wrap GL_OES_texture_cube_map GL_OES_texture_env_crossbar GL_OES_texture_float GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_mirrored_repeat GL_QCOM_binning_control GL_QCOM_extended_get GL_QCOM_tiled_rendering GL_AMD_compressed_3DC_texture 
+I/SurfaceFlinger(  349): GL_MAX_TEXTURE_SIZE = 4096
+I/SurfaceFlinger(  349): GL_MAX_VIEWPORT_DIMS = 4096
+I/SurfaceFlinger(  349): flags = 00000000
+D/SensorService(  349): nuSensorService starting...
+E/Sensors (  349): Failed to open "/dev/bma150"
+I/SensorService(  349): BMA020 3-axis accelerometer
+I/sysproc (  349): System server: starting Android runtime.
+I/sysproc (  349): System server: starting Android services.
+D/SensorService(  349): nuSensorService thread starting...
+I/sysproc (  349): System server: entering thread pool.
+I/SystemServer(  349): Entered the Android system server!
+I/SystemServer(  349): Entropy Service
+I/SystemServer(  349): Power Manager
+I/SystemServer(  349): Activity Manager
+I/ActivityManager(  349): Memory class: 24
+W/UsageStats(  349): Usage stats version changed; dropping
+D/libEGL  (  363): loaded /system/lib/egl/libGLES_android.so
+D/libEGL  (  363): loaded /system/lib/egl/libEGL_adreno200.so
+D/libEGL  (  363): loaded /system/lib/egl/libGLESv1_CM_adreno200.so
+D/libEGL  (  363): loaded /system/lib/egl/libGLESv2_adreno200.so
+W/zipro   (  363): Unable to open zip '/data/local/bootanimation.zip': No such file or directory
+I/SystemServer(  349): Telephony Registry
+I/SystemServer(  349): Package Manager
+I/installd(  146): new connection
+I/Installer(  349): connecting...
+D/dalvikvm(  349): GC_CONCURRENT freed 115K, 46% free 3049K/5639K, external 0K/0K, paused 4ms+3ms
+D/szipinf (  349): Initializing inflate state
+D/dalvikvm(  349): GC_CONCURRENT freed 503K, 50% free 3095K/6087K, external 0K/0K, paused 4ms+14ms
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+W/PackageParser(  349): Unknown element under <manifest>: meta-data at /system/app/Androidian.apk Binary XML file line #43
+D/szipinf (  349): Initializing inflate state
+W/PackageParser(  349): No actions in intent filter at /system/app/Bluetooth.apk Binary XML file line #132
+W/PackageParser(  349): No actions in intent filter at /system/app/Bluetooth.apk Binary XML file line #154
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+W/PackageParser(  349): Unknown element under <manifest>: meta-data at /system/app/Cyanbread.apk Binary XML file line #43
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/dalvikvm(  349): GC_CONCURRENT freed 197K, 45% free 3389K/6087K, external 0K/0K, paused 3ms+7ms
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/szipinf (  349): Initializing inflate state
+D/dalvikvm(  349): GC_CONCURRENT freed 251K, 45% free 3552K/6343K, external 0K/0K, paused 3ms+17ms
+D/PackageManager(  349): No files in app dir /vendor/app
+I/PackageManager(  349): Time to scan packages: 2.047 seconds
+W/PackageManager(  349): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.mail in package com.android.contacts
+W/PackageManager(  349): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.providers.calendar
+W/PackageManager(  349): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.cl in package com.android.providers.calendar
+W/PackageManager(  349): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.mail in package com.android.calendar
+W/PackageManager(  349): Not granting permission android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS to package com.android.browser (protectionLevel=2 flags=0x9be45)
+W/PackageManager(  349): Unknown permission com.google.android.c2dm.permission.RECEIVE in package com.koushikdutta.rommanager
+W/PackageManager(  349): Unknown permission com.android.vending.BILLING in package com.koushikdutta.rommanager
+W/PackageManager(  349): Unknown permission com.google.android.gm.permission.WRITE_GMAIL in package com.android.settings
+W/PackageManager(  349): Unknown permission com.google.android.gm.permission.READ_GMAIL in package com.android.settings
+W/PackageManager(  349): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.settings
+W/PackageManager(  349): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.providers.contacts
+W/PackageManager(  349): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.cp in package com.android.providers.contacts
+W/PackageManager(  349): Unknown permission com.google.android.c2dm.permission.RECEIVE in package com.cyanogenmod.updatenotify
+W/PackageManager(  349): Unknown permission com.google.android.googleapps.permission.ACCESS_GOOGLE_PASSWORD in package com.android.development
+W/PackageManager(  349): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.development
+W/PackageManager(  349): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.ALL_SERVICES in package com.android.development
+W/PackageManager(  349): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.YouTubeUser in package com.android.development
+W/PackageManager(  349): Unknown permission android.permission.READ_OWNER_DATA in package com.android.email
+W/PackageManager(  349): Not granting permission android.permission.DEVICE_POWER to package com.android.deskclock (protectionLevel=2 flags=0x8be45)
+D/dalvikvm(  349): GC_CONCURRENT freed 349K, 44% free 3729K/6599K, external 0K/0K, paused 4ms+5ms
+D/dalvikvm(  349): GC_EXPLICIT freed 112K, 46% free 3617K/6599K, external 0K/0K, paused 91ms
+I/SystemServer(  349): Account Manager
+D/szipinf (  349): Initializing inflate state
+I/SystemServer(  349): Content Manager
+D/szipinf (  349): Initializing inflate state
+I/ActivityThread(  349): Pub settings: com.android.providers.settings.SettingsProvider
+I/SystemServer(  349): System Content Providers
+I/SystemServer(  349): Battery Service
+I/SystemServer(  349): Lights Service
+D/SettingsProvider(  349): cache for settings table 'secure' rows=21; fullycached=true
+I/SystemServer(  349): Vibrator Service
+D/SettingsProvider(  349): cache for settings table 'system' rows=44; fullycached=true
+I/SystemServer(  349): Alarm Manager
+D/AlarmManagerService(  349): Kernel timezone updated to -60 minutes west of GMT
+W/dalvikvm(  349): threadid=16: thread exiting with uncaught exception (group=0x40018560)
+I/SystemServer(  349): Init Watchdog
+I/SystemServer(  349): Window Manager
+E/ActivityManager(  349): Attempt to launch receivers of broadcast intent Intent { act=android.intent.action.TIME_SET flg=0x20000000 } before boot completion
+E/AndroidRuntime(  349): *** FATAL EXCEPTION IN SYSTEM PROCESS: AlarmManager
+E/AndroidRuntime(  349): java.lang.IllegalStateException: Cannot broadcast before boot completed
+E/AndroidRuntime(  349): 	at com.android.server.am.ActivityManagerService.verifyBroadcastLocked(ActivityManagerService.java:10570)
+E/AndroidRuntime(  349): 	at com.android.server.am.ActivityManagerService.broadcastIntent(ActivityManagerService.java:10587)
+E/AndroidRuntime(  349): 	at android.app.ContextImpl.sendBroadcast(ContextImpl.java:683)
+E/AndroidRuntime(  349): 	at com.android.server.AlarmManagerService$AlarmThread.run(AlarmManagerService.java:665)
+E/AndroidRuntime(  349): Error reporting crash
+E/AndroidRuntime(  349): java.lang.NullPointerException
+E/AndroidRuntime(  349): 	at android.os.DropBoxManager.isTagEnabled(DropBoxManager.java:288)
+E/AndroidRuntime(  349): 	at com.android.server.am.ActivityManagerService.addErrorToDropBox(ActivityManagerService.java:6863)
+E/AndroidRuntime(  349): 	at com.android.server.am.ActivityManagerService.handleApplicationCrash(ActivityManagerService.java:6572)
+E/AndroidRuntime(  349): 	at com.android.internal.os.RuntimeInit$UncaughtHandler.uncaughtException(RuntimeInit.java:76)
+E/AndroidRuntime(  349): 	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:854)
+E/AndroidRuntime(  349): 	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:851)
+I/Process (  349): Sending signal. PID: 349 SIG: 9
+D/BootAnimation(  363): SurfaceFlinger died, exiting...
+I/ServiceManager(  138): service 'SurfaceFlinger' died
+I/ServiceManager(  138): service 'sensorservice' died
+I/ServiceManager(  138): service 'permission' died
+I/ServiceManager(  138): service 'entropy' died
+I/ServiceManager(  138): service 'power' died
+I/ServiceManager(  138): service 'usagestats' died
+I/ServiceManager(  138): service 'batteryinfo' died
+I/ServiceManager(  138): service 'telephony.registry' died
+I/ServiceManager(  138): service 'account' died
+I/ServiceManager(  138): service 'cpuinfo' died
+I/ServiceManager(  138): service 'activity' died
+I/ServiceManager(  138): service 'package' died
+I/ServiceManager(  138): service 'meminfo' died
+I/ServiceManager(  138): service 'content' died
+I/ServiceManager(  138): service 'battery' died
+I/ServiceManager(  138): service 'hardware' died
+I/ServiceManager(  138): service 'vibrator' died
+I/ServiceManager(  138): service 'alarm' died
+E/installd(  146): eof
+E/installd(  146): failed to read size
+I/installd(  146): closing connection
+I/Zygote  (  334): Exit zygote because system server (349) has terminated
+I/ServiceManager(  138): service 'media.audio_flinger' died
+I/ServiceManager(  138): service 'media.audio_policy' died
+I/ServiceManager(  138): service 'media.player' died
+I/ServiceManager(  138): service 'media.camera' died
+I/Netd    (  386): Netd 1.0 starting
+D/AndroidRuntime(  387): 
+D/AndroidRuntime(  387): >>>>>> AndroidRuntime START com.android.internal.os.ZygoteInit <<<<<<
+I/AndroidRuntime(  387): Heap size: -Xmx24m
+D/AndroidRuntime(  387): CheckJNI is OFF
+I/        (  385): ServiceManager: 0xad50
+I/AudioHardwareMSM72XX(  385): get_audpp_filter
+I/AudioHardwareMSM72XX(  385): open /system/etc/AudioFilter.csv success.
+D/AudioHardwareInterface(  385): setMode(NORMAL)
+I/AudioHardwareMSM72XX(  385): Set master volume to 7.
+I/CameraService(  385): CameraService started (pid=385)
+I/AudioFlinger(  385): AudioFlinger's thread 0xc9b0 ready to run
+D/AudioFlinger(  385): setParameters(): io 1, keyvalue routing=2, tid 397, calling tid 385
+I/AudioHardwareMSM72XX(  385): Routing audio to Speakerphone
+D/AudioHardwareMSM72XX(  385): doAudioRouteOrMute() device 6, mMode 0, mMicMute 1, mBuiltinMicSelected 0, muted
+I/AudioHardwareMSM72XX(  385): Routing audio to Speakerphone
+D/AudioHardwareMSM72XX(  385): setVoiceVolume(1.000000)
+I/AudioHardwareMSM72XX(  385): Setting in-call volume to 7 (available range is 0 to 7)
+I/SamplingProfilerIntegration(  387): Profiler is disabled.
+I/Zygote  (  387): Preloading classes...
+D/dalvikvm(  387): GC_EXPLICIT freed 47K, 77% free 237K/1024K, external 0K/0K, paused 3ms
+I/bluetooth_ScoSocket.cpp(  387): Entry name = MY-CAR ScoTypes = 0x7f
+I/bluetooth_ScoSocket.cpp(  387): Entry name = Motorola HF850 ScoTypes = 0x7
+D/szipinf (  387): Initializing inflate state
+D/dalvikvm(  387): GC_FOR_MALLOC freed 2916K, 57% free 2207K/5123K, external 0K/0K, paused 62ms
+D/dalvikvm(  387): GC_FOR_MALLOC freed 2635K, 52% free 2484K/5123K, external 0K/0K, paused 57ms
+I/Zygote  (  387): ...preloaded 1829 classes in 3757ms.
+D/Zygote  (  387): setreuid() error ignored, same uid.
+D/dalvikvm(  387): GC_EXPLICIT freed 847K, 48% free 2677K/5123K, external 0K/0K, paused 45ms
+I/Zygote  (  387): Preload resources disabled, skipped.
+D/dalvikvm(  387): GC_EXPLICIT freed 25K, 49% free 2652K/5123K, external 0K/0K, paused 38ms
+D/dalvikvm(  387): GC_EXPLICIT freed <1K, 49% free 2652K/5123K, external 0K/0K, paused 37ms
+D/dalvikvm(  387): GC_EXPLICIT freed <1K, 49% free 2652K/5123K, external 0K/0K, paused 37ms
+I/dalvikvm(  387): System server process 401 has been created
+I/Zygote  (  387): Accepting command socket connections
+W/SystemServer(  401): System clock is before 1970; setting to 1970.
+D/SystemClock(  401): Setting time of day to sec=86400
+E/BatteryService(  401): batteryTemperaturePath not found
+I/sysproc (  401): Entered system_init()
+I/sysproc (  401): ServiceManager: 0x1346e8
+I/SurfaceFlinger(  401): SurfaceFlinger is starting
+I/SurfaceFlinger(  401): dithering enabled
+I/SurfaceFlinger(  401): SurfaceFlinger's main thread ready to run. Initializing graphics H/W...
+D/libEGL  (  401): loaded /system/lib/egl/libGLES_android.so
+D/libEGL  (  401): loaded /system/lib/egl/libEGL_adreno200.so
+D/libEGL  (  401): loaded /system/lib/egl/libGLESv1_CM_adreno200.so
+D/libEGL  (  401): loaded /system/lib/egl/libGLESv2_adreno200.so
+E/libEGL  (  401): eglSetSwapRectangleANDROID:1909 error 3008 (EGL_BAD_DISPLAY)
+I/SurfaceFlinger(  401): EGL informations:
+I/SurfaceFlinger(  401): # of configs : 35
+I/SurfaceFlinger(  401): vendor    : Android
+I/SurfaceFlinger(  401): version   : 1.4 Android META-EGL
+I/SurfaceFlinger(  401): extensions: EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_ANDROID_image_native_buffer EGL_ANDROID_swap_rectangle EGL_ANDROID_get_render_buffer 
+I/SurfaceFlinger(  401): Client API: OpenGL ES
+I/SurfaceFlinger(  401): EGLSurface: 5-6-5-0, config=0x0
+I/SurfaceFlinger(  401): OpenGL informations:
+I/SurfaceFlinger(  401): vendor    : Qualcomm
+I/SurfaceFlinger(  401): renderer  : Adreno (TM) 200
+I/SurfaceFlinger(  401): version   : OpenGL ES-CM 1.1
+I/SurfaceFlinger(  401): extensions: GL_AMD_compressed_ATC_texture GL_AMD_performance_monitor GL_APPLE_texture_2D_limited_npot GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_type_2_10_10_10_REV GL_OES_blend_equation_separate GL_OES_blend_func_separate GL_OES_blend_subtract GL_OES_compressed_ETC1_RGB8_texture GL_OES_compressed_paletted_texture GL_OES_depth_texture GL_OES_draw_texture GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_framebuffer_object GL_OES_matrix_palette GL_OES_packed_depth_stencil GL_OES_point_size_array GL_OES_point_sprite GL_OES_read_format GL_OES_rgb8_rgba8 GL_OES_stencil_wrap GL_OES_texture_cube_map GL_OES_texture_env_crossbar GL_OES_texture_float GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_mirrored_repeat GL_QCOM_binning_control GL_QCOM_extended_get GL_QCOM_tiled_rendering GL_AMD_compressed_3DC_texture 
+I/SurfaceFlinger(  401): GL_MAX_TEXTURE_SIZE = 4096
+I/SurfaceFlinger(  401): GL_MAX_VIEWPORT_DIMS = 4096
+I/SurfaceFlinger(  401): flags = 00000000
+D/SensorService(  401): nuSensorService starting...
+E/Sensors (  401): Failed to open "/dev/bma150"
+I/SensorService(  401): BMA020 3-axis accelerometer
+I/sysproc (  401): System server: starting Android runtime.
+I/sysproc (  401): System server: starting Android services.
+I/sysproc (  401): System server: entering thread pool.
+D/SensorService(  401): nuSensorService thread starting...
+I/SystemServer(  401): Entered the Android system server!
+I/SystemServer(  401): Entropy Service
+I/SystemServer(  401): Power Manager
+I/SystemServer(  401): Activity Manager
+I/ActivityManager(  401): Memory class: 24
+W/UsageStats(  401): Usage stats version changed; dropping
+D/libEGL  (  415): loaded /system/lib/egl/libGLES_android.so
+D/libEGL  (  415): loaded /system/lib/egl/libEGL_adreno200.so
+D/libEGL  (  415): loaded /system/lib/egl/libGLESv1_CM_adreno200.so
+D/libEGL  (  415): loaded /system/lib/egl/libGLESv2_adreno200.so
+I/SystemServer(  401): Telephony Registry
+I/SystemServer(  401): Package Manager
+W/zipro   (  415): Unable to open zip '/data/local/bootanimation.zip': No such file or directory
+I/installd(  146): new connection
+I/Installer(  401): connecting...
+D/dalvikvm(  401): GC_CONCURRENT freed 115K, 46% free 3049K/5639K, external 0K/0K, paused 4ms+4ms
+D/szipinf (  401): Initializing inflate state
+D/dalvikvm(  401): GC_CONCURRENT freed 503K, 50% free 3082K/6087K, external 0K/0K, paused 4ms+7ms
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+W/PackageParser(  401): Unknown element under <manifest>: meta-data at /system/app/Androidian.apk Binary XML file line #43
+D/szipinf (  401): Initializing inflate state
+W/PackageParser(  401): No actions in intent filter at /system/app/Bluetooth.apk Binary XML file line #132
+W/PackageParser(  401): No actions in intent filter at /system/app/Bluetooth.apk Binary XML file line #154
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+W/PackageParser(  401): Unknown element under <manifest>: meta-data at /system/app/Cyanbread.apk Binary XML file line #43
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/dalvikvm(  401): GC_CONCURRENT freed 194K, 45% free 3357K/6087K, external 0K/0K, paused 15ms+6ms
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/szipinf (  401): Initializing inflate state
+D/dalvikvm(  401): GC_CONCURRENT freed 250K, 44% free 3556K/6343K, external 0K/0K, paused 4ms+24ms
+D/PackageManager(  401): No files in app dir /vendor/app
+I/PackageManager(  401): Time to scan packages: 2.028 seconds
+W/PackageManager(  401): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.mail in package com.android.contacts
+W/PackageManager(  401): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.providers.calendar
+W/PackageManager(  401): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.cl in package com.android.providers.calendar
+W/PackageManager(  401): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.mail in package com.android.calendar
+W/PackageManager(  401): Not granting permission android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS to package com.android.browser (protectionLevel=2 flags=0x9be45)
+W/PackageManager(  401): Unknown permission com.google.android.c2dm.permission.RECEIVE in package com.koushikdutta.rommanager
+W/PackageManager(  401): Unknown permission com.android.vending.BILLING in package com.koushikdutta.rommanager
+W/PackageManager(  401): Unknown permission com.google.android.gm.permission.WRITE_GMAIL in package com.android.settings
+W/PackageManager(  401): Unknown permission com.google.android.gm.permission.READ_GMAIL in package com.android.settings
+W/PackageManager(  401): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.settings
+W/PackageManager(  401): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.providers.contacts
+W/PackageManager(  401): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.cp in package com.android.providers.contacts
+W/PackageManager(  401): Unknown permission com.google.android.c2dm.permission.RECEIVE in package com.cyanogenmod.updatenotify
+W/PackageManager(  401): Unknown permission com.google.android.googleapps.permission.ACCESS_GOOGLE_PASSWORD in package com.android.development
+W/PackageManager(  401): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.development
+W/PackageManager(  401): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.ALL_SERVICES in package com.android.development
+W/PackageManager(  401): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.YouTubeUser in package com.android.development
+W/PackageManager(  401): Unknown permission android.permission.READ_OWNER_DATA in package com.android.email
+W/PackageManager(  401): Not granting permission android.permission.DEVICE_POWER to package com.android.deskclock (protectionLevel=2 flags=0x8be45)
+D/dalvikvm(  401): GC_CONCURRENT freed 345K, 44% free 3738K/6599K, external 0K/0K, paused 10ms+6ms
+D/dalvikvm(  401): GC_EXPLICIT freed 121K, 46% free 3617K/6599K, external 0K/0K, paused 84ms
+I/SystemServer(  401): Account Manager
+D/szipinf (  401): Initializing inflate state
+I/SystemServer(  401): Content Manager
+D/szipinf (  401): Initializing inflate state
+I/SystemServer(  401): System Content Providers
+I/ActivityThread(  401): Pub settings: com.android.providers.settings.SettingsProvider
+D/SettingsProvider(  401): cache for settings table 'secure' rows=21; fullycached=true
+I/SystemServer(  401): Battery Service
+I/SystemServer(  401): Lights Service
+I/SystemServer(  401): Vibrator Service
+D/SettingsProvider(  401): cache for settings table 'system' rows=44; fullycached=true
+D/AlarmManagerService(  401): Kernel timezone updated to -60 minutes west of GMT
+I/SystemServer(  401): Alarm Manager
+I/SystemServer(  401): Init Watchdog
+I/SystemServer(  401): Window Manager
+W/dalvikvm(  401): threadid=16: thread exiting with uncaught exception (group=0x40018560)
+E/ActivityManager(  401): Attempt to launch receivers of broadcast intent Intent { act=android.intent.action.TIME_SET flg=0x20000000 } before boot completion
+E/AndroidRuntime(  401): *** FATAL EXCEPTION IN SYSTEM PROCESS: AlarmManager
+E/AndroidRuntime(  401): java.lang.IllegalStateException: Cannot broadcast before boot completed
+E/AndroidRuntime(  401): 	at com.android.server.am.ActivityManagerService.verifyBroadcastLocked(ActivityManagerService.java:10570)
+E/AndroidRuntime(  401): 	at com.android.server.am.ActivityManagerService.broadcastIntent(ActivityManagerService.java:10587)
+E/AndroidRuntime(  401): 	at android.app.ContextImpl.sendBroadcast(ContextImpl.java:683)
+E/AndroidRuntime(  401): 	at com.android.server.AlarmManagerService$AlarmThread.run(AlarmManagerService.java:665)
+E/AndroidRuntime(  401): Error reporting crash
+E/AndroidRuntime(  401): java.lang.NullPointerException
+E/AndroidRuntime(  401): 	at android.os.DropBoxManager.isTagEnabled(DropBoxManager.java:288)
+E/AndroidRuntime(  401): 	at com.android.server.am.ActivityManagerService.addErrorToDropBox(ActivityManagerService.java:6863)
+E/AndroidRuntime(  401): 	at com.android.server.am.ActivityManagerService.handleApplicationCrash(ActivityManagerService.java:6572)
+E/AndroidRuntime(  401): 	at com.android.internal.os.RuntimeInit$UncaughtHandler.uncaughtException(RuntimeInit.java:76)
+E/AndroidRuntime(  401): 	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:854)
+E/AndroidRuntime(  401): 	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:851)
+I/Process (  401): Sending signal. PID: 401 SIG: 9
+D/BootAnimation(  415): SurfaceFlinger died, exiting...
+I/ServiceManager(  138): service 'SurfaceFlinger' died
+I/ServiceManager(  138): service 'sensorservice' died
+I/ServiceManager(  138): service 'entropy' died
+I/ServiceManager(  138): service 'power' died
+I/ServiceManager(  138): service 'batteryinfo' died
+I/ServiceManager(  138): service 'usagestats' died
+I/ServiceManager(  138): service 'telephony.registry' died
+I/ServiceManager(  138): service 'package' died
+I/ServiceManager(  138): service 'activity' died
+I/ServiceManager(  138): service 'meminfo' died
+I/ServiceManager(  138): service 'cpuinfo' died
+I/ServiceManager(  138): service 'permission' died
+I/ServiceManager(  138): service 'account' died
+I/ServiceManager(  138): service 'content' died
+I/ServiceManager(  138): service 'hardware' died
+I/ServiceManager(  138): service 'battery' died
+I/ServiceManager(  138): service 'vibrator' died
+I/ServiceManager(  138): service 'alarm' died
+E/installd(  146): eof
+E/installd(  146): failed to read size
+I/installd(  146): closing connection
+I/Zygote  (  387): Exit zygote because system server (401) has terminated
+I/ServiceManager(  138): service 'media.audio_flinger' died
+I/ServiceManager(  138): service 'media.audio_policy' died
+I/ServiceManager(  138): service 'media.player' died
+I/ServiceManager(  138): service 'media.camera' died
+I/Netd    (  439): Netd 1.0 starting
+D/AndroidRuntime(  442): 
+D/AndroidRuntime(  442): >>>>>> AndroidRuntime START com.android.internal.os.ZygoteInit <<<<<<
+I/AndroidRuntime(  442): Heap size: -Xmx24m
+D/AndroidRuntime(  442): CheckJNI is OFF
+I/        (  438): ServiceManager: 0xad50
+I/AudioHardwareMSM72XX(  438): get_audpp_filter
+I/AudioHardwareMSM72XX(  438): open /system/etc/AudioFilter.csv success.
+D/AudioHardwareInterface(  438): setMode(NORMAL)
+I/AudioHardwareMSM72XX(  438): Set master volume to 7.
+I/CameraService(  438): CameraService started (pid=438)
+D/AudioFlinger(  438): setParameters(): io 1, keyvalue routing=2, tid 448, calling tid 438
+I/AudioFlinger(  438): AudioFlinger's thread 0xc9b0 ready to run
+I/AudioHardwareMSM72XX(  438): Routing audio to Speakerphone
+D/AudioHardwareMSM72XX(  438): doAudioRouteOrMute() device 6, mMode 0, mMicMute 1, mBuiltinMicSelected 0, muted
+I/AudioHardwareMSM72XX(  438): Routing audio to Speakerphone
+D/AudioHardwareMSM72XX(  438): setVoiceVolume(1.000000)
+I/AudioHardwareMSM72XX(  438): Setting in-call volume to 7 (available range is 0 to 7)
+I/SamplingProfilerIntegration(  442): Profiler is disabled.
+I/Zygote  (  442): Preloading classes...
+D/dalvikvm(  442): GC_EXPLICIT freed 47K, 77% free 237K/1024K, external 0K/0K, paused 4ms
+I/bluetooth_ScoSocket.cpp(  442): Entry name = MY-CAR ScoTypes = 0x7f
+I/bluetooth_ScoSocket.cpp(  442): Entry name = Motorola HF850 ScoTypes = 0x7
+D/szipinf (  442): Initializing inflate state
+D/dalvikvm(  442): GC_FOR_MALLOC freed 2916K, 57% free 2207K/5123K, external 0K/0K, paused 61ms
+D/dalvikvm(  442): GC_FOR_MALLOC freed 2635K, 52% free 2484K/5123K, external 0K/0K, paused 56ms
+I/Zygote  (  442): ...preloaded 1829 classes in 3683ms.
+D/Zygote  (  442): setreuid() error ignored, same uid.
+D/dalvikvm(  442): GC_EXPLICIT freed 847K, 48% free 2677K/5123K, external 0K/0K, paused 46ms
+I/Zygote  (  442): Preload resources disabled, skipped.
+D/dalvikvm(  442): GC_EXPLICIT freed 25K, 49% free 2652K/5123K, external 0K/0K, paused 37ms
+D/dalvikvm(  442): GC_EXPLICIT freed <1K, 49% free 2652K/5123K, external 0K/0K, paused 36ms
+D/dalvikvm(  442): GC_EXPLICIT freed <1K, 49% free 2652K/5123K, external 0K/0K, paused 36ms
+I/dalvikvm(  442): System server process 452 has been created
+I/Zygote  (  442): Accepting command socket connections
+D/SystemClock(  452): Setting time of day to sec=86400
+W/SystemServer(  452): System clock is before 1970; setting to 1970.
+E/BatteryService(  452): batteryTemperaturePath not found
+I/sysproc (  452): Entered system_init()
+I/sysproc (  452): ServiceManager: 0x1346d0
+I/SurfaceFlinger(  452): SurfaceFlinger is starting
+I/SurfaceFlinger(  452): dithering enabled
+I/SurfaceFlinger(  452): SurfaceFlinger's main thread ready to run. Initializing graphics H/W...
+D/libEGL  (  452): loaded /system/lib/egl/libGLES_android.so
+D/libEGL  (  452): loaded /system/lib/egl/libEGL_adreno200.so
+D/libEGL  (  452): loaded /system/lib/egl/libGLESv1_CM_adreno200.so
+D/libEGL  (  452): loaded /system/lib/egl/libGLESv2_adreno200.so
+E/libEGL  (  452): eglSetSwapRectangleANDROID:1909 error 3008 (EGL_BAD_DISPLAY)
+I/SurfaceFlinger(  452): EGL informations:
+I/SurfaceFlinger(  452): # of configs : 35
+I/SurfaceFlinger(  452): vendor    : Android
+I/SurfaceFlinger(  452): version   : 1.4 Android META-EGL
+I/SurfaceFlinger(  452): extensions: EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_ANDROID_image_native_buffer EGL_ANDROID_swap_rectangle EGL_ANDROID_get_render_buffer 
+I/SurfaceFlinger(  452): Client API: OpenGL ES
+I/SurfaceFlinger(  452): EGLSurface: 5-6-5-0, config=0x0
+I/SurfaceFlinger(  452): OpenGL informations:
+I/SurfaceFlinger(  452): vendor    : Qualcomm
+I/SurfaceFlinger(  452): renderer  : Adreno (TM) 200
+I/SurfaceFlinger(  452): version   : OpenGL ES-CM 1.1
+I/SurfaceFlinger(  452): extensions: GL_AMD_compressed_ATC_texture GL_AMD_performance_monitor GL_APPLE_texture_2D_limited_npot GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_type_2_10_10_10_REV GL_OES_blend_equation_separate GL_OES_blend_func_separate GL_OES_blend_subtract GL_OES_compressed_ETC1_RGB8_texture GL_OES_compressed_paletted_texture GL_OES_depth_texture GL_OES_draw_texture GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_framebuffer_object GL_OES_matrix_palette GL_OES_packed_depth_stencil GL_OES_point_size_array GL_OES_point_sprite GL_OES_read_format GL_OES_rgb8_rgba8 GL_OES_stencil_wrap GL_OES_texture_cube_map GL_OES_texture_env_crossbar GL_OES_texture_float GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_mirrored_repeat GL_QCOM_binning_control GL_QCOM_extended_get GL_QCOM_tiled_rendering GL_AMD_compressed_3DC_texture 
+I/SurfaceFlinger(  452): GL_MAX_TEXTURE_SIZE = 4096
+I/SurfaceFlinger(  452): GL_MAX_VIEWPORT_DIMS = 4096
+I/SurfaceFlinger(  452): flags = 00000000
+D/SensorService(  452): nuSensorService starting...
+E/Sensors (  452): Failed to open "/dev/bma150"
+I/SensorService(  452): BMA020 3-axis accelerometer
+I/sysproc (  452): System server: starting Android runtime.
+I/sysproc (  452): System server: starting Android services.
+I/sysproc (  452): System server: entering thread pool.
+D/SensorService(  452): nuSensorService thread starting...
+I/SystemServer(  452): Entered the Android system server!
+I/SystemServer(  452): Entropy Service
+I/SystemServer(  452): Power Manager
+I/SystemServer(  452): Activity Manager
+I/ActivityManager(  452): Memory class: 24
+W/UsageStats(  452): Usage stats version changed; dropping
+D/libEGL  (  466): loaded /system/lib/egl/libGLES_android.so
+D/libEGL  (  466): loaded /system/lib/egl/libEGL_adreno200.so
+D/libEGL  (  466): loaded /system/lib/egl/libGLESv1_CM_adreno200.so
+D/libEGL  (  466): loaded /system/lib/egl/libGLESv2_adreno200.so
+I/SystemServer(  452): Telephony Registry
+W/zipro   (  466): Unable to open zip '/data/local/bootanimation.zip': No such file or directory
+I/SystemServer(  452): Package Manager
+I/installd(  146): new connection
+I/Installer(  452): connecting...
+D/dalvikvm(  452): GC_CONCURRENT freed 115K, 46% free 3049K/5639K, external 0K/0K, paused 4ms+6ms
+D/szipinf (  452): Initializing inflate state
+D/dalvikvm(  452): GC_CONCURRENT freed 498K, 50% free 3087K/6087K, external 0K/0K, paused 3ms+6ms
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+W/PackageParser(  452): Unknown element under <manifest>: meta-data at /system/app/Androidian.apk Binary XML file line #43
+D/szipinf (  452): Initializing inflate state
+W/PackageParser(  452): No actions in intent filter at /system/app/Bluetooth.apk Binary XML file line #132
+W/PackageParser(  452): No actions in intent filter at /system/app/Bluetooth.apk Binary XML file line #154
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+W/PackageParser(  452): Unknown element under <manifest>: meta-data at /system/app/Cyanbread.apk Binary XML file line #43
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/dalvikvm(  452): GC_CONCURRENT freed 198K, 45% free 3373K/6087K, external 0K/0K, paused 3ms+6ms
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/szipinf (  452): Initializing inflate state
+D/dalvikvm(  452): GC_CONCURRENT freed 251K, 44% free 3556K/6343K, external 0K/0K, paused 3ms+16ms
+D/PackageManager(  452): No files in app dir /vendor/app
+I/PackageManager(  452): Time to scan packages: 2.09 seconds
+W/PackageManager(  452): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.mail in package com.android.contacts
+W/PackageManager(  452): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.providers.calendar
+W/PackageManager(  452): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.cl in package com.android.providers.calendar
+W/PackageManager(  452): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.mail in package com.android.calendar
+W/PackageManager(  452): Not granting permission android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS to package com.android.browser (protectionLevel=2 flags=0x9be45)
+W/PackageManager(  452): Unknown permission com.google.android.c2dm.permission.RECEIVE in package com.koushikdutta.rommanager
+W/PackageManager(  452): Unknown permission com.android.vending.BILLING in package com.koushikdutta.rommanager
+W/PackageManager(  452): Unknown permission com.google.android.gm.permission.WRITE_GMAIL in package com.android.settings
+W/PackageManager(  452): Unknown permission com.google.android.gm.permission.READ_GMAIL in package com.android.settings
+W/PackageManager(  452): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.settings
+W/PackageManager(  452): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.providers.contacts
+W/PackageManager(  452): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.cp in package com.android.providers.contacts
+W/PackageManager(  452): Unknown permission com.google.android.c2dm.permission.RECEIVE in package com.cyanogenmod.updatenotify
+W/PackageManager(  452): Unknown permission com.google.android.googleapps.permission.ACCESS_GOOGLE_PASSWORD in package com.android.development
+W/PackageManager(  452): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.development
+W/PackageManager(  452): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.ALL_SERVICES in package com.android.development
+W/PackageManager(  452): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.YouTubeUser in package com.android.development
+W/PackageManager(  452): Unknown permission android.permission.READ_OWNER_DATA in package com.android.email
+W/PackageManager(  452): Not granting permission android.permission.DEVICE_POWER to package com.android.deskclock (protectionLevel=2 flags=0x8be45)
+D/dalvikvm(  452): GC_CONCURRENT freed 347K, 44% free 3735K/6599K, external 0K/0K, paused 4ms+5ms
+D/dalvikvm(  452): GC_EXPLICIT freed 118K, 46% free 3616K/6599K, external 0K/0K, paused 69ms
+I/SystemServer(  452): Account Manager
+D/szipinf (  452): Initializing inflate state
+I/SystemServer(  452): Content Manager
+D/szipinf (  452): Initializing inflate state
+I/ActivityThread(  452): Pub settings: com.android.providers.settings.SettingsProvider
+I/SystemServer(  452): System Content Providers
+I/SystemServer(  452): Battery Service
+D/SettingsProvider(  452): cache for settings table 'secure' rows=21; fullycached=true
+I/SystemServer(  452): Lights Service
+I/SystemServer(  452): Vibrator Service
+D/SettingsProvider(  452): cache for settings table 'system' rows=44; fullycached=true
+D/AlarmManagerService(  452): Kernel timezone updated to -60 minutes west of GMT
+I/SystemServer(  452): Alarm Manager
+I/SystemServer(  452): Init Watchdog
+W/dalvikvm(  452): threadid=16: thread exiting with uncaught exception (group=0x40018560)
+I/SystemServer(  452): Window Manager
+E/ActivityManager(  452): Attempt to launch receivers of broadcast intent Intent { act=android.intent.action.TIME_SET flg=0x20000000 } before boot completion
+E/AndroidRuntime(  452): *** FATAL EXCEPTION IN SYSTEM PROCESS: AlarmManager
+E/AndroidRuntime(  452): java.lang.IllegalStateException: Cannot broadcast before boot completed
+E/AndroidRuntime(  452): 	at com.android.server.am.ActivityManagerService.verifyBroadcastLocked(ActivityManagerService.java:10570)
+E/AndroidRuntime(  452): 	at com.android.server.am.ActivityManagerService.broadcastIntent(ActivityManagerService.java:10587)
+E/AndroidRuntime(  452): 	at android.app.ContextImpl.sendBroadcast(ContextImpl.java:683)
+E/AndroidRuntime(  452): 	at com.android.server.AlarmManagerService$AlarmThread.run(AlarmManagerService.java:665)
+E/AndroidRuntime(  452): Error reporting crash
+E/AndroidRuntime(  452): java.lang.NullPointerException
+E/AndroidRuntime(  452): 	at android.os.DropBoxManager.isTagEnabled(DropBoxManager.java:288)
+E/AndroidRuntime(  452): 	at com.android.server.am.ActivityManagerService.addErrorToDropBox(ActivityManagerService.java:6863)
+E/AndroidRuntime(  452): 	at com.android.server.am.ActivityManagerService.handleApplicationCrash(ActivityManagerService.java:6572)
+E/AndroidRuntime(  452): 	at com.android.internal.os.RuntimeInit$UncaughtHandler.uncaughtException(RuntimeInit.java:76)
+E/AndroidRuntime(  452): 	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:854)
+E/AndroidRuntime(  452): 	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:851)
+I/Process (  452): Sending signal. PID: 452 SIG: 9
+I/InputManager(  452): Initializing input manager
+D/BootAnimation(  466): SurfaceFlinger died, exiting...
+I/ServiceManager(  138): service 'SurfaceFlinger' died
+I/ServiceManager(  138): service 'sensorservice' died
+I/ServiceManager(  138): service 'entropy' died
+I/ServiceManager(  138): service 'power' died
+I/ServiceManager(  138): service 'usagestats' died
+I/ServiceManager(  138): service 'telephony.registry' died
+I/ServiceManager(  138): service 'batteryinfo' died
+I/ServiceManager(  138): service 'account' died
+I/ServiceManager(  138): service 'activity' died
+I/ServiceManager(  138): service 'meminfo' died
+I/ServiceManager(  138): service 'cpuinfo' died
+I/ServiceManager(  138): service 'permission' died
+I/ServiceManager(  138): service 'package' died
+I/ServiceManager(  138): service 'content' died
+I/ServiceManager(  138): service 'battery' died
+I/ServiceManager(  138): service 'hardware' died
+I/ServiceManager(  138): service 'vibrator' died
+I/ServiceManager(  138): service 'alarm' died
+E/installd(  146): eof
+E/installd(  146): failed to read size
+I/installd(  146): closing connection
+I/Zygote  (  442): Exit zygote because system server (452) has terminated
+I/ServiceManager(  138): service 'media.audio_flinger' died
+I/ServiceManager(  138): service 'media.audio_policy' died
+I/ServiceManager(  138): service 'media.player' died
+I/ServiceManager(  138): service 'media.camera' died
+I/Netd    (  489): Netd 1.0 starting
+D/AndroidRuntime(  493): 
+D/AndroidRuntime(  493): >>>>>> AndroidRuntime START com.android.internal.os.ZygoteInit <<<<<<
+I/AndroidRuntime(  493): Heap size: -Xmx24m
+D/AndroidRuntime(  493): CheckJNI is OFF
+I/        (  488): ServiceManager: 0xad50
+I/AudioHardwareMSM72XX(  488): get_audpp_filter
+I/AudioHardwareMSM72XX(  488): open /system/etc/AudioFilter.csv success.
+D/AudioHardwareInterface(  488): setMode(NORMAL)
+I/AudioHardwareMSM72XX(  488): Set master volume to 7.
+I/CameraService(  488): CameraService started (pid=488)
+I/AudioFlinger(  488): AudioFlinger's thread 0xc9b0 ready to run
+D/AudioFlinger(  488): setParameters(): io 1, keyvalue routing=2, tid 500, calling tid 488
+I/AudioHardwareMSM72XX(  488): Routing audio to Speakerphone
+D/AudioHardwareMSM72XX(  488): doAudioRouteOrMute() device 6, mMode 0, mMicMute 1, mBuiltinMicSelected 0, muted
+I/AudioHardwareMSM72XX(  488): Routing audio to Speakerphone
+D/AudioHardwareMSM72XX(  488): setVoiceVolume(1.000000)
+I/AudioHardwareMSM72XX(  488): Setting in-call volume to 7 (available range is 0 to 7)
+I/SamplingProfilerIntegration(  493): Profiler is disabled.
+I/Zygote  (  493): Preloading classes...
+D/dalvikvm(  493): GC_EXPLICIT freed 47K, 77% free 237K/1024K, external 0K/0K, paused 4ms
+I/bluetooth_ScoSocket.cpp(  493): Entry name = MY-CAR ScoTypes = 0x7f
+I/bluetooth_ScoSocket.cpp(  493): Entry name = Motorola HF850 ScoTypes = 0x7
+D/szipinf (  493): Initializing inflate state
+D/dalvikvm(  493): GC_FOR_MALLOC freed 2916K, 57% free 2207K/5123K, external 0K/0K, paused 61ms
+D/dalvikvm(  493): GC_FOR_MALLOC freed 2635K, 52% free 2484K/5123K, external 0K/0K, paused 55ms
+I/Zygote  (  493): ...preloaded 1829 classes in 3667ms.
+D/Zygote  (  493): setreuid() error ignored, same uid.
+D/dalvikvm(  493): GC_EXPLICIT freed 847K, 48% free 2677K/5123K, external 0K/0K, paused 45ms
+I/Zygote  (  493): Preload resources disabled, skipped.
+D/dalvikvm(  493): GC_EXPLICIT freed 25K, 49% free 2652K/5123K, external 0K/0K, paused 37ms
+D/dalvikvm(  493): GC_EXPLICIT freed <1K, 49% free 2652K/5123K, external 0K/0K, paused 37ms
+D/dalvikvm(  493): GC_EXPLICIT freed <1K, 49% free 2652K/5123K, external 0K/0K, paused 100ms
+I/dalvikvm(  493): System server process 504 has been created
+I/Zygote  (  493): Accepting command socket connections
+W/SystemServer(  504): System clock is before 1970; setting to 1970.
+D/SystemClock(  504): Setting time of day to sec=86400
+E/BatteryService(  504): batteryTemperaturePath not found
+I/sysproc (  504): Entered system_init()
+I/sysproc (  504): ServiceManager: 0x1346e8
+I/SurfaceFlinger(  504): SurfaceFlinger is starting
+I/SurfaceFlinger(  504): dithering enabled
+I/SurfaceFlinger(  504): SurfaceFlinger's main thread ready to run. Initializing graphics H/W...
+D/libEGL  (  504): loaded /system/lib/egl/libGLES_android.so
+D/libEGL  (  504): loaded /system/lib/egl/libEGL_adreno200.so
+D/libEGL  (  504): loaded /system/lib/egl/libGLESv1_CM_adreno200.so
+D/libEGL  (  504): loaded /system/lib/egl/libGLESv2_adreno200.so
+E/libEGL  (  504): eglSetSwapRectangleANDROID:1909 error 3008 (EGL_BAD_DISPLAY)
+I/SurfaceFlinger(  504): EGL informations:
+I/SurfaceFlinger(  504): # of configs : 35
+I/SurfaceFlinger(  504): vendor    : Android
+I/SurfaceFlinger(  504): version   : 1.4 Android META-EGL
+I/SurfaceFlinger(  504): extensions: EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_ANDROID_image_native_buffer EGL_ANDROID_swap_rectangle EGL_ANDROID_get_render_buffer 
+I/SurfaceFlinger(  504): Client API: OpenGL ES
+I/SurfaceFlinger(  504): EGLSurface: 5-6-5-0, config=0x0
+I/SurfaceFlinger(  504): OpenGL informations:
+I/SurfaceFlinger(  504): vendor    : Qualcomm
+I/SurfaceFlinger(  504): renderer  : Adreno (TM) 200
+I/SurfaceFlinger(  504): version   : OpenGL ES-CM 1.1
+I/SurfaceFlinger(  504): extensions: GL_AMD_compressed_ATC_texture GL_AMD_performance_monitor GL_APPLE_texture_2D_limited_npot GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_type_2_10_10_10_REV GL_OES_blend_equation_separate GL_OES_blend_func_separate GL_OES_blend_subtract GL_OES_compressed_ETC1_RGB8_texture GL_OES_compressed_paletted_texture GL_OES_depth_texture GL_OES_draw_texture GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_framebuffer_object GL_OES_matrix_palette GL_OES_packed_depth_stencil GL_OES_point_size_array GL_OES_point_sprite GL_OES_read_format GL_OES_rgb8_rgba8 GL_OES_stencil_wrap GL_OES_texture_cube_map GL_OES_texture_env_crossbar GL_OES_texture_float GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_mirrored_repeat GL_QCOM_binning_control GL_QCOM_extended_get GL_QCOM_tiled_rendering GL_AMD_compressed_3DC_texture 
+I/SurfaceFlinger(  504): GL_MAX_TEXTURE_SIZE = 4096
+I/SurfaceFlinger(  504): GL_MAX_VIEWPORT_DIMS = 4096
+I/SurfaceFlinger(  504): flags = 00000000
+D/SensorService(  504): nuSensorService starting...
+E/Sensors (  504): Failed to open "/dev/bma150"
+I/SensorService(  504): BMA020 3-axis accelerometer
+I/sysproc (  504): System server: starting Android runtime.
+I/sysproc (  504): System server: starting Android services.
+I/sysproc (  504): System server: entering thread pool.
+D/SensorService(  504): nuSensorService thread starting...
+I/SystemServer(  504): Entered the Android system server!
+I/SystemServer(  504): Entropy Service
+I/SystemServer(  504): Power Manager
+I/SystemServer(  504): Activity Manager
+I/ActivityManager(  504): Memory class: 24
+W/UsageStats(  504): Usage stats version changed; dropping
+D/libEGL  (  518): loaded /system/lib/egl/libGLES_android.so
+D/libEGL  (  518): loaded /system/lib/egl/libEGL_adreno200.so
+D/libEGL  (  518): loaded /system/lib/egl/libGLESv1_CM_adreno200.so
+D/libEGL  (  518): loaded /system/lib/egl/libGLESv2_adreno200.so
+W/zipro   (  518): Unable to open zip '/data/local/bootanimation.zip': No such file or directory
+I/SystemServer(  504): Telephony Registry
+I/SystemServer(  504): Package Manager
+I/installd(  146): new connection
+I/Installer(  504): connecting...
+D/dalvikvm(  504): GC_CONCURRENT freed 115K, 46% free 3049K/5639K, external 0K/0K, paused 4ms+4ms
+D/szipinf (  504): Initializing inflate state
+D/dalvikvm(  504): GC_CONCURRENT freed 496K, 50% free 3089K/6087K, external 0K/0K, paused 4ms+6ms
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+W/PackageParser(  504): Unknown element under <manifest>: meta-data at /system/app/Androidian.apk Binary XML file line #43
+D/szipinf (  504): Initializing inflate state
+W/PackageParser(  504): No actions in intent filter at /system/app/Bluetooth.apk Binary XML file line #132
+W/PackageParser(  504): No actions in intent filter at /system/app/Bluetooth.apk Binary XML file line #154
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+W/PackageParser(  504): Unknown element under <manifest>: meta-data at /system/app/Cyanbread.apk Binary XML file line #43
+D/szipinf (  504): Initializing inflate state
+D/dalvikvm(  504): GC_CONCURRENT freed 196K, 45% free 3360K/6087K, external 0K/0K, paused 4ms+20ms
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/szipinf (  504): Initializing inflate state
+D/dalvikvm(  504): GC_CONCURRENT freed 248K, 44% free 3563K/6343K, external 0K/0K, paused 4ms+19ms
+D/PackageManager(  504): No files in app dir /vendor/app
+I/PackageManager(  504): Time to scan packages: 2.087 seconds
+W/PackageManager(  504): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.mail in package com.android.contacts
+W/PackageManager(  504): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.providers.calendar
+W/PackageManager(  504): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.cl in package com.android.providers.calendar
+W/PackageManager(  504): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.mail in package com.android.calendar
+W/PackageManager(  504): Not granting permission android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS to package com.android.browser (protectionLevel=2 flags=0x9be45)
+W/PackageManager(  504): Unknown permission com.google.android.c2dm.permission.RECEIVE in package com.koushikdutta.rommanager
+W/PackageManager(  504): Unknown permission com.android.vending.BILLING in package com.koushikdutta.rommanager
+W/PackageManager(  504): Unknown permission com.google.android.gm.permission.WRITE_GMAIL in package com.android.settings
+W/PackageManager(  504): Unknown permission com.google.android.gm.permission.READ_GMAIL in package com.android.settings
+W/PackageManager(  504): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.settings
+W/PackageManager(  504): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.providers.contacts
+W/PackageManager(  504): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.cp in package com.android.providers.contacts
+W/PackageManager(  504): Unknown permission com.google.android.c2dm.permission.RECEIVE in package com.cyanogenmod.updatenotify
+W/PackageManager(  504): Unknown permission com.google.android.googleapps.permission.ACCESS_GOOGLE_PASSWORD in package com.android.development
+W/PackageManager(  504): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH in package com.android.development
+W/PackageManager(  504): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.ALL_SERVICES in package com.android.development
+W/PackageManager(  504): Unknown permission com.google.android.googleapps.permission.GOOGLE_AUTH.YouTubeUser in package com.android.development
+W/PackageManager(  504): Unknown permission android.permission.READ_OWNER_DATA in package com.android.email
+W/PackageManager(  504): Not granting permission android.permission.DEVICE_POWER to package com.android.deskclock (protectionLevel=2 flags=0x8be45)
+D/dalvikvm(  504): GC_CONCURRENT freed 360K, 44% free 3730K/6599K, external 0K/0K, paused 4ms+17ms
+D/dalvikvm(  504): GC_EXPLICIT freed 113K, 46% free 3617K/6599K, external 0K/0K, paused 81ms
+I/SystemServer(  504): Account Manager
+D/szipinf (  504): Initializing inflate state
+I/SystemServer(  504): Content Manager
+D/szipinf (  504): Initializing inflate state
+I/ActivityThread(  504): Pub settings: com.android.providers.settings.SettingsProvider
+I/SystemServer(  504): System Content Providers
+D/SettingsProvider(  504): cache for settings table 'secure' rows=21; fullycached=true
+I/SystemServer(  504): Battery Service
+I/SystemServer(  504): Lights Service
+I/SystemServer(  504): Vibrator Service
+D/SettingsProvider(  504): cache for settings table 'system' rows=44; fullycached=true
+I/SystemServer(  504): Alarm Manager
+D/AlarmManagerService(  504): Kernel timezone updated to -60 minutes west of GMT
+W/dalvikvm(  504): threadid=16: thread exiting with uncaught exception (group=0x40018560)
+I/SystemServer(  504): Init Watchdog
+I/SystemServer(  504): Window Manager
+E/ActivityManager(  504): Attempt to launch receivers of broadcast intent Intent { act=android.intent.action.TIME_SET flg=0x20000000 } before boot completion
+E/AndroidRuntime(  504): *** FATAL EXCEPTION IN SYSTEM PROCESS: AlarmManager
+E/AndroidRuntime(  504): java.lang.IllegalStateException: Cannot broadcast before boot completed
+E/AndroidRuntime(  504): 	at com.android.server.am.ActivityManagerService.verifyBroadcastLocked(ActivityManagerService.java:10570)
+E/AndroidRuntime(  504): 	at com.android.server.am.ActivityManagerService.broadcastIntent(ActivityManagerService.java:10587)
+E/AndroidRuntime(  504): 	at android.app.ContextImpl.sendBroadcast(ContextImpl.java:683)
+E/AndroidRuntime(  504): 	at com.android.server.AlarmManagerService$AlarmThread.run(AlarmManagerService.java:665)
+I/InputManager(  504): Initializing input manager
+I/Process (  504): Sending signal. PID: 504 SIG: 9
+E/AndroidRuntime(  504): Error reporting crash
+E/AndroidRuntime(  504): java.lang.NullPointerException
+E/AndroidRuntime(  504): 	at android.os.DropBoxManager.isTagEnabled(DropBoxManager.java:288)
+E/AndroidRuntime(  504): 	at com.android.server.am.ActivityManagerService.addErrorToDropBox(ActivityManagerService.java:6863)
+E/AndroidRuntime(  504): 	at com.android.server.am.ActivityManagerService.handleApplicationCrash(ActivityManagerService.java:6572)
+E/AndroidRuntime(  504): 	at com.android.internal.os.RuntimeInit$UncaughtHandler.uncaughtException(RuntimeInit.java:76)
+E/AndroidRuntime(  504): 	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:854)
+E/AndroidRuntime(  504): 	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:851)
+D/BootAnimation(  518): SurfaceFlinger died, exiting...
+I/ServiceManager(  138): service 'SurfaceFlinger' died
+I/ServiceManager(  138): service 'sensorservice' died
+I/ServiceManager(  138): service 'entropy' died
+I/ServiceManager(  138): service 'power' died
+I/ServiceManager(  138): service 'batteryinfo' died
+I/ServiceManager(  138): service 'usagestats' died
+I/ServiceManager(  138): service 'telephony.registry' died
+I/ServiceManager(  138): service 'activity' died
+I/ServiceManager(  138): service 'cpuinfo' died
+I/ServiceManager(  138): service 'package' died
+I/ServiceManager(  138): service 'permission' died
+I/ServiceManager(  138): service 'meminfo' died
+I/ServiceManager(  138): service 'account' died
+I/ServiceManager(  138): service 'content' died
+I/ServiceManager(  138): service 'battery' died
+I/ServiceManager(  138): service 'hardware' died
+I/ServiceManager(  138): service 'vibrator' died
+I/ServiceManager(  138): service 'alarm' died
+E/installd(  146): eof
+E/installd(  146): failed to read size
+I/installd(  146): closing connection
+I/Zygote  (  493): Exit zygote because system server (504) has terminated
+I/ServiceManager(  138): service 'media.audio_flinger' died
+I/ServiceManager(  138): service 'media.audio_policy' died
+I/ServiceManager(  138): service 'media.player' died
+I/ServiceManager(  138): service 'media.camera' died
+I/Netd    (  541): Netd 1.0 starting
+D/AndroidRuntime(  545): 
+D/AndroidRuntime(  545): >>>>>> AndroidRuntime START com.android.internal.os.ZygoteInit <<<<<<
+I/AndroidRuntime(  545): Heap size: -Xmx24m
+D/AndroidRuntime(  545): CheckJNI is OFF
+I/        (  540): ServiceManager: 0xad50
+I/AudioHardwareMSM72XX(  540): get_audpp_filter
+I/AudioHardwareMSM72XX(  540): open /system/etc/AudioFilter.csv success.
+D/AudioHardwareInterface(  540): setMode(NORMAL)
+I/AudioHardwareMSM72XX(  540): Set master volume to 7.
+I/CameraService(  540): CameraService started (pid=540)
+I/AudioFlinger(  540): AudioFlinger's thread 0xc9b0 ready to run
+D/AudioFlinger(  540): setParameters(): io 1, keyvalue routing=2, tid 552, calling tid 540
+I/AudioHardwareMSM72XX(  540): Routing audio to Speakerphone
+D/AudioHardwareMSM72XX(  540): doAudioRouteOrMute() device 6, mMode 0, mMicMute 1, mBuiltinMicSelected 0, muted
+I/AudioHardwareMSM72XX(  540): Routing audio to Speakerphone
+D/AudioHardwareMSM72XX(  540): setVoiceVolume(1.000000)
+I/AudioHardwareMSM72XX(  540): Setting in-call volume to 7 (available range is 0 to 7)
+I/SamplingProfilerIntegration(  545): Profiler is disabled.
+I/Zygote  (  545): Preloading classes...
+D/dalvikvm(  545): GC_EXPLICIT freed 47K, 77% free 237K/1024K, external 0K/0K, paused 3ms
+I/bluetooth_ScoSocket.cpp(  545): Entry name = MY-CAR ScoTypes = 0x7f
+I/bluetooth_ScoSocket.cpp(  545): Entry name = Motorola HF850 ScoTypes = 0x7
+D/szipinf (  545): Initializing inflate state
+D/dalvikvm(  545): GC_FOR_MALLOC freed 2916K, 57% free 2207K/5123K, external 0K/0K, paused 62ms

@@ -7,16 +7,17 @@ lib/modules/librasdioif.ko
 # Keyboard layouts
 
 usr/keylayout/7k_ffa_keypad.kl
-usr/keylayout/7k_ffa_tp_keypad.kl
+# usr/keylayout/7k_ffa_tp_keypad.kl
 usr/keylayout/7k_handset.kl
 usr/keychars/7k_ffa_keypad.kcm.bin
-usr/idc/ft5x0x_ts.idc
+# usr/idc/ft5x0x_ts.idc
 
 # Hardware libraries
 
-# lib/hw/copybit.msm7k.so
+lib/hw/copybit.msm7k.so
 lib/hw/gralloc.msm7k.so
-# lib/hw/lights.msm7k.so
+lib/hw/lights.msm7k.so
+lib/hw/sensors.default.so
 # lib/hw/sensors.7x27.so
 
 # Adreno 200 files
@@ -37,7 +38,7 @@ bin/hci_qcomm_init
 lib/libcm.so
 lib/libdsm.so
 lib/libdss.so
-lib/libdll.so
+lib/libdl.so
 lib/libgsdi_exp.so
 lib/libgstk_exp.so
 lib/libmmgsdilib.so
@@ -48,14 +49,17 @@ lib/libqmi.so
 lib/libqueue.so
 lib/libril-qc-1.so
 lib/libril-qcril-hook-oem.so
+lib/libril-qc-qmi-1.so
 lib/libwms.so
 lib/libwmsts.so
 lib/libsnd.so
 lib/libdiag.so
 lib/libauth.so
 lib/libpbmlib.so
-# lib/libdsutils.so
-# lib/libnetmgr.so
+
+lib/libdsutils.so
+lib/libnetmgr.so
+lib/libidl.so
 
 # Camera libraries
 
@@ -102,8 +106,8 @@ lib/libgps.so
 
 # WLAN
 
-etc/wifi/qcom_cfg.ini
-etc/wifi/softap/hostapd.conf
+# etc/wifi/qcom_cfg.ini
+# etc/wifi/softap/hostapd.conf
 
 # Firmware files
 
@@ -113,7 +117,7 @@ etc/firmware/wlan/cfg.dat
 etc/firmware/wlan/qcom_cfg.ini
 etc/firmware/wlan/qcom_wapi_fw.bin
 etc/firmware/wlan/qcom_fw.bin
-etc/firmware/wlan/qcom_wlan_nv.bin
+# etc/firmware/wlan/qcom_wlan_nv.bin
 
 # Android 2.2.2 init script
 
@@ -134,8 +138,8 @@ bin/qmuxd
 bin/btwlancoex
 bin/wifiwritemac
 bin/port-bridge
-bin/CKPD-daemon
-bin/wiperiface
+# bin/CKPD-daemon
+# bin/wiperiface
 bin/netmgrd
 bin/hostapd
 bin/hostapd_cli
@@ -145,3 +149,10 @@ bin/hostapd_cli
 # bin/wpa_supplicant
 # bin/rmt_storage
 
+# Android 2.3.3 binaries
+bin/usbhub
+bin/usbhub_init
+bin/diag_klog
+bin/diag_mdlog
+bin/cnd
+bin/ds_fmc_appd

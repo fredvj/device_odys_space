@@ -20,7 +20,7 @@
 #include "common.h"
 #include "extendedcommands.h"
 
-char* MENU_HEADERS[] = { "Use Volume + Home Keys * Odys Space 2013/03/12 rev 1",
+char* MENU_HEADERS[] = { "Use Volume + Home Keys * Odys Space 2013/05/31 rev 1",
                          NULL };
 
 char* MENU_ITEMS[] = { "reboot system now",
