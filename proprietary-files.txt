@@ -38,7 +38,7 @@ bin/hci_qcomm_init
 lib/libcm.so
 lib/libdsm.so
 lib/libdss.so
-lib/libdl.so
+# lib/libdl.so
 lib/libgsdi_exp.so
 lib/libgstk_exp.so
 lib/libmmgsdilib.so
@@ -117,7 +117,7 @@ etc/firmware/wlan/cfg.dat
 etc/firmware/wlan/qcom_cfg.ini
 etc/firmware/wlan/qcom_wapi_fw.bin
 etc/firmware/wlan/qcom_fw.bin
-# etc/firmware/wlan/qcom_wlan_nv.bin
+etc/firmware/wlan/qcom_wlan_nv.bin
 
 # Android 2.2.2 init script
 

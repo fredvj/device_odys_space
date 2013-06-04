@@ -131,6 +131,11 @@ PRODUCT_COPY_FILES += \
 	device/odys/space/prebuilt/slow-work.ko:system/lib/modules/slow-work.ko \
 	device/odys/space/prebuilt/cifs.ko:system/lib/modules/cifs.ko
 
+# Keyboard related files
+
+PRODUCT_COPY_FILES += \
+	device/odys/space/prebuilt/ft5x0x_ts.kcm.bin:system/usr/keychars/ft5x0x_ts.kcm.bin
+
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := odys_space

@@ -65,7 +65,7 @@ BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 BOARD_UMS_LUNFILE := "/sys/devices/platform/usb_mass_storage/lun0/file"
 # BOARD_CUSTOM_USB_CONTROLLER := ../../device/odys/space/configuration/UsbController.cpp
 
-TARGET_PROVIDES_LIBRIL := true
+# TARGET_PROVIDES_LIBRIL := true
 TARGET_PROVIDES_LIBAUDIO := true
 
 # The name of the init file can be controlled from the kernel command line
