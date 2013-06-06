@@ -18,6 +18,7 @@ ro.ril.hsxpa=2
 ro.ril.gprsclass=10
 ro.telephony.default_network=0
 ro.telephony.call_ring.multiple=false
+ro.telephony.ril_class=QualcommNoSimReadyRIL
 
 # OpenGL
 

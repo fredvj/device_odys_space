@@ -1,6 +1,6 @@
 # Build environment for:
 #
-# Odys Space - CyanogenMod 7.2
+# Odys Space - CyanogenMod 7.2 - Kernel 2.6.35
 #
 # See: http://www.odys.de/web/tablet-pc_space_de.html
 #
@@ -19,12 +19,12 @@ Screen rotation		: Okay
 Touchscreen		: HW: FT5406 (Focal Tech) Controller
 WLAN                    : Okay
 			: HW: WCN1312_2.10-3.0.0.49-3.0.0.20
-WLAN Hotspot            : Okay - New settings will get picked up when re-enabling the Hotspot
+WLAN Hotspot            : Failure
 GSM                     : Okay
-GSM Data		: Okay
+GSM Data		: Failure
 GSM Voice		: Okay
 GSM SMS			: Okay
-Bluetooth               : Okay, but MAC address is randomly picked with every reboot
+Bluetooth               : Okay
 Camera                  : No - crashes
 			: HW: MT9D112 (Aptina 2 Mp camera enabled in kernel)
 			:     Needs further investigation
@@ -67,3 +67,5 @@ Memory                  : 256MB device - needs special parameters?
 2012-06-16:	A couple of updates after CM 7.2 released
 2012-10-11:	Added lockscreen rotation
 2012-10-12:	Moved config files to configuration folder
+2013-06-06:	Readme update for Kernel 2.6.35 integration
+

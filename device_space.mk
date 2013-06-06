@@ -82,7 +82,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	device/odys/space/prebuilt/initlogo.rle:root/initlogo.rle
 
-# APNS / SPN
+# APNS / SPN / Voicemail
 #
 # It looks like Cyanogen has more power - apns-conf.xml gets overwritten by
 # development/data/etc/apns-conf.xml
@@ -97,7 +97,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	device/odys/space/prebuilt/apns-conf.xml:system/etc/apns-conf.xml \
-	device/odys/space/prebuilt/spn-conf.xml:system/etc/spn-conf.xml
+	device/odys/space/prebuilt/spn-conf.xml:system/etc/spn-conf.xml \
+	device/odys/space/prebuilt/voicemail-conf.xml:system/etc/voicemail-conf.xml
 
 # Startup scripts
 # If we would like to name it init.space.rc, we would have to change the kernel parameter
@@ -135,6 +136,11 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	device/odys/space/prebuilt/ft5x0x_ts.kcm.bin:system/usr/keychars/ft5x0x_ts.kcm.bin
+
+# WLAN files
+
+PRODUCT_COPY_FILES += \
+	device/odys/space/prebuilt/qcom_wlan_nv.bin:system/etc/firmware/wlan/qcom_wlan_nv.bin
 
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
