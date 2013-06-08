@@ -140,7 +140,8 @@ PRODUCT_COPY_FILES += \
 # WLAN files
 
 PRODUCT_COPY_FILES += \
-	device/odys/space/prebuilt/qcom_wlan_nv.bin:system/etc/firmware/wlan/qcom_wlan_nv.bin
+	device/odys/space/prebuilt/qcom_wlan_nv.bin:system/etc/firmware/wlan/qcom_wlan_nv.bin \
+	device/odys/space/configuration/hostapd.conf:system/etc/wifi/softap/hostapd.conf
 
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
